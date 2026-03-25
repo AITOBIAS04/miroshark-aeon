@@ -43,22 +43,22 @@ Today is ${today}. Search X for tweets matching **${var}**.
    ```
    *Top Tweets — ${var} (${today})*
 
-   1. @handle — [brief summary of tweet content]
+   1. x.com/handle — [brief summary of tweet content]
    Likes: X | RTs: Y
    [View tweet](https://x.com/handle/status/ID)
 
-   2. @handle — [brief summary]
+   2. x.com/handle — [brief summary]
    Likes: X | RTs: Y
    [View tweet](https://x.com/handle/status/ID)
 
-   3. @handle — [brief summary]
+   3. x.com/handle — [brief summary]
    Likes: X | RTs: Y
    [View tweet](https://x.com/handle/status/ID)
 
    ... (up to 5 tweets)
    ```
 
-   IMPORTANT: The `[View tweet](URL)` link format is required so users can tap to open each tweet directly in Telegram.
+   IMPORTANT: Do NOT use @handle format — it tags/pings users on Telegram. Use x.com/handle instead (shows the profile URL without tagging anyone). The `[View tweet](URL)` link is required so users can tap to open each tweet.
 
 ## Environment Variables Required
 
