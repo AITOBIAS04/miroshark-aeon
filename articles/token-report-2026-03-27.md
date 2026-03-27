@@ -4,26 +4,26 @@
 
 | Metric | Value | 24h Change |
 |--------|-------|------------|
-| Price | $0.0000005222 | -2.35% |
-| Liquidity | $60.8K | — |
-| 24h Volume | $39.0K | — |
-| 24h Buys/Sells | 87 / 83 | — |
-| 24h High/Low | $0.000000759 / $0.000000481 | — |
-| FDV | $52.2K | — |
+| Price | $0.0000005318 | -23.95% |
+| Liquidity | $58.7K | — |
+| 24h Volume | $28.0K | — |
+| 24h Buys/Sells | 62 / 71 | — |
+| 24h High/Low | $0.0000007594 / $0.0000004954 | — |
+| FDV | $53.2K | — |
 
 ## Trend
-- **24h:** Mild downtrend. Price drifted lower through the day, touching a low of $0.000000481 before recovering slightly. Activity concentrated in a few bursts — a $9.5K volume spike around 14:00 UTC, otherwise thin trading. Current price sits near the day's low.
-- **3-day (since launch):** -48.2% from the 3/24 opening price of ~$0.000001009. The token spiked to an all-time high of ~$0.00000357 on launch day before steadily retracing.
-- **vs. yesterday's report (3/25):** -12.6% from the $0.0000005977 price recorded on 3/25. Volume has dropped sharply from $359.9K to $39.0K — a 89% decline in daily volume.
+- **24h:** Volatile session. Price spiked to $0.0000007594 around 16:00–17:00 UTC yesterday before selling off steadily through the night, bottoming near $0.0000004954 around 03:00 UTC. A brief recovery in early morning brought the price back to $0.0000005318. The hourly candles show a clear spike-and-fade pattern with the biggest volume burst ($9.5K) during the spike.
+- **3-day (since launch):** -47.3% from the 3/24 opening price of ~$0.000001009. The token hit an all-time high of ~$0.00000357 on launch day before steadily retracing.
+- **vs. yesterday close (3/26):** -5.5% from $0.0000005628. Volume dropped further from $49.9K to $28.0K — continuing the post-launch decay.
 
 ## Volume & Liquidity
-Volume has dropped significantly over three days: $965K (3/24) → $391K (3/25) → $49.9K (3/26) → $39.0K (3/27 so far). This is a typical post-launch decay pattern. Buy/sell ratio is roughly balanced at 87/83, suggesting no strong directional pressure. Liquidity remains healthy at $60.8K relative to the $52.2K FDV. Recent trades show mostly small sells — the largest recent trade was a ~$471 sell at 05:38 UTC.
+Volume continues its post-launch decline: $965K (3/24) → $391K (3/25) → $49.9K (3/26) → $28.0K (3/27). Today's volume is 97% below launch day. Sell pressure slightly outweighs buys at 71 sells vs 62 buys in the last 24h — more sellers than buyers (56 vs 45 unique addresses). Liquidity at $58.7K remains healthy relative to FDV ($53.2K), with the main pool (MiroShark/WETH) on Uniswap v4 holding the vast majority. Recent trades are small — the most recent was a $0.50 buy and a $4.72 sell, both under 10M tokens.
 
 ## Social Pulse
-XAI_API_KEY not set, social data unavailable. Previous report (3/25) noted bullish sentiment — whale accumulation alerts, dev roadmap confirmations, and community speculation around @aaronjmars involvement. One bearish signal was a claim that the dev sold tokens.
+XAI_API_KEY not set, social data unavailable. Previous fetch-tweets run (3/27) found 10 mentions over the past week — top tweet from @RoundtableSpace (59 likes, 52K views) covering the simulation framework. @aaronjmars posted a roadmap update (28 likes). Whale alert activity from @BlackhatEmpire. Community engagement remains active but concentrated among a small group.
 
 ## Context
-MiroShark is 3 days old (launched 2026-03-24) and is in a natural post-launch cooling period. The sharp volume decline from $965K to $39K suggests initial hype has faded. The parent repo (aaronjmars/MiroShark) continues to gain traction with 282 stars and 46 forks, and a major Wonderwall/Polymarket integration was pushed on 3/26 — but this hasn't translated into renewed token momentum yet.
+MiroShark is 3 days old (launched 2026-03-24) and is in a natural post-launch cooling period. The -24% daily drop reflects continued profit-taking after the initial spike. The parent repo (aaronjmars/MiroShark) maintains strong developer traction at 282 stars and 46 forks, with a major Wonderwall/Polymarket integration pushed on 3/26. However, development milestones haven't yet translated into renewed buying pressure. The sell-heavy 24h ratio (71/62) and declining volume suggest the market is waiting for a new catalyst.
 
 ---
 *Data: GeckoTerminal | Chain: Base*
