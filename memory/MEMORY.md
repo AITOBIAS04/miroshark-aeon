@@ -33,6 +33,7 @@
 | Simulation Replay | 2026-03-28 | Playback controls (play/pause, speed, scrubber) for completed simulations (PR #3) |
 | Repo Pulse Optimization | 2026-03-28 | Stargazer fetch from O(N) to O(1) API pages (PR #4 on miroshark-aeon) |
 | Agent Network Visualization | 2026-03-29 | D3 force-directed graph of agent interactions with round playback (PR #4 on MiroShark) |
+| Feature PR Deduplication | 2026-03-29 | Added open PR checks to feature + repo-actions skills to prevent duplicate builds (PR #5 on miroshark-aeon) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
