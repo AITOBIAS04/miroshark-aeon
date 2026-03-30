@@ -27,11 +27,19 @@ Read memory/watched-repos.md for the list of repos to track. Skip any repo whose
    ```
    Use this `$CUTOFF` for ALL time filtering below. Do NOT use "today's date" — use exactly 24 hours ago from now.
 
-3. **Fetch the most recent stargazers** — use `--paginate` and filter by the 24h cutoff:
+3. **Fetch the most recent stargazers** — efficiently, without downloading all pages:
    ```bash
-   gh api repos/owner/repo/stargazers -H "Accept: application/vnd.github.star+json" --paginate --jq '.[] | {user: .user.login, starred_at: .starred_at}' | tail -30
+   # Calculate the last page (100 per page) to avoid fetching all stargazers
+   STARS=$(gh api repos/owner/repo --jq '.stargazers_count')
+   LAST_PAGE=$(( (STARS + 99) / 100 ))
+   # Fetch only the last 2 pages (covers up to 200 most recent stars)
+   PREV_PAGE=$(( LAST_PAGE > 1 ? LAST_PAGE - 1 : 1 ))
+   gh api "repos/owner/repo/stargazers?per_page=100&page=$PREV_PAGE" -H "Accept: application/vnd.github.star+json" --jq '.[] | {user: .user.login, starred_at: .starred_at}'
+   gh api "repos/owner/repo/stargazers?per_page=100&page=$LAST_PAGE" -H "Accept: application/vnd.github.star+json" --jq '.[] | {user: .user.login, starred_at: .starred_at}'
    ```
-   From this list, keep only entries where `starred_at` >= `$CUTOFF` (24 hours ago). NOT "since midnight today" — since exactly 24 hours ago.
+   Combine the results from both pages, deduplicate by user, and keep only entries where `starred_at` >= `$CUTOFF` (24 hours ago). NOT "since midnight today" — since exactly 24 hours ago.
+
+   **Why not `--paginate`?** The stargazers API returns oldest-first. Using `--paginate` fetches ALL pages (O(N) API calls as stars grow). Fetching only the last 2 pages is O(1) and covers up to 200 recent stars — more than enough for 24h changes.
 
 4. **Fetch recent forks** (sorted by newest):
    ```bash
