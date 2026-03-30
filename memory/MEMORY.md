@@ -43,6 +43,7 @@
 | Repo Pulse Optimization | 2026-03-28 | Stargazer fetch from O(N) to O(1) API pages (PR #4 on miroshark-aeon) |
 | Agent Network Visualization | 2026-03-29 | D3 force-directed graph of agent interactions with round playback (PR #4 on MiroShark) |
 | Feature PR Deduplication | 2026-03-29 | Added open PR checks to feature + repo-actions skills to prevent duplicate builds (PR #5 on miroshark-aeon) |
+| MCP Server | 2026-03-30 | MCP server exposing 4 simulation tools for agent ecosystem interop (PR #5 on MiroShark) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
@@ -56,7 +57,7 @@
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars by 2026-04-15 (at 336 on Mar 29, ~+33/day)
-- 7 stalled PRs need merging: miroshark-aeon #1-#4, MiroShark #1-#3
+- 8 stalled PRs need merging: miroshark-aeon #1-#4, MiroShark #1-#4 + new MCP server PR #5
 
 ## Next Priorities
 - Get stalled PRs reviewed and merged
