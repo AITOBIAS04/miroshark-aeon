@@ -40,6 +40,7 @@
 | Preset Templates | 2026-03-27 | 6 one-click simulation templates for new user onboarding (PR #2) |
 | Heartbeat Scheduler Diagnostics | 2026-03-27 | Added messages.yml scheduler checks to heartbeat for accurate root cause analysis (PR #2 on miroshark-aeon) |
 | Simulation Replay | 2026-03-28 | Playback controls (play/pause, speed, scrubber) for completed simulations (PR #3) |
+| Notify Truncation Fix | 2026-03-28 | Discord (2000) & Slack (4000) char truncation in notify script (PR #3 on miroshark-aeon) |
 | Repo Pulse Optimization | 2026-03-28 | Stargazer fetch from O(N) to O(1) API pages (PR #4 on miroshark-aeon) |
 | Agent Network Visualization | 2026-03-29 | D3 force-directed graph of agent interactions with round playback (PR #4 on MiroShark) |
 | Feature PR Deduplication | 2026-03-29 | Added open PR checks to feature + repo-actions skills to prevent duplicate builds (PR #5 on miroshark-aeon) |
