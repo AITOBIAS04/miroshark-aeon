@@ -46,6 +46,7 @@
 | Feature PR Deduplication | 2026-03-29 | Added open PR checks to feature + repo-actions skills to prevent duplicate builds (PR #5 on miroshark-aeon) |
 | MCP Server | 2026-03-30 | MCP server exposing 4 simulation tools for agent ecosystem interop (PR #5 on MiroShark) |
 | Schedule Comment Fix | 2026-04-01 | Fixed stale 3-day-cycle comments in aeon.yml — now matches actual schedule after feature→daily + hyperstitions→Sat-only (PR #6 on miroshark-aeon) |
+| One-Click Cloud Deploy | 2026-04-03 | railway.json + render.yaml + README section with deploy badges and Neo4j Aura guide (PR #9 on MiroShark) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
