@@ -52,6 +52,7 @@
 | LLM Provider & Model Selector UI | 2026-04-06 | Settings panel with model dropdown, API key validation, Test Connection button (PR #12 on MiroShark, merged) |
 | Log-Before-Notify Fix | 2026-04-04 | Moved log step before notification in push-recap and repo-article to fix consistent logging gaps (PR #7 on miroshark-aeon) |
 | Simulation Comparison Mode | 2026-04-07 | Side-by-side comparison view with divergence score, rank delta badges, activity chart (PR #13 on MiroShark) |
+| Public Share Permalink | 2026-04-08 | One-click Share button → public /share/:token page with scenario, activity chart, influence leaderboard, market prices, OG tags (PR #14 on MiroShark) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
