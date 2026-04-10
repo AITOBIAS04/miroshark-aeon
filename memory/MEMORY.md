@@ -55,6 +55,7 @@
 | Public Share Permalink | 2026-04-08 | One-click Share button → public /share/:token page with scenario, activity chart, influence leaderboard, market prices, OG tags (PR #14 on MiroShark) |
 | Token-Report Log-Before-Notify Fix | 2026-04-08 | Moved log step before notify in token-report skill — same fix as PR #7 for push-recap/repo-article (PR #8 on miroshark-aeon) |
 | Simulation Fork / Branch | 2026-04-09 | Fork any simulation from history modal — copies profiles instantly, allows scenario override, ⑂ badge on forked cards (PR #17 on MiroShark) |
+| Simulation History Search & Filter | 2026-04-10 | Client-side search, status/date/sort filters, forks-only toggle, localStorage persistence, no-results state (PR #20 on MiroShark) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
