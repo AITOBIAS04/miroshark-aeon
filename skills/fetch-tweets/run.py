@@ -6,8 +6,10 @@ print(f"Date range: {from_date} to {to_date}", flush=True)
 
 prompt = (
     "Search for tweets about the MIROSHARK crypto token on Base chain "
-    "(contract address 0xd7bc6a05a56655fb2052f742b012d1dfd66e1ba3). "
-    "Only return tweets specifically about this cryptocurrency, not unrelated uses of the word. "
+    "(contract address 0xd7bc6a05a56655fb2052f742b012d1dfd66e1ba3) "
+    "AND the MiroShark GitHub project (https://github.com/aaronjmars/MiroShark — a multi-agent social simulation engine). "
+    "Return tweets that mention the MIROSHARK token, the MiroShark project, aaronjmars/MiroShark, or the contract address. "
+    "Only return tweets specifically about these — not unrelated uses of the word. "
     "Date range: " + from_date + " to " + to_date + ". "
     "Return 10 tweets, prioritize the most interesting, insightful, or highly-engaged posts. "
     "For each tweet include: handle, the full text, date posted, engagement (likes/retweets if available), "
