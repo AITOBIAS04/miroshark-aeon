@@ -47,8 +47,8 @@
     "success_rate": 1
   },
   "token-report": {
-    "last_dispatch": "2026-04-16T10:23:19Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-04-16T11:36:03Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-16T10:23:33Z",
     "total_runs": 3,
     "total_successes": 0,
@@ -58,8 +58,8 @@
     "last_error": "043e6b0\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "fetch-tweets": {
-    "last_dispatch": "2026-04-16T10:23:19Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-04-16T11:36:03Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-16T10:23:44Z",
     "total_runs": 3,
     "total_successes": 0,
@@ -69,8 +69,8 @@
     "last_error": "08374df\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "repo-pulse": {
-    "last_dispatch": "2026-04-16T10:23:19Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-04-16T11:36:03Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-16T10:23:42Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -78,5 +78,9 @@
     "consecutive_failures": 1,
     "success_rate": 0,
     "last_error": "a50ad0f\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+  },
+  "feature": {
+    "last_dispatch": "2026-04-16T11:36:03Z",
+    "last_status": "dispatched"
   }
 }
