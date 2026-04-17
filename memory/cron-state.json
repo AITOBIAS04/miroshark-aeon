@@ -100,13 +100,13 @@
   },
   "self-improve": {
     "last_status": "failed",
-    "last_failed": "2026-04-17T16:07:54Z",
-    "total_runs": 22,
+    "last_failed": "2026-04-17T17:06:10Z",
+    "total_runs": 23,
     "total_successes": 0,
-    "total_failures": 22,
-    "consecutive_failures": 22,
+    "total_failures": 23,
+    "consecutive_failures": 23,
     "success_rate": 0,
-    "last_error": "7d9a1cd\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "936e7cb\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "repo-article": {
     "last_status": "failed",
