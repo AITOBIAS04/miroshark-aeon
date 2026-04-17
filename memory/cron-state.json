@@ -79,13 +79,13 @@
   "repo-pulse": {
     "last_dispatch": "2026-04-16T12:47:38Z",
     "last_status": "failed",
-    "last_failed": "2026-04-17T21:56:06Z",
-    "total_runs": 31,
+    "last_failed": "2026-04-17T22:41:02Z",
+    "total_runs": 32,
     "total_successes": 0,
-    "total_failures": 31,
-    "consecutive_failures": 31,
+    "total_failures": 32,
+    "consecutive_failures": 32,
     "success_rate": 0,
-    "last_error": "41c3457\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "81662f0\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "feature": {
     "last_dispatch": "2026-04-16T12:47:38Z",
