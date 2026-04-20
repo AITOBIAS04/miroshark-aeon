@@ -70,13 +70,13 @@
   "fetch-tweets": {
     "last_dispatch": "2026-04-16T12:47:38Z",
     "last_status": "failed",
-    "last_failed": "2026-04-20T12:55:28Z",
-    "total_runs": 100,
+    "last_failed": "2026-04-20T14:51:04Z",
+    "total_runs": 101,
     "total_successes": 0,
-    "total_failures": 100,
-    "consecutive_failures": 100,
+    "total_failures": 101,
+    "consecutive_failures": 101,
     "success_rate": 0,
-    "last_error": "c0e7396\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "3015a1b\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "repo-pulse": {
     "last_dispatch": "2026-04-16T12:47:38Z",
