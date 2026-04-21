@@ -92,13 +92,13 @@
   "feature": {
     "last_dispatch": "2026-04-16T12:47:38Z",
     "last_status": "failed",
-    "last_failed": "2026-04-21T02:24:14Z",
-    "total_runs": 113,
+    "last_failed": "2026-04-21T05:13:56Z",
+    "total_runs": 115,
     "total_successes": 0,
-    "total_failures": 113,
-    "consecutive_failures": 113,
+    "total_failures": 115,
+    "consecutive_failures": 115,
     "success_rate": 0,
-    "last_error": "b5c7c51\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "215dcd7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "self-improve": {
     "last_status": "failed",
