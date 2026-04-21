@@ -112,13 +112,13 @@
   },
   "repo-article": {
     "last_status": "failed",
-    "last_failed": "2026-04-21T18:49:38Z",
-    "total_runs": 121,
+    "last_failed": "2026-04-21T19:56:30Z",
+    "total_runs": 123,
     "total_successes": 0,
-    "total_failures": 121,
-    "consecutive_failures": 121,
+    "total_failures": 123,
+    "consecutive_failures": 123,
     "success_rate": 0,
-    "last_error": "8935337\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "ccba2bb\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "hyperstitions-ideas": {
     "last_status": "failed",
