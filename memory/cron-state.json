@@ -26,13 +26,13 @@
   "project-lens": {
     "last_status": "failed",
     "last_success": "2026-04-15T19:14:07Z",
-    "total_runs": 136,
+    "total_runs": 137,
     "total_successes": 1,
-    "total_failures": 135,
-    "consecutive_failures": 135,
+    "total_failures": 136,
+    "consecutive_failures": 136,
     "success_rate": 0.01,
-    "last_failed": "2026-04-23T01:14:38Z",
-    "last_error": "a6b96f7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-04-23T04:24:44Z",
+    "last_error": "d5185e1\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "repo-actions": {
     "last_status": "failed",
