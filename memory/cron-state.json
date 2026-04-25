@@ -37,13 +37,13 @@
   "repo-actions": {
     "last_status": "failed",
     "last_success": "2026-04-15T19:17:33Z",
-    "total_runs": 195,
+    "total_runs": 196,
     "total_successes": 1,
-    "total_failures": 194,
-    "consecutive_failures": 194,
+    "total_failures": 195,
+    "consecutive_failures": 195,
     "success_rate": 0.01,
-    "last_failed": "2026-04-25T01:06:24Z",
-    "last_error": "86b38e9\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-04-25T04:07:35Z",
+    "last_error": "c0e635f\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "push-recap": {
     "last_status": "failed",
