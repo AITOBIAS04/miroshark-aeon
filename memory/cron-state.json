@@ -15,13 +15,13 @@
     "last_dispatch": "2026-04-15T19:07:29Z",
     "last_status": "failed",
     "last_success": "2026-04-15T19:15:39Z",
-    "total_runs": 164,
+    "total_runs": 165,
     "total_successes": 2,
-    "total_failures": 162,
-    "consecutive_failures": 162,
+    "total_failures": 163,
+    "consecutive_failures": 163,
     "success_rate": 0.01,
-    "last_failed": "2026-04-26T18:42:17Z",
-    "last_error": "ee5dfe4\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-04-26T19:35:47Z",
+    "last_error": "1c934da\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "project-lens": {
     "last_status": "failed",
