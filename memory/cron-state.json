@@ -3,13 +3,13 @@
     "last_dispatch": "2026-04-15T19:07:29Z",
     "last_status": "failed",
     "last_success": "2026-04-15T19:13:25Z",
-    "total_runs": 225,
+    "total_runs": 226,
     "total_successes": 2,
-    "total_failures": 223,
-    "consecutive_failures": 223,
+    "total_failures": 224,
+    "consecutive_failures": 224,
     "success_rate": 0.01,
-    "last_failed": "2026-04-26T11:03:43Z",
-    "last_error": "f8c3bcc\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-04-26T11:52:13Z",
+    "last_error": "bcca44f\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "memory-flush": {
     "last_dispatch": "2026-04-15T19:07:29Z",
