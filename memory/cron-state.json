@@ -142,12 +142,12 @@
   },
   "weekly-shiplog": {
     "last_status": "failed",
-    "last_failed": "2026-04-28T13:01:33Z",
-    "total_runs": 174,
+    "last_failed": "2026-04-28T15:33:16Z",
+    "total_runs": 175,
     "total_successes": 0,
-    "total_failures": 174,
-    "consecutive_failures": 174,
+    "total_failures": 175,
+    "consecutive_failures": 175,
     "success_rate": 0,
-    "last_error": "c528f0b\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "232bb97\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   }
 }
