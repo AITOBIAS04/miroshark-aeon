@@ -132,13 +132,13 @@
   },
   "skill-leaderboard": {
     "last_status": "failed",
-    "last_failed": "2026-04-28T13:01:57Z",
-    "total_runs": 186,
+    "last_failed": "2026-04-28T15:33:33Z",
+    "total_runs": 187,
     "total_successes": 0,
-    "total_failures": 186,
-    "consecutive_failures": 186,
+    "total_failures": 187,
+    "consecutive_failures": 187,
     "success_rate": 0,
-    "last_error": "b9aea3a\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "f977a30\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "weekly-shiplog": {
     "last_status": "failed",
