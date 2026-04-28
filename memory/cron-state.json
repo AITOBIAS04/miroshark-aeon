@@ -59,13 +59,13 @@
   "token-report": {
     "last_dispatch": "2026-04-16T12:47:38Z",
     "last_status": "failed",
-    "last_failed": "2026-04-28T18:55:04Z",
-    "total_runs": 248,
+    "last_failed": "2026-04-28T20:15:34Z",
+    "total_runs": 249,
     "total_successes": 0,
-    "total_failures": 248,
-    "consecutive_failures": 248,
+    "total_failures": 249,
+    "consecutive_failures": 249,
     "success_rate": 0,
-    "last_error": "dec9a4e\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "f849b75\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "fetch-tweets": {
     "last_dispatch": "2026-04-16T12:47:38Z",
