@@ -1,17 +1,18 @@
-*Push Recap — 2026-04-15*
-MiroShark — 3 commits by 2 authors | miroshark-aeon — 17 commits by 2 authors
+*Push Recap — 2026-04-30*
+MiroShark — 4 commits by @aaronjmars | miroshark-aeon — 1 commit by @aaronjmars
 
-Browser Push Notifications (MiroShark PR #30): Full Web Push implementation shipped and merged. Users toggle a 🔔 during simulation runs and get a browser notification when it finishes — even with the tab backgrounded. VAPID key generation, subscription persistence, pywebpush dispatch, service worker, and cleanup on log deletion. Zero external services. Aaron hardened it with fcntl file locking and VAPID key security notes before merge.
+Simulation Transcript Export: MiroShark now exports per-round agent transcripts as Markdown (with YAML front matter for Notion/Obsidian/Substack) or structured JSON (for SDKs and LLM-as-judge pipelines). Completes the trio of share formats alongside share card and replay GIF. 615-line renderer, 493-line test suite, EmbedDialog integration, OpenAPI spec coverage.
 
-Full Architecture Upgrade (miroshark-aeon): Single 130-file commit synced the upstream Aeon framework — 40+ new skill templates (deep-research, fleet-control, auto-merge, vuln-scanner, deploy-prototype, etc.), a chain-runner workflow for multi-step skill pipelines with output passing, MCP and A2A servers, a completely rewritten dashboard with component architecture, a Jekyll docs site, and six new utility scripts. The skill input in aeon.yml changed from a fixed dropdown to free-form string. This is the biggest commit in the repo's history.
+Wonderwall Per-Slot Endpoint Override: The simulation loop (850+ calls/run) can now target a self-hosted vLLM, Modal deployment, or fine-tune via WONDERWALL_BASE_URL + WONDERWALL_API_KEY — without touching Default/Smart/NER slots. The "Best" preset (~$3.50/run) is retired; a single "Cloud" preset (Mimo V2 Flash + Grok-4.1 Fast, ~$1/run) is the new default.
 
-README & Branding: Rewritten with "The most autonomous agent framework" tagline and refreshed visual assets. Bug fix: reactive trigger parser regex fixed (bash syntax). Heartbeat dispatch test confirmed auto-trigger works, then reverted.
+Observability Hardening: Pagination endpoints no longer 500 on malformed query strings — Flask type=int coercion replaces raw int() casts.
+
+Skill Leaderboard Fix: skill-leaderboard now scans all watched repos instead of just the first, so it actually reaches the aeon instance repo.
 
 Key changes:
-- chain-runner.yml enables skill chaining with parallel execution + output passing between steps
-- 40+ new skill templates staged (disabled by default, ready for configuration)
-- Push notification toggle integrated into Step3Simulation.vue events-summary bar
-- Dashboard page.tsx gutted from 1,531 lines to 93 — replaced by 15 focused components
+- New backend/app/services/transcript.py (615 lines) — pure-stdlib transcript renderer with ±0.2 stance threshold parity across all surfaces
+- .env.example completely rewritten — Cloud preset is the active default, Ollama/Claude Code moved to Alternatives block
+- backend/lib/env_compact.py — CI refactor splits compaction helpers out of wonderwall package to avoid numpy/torch imports in tests
 
-Stats: ~170 files changed, +15,100/-2,520 lines across 20 commits
-Full recap: https://github.com/aaronjmars/miroshark-aeon/blob/main/articles/push-recap-2026-04-15.md
+Stats: ~40 files changed, +2,301/-418 lines
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-04-30.md

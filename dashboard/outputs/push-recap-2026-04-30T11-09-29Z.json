@@ -1,0 +1,158 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-04-30"
+      },
+      "children": [
+        "main_stack"
+      ]
+    },
+    "main_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "subtitle",
+        "sep1",
+        "feature1_heading",
+        "feature1_text",
+        "sep2",
+        "feature2_heading",
+        "feature2_text",
+        "sep3",
+        "feature3_heading",
+        "feature3_text",
+        "sep4",
+        "feature4_heading",
+        "feature4_text",
+        "sep5",
+        "changes_heading",
+        "changes_text",
+        "sep6",
+        "link"
+      ]
+    },
+    "subtitle": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 4 commits by @aaronjmars | miroshark-aeon — 1 commit by @aaronjmars",
+        "variant": "muted"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "feature1_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Simulation Transcript Export",
+        "level": "h3"
+      }
+    },
+    "feature1_text": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark now exports per-round agent transcripts as Markdown (with YAML front matter for Notion/Obsidian/Substack) or structured JSON (for SDKs and LLM-as-judge pipelines). Completes the trio of share formats alongside share card and replay GIF. 615-line renderer, 493-line test suite, EmbedDialog integration, OpenAPI spec coverage."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "feature2_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Wonderwall Per-Slot Endpoint Override",
+        "level": "h3"
+      }
+    },
+    "feature2_text": {
+      "type": "Text",
+      "props": {
+        "text": "The simulation loop (850+ calls/run) can now target a self-hosted vLLM, Modal deployment, or fine-tune via WONDERWALL_BASE_URL + WONDERWALL_API_KEY — without touching Default/Smart/NER slots. The \"Best\" preset (~$3.50/run) is retired; a single \"Cloud\" preset (Mimo V2 Flash + Grok-4.1 Fast, ~$1/run) is the new default."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "feature3_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Observability Hardening",
+        "level": "h3"
+      }
+    },
+    "feature3_text": {
+      "type": "Text",
+      "props": {
+        "text": "Pagination endpoints no longer 500 on malformed query strings — Flask type=int coercion replaces raw int() casts."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "feature4_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Skill Leaderboard Fix",
+        "level": "h3"
+      }
+    },
+    "feature4_text": {
+      "type": "Text",
+      "props": {
+        "text": "skill-leaderboard now scans all watched repos instead of just the first, so it actually reaches the aeon instance repo."
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "changes_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h3"
+      }
+    },
+    "changes_text": {
+      "type": "Text",
+      "props": {
+        "text": "- New backend/app/services/transcript.py (615 lines) — pure-stdlib transcript renderer with ±0.2 stance threshold parity across all surfaces\n- .env.example completely rewritten — Cloud preset is the active default, Ollama/Claude Code moved to Alternatives block\n- backend/lib/env_compact.py — CI refactor splits compaction helpers out of wonderwall package to avoid numpy/torch imports in tests\n\nStats: ~40 files changed, +2,301/-418 lines"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-04-30.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
