@@ -46,6 +46,7 @@
 | Heartbeat Auto-Trigger | 2026-04-14 | Heartbeat now auto-dispatches confirmed-missing skills via gh workflow run instead of just notifying (PR #11 on miroshark-aeon) |
 | Browser Push Notifications | 2026-04-15 | 🔕/🔔 toggle during simulation runs; Service Worker + VAPID + pywebpush; browser notified when simulation completes even if tab is hidden (PR #30 on MiroShark) |
 | Pre-Flight Health Guard | 2026-04-30 | Bash-level systemic failure detection in prefetch step; reads cron-state.json, logs ::error:: in GH Actions UI when >80% skills failing; works without Claude auth (PR #1 on miroshark-aeon) |
+| Atom Feed (/feed.xml) | 2026-04-30 | RFC 4287 Atom feed of completed sims; subscribe in Feedly/n8n/Zapier; stdlib XML, zero deps; RSS icon + Subscribe button in UI (code complete, push blocked — GH_GLOBAL not set) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
