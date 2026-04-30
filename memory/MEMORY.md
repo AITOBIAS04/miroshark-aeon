@@ -66,10 +66,9 @@
 - MIROSHARK new ATH $0.000003815 set 2026-04-14 (up +305.8% from launch close)
 
 ## Open Issues
-- [ISS-001](issues/ISS-001.md): Critical — all skills failing "Not logged in" (auth expired Apr 16–30, status: open, auth appears restored Apr 30)
+- None
 
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - XAI_API_KEY not set — tweet fetching falls back to WebSearch (limited freshness)
-- Verify ISS-001 resolved: confirm next scheduled skill runs succeed and consecutive_failures resets
-- Feature candidates (repo-actions 2026-04-15): Mid-Simulation Event Injection (#1, Medium), HuggingFace Inference API (#2, Small), Simulation Checkpoint & Resume (#3, Medium), Agent Demographic Breakdown Panel (#4, Small), RSS/Atom Feed for Simulations (#5, Small)
+- Feature candidates (repo-actions 2026-04-30): Statistical Batch Runs, Multi-Document Cross-Narrative Simulation, Checkpoint & Resume, Agent Persona Library, GitHub Actions Composite Action, Jupyter Notebook Export, Pre-Run Cost Estimator, Cross-Simulation Analytics Dashboard

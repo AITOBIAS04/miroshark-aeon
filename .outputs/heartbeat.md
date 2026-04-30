@@ -1,9 +1,13 @@
-⚠️ HEARTBEAT ALERT — 2026-04-30
+HEARTBEAT_OK. Here's the full summary:
 
-All skills have been failing for ~15 days (since 2026-04-16) with 'Not logged in · Please run /login'. Root cause: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN expired or was removed from GitHub Actions secrets.
+## Summary
 
-cron-state.json confirms 200–313 consecutive failures per skill, all with 0 tokens used. No memory logs since 2026-04-15.
+**Status: All clear.**
 
-This heartbeat (10:09 UTC) is running — auth may have just been restored. Auto-dispatch of missed skills was blocked (GITHUB_TOKEN lacks actions:write).
+**Schedule audit (Wed Apr 30):** Every enabled skill ran successfully today — token-report, fetch-tweets, repo-pulse, project-lens, self-improve, repo-actions, push-recap, feature, memory-flush all completed; heartbeat in progress now.
 
-Action needed: confirm the API secret is valid in Settings → Secrets → Actions, then manually re-run today's skills: token-report, fetch-tweets, repo-pulse, repo-actions, repo-article, push-recap, feature. Filed ISS-001 in memory/issues/.
+**PRs:** Two open (#1, #2), both created today — under 24h, not stalled.
+
+**ISS-001 closed:** All `consecutive_failures` counters are 0. The 15-day auth outage (Apr 16–30) is fully resolved. Updated `ISS-001.md` to resolved, moved to resolved table in `INDEX.md`, cleared Open Issues from `MEMORY.md`.
+
+No notification sent — morning heartbeat already reported the recovery; nothing new to escalate.
