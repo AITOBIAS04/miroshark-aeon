@@ -47,6 +47,7 @@
 | Browser Push Notifications | 2026-04-15 | 🔕/🔔 toggle during simulation runs; Service Worker + VAPID + pywebpush; browser notified when simulation completes even if tab is hidden (PR #30 on MiroShark) |
 | Pre-Flight Health Guard | 2026-04-30 | Bash-level systemic failure detection in prefetch step; reads cron-state.json, logs ::error:: in GH Actions UI when >80% skills failing; works without Claude auth (PR #1 on miroshark-aeon) |
 | Atom Feed (/feed.xml) | 2026-04-30 | RFC 4287 Atom feed of completed sims; subscribe in Feedly/n8n/Zapier; stdlib XML, zero deps; RSS icon + Subscribe button in UI (code complete, push blocked — GH_GLOBAL not set) |
+| Cron-State Outage Recovery | 2026-04-30 | Prefetch script resets poisoned success_rate metrics after systemic outage (ISS-001 15-day auth gap); one-time trigger with marker file |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
@@ -63,11 +64,11 @@
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07 (563 stars); 691 stars as of 2026-04-15
 - MIROSHARK new ATH $0.000003815 set 2026-04-14 (up +305.8% from launch close)
 
-## Open Issues
-- [ISS-001](issues/ISS-001.md): Critical — all skills failing "Not logged in" (auth expired Apr 16–30, status: open, auth appears restored Apr 30)
+## Resolved Issues
+- [ISS-001](issues/ISS-001.md): Critical — all skills failing "Not logged in" (auth expired Apr 16–30, resolved Apr 30 — auth renewed, all skills succeeded)
 
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
 - XAI_API_KEY not set — tweet fetching falls back to WebSearch (limited freshness)
-- Verify ISS-001 resolved: confirm next scheduled skill runs succeed and consecutive_failures resets
+- ISS-001 resolved: auth renewed Apr 30, all skills succeeded, cron-state recovery script will reset poisoned metrics on next run
 - Feature candidates (repo-actions 2026-04-15): Mid-Simulation Event Injection (#1, Medium), HuggingFace Inference API (#2, Small), Simulation Checkpoint & Resume (#3, Medium), Agent Demographic Breakdown Panel (#4, Small), RSS/Atom Feed for Simulations (#5, Small)
