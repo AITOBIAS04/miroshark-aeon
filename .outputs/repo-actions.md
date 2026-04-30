@@ -1,19 +1,19 @@
-*Repo Action Ideas — 2026-04-30*
-Generated from analysis of aaronjmars/MiroShark (886 stars, 171 forks, 0 open PRs) following a 15-day feature burst (PRs #31–#59: Director Mode, OpenAPI spec, completion webhooks, Langfuse, /explore gallery, MCP panel, OG cards, animated GIFs, counterfactual explorer, transcript export).
+*Repo Action Ideas (v2) — 2026-04-30*
+Second pass after this morning's run — PR #60 (RSS/Atom feed) merged since then; 904 stars.
 
-1. Statistical Batch Runs with Aggregate Dashboard (Feature, Medium)
-   Run the same config N times with different seeds; output mean/SD market price, consensus round histogram, and robustness badge — the feature that makes simulation results statistically defensible for academic citation.
+1. Jupyter Notebook Export (Integration, Small)
+   Packages trajectory.json + agent posts into a .ipynb with pre-written pandas/networkx/matplotlib cells — the last-mile artifact for researchers who need publication-ready analysis.
 
-2. Multi-Document Cross-Narrative Simulation (Feature, Medium)
-   Feed competing documents to different agent cohorts in the same simulation (bull vs. bear, two policy framings) and visualize how narrative competition shapes consensus formation — the most important unbuilt experimental primitive.
+2. Pre-Run Cost Estimator (DX, Small)
+   Shows estimated tokens, cost in USD, and wall-clock time before clicking Run — reactive to agent count, rounds, and LLM selection; flags expensive runs in orange/red.
 
-3. Simulation Checkpoint & Resume (DX, Medium)
-   Write a checkpoint after each round; resume from N+1 after a cloud container restart — prevents losing $0.30 runs and all intermediate analysis on Railway/Render crashes.
+3. Cross-Simulation Analytics Dashboard (Feature, Medium)
+   Meta-analysis view across all completed simulations: weekly run counts, consensus round histogram, final-price distributions by agent-count bucket, prediction accuracy rate, top scenario keywords.
 
-4. Agent Persona Library (Feature, Small)
-   Save any agent persona card to a persistent library; inject saved personas as fixed participants in future simulations — the reuse primitive for longitudinal and multi-scenario research designs.
+4. Simulation Scheduling (Feature, Small)
+   APScheduler-backed cron scheduling from the Settings UI — daily, weekly, monthly, or custom expression; fires existing webhook on completion; tags scheduled runs in history.
 
-5. GitHub Actions Composite Action (Integration, Small)
-   A drop-in composite action that triggers a MiroShark simulation from a CI/CD workflow and posts results as a formatted PR comment — extends the existing OpenAPI/webhook stack into developer pipelines.
+5. n8n / Zapier Integration Template Pack (Integration/Growth, Small)
+   Four ready-to-import workflow templates (RSS→Discord, daily Slack digest, webhook→Google Sheet, schedule→Telegram) — seeds discovery in n8n and Zapier communities.
 
-Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-04-30.md
+Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-04-30-v2.md
