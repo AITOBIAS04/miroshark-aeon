@@ -1,0 +1,200 @@
+{
+  "root": "card_hyperstitions",
+  "state": {},
+  "elements": {
+    "card_hyperstitions": {
+      "type": "Card",
+      "props": {
+        "title": "Hyperstitions Idea",
+        "description": "2026-04-30"
+      },
+      "children": [
+        "heading_main",
+        "stack_content"
+      ]
+    },
+    "heading_main": {
+      "type": "Heading",
+      "props": {
+        "text": "Will MiroShark reach 1,000 GitHub stars by May 15, 2026?",
+        "level": "h2"
+      }
+    },
+    "stack_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "section_coordination",
+        "section_stats",
+        "separator_1",
+        "section_why_now",
+        "separator_2",
+        "section_resolution",
+        "separator_3",
+        "section_scores",
+        "separator_4",
+        "link_hyperstitions"
+      ]
+    },
+    "section_coordination": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_coordination",
+        "text_coordination"
+      ]
+    },
+    "heading_coordination": {
+      "type": "Heading",
+      "props": {
+        "text": "The Coordination Play",
+        "level": "h3"
+      }
+    },
+    "text_coordination": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark sits at 886 stars with 171 forks — meaning roughly 5x more people cloned the repo than starred it. The market turns passive fork-holders into active promoters: share the repo, write about it, demo it to your community, post a tutorial. No AI agent can star a repo or write a genuine tweet thread about why a simulation tool changed how they think. This needs humans who have actually used MiroShark to tell their networks. The 1,000 line is close enough to taste, far enough to require effort.",
+        "variant": "body"
+      }
+    },
+    "section_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_stars",
+        "stat_forks"
+      ]
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Current Stars",
+        "value": "886",
+        "delta": "+114 needed"
+      }
+    },
+    "stat_forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "171"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_why_now": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_why_now",
+        "text_why_now"
+      ]
+    },
+    "heading_why_now": {
+      "type": "Heading",
+      "props": {
+        "text": "Why Now",
+        "level": "h3"
+      }
+    },
+    "text_why_now": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark maintained ~13 stars/day growth even through a 15-day system outage where zero content was produced — no daily articles, no token reports, no tweet digests. The Aeon engine just came back online today with a massive architecture upgrade (90+ skills, chain orchestration, MCP/A2A servers). The content machine is restarting, but two weeks of silence means momentum needs a catalyst. This market is that catalyst.",
+        "variant": "body"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_resolution": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_resolution",
+        "text_resolution"
+      ]
+    },
+    "heading_resolution": {
+      "type": "Heading",
+      "props": {
+        "text": "Resolution",
+        "level": "h3"
+      }
+    },
+    "text_resolution": {
+      "type": "Text",
+      "props": {
+        "text": "YES if github.com/aaronjmars/MiroShark shows ≥1,000 stargazers_count via the GitHub API at any point on or before May 15, 2026 23:59 UTC. NO otherwise.",
+        "variant": "body"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_scores": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_reflexivity",
+        "badge_viral"
+      ]
+    },
+    "badge_reflexivity": {
+      "type": "Badge",
+      "props": {
+        "text": "Reflexivity 4/5",
+        "variant": "default"
+      }
+    },
+    "badge_viral": {
+      "type": "Badge",
+      "props": {
+        "text": "Viral 4/5",
+        "variant": "default"
+      }
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link_hyperstitions": {
+      "type": "Link",
+      "props": {
+        "label": "Soon on hyperstitions.com",
+        "href": "https://www.hyperstitions.com/"
+      }
+    }
+  }
+}
