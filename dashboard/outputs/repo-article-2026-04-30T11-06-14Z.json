@@ -1,0 +1,164 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "The Two-Week Sprint That Turned MiroShark Into a Platform"
+      },
+      "children": [
+        "date-range",
+        "summary-text",
+        "sep-1",
+        "stats-container",
+        "sep-2",
+        "features-container",
+        "sep-3",
+        "link-article"
+      ]
+    },
+    "date-range": {
+      "type": "Text",
+      "props": {
+        "text": "April 15 – April 30, 2026",
+        "variant": "caption"
+      }
+    },
+    "summary-text": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark merged 27 PRs and shipped ~67 commits, transforming from a simulation engine into integration-ready infrastructure."
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-prs",
+        "stat-commits",
+        "stat-stars",
+        "stat-forks"
+      ]
+    },
+    "stat-prs": {
+      "type": "Stat",
+      "props": {
+        "label": "PRs Merged",
+        "value": "27"
+      }
+    },
+    "stat-commits": {
+      "type": "Stat",
+      "props": {
+        "label": "Commits Shipped",
+        "value": "~67"
+      }
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "886",
+        "delta": "+28%",
+        "trend": "up"
+      }
+    },
+    "stat-forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "171",
+        "delta": "+32%",
+        "trend": "up"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "features-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-1",
+        "badge-2",
+        "badge-3",
+        "badge-4",
+        "badge-5",
+        "badge-6",
+        "badge-7"
+      ]
+    },
+    "badge-1": {
+      "type": "Badge",
+      "props": {
+        "text": "OpenAPI spec with Swagger UI"
+      }
+    },
+    "badge-2": {
+      "type": "Badge",
+      "props": {
+        "text": "Completion webhooks for Slack/Discord/Zapier"
+      }
+    },
+    "badge-3": {
+      "type": "Badge",
+      "props": {
+        "text": "MCP integration for Claude/Cursor/Windsurf"
+      }
+    },
+    "badge-4": {
+      "type": "Badge",
+      "props": {
+        "text": "Public simulation gallery"
+      }
+    },
+    "badge-5": {
+      "type": "Badge",
+      "props": {
+        "text": "Embeddable widgets"
+      }
+    },
+    "badge-6": {
+      "type": "Badge",
+      "props": {
+        "text": "Animated belief-replay GIFs"
+      }
+    },
+    "badge-7": {
+      "type": "Badge",
+      "props": {
+        "text": "Transcript exports"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link-article": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Read full article",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-04-30.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
