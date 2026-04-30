@@ -1,0 +1,160 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Top Tweets — MIROSHARK crypto token on Base chain (2026-04-30)",
+        "description": "XAI_API_KEY not available; results compiled via WebSearch"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tweet-1-container",
+        "tweet-2-container",
+        "tweet-3-container",
+        "tweet-4-container",
+        "tweet-5-container"
+      ]
+    },
+    "tweet-1-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet-1",
+        "link-1"
+      ]
+    },
+    "tweet-1": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "Urges community to share the MiroShark GitHub to people who'd be interested, promising rewards; \"MiroFish have 56k stars — MiroShark is easily 10x\" (~Apr 19)"
+      }
+    },
+    "link-1": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2045134558186664267"
+      }
+    },
+    "tweet-2-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet-2",
+        "link-2"
+      ]
+    },
+    "tweet-2": {
+      "type": "TweetCard",
+      "props": {
+        "author": "anger_trading",
+        "handle": "anger_trading",
+        "text": "$miroshark cashtag mention (~Apr 10–11)"
+      }
+    },
+    "link-2": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/anger_trading/status/2041985239858475105"
+      }
+    },
+    "tweet-3-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet-3",
+        "link-3"
+      ]
+    },
+    "tweet-3": {
+      "type": "TweetCard",
+      "props": {
+        "author": "BioStone_chad",
+        "handle": "BioStone_chad",
+        "text": "DEV confirmed roadmap; highlights $Miroshark at 70k MC on Base as undervalued — upgraded swarm AI from MiroFish, fee-based ads/burns/coordination engine (~Mar 26)"
+      }
+    },
+    "link-3": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/BioStone_chad/status/2036824963689411046"
+      }
+    },
+    "tweet-4-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet-4",
+        "link-4"
+      ]
+    },
+    "tweet-4": {
+      "type": "TweetCard",
+      "props": {
+        "author": "BranaRakic",
+        "handle": "BranaRakic",
+        "text": "\"DKG V9 + MiroShark simulating the future\" (~Mar 25)"
+      }
+    },
+    "link-4": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/BranaRakic/status/2036747635751633047"
+      }
+    },
+    "tweet-5-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet-5",
+        "link-5"
+      ]
+    },
+    "tweet-5": {
+      "type": "TweetCard",
+      "props": {
+        "author": "JMania402",
+        "handle": "JMania402",
+        "text": "\"$MIROSHARK 0xd7bc6a... This one pump so hard 👀\" (~Mar 24)"
+      }
+    },
+    "link-5": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/JMania402/status/2036486940313493591"
+      }
+    }
+  }
+}
