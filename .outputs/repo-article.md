@@ -1,5 +1,5 @@
-*New Article: The Two-Week Sprint That Turned MiroShark Into a Platform*
+*New Article: 906 Stars and a New Language: MiroShark's Quiet Bet on Distribution*
 
-Between April 15 and April 30, MiroShark merged 27 PRs and shipped ~67 commits — transforming from a simulation engine into integration-ready infrastructure. OpenAPI spec with Swagger UI, completion webhooks for Slack/Discord/Zapier, MCP integration for Claude/Cursor/Windsurf, a public simulation gallery, embeddable widgets, animated belief-replay GIFs, and transcript exports. Stars jumped 28% to 886, forks up 32% to 171.
+MiroShark shipped Chinese localization (1,300 strings across 30 components) and RSS/Atom feeds in the same day, completing a distribution infrastructure stack that includes a public gallery, share cards, embeds, webhooks, MCP integration, and now multilingual access. At 906 stars and 177 forks, the project is less than 100 stars from a four-digit milestone — and the bet is that distribution, not features, will get it there.
 
-Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-04-30.md
+Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-04-30-v2.md
