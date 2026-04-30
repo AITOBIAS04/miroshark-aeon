@@ -11,6 +11,15 @@ If `${var}` is set, focus checks on that specific area.
 Read memory/MEMORY.md and the last 2 days of memory/logs/ for context.
 
 Check the following:
+
+### 0. System health (cron-state analysis)
+Read `memory/cron-state.json`. For each skill, note `consecutive_failures` and `last_error`.
+- If **>80% of skills** have `consecutive_failures >= 10` with similar `last_error` signatures (e.g. all contain "Not logged in" or all show 0 tokens): this is a **systemic failure** (auth, infra, or config). Classify it as such — don't list individual skill failures. Report the root cause, when it started (`last_success` dates), and the remediation (e.g. "renew ANTHROPIC_API_KEY in repo secrets").
+- If **this heartbeat succeeds after a systemic failure**: you're in **recovery mode**. Note how long the outage lasted, check `memory/issues/` for open issues matching this pattern, and update them. Log a RECOVERY event.
+- If only **individual skills** are failing (1-3 skills, different errors): report them individually with their specific error.
+- Check `memory/issues/INDEX.md` — if an open issue matches what you're seeing, update its status rather than filing a duplicate.
+
+### 1. Standard checks
 - [ ] Any open PRs stalled > 24h? (use `gh pr list` to check)
 - [ ] Anything flagged in memory that needs follow-up?
 - [ ] Check recent GitHub issues for anything labeled urgent (use `gh issue list`)
