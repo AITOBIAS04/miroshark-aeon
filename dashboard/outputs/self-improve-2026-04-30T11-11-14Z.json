@@ -1,0 +1,197 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Self-Improvement"
+      },
+      "children": [
+        "date-badge",
+        "separator-1",
+        "main-content"
+      ]
+    },
+    "date-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "2026-04-30",
+        "variant": "secondary"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "main-content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-main",
+        "summary-text",
+        "separator-2",
+        "why-section",
+        "separator-3",
+        "what-section",
+        "separator-4",
+        "impact-section",
+        "separator-5",
+        "pr-section"
+      ]
+    },
+    "heading-main": {
+      "type": "Heading",
+      "props": {
+        "text": "Pre-flight Health Guard for Systemic Failures",
+        "level": "h2"
+      }
+    },
+    "summary-text": {
+      "type": "Text",
+      "props": {
+        "text": "Detects systemic skill failures (like the 15-day auth outage) at the bash level — before Claude even starts. This means future outages will surface as ::error:: annotations in GitHub Actions UI even when Claude itself cannot authenticate.",
+        "variant": "lead"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "why-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "why-heading",
+        "why-text"
+      ]
+    },
+    "why-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Why",
+        "level": "h3"
+      }
+    },
+    "why-text": {
+      "type": "Text",
+      "props": {
+        "text": "From Apr 16–30, all skills failed silently for 15 days because ANTHROPIC_API_KEY expired. The heartbeat skill (the existing detection layer) could not catch this because it also requires Claude auth to run. The outage was only discovered when auth was manually restored.",
+        "variant": "body"
+      }
+    },
+    "separator-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "what-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "what-heading",
+        "what-items"
+      ]
+    },
+    "what-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What Changed",
+        "level": "h3"
+      }
+    },
+    "what-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "what-item-1",
+        "what-item-2"
+      ]
+    },
+    "what-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "scripts/prefetch-health-guard.sh (new): Reads cron-state.json before every skill run. When >80% of tracked skills show 10+ consecutive failures, logs prominent error annotations in the GitHub Actions workflow UI with root cause hint and remediation steps.",
+        "variant": "body"
+      }
+    },
+    "what-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "skills/heartbeat/SKILL.md: Added cron-state analysis as step 0 — classifies failures as systemic (auth/infra) vs individual, detects recovery mode, integrates with issue tracker.",
+        "variant": "body"
+      }
+    },
+    "separator-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "impact-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "impact-heading",
+        "impact-text"
+      ]
+    },
+    "impact-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h3"
+      }
+    },
+    "impact-text": {
+      "type": "Text",
+      "props": {
+        "text": "Future auth or infrastructure outages will be visible in the GitHub Actions UI within hours instead of going undetected for weeks.",
+        "variant": "body"
+      }
+    },
+    "separator-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical"
+      },
+      "children": [
+        "pr-link"
+      ]
+    },
+    "pr-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR: Pre-flight health guard + heartbeat integration",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/1",
+        "source": "GitHub"
+      }
+    }
+  }
+}
