@@ -1,0 +1,304 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas — 2026-04-30"
+      },
+      "children": [
+        "repo_info",
+        "separator_1",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "separator_final",
+        "full_details"
+      ]
+    },
+    "repo_info": {
+      "type": "Text",
+      "props": {
+        "text": "Generated from analysis of aaronjmars/MiroShark (886 stars, 171 forks, 0 open PRs) following a 15-day feature burst (PRs #31–#59: Director Mode, OpenAPI spec, completion webhooks, Langfuse, /explore gallery, MCP panel, OG cards, animated GIFs, counterfactual explorer, transcript export).",
+        "variant": "body"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "item_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item_1_heading",
+        "item_1_badges",
+        "item_1_desc"
+      ]
+    },
+    "item_1_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "1. Statistical Batch Runs with Aggregate Dashboard",
+        "level": "h3"
+      }
+    },
+    "item_1_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "item_1_type",
+        "item_1_difficulty"
+      ]
+    },
+    "item_1_type": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "item_1_difficulty": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium",
+        "variant": "outline"
+      }
+    },
+    "item_1_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Run the same config N times with different seeds; output mean/SD market price, consensus round histogram, and robustness badge — the feature that makes simulation results statistically defensible for academic citation.",
+        "variant": "body"
+      }
+    },
+    "item_2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item_2_heading",
+        "item_2_badges",
+        "item_2_desc"
+      ]
+    },
+    "item_2_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "2. Multi-Document Cross-Narrative Simulation",
+        "level": "h3"
+      }
+    },
+    "item_2_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "item_2_type",
+        "item_2_difficulty"
+      ]
+    },
+    "item_2_type": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "item_2_difficulty": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium",
+        "variant": "outline"
+      }
+    },
+    "item_2_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Feed competing documents to different agent cohorts in the same simulation (bull vs. bear, two policy framings) and visualize how narrative competition shapes consensus formation — the most important unbuilt experimental primitive.",
+        "variant": "body"
+      }
+    },
+    "item_3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item_3_heading",
+        "item_3_badges",
+        "item_3_desc"
+      ]
+    },
+    "item_3_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "3. Simulation Checkpoint & Resume",
+        "level": "h3"
+      }
+    },
+    "item_3_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "item_3_type",
+        "item_3_difficulty"
+      ]
+    },
+    "item_3_type": {
+      "type": "Badge",
+      "props": {
+        "text": "DX",
+        "variant": "secondary"
+      }
+    },
+    "item_3_difficulty": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium",
+        "variant": "outline"
+      }
+    },
+    "item_3_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Write a checkpoint after each round; resume from N+1 after a cloud container restart — prevents losing $0.30 runs and all intermediate analysis on Railway/Render crashes.",
+        "variant": "body"
+      }
+    },
+    "item_4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item_4_heading",
+        "item_4_badges",
+        "item_4_desc"
+      ]
+    },
+    "item_4_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "4. Agent Persona Library",
+        "level": "h3"
+      }
+    },
+    "item_4_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "item_4_type",
+        "item_4_difficulty"
+      ]
+    },
+    "item_4_type": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "item_4_difficulty": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      }
+    },
+    "item_4_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Save any agent persona card to a persistent library; inject saved personas as fixed participants in future simulations — the reuse primitive for longitudinal and multi-scenario research designs.",
+        "variant": "body"
+      }
+    },
+    "item_5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item_5_heading",
+        "item_5_badges",
+        "item_5_desc"
+      ]
+    },
+    "item_5_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "5. GitHub Actions Composite Action",
+        "level": "h3"
+      }
+    },
+    "item_5_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "item_5_type",
+        "item_5_difficulty"
+      ]
+    },
+    "item_5_type": {
+      "type": "Badge",
+      "props": {
+        "text": "Integration",
+        "variant": "secondary"
+      }
+    },
+    "item_5_difficulty": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      }
+    },
+    "item_5_desc": {
+      "type": "Text",
+      "props": {
+        "text": "A drop-in composite action that triggers a MiroShark simulation from a CI/CD workflow and posts results as a formatted PR comment — extends the existing OpenAPI/webhook stack into developer pipelines.",
+        "variant": "body"
+      }
+    },
+    "separator_final": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "full_details": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full details: repo-actions-2026-04-30.md",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-04-30.md"
+      }
+    }
+  }
+}
