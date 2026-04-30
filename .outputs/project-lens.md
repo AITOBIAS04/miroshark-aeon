@@ -1,5 +1,5 @@
-*New Article: Everyone Is Building AI Agents That Act. The Smarter Bet Might Be Agents That Don't.*
+*New Article: From Kriegsspiel to GitHub: The 200-Year-Old Military Practice That AI Is Quietly Reinventing*
 
-The agentic AI market is racing toward $139B by building agents that execute tasks autonomously. But cascading failure research, LLM scheming incidents, and calls from Bengio and Russell to ban long-term planning agents suggest the industry may be solving the wrong problem first. MiroShark — 692 stars in 25 days — represents a different thesis: agents that simulate rather than act, with prediction tracking, trace interviews, and belief drift charts that make simulated reasoning auditable.
+For 200 years — from Prussian war games to RAND's Cold War simulations to the Pentagon's new WarMatrix system — serious decision-makers have rehearsed before acting. A February 2026 study showed LLMs escalate to nuclear war in nearly every simulated crisis, proving why simulation-first matters. MiroShark (886 stars) is building the open-source, civilian version of this tradition: hundreds of AI agents with distinct personas reacting to any document across simulated platforms, with full audit trails, trace interviews, and prediction accuracy tracking. The question is no longer whether to simulate — it's whether simulation stays exclusive to defense ministries or becomes a GitHub clone away.
 
-Read: https://github.com/aaronjmars/miroshark-aeon/blob/main/articles/project-lens-2026-04-15.md
+Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-04-30.md
