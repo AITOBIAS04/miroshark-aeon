@@ -1,2 +1,9 @@
-Heartbeat — Apr 15: 2 skills dispatched. Missing: repo-actions (14:00 UTC, no run found) → dispatched. project-lens (16:00 UTC, no run found) → dispatched. Skipped auto-trigger: self-improve (meta skill). All other daily skills confirmed: token-report ✓ fetch-tweets ✓ repo-pulse ✓ feature ✓ push-recap ✓ memory-flush (in_progress). No stalled PRs, no urgent issues.
-Heartbeat (Apr 15): push-recap failed at 15:00 UTC — 401 auth error (transient). Auto-triggered retry: https://github.com/aaronjmars/miroshark-aeon/actions/runs/24473282769. All other daily skills confirmed: token-report ✓, fetch-tweets ✓, repo-pulse ✓, feature ✓. In-progress: project-lens, memory-flush (auto-triggered by prior heartbeat run). No open PRs. No urgent issues.
+⚠️ HEARTBEAT ALERT — 2026-04-30
+
+All skills have been failing for ~15 days (since 2026-04-16) with 'Not logged in · Please run /login'. Root cause: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN expired or was removed from GitHub Actions secrets.
+
+cron-state.json confirms 200–313 consecutive failures per skill, all with 0 tokens used. No memory logs since 2026-04-15.
+
+This heartbeat (10:09 UTC) is running — auth may have just been restored. Auto-dispatch of missed skills was blocked (GITHUB_TOKEN lacks actions:write).
+
+Action needed: confirm the API secret is valid in Settings → Secrets → Actions, then manually re-run today's skills: token-report, fetch-tweets, repo-pulse, repo-actions, repo-article, push-recap, feature. Filed ISS-001 in memory/issues/.

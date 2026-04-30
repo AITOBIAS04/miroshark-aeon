@@ -1,0 +1,287 @@
+{
+  "root": "card-heartbeat",
+  "state": {},
+  "elements": {
+    "card-heartbeat": {
+      "type": "Card",
+      "props": {
+        "title": "⚠️ Heartbeat Alert — 2026-04-30"
+      },
+      "children": [
+        "alert-main",
+        "sep-1",
+        "section-failures",
+        "sep-2",
+        "section-evidence",
+        "sep-3",
+        "section-status",
+        "sep-4",
+        "section-actions",
+        "sep-5",
+        "section-issue"
+      ]
+    },
+    "alert-main": {
+      "type": "Alert",
+      "props": {
+        "title": "All Skills Failing — Auth Credentials Issue",
+        "message": "All skills have been failing for ~15 days (since 2026-04-16) with 'Not logged in · Please run /login'. Root cause: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN expired or was removed from GitHub Actions secrets.",
+        "type": "error"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-failures": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-failures",
+        "stat-since",
+        "stat-consecutive",
+        "stat-tokens"
+      ]
+    },
+    "heading-failures": {
+      "type": "Heading",
+      "props": {
+        "text": "Failure Timeline",
+        "level": "h3"
+      }
+    },
+    "stat-since": {
+      "type": "Stat",
+      "props": {
+        "label": "Failing Since",
+        "value": "2026-04-16"
+      }
+    },
+    "stat-consecutive": {
+      "type": "Stat",
+      "props": {
+        "label": "Consecutive Failures Per Skill",
+        "value": "200–313"
+      }
+    },
+    "stat-tokens": {
+      "type": "Stat",
+      "props": {
+        "label": "Tokens Used",
+        "value": "0"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-evidence": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-evidence",
+        "text-cron",
+        "text-memory"
+      ]
+    },
+    "heading-evidence": {
+      "type": "Heading",
+      "props": {
+        "text": "Evidence",
+        "level": "h3"
+      }
+    },
+    "text-cron": {
+      "type": "Text",
+      "props": {
+        "text": "cron-state.json confirms 200–313 consecutive failures per skill, all with 0 tokens used."
+      }
+    },
+    "text-memory": {
+      "type": "Text",
+      "props": {
+        "text": "No memory logs since 2026-04-15."
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-status": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-status",
+        "text-heartbeat",
+        "alert-blocker"
+      ]
+    },
+    "heading-status": {
+      "type": "Heading",
+      "props": {
+        "text": "Current Status",
+        "level": "h3"
+      }
+    },
+    "text-heartbeat": {
+      "type": "Text",
+      "props": {
+        "text": "This heartbeat (10:09 UTC) is running — auth may have just been restored."
+      }
+    },
+    "alert-blocker": {
+      "type": "Alert",
+      "props": {
+        "title": "Auto-dispatch Blocked",
+        "message": "GITHUB_TOKEN lacks actions:write permission. Auto-dispatch of missed skills was blocked.",
+        "type": "warning"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-actions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-actions",
+        "step-1",
+        "step-2",
+        "skills-header",
+        "skills-list"
+      ]
+    },
+    "heading-actions": {
+      "type": "Heading",
+      "props": {
+        "text": "Required Actions",
+        "level": "h3"
+      }
+    },
+    "step-1": {
+      "type": "Text",
+      "props": {
+        "text": "1. Confirm the API secret is valid in Settings → Secrets → Actions"
+      }
+    },
+    "step-2": {
+      "type": "Text",
+      "props": {
+        "text": "2. Manually re-run today's skills:"
+      }
+    },
+    "skills-header": {
+      "type": "Heading",
+      "props": {
+        "text": "Skills to Re-run",
+        "level": "h4"
+      }
+    },
+    "skills-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "skill-1",
+        "skill-2",
+        "skill-3",
+        "skill-4",
+        "skill-5",
+        "skill-6",
+        "skill-7"
+      ]
+    },
+    "skill-1": {
+      "type": "Badge",
+      "props": {
+        "text": "token-report",
+        "variant": "outline"
+      }
+    },
+    "skill-2": {
+      "type": "Badge",
+      "props": {
+        "text": "fetch-tweets",
+        "variant": "outline"
+      }
+    },
+    "skill-3": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse",
+        "variant": "outline"
+      }
+    },
+    "skill-4": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-actions",
+        "variant": "outline"
+      }
+    },
+    "skill-5": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-article",
+        "variant": "outline"
+      }
+    },
+    "skill-6": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap",
+        "variant": "outline"
+      }
+    },
+    "skill-7": {
+      "type": "Badge",
+      "props": {
+        "text": "feature",
+        "variant": "outline"
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-issue": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-issue",
+        "text-issue"
+      ]
+    },
+    "heading-issue": {
+      "type": "Heading",
+      "props": {
+        "text": "Issue Tracking",
+        "level": "h3"
+      }
+    },
+    "text-issue": {
+      "type": "Text",
+      "props": {
+        "text": "Filed ISS-001 in memory/issues/"
+      }
+    }
+  }
+}
