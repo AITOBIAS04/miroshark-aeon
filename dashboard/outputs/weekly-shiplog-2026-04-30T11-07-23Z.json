@@ -1,0 +1,172 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Weekly Shiplog"
+      },
+      "children": [
+        "heading_title",
+        "text_summary",
+        "sep_1",
+        "heading_shipped",
+        "stack_shipped",
+        "sep_2",
+        "heading_stats",
+        "grid_stats",
+        "sep_3",
+        "link_full"
+      ]
+    },
+    "heading_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Weekly Shiplog — 2026-04-30",
+        "level": "h2"
+      }
+    },
+    "text_summary": {
+      "type": "Text",
+      "props": {
+        "text": "The week MiroShark became a platform. 16 PRs merged, 886 stars.",
+        "variant": "lead"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_shipped": {
+      "type": "Heading",
+      "props": {
+        "text": "Shipped",
+        "level": "h3"
+      }
+    },
+    "stack_shipped": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    },
+    "item_1": {
+      "type": "Text",
+      "props": {
+        "text": "Public simulation gallery + verified predictions hall — browse and prove track records"
+      }
+    },
+    "item_2": {
+      "type": "Text",
+      "props": {
+        "text": "OpenAPI 3.1 spec, completion webhooks, MCP onboarding — full integration surface"
+      }
+    },
+    "item_3": {
+      "type": "Text",
+      "props": {
+        "text": "Animated belief-replay GIFs + transcript export — shareable simulation artifacts"
+      }
+    },
+    "item_4": {
+      "type": "Text",
+      "props": {
+        "text": "57% agent env token reduction — faster, cheaper simulation rounds"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_stats": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "grid_stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat_commits",
+        "stat_prs",
+        "stat_added",
+        "stat_removed",
+        "stat_repos",
+        "stat_stars"
+      ]
+    },
+    "stat_commits": {
+      "type": "Stat",
+      "props": {
+        "label": "Commits",
+        "value": "114"
+      }
+    },
+    "stat_prs": {
+      "type": "Stat",
+      "props": {
+        "label": "PRs Merged",
+        "value": "20"
+      }
+    },
+    "stat_added": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines Added",
+        "value": "+13,600"
+      }
+    },
+    "stat_removed": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines Removed",
+        "value": "-620"
+      }
+    },
+    "stat_repos": {
+      "type": "Stat",
+      "props": {
+        "label": "Repos",
+        "value": "2"
+      }
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "886"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link_full": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full update",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/weekly-shiplog-2026-04-30.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
