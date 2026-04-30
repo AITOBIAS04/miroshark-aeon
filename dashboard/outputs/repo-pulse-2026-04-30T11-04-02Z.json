@@ -1,0 +1,326 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Pulse"
+      },
+      "children": [
+        "heading-repo",
+        "stats-container",
+        "sep1",
+        "heading-stargazers",
+        "stargazers-stack",
+        "sep2",
+        "heading-forks",
+        "forks-stack"
+      ]
+    },
+    "heading-repo": {
+      "type": "Heading",
+      "props": {
+        "text": "aaronjmars/MiroShark",
+        "level": "h2"
+      }
+    },
+    "stats-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-stars",
+        "stat-forks"
+      ]
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "886",
+        "delta": "+24",
+        "trend": "up"
+      }
+    },
+    "stat-forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "171",
+        "delta": "+4",
+        "trend": "up"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-stargazers": {
+      "type": "Heading",
+      "props": {
+        "text": "New stargazers (24)",
+        "level": "h3"
+      }
+    },
+    "stargazers-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link-funaileo",
+        "link-alaev",
+        "link-imsmith",
+        "link-fanispoulinakisai",
+        "link-tomdavenport",
+        "link-adebesin",
+        "link-marioushev",
+        "link-buzzjeux",
+        "link-gaborforgacs",
+        "link-imam",
+        "link-phitrann",
+        "link-chenyihuang",
+        "link-fbotond",
+        "link-joobn72",
+        "link-argado",
+        "link-yanjigb",
+        "link-jaimedhenriques",
+        "link-shpxlbh",
+        "link-accelerate",
+        "link-robertcruze",
+        "link-fursiol",
+        "link-daizaerh",
+        "link-manchu",
+        "link-clasense"
+      ]
+    },
+    "link-funaileo": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/funaileo",
+        "href": "https://github.com/funaileo"
+      }
+    },
+    "link-alaev": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/Alaev",
+        "href": "https://github.com/Alaev"
+      }
+    },
+    "link-imsmith": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/imsmith",
+        "href": "https://github.com/imsmith"
+      }
+    },
+    "link-fanispoulinakisai": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/fanispoulinakisai-boop",
+        "href": "https://github.com/fanispoulinakisai-boop"
+      }
+    },
+    "link-tomdavenport": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/tomdavenport",
+        "href": "https://github.com/tomdavenport"
+      }
+    },
+    "link-adebesin": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/Adebesin-Cell",
+        "href": "https://github.com/Adebesin-Cell"
+      }
+    },
+    "link-marioushev": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/marioushev",
+        "href": "https://github.com/marioushev"
+      }
+    },
+    "link-buzzjeux": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/buzzjeux",
+        "href": "https://github.com/buzzjeux"
+      }
+    },
+    "link-gaborforgacs": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/gaborforgacs",
+        "href": "https://github.com/gaborforgacs"
+      }
+    },
+    "link-imam": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/imam0096361",
+        "href": "https://github.com/imam0096361"
+      }
+    },
+    "link-phitrann": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/phitrann",
+        "href": "https://github.com/phitrann"
+      }
+    },
+    "link-chenyihuang": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/chenyihuang",
+        "href": "https://github.com/chenyihuang"
+      }
+    },
+    "link-fbotond": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/fbotond11",
+        "href": "https://github.com/fbotond11"
+      }
+    },
+    "link-joobn72": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/joobn72",
+        "href": "https://github.com/joobn72"
+      }
+    },
+    "link-argado": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/Argado",
+        "href": "https://github.com/Argado"
+      }
+    },
+    "link-yanjigb": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/yanjigb",
+        "href": "https://github.com/yanjigb"
+      }
+    },
+    "link-jaimedhenriques": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/jaimedhenriques",
+        "href": "https://github.com/jaimedhenriques"
+      }
+    },
+    "link-shpxlbh": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/ShpxLbh",
+        "href": "https://github.com/ShpxLbh"
+      }
+    },
+    "link-accelerate": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/do-accelerate",
+        "href": "https://github.com/do-accelerate"
+      }
+    },
+    "link-robertcruze": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/robertcruze",
+        "href": "https://github.com/robertcruze"
+      }
+    },
+    "link-fursiol": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/fursiol0800",
+        "href": "https://github.com/fursiol0800"
+      }
+    },
+    "link-daizaerh": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/Daizaerh",
+        "href": "https://github.com/Daizaerh"
+      }
+    },
+    "link-manchu": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/Manchu505",
+        "href": "https://github.com/Manchu505"
+      }
+    },
+    "link-clasense": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/clasense4",
+        "href": "https://github.com/clasense4"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-forks": {
+      "type": "Heading",
+      "props": {
+        "text": "New forks (4)",
+        "level": "h3"
+      }
+    },
+    "forks-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link-fork1",
+        "link-fork2",
+        "link-fork3",
+        "link-fork4"
+      ]
+    },
+    "link-fork1": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/fursiol0800/MiroShark",
+        "href": "https://github.com/fursiol0800/MiroShark"
+      }
+    },
+    "link-fork2": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/curatedhealth/miroshark",
+        "href": "https://github.com/curatedhealth/miroshark"
+      }
+    },
+    "link-fork3": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/isflorian-hash/MiroShark",
+        "href": "https://github.com/isflorian-hash/MiroShark"
+      }
+    },
+    "link-fork4": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/funaileo/MiroShark",
+        "href": "https://github.com/funaileo/MiroShark"
+      }
+    }
+  }
+}
