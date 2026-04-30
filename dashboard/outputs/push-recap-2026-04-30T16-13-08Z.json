@@ -1,0 +1,183 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-04-30"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_header",
+        "sep_1",
+        "pr61_link",
+        "text_pr61",
+        "sep_pr61",
+        "pr60_link",
+        "text_pr60",
+        "sep_pr60",
+        "pr59_link",
+        "text_pr59",
+        "sep_pr59",
+        "pr27_link",
+        "text_pr27",
+        "sep_2",
+        "heading_changes",
+        "text_changes",
+        "sep_3",
+        "heading_stats",
+        "text_stats",
+        "sep_4",
+        "link_recap"
+      ]
+    },
+    "text_header": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 3 commits by @aaronjmars | miroshark-aeon — 1 commit by @aeonframework",
+        "variant": "lead"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr61_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Chinese (zh-CN) Localization",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/61",
+        "source": "PR #61"
+      }
+    },
+    "text_pr61": {
+      "type": "Text",
+      "props": {
+        "text": "Full opt-in Chinese locale across the entire SPA — 1,300+ strings wrapped in 30 Vue components, backend locale resolution via X-MiroShark-Locale header, 6 preset templates with embedded zh-CN blocks, bilingual README. A 中/EN toggle in the navbar persists in localStorage. Makes MiroShark accessible to the largest non-English developer audience."
+      }
+    },
+    "sep_pr61": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr60_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "RSS/Atom Syndication Feeds",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/60",
+        "source": "PR #60"
+      }
+    },
+    "text_pr60": {
+      "type": "Text",
+      "props": {
+        "text": "/api/feed.atom and /api/feed.rss serve the public gallery as standard syndication feeds with share-card PNG and replay GIF as media enclosures. Subscribe in Feedly, Readwise, Obsidian, or any RSS reader. 17 offline unit tests, zero new dependencies (stdlib XML). Converts the pull-based gallery into a push channel."
+      }
+    },
+    "sep_pr60": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr59_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Wonderwall Endpoint Override",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/59",
+        "source": "PR #59"
+      }
+    },
+    "text_pr59": {
+      "type": "Text",
+      "props": {
+        "text": "WONDERWALL_BASE_URL + WONDERWALL_API_KEY let operators route the 850+ agent-action calls to a self-hosted vLLM/Modal/fine-tune without touching other model slots. Cloud preset refreshed to Mimo V2 Flash + Grok-4.1 Fast (~$1/run). Best preset dropped."
+      }
+    },
+    "sep_pr59": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr27_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Heartbeat Day-of-Week Fix",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/27",
+        "source": "PR #27"
+      }
+    },
+    "text_pr27": {
+      "type": "Text",
+      "props": {
+        "text": "Shell-computed weekday replaces LLM-inferred value after Apr 29 hallucinated \"Tuesday\" for a Wednesday. Schedule checks now deterministic."
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h3"
+      }
+    },
+    "text_changes": {
+      "type": "Text",
+      "props": {
+        "text": "- 44 files touched for i18n — recursive apply_i18n() merges embedded locale blocks at read time\n- 584-line Atom/RSS renderer with stance threshold matching consistent across all share surfaces\n- .env.example restructured: cloud-first default, Ollama moved to commented alternatives"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_stats": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "text_stats": {
+      "type": "Text",
+      "props": {
+        "text": "~79 files changed, +4,048/-1,758 lines"
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link_recap": {
+      "type": "Link",
+      "props": {
+        "label": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-04-30.md"
+      }
+    }
+  }
+}
