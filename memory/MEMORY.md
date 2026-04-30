@@ -22,6 +22,7 @@
 | 2026-04-12 | Closing the Loop: MiroShark Builds the Accountability Layer for AI-Powered Simulation | Prediction resolution & accuracy tracking, article generator, history search — evidence loop closes, 661 stars |
 | 2026-04-14 | When Simulated Agents Can Testify: MiroShark's Interrogatable Intelligence | Trace interview (PR #26), Apr 13 four-PR wave, belief drift chart, 681 stars, simulation-as-research-instrument |
 | 2026-04-30 | The Two-Week Sprint That Turned MiroShark Into a Platform | Platform moment: OpenAPI + webhooks + MCP + gallery + embeds + exports, 27 PRs in 2 weeks, 886 stars |
+| 2026-04-30 | 906 Stars and a New Language: MiroShark's Quiet Bet on Distribution | Distribution angle: Chinese i18n (PR #61), RSS/Atom feeds (PR #60), distribution stack thesis, 906 stars, path to 1K |
 
 ## Recent Digests
 | Date | Type | Key Topics |
