@@ -1,0 +1,111 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "New Article"
+      },
+      "children": [
+        "heading",
+        "description",
+        "features",
+        "metrics",
+        "separator",
+        "storylink"
+      ]
+    },
+    "heading": {
+      "type": "Heading",
+      "props": {
+        "text": "When AI Simulations Need Receipts: MiroShark's Accountability Turn",
+        "level": "h2"
+      }
+    },
+    "description": {
+      "type": "Text",
+      "props": {
+        "text": "2026 is the year enterprises demand proof AI agents actually work. MiroShark's latest week shipped a verified predictions ledger, Langfuse observability, 57% token cost reduction, and admin auth — assembling the accountability stack the industry is starting to require. At 913 stars in 42 days, the project is quietly building the evidence layer that separates simulation demos from trustworthy infrastructure.",
+        "variant": "body"
+      }
+    },
+    "features": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge1",
+        "badge2",
+        "badge3",
+        "badge4"
+      ]
+    },
+    "badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Verified Predictions Ledger"
+      }
+    },
+    "badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Langfuse Observability"
+      }
+    },
+    "badge3": {
+      "type": "Badge",
+      "props": {
+        "text": "Admin Auth"
+      }
+    },
+    "badge4": {
+      "type": "Badge",
+      "props": {
+        "text": "57% Token Cost Reduction"
+      }
+    },
+    "metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat1",
+        "stat2"
+      ]
+    },
+    "stat1": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars in 42 Days",
+        "value": "913"
+      }
+    },
+    "stat2": {
+      "type": "Stat",
+      "props": {
+        "label": "Token Cost Reduction",
+        "value": "57%",
+        "trend": "down"
+      }
+    },
+    "separator": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "storylink": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Read full article",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-04-30-v3.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
