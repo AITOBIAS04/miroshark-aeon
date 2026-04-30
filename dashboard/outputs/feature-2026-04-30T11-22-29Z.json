@@ -1,0 +1,180 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Feature Built — 2026-04-30"
+      },
+      "children": [
+        "feature-name",
+        "intro-para1",
+        "intro-para2",
+        "sep1",
+        "built-heading",
+        "built-list",
+        "sep2",
+        "how-heading",
+        "how-text",
+        "sep3",
+        "status-section"
+      ]
+    },
+    "feature-name": {
+      "type": "Heading",
+      "props": {
+        "text": "Atom Feed for Completed Simulations (/feed.xml)",
+        "level": "h2"
+      }
+    },
+    "intro-para1": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark now publishes an Atom (RFC 4287) feed at /feed.xml listing the last 20 completed simulations. Teams subscribe via Feedly, n8n, Zapier, Slack RSS app, or any standard feed reader and get notified whenever a simulation completes — zero config, zero new dependencies."
+      }
+    },
+    "intro-para2": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: Every other output surface (share cards, transcripts, embeds) requires someone to visit the app. The feed flips it — simulations come to you. Wire it into n8n → Discord and your channel gets a post every time a sim finishes. Subscribe in Feedly and browse results over coffee. It's the missing push layer for teams that run MiroShark unattended."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "built-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What was built:",
+        "level": "h3"
+      }
+    },
+    "built-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6",
+        "item7",
+        "item8",
+        "item9"
+      ]
+    },
+    "item1": {
+      "type": "Text",
+      "props": {
+        "text": "• backend/app/api/feed.py — New Flask blueprint, stdlib XML, zero deps"
+      }
+    },
+    "item2": {
+      "type": "Text",
+      "props": {
+        "text": "• backend/app/__init__.py + api/__init__.py — Blueprint registration"
+      }
+    },
+    "item3": {
+      "type": "Text",
+      "props": {
+        "text": "• frontend/index.html — <link rel=\"alternate\"> feed autodiscovery"
+      }
+    },
+    "item4": {
+      "type": "Text",
+      "props": {
+        "text": "• frontend/src/views/Home.vue — RSS icon in navbar"
+      }
+    },
+    "item5": {
+      "type": "Text",
+      "props": {
+        "text": "• frontend/src/components/HistoryDatabase.vue — Subscribe button (copies feed URL)"
+      }
+    },
+    "item6": {
+      "type": "Text",
+      "props": {
+        "text": "• frontend/vite.config.js — Dev proxy for /feed.xml"
+      }
+    },
+    "item7": {
+      "type": "Text",
+      "props": {
+        "text": "• backend/openapi.yaml — Endpoint documentation"
+      }
+    },
+    "item8": {
+      "type": "Text",
+      "props": {
+        "text": "• README.md — New Integrations section + Features table row"
+      }
+    },
+    "item9": {
+      "type": "Text",
+      "props": {
+        "text": "• docs/FEATURES.md — Full feature documentation"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "how-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "How it works:",
+        "level": "h3"
+      }
+    },
+    "how-text": {
+      "type": "Text",
+      "props": {
+        "text": "GET /feed.xml returns valid Atom XML. Each entry carries the scenario text, agent count, round count, total events, quality data, and a direct link. Public sims link to /share/<id>; private ones link to the internal view. 60s cache header keeps feed readers from hammering the endpoint."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "status-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "branch-info",
+        "status-info"
+      ]
+    },
+    "branch-info": {
+      "type": "Text",
+      "props": {
+        "text": "Branch: feat/atom-feed (commit 1a78a0f)",
+        "variant": "caption"
+      }
+    },
+    "status-info": {
+      "type": "Alert",
+      "props": {
+        "title": "Status",
+        "message": "Code complete — push blocked (GH_GLOBAL secret not set; GITHUB_TOKEN lacks cross-repo push). PR will be created once the secret is available.",
+        "type": "warning"
+      }
+    }
+  }
+}
