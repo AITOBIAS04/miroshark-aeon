@@ -1,95 +1,104 @@
 # Push Recap — 2026-04-30
 
 ## Overview
-5 meaningful commits by @aaronjmars across both repos yesterday — the headline is a new simulation transcript export feature that gives MiroShark its third quote-friendly share format (text, alongside the share card for preview and replay GIF for motion). Alongside that, the Wonderwall simulation slot gained a per-endpoint override so operators can route the 850+ agent-action calls to a self-hosted vLLM or fine-tune without touching the other model slots. The "Best" preset was retired in favor of a single streamlined "Cloud" default.
+6 meaningful commits across 2 repos by 2 authors (@aaronjmars, @aeonframework), plus ~28 automated cron/scheduler commits on miroshark-aeon. Today's headline is a complete Chinese (zh-CN) localization of the MiroShark UI touching all 30 Vue components and 1,300+ strings — making the simulation platform accessible to the largest non-English developer audience. Alongside that, RSS/Atom syndication feeds turned the public simulation gallery into a push channel, the Wonderwall simulation slot gained per-endpoint overrides for BYO inference, and the Aeon heartbeat hardened against weekday hallucination.
 
-**Stats:** ~40 files changed, +2,301/-418 lines across 5 commits (plus ~28 automated cron/scheduler commits on miroshark-aeon)
+**Stats:** ~79 files changed, +4,048/-1,758 lines across 6 meaningful commits
 
 ---
 
 ## aaronjmars/MiroShark
 
-### New Feature: Simulation Transcript Export
-
-**Summary:** MiroShark now exports simulation transcripts as both Markdown (with YAML front matter for Notion/Obsidian/Substack import) and structured JSON (for SDK consumers and LLM-as-judge pipelines). This completes the trio of share formats: share card (preview), replay GIF (motion), transcript (text). The feature ships with an 18-test suite, OpenAPI spec coverage, and full EmbedDialog integration.
+### Internationalization: Chinese (zh-CN) Locale (PR #61)
+**Summary:** A full opt-in Chinese locale has been added to the SPA and backend. English remains the default. Users flip via a 中/EN toggle button in the navbar (also accessible in SettingsPanel). The choice persists in localStorage and is forwarded to the backend on every API call via `X-MiroShark-Locale` and `Accept-Language` headers.
 
 **Commits:**
-- `48b38f9` — feat: simulation transcript export (Markdown + JSON) (#57)
-  - New file `backend/app/services/transcript.py`: 615-line pure-stdlib renderer. Reads trajectory.json, quality.json, resolution.json, outcome.json, and profile files. Builds per-round sections with agent posts as block quotes tagged with stance labels. Uses the same +/-0.2 stance threshold as every other surface (gallery, share card, webhook, replay GIF) so labels stay consistent. Markdown form opens with YAML front-matter block; JSON form is pretty-printed for curl-to-file readability. 80-round cap on Markdown with head/tail preservation and "skipped N rounds" annotation (+615 lines)
-  - Changed `backend/app/api/simulation.py`: Added `_serve_transcript()` shared handler + two route handlers (`transcript.md` and `transcript.json`), both behind the same publish gate as share card (+86 lines)
-  - New file `backend/tests/test_unit_transcript.py`: 493-line test suite — stance threshold parity, profile name resolution (reddit + polymarket), corrupt artifact graceful degradation, long-post excerpting, YAML front-matter escaping, per-round section emission, oversized trajectory truncation, JSON round-trip, route decorator presence guard (+493 lines)
-  - Changed `backend/openapi.yaml`: Two new paths under Publish & Embed + `SimulationTranscript` schema with full per-round shape (+143 lines)
-  - Changed `frontend/src/components/EmbedDialog.vue`: "Export transcript" section with Download .md / Download .json buttons, copyable Markdown URL, publish-gated empty state (+156 lines)
-  - Changed `frontend/src/api/simulation.js`: `getTranscriptMarkdownUrl()` and `getTranscriptJsonUrl()` helpers (+33 lines)
-  - Changed `docs/FEATURES.md`: "Simulation Transcript Export" section (+11 lines)
-  - Changed `README.md`: Added Transcript Export to features table (+1 line)
+- `0034053` — feat: Chinese (zh-CN) UI toggle + localized templates + bilingual README (#61)
+  - New file `backend/app/utils/i18n.py`: 122-line locale helper — `get_locale(request)` resolves locale from `?lang=` > `X-MiroShark-Locale` header > `Accept-Language` > default. `apply_i18n(payload, locale)` recursively merges embedded `i18n.zh-CN` blocks into JSON responses at read time. `t(en, zh, locale)` for inline translations. (+122 lines)
+  - New file `frontend/src/i18n.js`: Vue i18n system — reactive `locale` ref backed by localStorage, `tr(en, zh)` helper, `useI18n()` composable, `i18nPlugin` providing global `$tr` / `$isZh` / `$setLocale` / `$toggleLocale`. (+54 lines)
+  - New file `frontend/src/components/LocaleToggle.vue`: Navbar toggle button with active state styling, aria labels, and bidirectional label swap (shows target locale, not current). Themed with MiroShark orange accent. (+63 lines)
+  - Modified `frontend/src/api/index.js`: API interceptor now sends `X-MiroShark-Locale` and `Accept-Language` headers on every request (+8, -1 lines)
+  - Modified 30 `.vue` files: ~1,300 user-visible strings wrapped with `$tr()` calls — from Step1 through Step5 pipeline headers, HistoryDatabase, SettingsPanel, EmbedDialog, ExploreView, InfluenceLeaderboard, GraphPanel, NetworkPanel, PolymarketChart, and all report/interaction views. Aggregate: +1,563, -1,260 lines
+  - Modified 6 preset template JSON files (`campus_controversy`, `corporate_crisis`, `crypto_launch`, `historical_whatif`, `political_debate`, `product_announcement`): Each now carries an embedded `i18n.zh-CN` block with translated name, category, description, tags, and counterfactual labels. Gallery cards swap on the fly. (+96 total lines)
+  - Modified `backend/app/api/templates.py`: `/api/templates/list` and `/<id>` now apply locale via `apply_i18n()` and `get_locale()`; error messages localized (+21, -15 lines)
+  - Modified `README.md`: Bilingual structure — 中文 section at top right after badges with full quick-start, feature table, use cases, docs index, and license. English section follows under `## English` with top-of-page anchor links `English · 中文`. (+129, -10 lines)
+  - Modified `frontend/src/main.js`: Registered `i18nPlugin` globally (+2 lines)
 
-- `cee23c7` — fix(ci): split agent-env compaction helpers into stdlib-only module (#58)
-  - New file `backend/lib/env_compact.py`: Moved `_compact_post_for_agent`, `_compact_posts_for_agent`, `_compact_comment`, `_comment_score`, `_parse_ts`, `_MAX_COMMENTS_PER_POST` out of `wonderwall.social_agent.agent_environment` into a standalone module under `backend/lib/` (+120 lines)
-  - Changed `backend/wonderwall/social_agent/agent_environment.py`: Replaced inline implementations with imports from `lib.env_compact` (-109, +8 lines)
-  - Changed `backend/tests/test_unit_agent_env_compaction.py`: Updated import path (-1, +1 line)
-  - The reason: the offline unit test suite was importing the compaction helpers from within the wonderwall package, which transitively pulls in CAMEL -> numpy -> torch and would force the CI dependency set to grow significantly. Moving them to a stdlib-only module keeps the test suite lean.
+**Impact:** MiroShark is now accessible to Chinese-speaking users and researchers — a significant audience in the crypto/DeFi/AI simulation space. The i18n architecture (embedded `i18n` blocks in JSON, recursive merge on read) means adding a third locale later requires zero schema changes. Tier 3 (agent system prompts and report-writer prompts) remains English — simulation content language is unchanged.
 
-**Impact:** Simulations can now be cited in research papers, Substack posts, and Discord threads by linking the Markdown transcript URL or downloading the file directly. The YAML front matter means Notion and Obsidian recognize it as a structured document on import. The CI fix ensures the offline test suite stays fast by avoiding heavy ML framework imports.
+**44 files changed, +2,047/-1,482 lines**
 
-### Config Overhaul: Wonderwall Per-Slot Endpoint + Cloud Preset Refresh
+---
 
-**Summary:** The Wonderwall simulation slot now accepts an independent endpoint override (`WONDERWALL_BASE_URL` + `WONDERWALL_API_KEY`) so operators can route the 850+ agent-action calls per run to a self-hosted vLLM, Modal deployment, or fine-tuned model without touching the Default/Smart/NER slots. The "Best" preset (Claude Haiku + Sonnet, ~$3.50/run) was retired — the new default is a single "Cloud" preset using Mimo V2 Flash + Grok-4.1 Fast at ~$1/run.
+### Discovery & Distribution: RSS/Atom Feeds (PR #60)
+**Summary:** Two syndication feeds — `/api/feed.atom` (Atom 1.0) and `/api/feed.rss` (RSS 2.0) — now serve the same cards the public gallery shows. Researchers using Feedly, Readwise, Inoreader, NetNewsWire, or Obsidian RSS can subscribe in their existing toolchain. Every newly published simulation lands in their reader without anyone curating it. Pure stdlib — zero new dependencies.
+
+**Commits:**
+- `91e22e4` — feat: RSS / Atom feeds for the public simulation gallery (#60)
+  - New file `backend/app/services/feed.py`: 584-line Atom 1.0 + RSS 2.0 renderer using stdlib `xml.etree.ElementTree` + `html`. Includes share-card PNG and replay GIF as `<media:thumbnail>` / `<media:content>` / `<enclosure>`. Outcome and quality categories. Stance threshold matching (±0.2) consistent with every other surface. Scenario truncated to 100 chars. (+584 lines)
+  - New file `backend/app/api/feed.py`: `feed_bp` blueprint at `/api` with `?verified=1` filter, `Cache-Control: public, max-age=300`, `PUBLIC_BASE_URL` / `X-Forwarded-Proto-Host` honored, fail-soft against SimulationManager errors. (+144 lines)
+  - New file `backend/tests/test_unit_feed.py`: 17 offline unit tests covering Atom validity, RSS validity, share-link + media enclosures, summary stance split, scenario truncation, outcome+quality categorization, empty-feed handling, missing optional fields, self-link query string preservation, skips bad sims, RSS guid stability, RSS enclosure, dispatcher MIME, verified-only branch, selection helper filter+sort+limit+graceful-degradation. (+566 lines)
+  - Modified `backend/app/__init__.py` + `backend/app/api/__init__.py`: Blueprint registration (+8, -1 lines)
+  - Modified `frontend/index.html`: `<link rel="alternate" type="application/atom+xml">` for browser auto-discovery (address-bar globe icon). (+5 lines)
+  - Modified `frontend/src/views/ExploreView.vue`: "Subscribe via RSS" chip in the header that mirrors the active filter (verified-only when toggled on). (+37 lines)
+  - Modified `frontend/src/components/EmbedDialog.vue`: "Follow the gallery via RSS" callout with one-click Atom / RSS / Verified-only buttons. (+150 lines)
+  - Modified `frontend/src/api/simulation.js`: `getFeedUrl({format, verified})` helper. (+25 lines)
+  - Modified `backend/openapi.yaml`: Both endpoints documented under Publish & Embed. (+64 lines)
+  - Modified `backend/tests/test_unit_openapi.py`: `feed_bp` registered with `/api` prefix so drift-detection test passes. (+1 line)
+  - Modified `README.md` + `docs/FEATURES.md`: Feature row + full Public Gallery Feeds section. (+20 lines)
+
+**Impact:** Closes the discovery loop opened by `/explore` gallery (PR #43), share cards (PR #42), replay GIF (PR #50), and transcript export (PR #57). Converts the pull-based gallery into a push channel for the research and DeFi-tooling audience. Same on-disk sim folder now has four orthogonal share surfaces: preview (PNG), motion (GIF), text (transcript), and syndication (RSS/Atom). Qualifies MiroShark for RSS directory listings and Zapier/n8n integrations.
+
+**13 files changed, +1,604/-1 lines**
+
+---
+
+### Infrastructure Flexibility: Wonderwall Endpoint Override + Cloud Preset Refresh (PR #59)
+**Summary:** The Wonderwall simulation slot can now target any OpenAI-compatible endpoint independently of the Default/Smart/NER slots via `WONDERWALL_BASE_URL` and `WONDERWALL_API_KEY`. The cloud preset has been refreshed to Mimo V2 Flash + Grok-4.1 Fast, and the "Best" preset was dropped entirely.
 
 **Commits:**
 - `2e782e0` — feat(wonderwall): per-slot endpoint override + cloud preset refresh (#59)
-  - Changed `.env.example`: Complete rewrite — defaults to Cloud (OpenRouter) instead of local Ollama. Active LLM/Smart/NER/Wonderwall slots now use Mimo V2 Flash and Grok-4.1 Fast. Ollama and Claude Code modes moved to a commented "Alternatives" block. Wonderwall per-slot override documented (+91, -136 lines)
-  - Changed `backend/app/config.py`: Added `WONDERWALL_API_KEY` and `WONDERWALL_BASE_URL` config fields. Updated default model names and comments from Cheap/Best to Cloud (+11, -7 lines)
-  - Changed `backend/app/api/settings.py`: Removed the "best" preset entirely. Renamed "cheap" label to "Cloud". Settings API now accepts `wonderwall.base_url` and `wonderwall.api_key`. Snapshot includes Wonderwall endpoint info (+14, -27 lines)
-  - Changed `backend/scripts/run_parallel_simulation.py`: `create_model()` now prefers `WONDERWALL_API_KEY` / `WONDERWALL_BASE_URL` over `LLM_*` for the simulation loop (+6, -4 lines)
-  - Changed `backend/scripts/run_reddit_simulation.py` and `run_twitter_simulation.py`: Same WONDERWALL_* override pattern (+10, -7 each)
-  - Changed `backend/app/services/simulation_runner.py`: Forwards runtime Config.WONDERWALL_* into subprocess env at spawn time, so Settings UI updates apply on next run without Flask restart (+10 lines)
-  - Changed `backend/app/utils/run_summary.py`: Added Mimo V2 Flash and Grok-4.1 Fast to the pricing table (+4, -3 lines)
-  - Changed `frontend/src/components/SettingsPanel.vue`: Wonderwall section now has Base URL and API Key fields alongside Model Name. Preset logic simplified (+31, -7 lines)
-  - Changed `frontend/src/views/Home.vue`: "Cheap preset" -> "cloud preset" (+1, -1 line)
-  - Changed `docs/CONFIGURATION.md`, `docs/MODELS.md`, `docs/INSTALL.md`, `docs/FEATURES.md`, `README.md`: Updated all documentation to reflect single Cloud preset, per-slot Wonderwall override, and new model lineup
+  - Modified `.env.example`: Complete restructure — cloud-first default (Mimo V2 Flash for Default+Wonderwall, Grok-4.1 Fast for Smart+NER+web search) with active slot blocks and API key placeholders. Local Ollama and Claude Code modes moved to a commented "Alternatives" block. Best preset removed. (+91, -136 lines)
+  - Modified `backend/app/config.py`: New `WONDERWALL_API_KEY` and `WONDERWALL_BASE_URL` config fields. Default model updated from `qwen3.5-flash` to `mimo-v2-flash`. Smart model comment updated to `grok-4.1-fast`. (+11, -7 lines)
+  - Modified `backend/app/services/simulation_runner.py`: Forwards runtime `Config.WONDERWALL_*` values into subprocess env at spawn time, so Settings UI updates apply on next run without Flask restart. (+10 lines)
+  - Modified `backend/scripts/run_parallel_simulation.py`, `run_twitter_simulation.py`, `run_reddit_simulation.py`: Each subprocess reads `WONDERWALL_BASE_URL`/`WONDERWALL_API_KEY` at startup and prefers them over `LLM_*` equivalents. (+26, -18 lines total)
+  - Modified `frontend/src/components/SettingsPanel.vue`: Wonderwall section gains Base URL and API Key input fields alongside Model Name. Password-type input with masked display of saved keys. Preset logic simplified — removed `best` references. (+31, -7 lines)
+  - Modified `backend/app/api/settings.py`: POST accepts `wonderwall.base_url` and `wonderwall.api_key`. GET exposes them with key masking. Removed `best` preset. (+14, -27 lines)
+  - Modified docs: `README.md`, `INSTALL.md`, `MODELS.md`, `CONFIGURATION.md`, `FEATURES.md` — all updated for single Cloud preset, per-slot override, and new model lineup.
 
-**Impact:** Operators with a self-hosted GPU or custom fine-tune can now split their inference — keep graph build and reports on OpenRouter while the expensive simulation loop targets a local or private endpoint. The Cloud preset simplification (one preset instead of two) reduces setup friction for new users.
+**Impact:** Users can now point the 850+-call Wonderwall simulation loop at a self-hosted vLLM, Modal, fine-tuned model, or Ollama on a different host without affecting any other slot. The preset simplification (one instead of two) reduces setup friction. The .env.example restructure makes cloud the default experience for new installations.
 
-### Bug Fix: Observability Pagination Hardening
-
-**Summary:** The observability event and LLM-call endpoints were calling `int()` directly on query string parameters, which raises `ValueError` on non-numeric input and causes a Flask 500. Now they use Flask's `type=int` coercion, which silently falls back to the default.
-
-**Commits:**
-- `02ff29a` — fix(observability): coerce pagination ints via Flask type= so bad input doesn't 500 (#56)
-  - Changed `backend/app/api/observability.py`: Replaced `int(request.args.get(...))` with `request.args.get(..., type=int)` on `from_line`, `limit`, `agent_id`, `round_num` across both `/events` and `/llm-calls` endpoints (+10, -8 lines)
-  - New file `backend/tests/test_unit_observability_routes.py`: 114-line test suite with stub Flask app — validates that garbage `from_line`, `limit`, `agent_id`, and `round_num` values return 200 instead of 500 (+114 lines)
-
-**Impact:** Malformed query strings from bots, debugging tools, or copy-paste errors no longer 500 the observability endpoints. Defensive improvement for production readiness.
+**16 files changed, +267/-266 lines**
 
 ---
 
 ## aaronjmars/miroshark-aeon
 
-### Improvement: Skill Leaderboard Multi-Repo Aggregation
-
-**Summary:** The skill-leaderboard skill was only scanning the first entry in `watched-repos.md` for active forks. Since `aaronjmars/MiroShark` is an application repo (not an aeon instance), it found 107 forks but zero with `aeon.yml`. The actual aeon instance (`miroshark-aeon`) sat at position 2 and was never scanned.
+### Agent Self-Repair: Heartbeat Day-of-Week Accuracy (PR #27)
+**Summary:** The heartbeat skill was occasionally hallucinating the wrong weekday from the `${today}` date string, causing misclassification of scheduled vs. off-schedule skill runs. On Apr 29, the report labeled the day as "Tuesday" (it was Wednesday), which hid `memory-flush`'s on-schedule run as "off-schedule." The fix adds a deterministic Step 0 that computes the day-of-week from the shell.
 
 **Commits:**
-- `b910088` — improve: skill-leaderboard scans all watched repos (#26)
-  - Changed `skills/skill-leaderboard/SKILL.md`: Step 1 now reads every entry from `watched-repos.md` into a `TARGET_REPOS` array. Step 2 iterates all repos, fetches active forks for each, and unions results deduped by `full_name`. Article footer and log entry record the full source-repo list (+9, -6 lines)
-  - Changed `.outputs/self-improve.md`: Updated with the rationale for the fix (+8, -7 lines)
-  - Changed `memory/MEMORY.md`: Added Skills Built entry for the multi-repo aggregation fix (+1 line)
-  - Changed `memory/logs/2026-04-28.md`: Detailed log of the self-improve run (+11 lines)
-  - Changed `memory/token-usage.csv`: Token usage entry for the self-improve run (+1 line)
-  - New file `dashboard/outputs/self-improve-2026-04-28T13-21-20Z.json`: json-render dashboard spec (+179 lines)
+- `f5ff617` — improve(heartbeat): compute day-of-week from shell, not inference (#27)
+  - Modified `skills/heartbeat/SKILL.md`: New Step 0 section — runs `date -u +%A` / `+%u` / `+%d` and uses shell output as the source of truth for every "is this skill scheduled today?" comparison. Adds explicit cron weekday translation note (`0=Sun` in cron vs. `7=Sun` in `date +%u`). Adds ground-truth guidance for every-other-day cron expressions (check `last_dispatch` history instead of guessing parity). (+20 lines)
+  - Modified `.outputs/self-improve.md`: Updated output artifact with improvement description. (+7, -8 lines)
+  - Modified `memory/MEMORY.md`: Skills Built table updated with the fix entry. (+1, -1 lines)
+  - New file `dashboard/outputs/self-improve-2026-04-30T13-42-01Z.json`: json-render dashboard spec for the improvement. (+91 lines)
+  - Modified `memory/logs/2026-04-30.md`: Detailed log entry with trigger, fix, PR link. (+10 lines)
 
-**Impact:** The Sunday skill leaderboard run (May 3) can now find aeon forks across all watched repos, meeting the >=2-fork notification threshold as soon as a second aeon instance fork appears. Adding new repos to `watched-repos.md` automatically expands the leaderboard surface.
+**Impact:** Heartbeat report headers are now deterministic instead of inferred. "Scheduled today / not scheduled today" classifications stop drifting silently. A real day-bound outage (e.g., memory-flush failing to fire on its Wednesday schedule) would now surface correctly instead of being hidden behind a hallucinated weekday.
+
+**6 files changed, +130/-9 lines**
 
 ---
 
 ## Developer Notes
-- **New dependencies:** None across both repos
-- **Breaking changes:** The "Best" preset has been removed from MiroShark's Settings API — any client calling `POST /api/settings` with `preset: "best"` will get an error. The "cheap" preset key is unchanged but its label and model lineup have been updated.
-- **Architecture shifts:** Compaction helpers moved from `wonderwall.social_agent.agent_environment` to `backend/lib/env_compact.py` — a new `backend/lib/` package for stdlib-only utilities that the test suite can import without heavy ML deps.
-- **Tech debt:** None introduced — the CI refactor actively reduces test-time dependency bloat.
+- **New dependencies:** None across all PRs. RSS/Atom uses stdlib `xml.etree.ElementTree`. i18n is hand-rolled (no i18next/vue-i18n).
+- **Breaking changes:** `.env.example` restructured in PR #59 — defaults are now cloud (OpenRouter) instead of local Ollama. Existing `.env` files are unaffected. The "best" preset has been removed from the Settings API.
+- **Architecture shifts:** The i18n system (PR #61) introduces embedded `i18n` blocks in JSON payloads, merged recursively on read — a lightweight alternative to full gettext/i18next that scales to additional locales without schema changes. The feed system (PR #60) reuses `_build_gallery_card_payload` with zero new infrastructure.
+- **Tech debt:** None introduced. PR #59 cleaned up `.env.example` by consolidating two presets into one.
 
 ## What's Next
-- The transcript export pairs naturally with a future **Simulation SDK/client library** — the JSON transcript endpoint is the first structured export endpoint purpose-built for programmatic consumers.
-- The Wonderwall per-slot endpoint override sets up **fine-tune experimentation** — operators can now A/B test custom agent models against the stock OpenRouter lineup while holding everything else constant.
-- The 15-day auth outage (Apr 16–30) means several scheduled skills haven't run in two weeks; the first successful heartbeat today confirmed auth is restored, so the backlog of scheduled skills should start clearing.
+- The Chinese locale (PR #61) explicitly scopes out Tier 3 — agent system prompts and report-writer prompts remain English. A follow-up could localize simulation output for Chinese-speaking research audiences.
+- RSS/Atom feeds pair naturally with the webhook system (PR #46) and n8n/Zapier integration templates (repo-actions idea from today).
+- The Wonderwall endpoint override (PR #59) unblocks fine-tuned model experiments — the simulation loop can now point at a domain-specific fine-tune while keeping reports on a general-purpose model.
+- 28 automated cron commits confirm all Aeon skills are back online after the 15-day auth outage (ISS-001). First full day of successful operations since Apr 15.
