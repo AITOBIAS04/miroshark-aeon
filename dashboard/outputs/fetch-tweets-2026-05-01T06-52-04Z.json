@@ -1,0 +1,214 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Top Tweets"
+      },
+      "children": [
+        "metadata_section",
+        "separator1",
+        "tweets_stack"
+      ]
+    },
+    "metadata_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "metadata_crypto",
+        "repo_link",
+        "metadata_date"
+      ]
+    },
+    "metadata_crypto": {
+      "type": "Text",
+      "props": {
+        "text": "MIROSHARK crypto token on Base chain AND",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "repo_link": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/aaronjmars/MiroShark",
+        "href": "https://github.com/aaronjmars/MiroShark"
+      },
+      "children": []
+    },
+    "metadata_date": {
+      "type": "Text",
+      "props": {
+        "text": "(2026-05-01)",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tweets_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tweet1_container",
+        "tweet2_container",
+        "tweet3_container",
+        "tweet4_container",
+        "tweet5_container"
+      ]
+    },
+    "tweet1_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet1_card",
+        "tweet1_link"
+      ]
+    },
+    "tweet1_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "@aaronjmars",
+        "text": "Reply to shawmakesmagic: just build on aeon... AI should liberate us from the information bombing we receive every time we log-in. Just have an agent that check your X feed & tell you whats worth your time"
+      },
+      "children": []
+    },
+    "tweet1_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2046252721557139500"
+      },
+      "children": []
+    },
+    "tweet2_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet2_card",
+        "tweet2_link"
+      ]
+    },
+    "tweet2_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "@aaronjmars",
+        "text": "getting bullied by a github fork is crazy — a MiroShark fork gaining traction vs the original repo"
+      },
+      "children": []
+    },
+    "tweet2_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2046202572415943146"
+      },
+      "children": []
+    },
+    "tweet3_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet3_card",
+        "tweet3_link"
+      ]
+    },
+    "tweet3_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "@aaronjmars",
+        "text": "whats happening here — MiroShark-related post with image"
+      },
+      "children": []
+    },
+    "tweet3_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2045920759076294920"
+      },
+      "children": []
+    },
+    "tweet4_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet4_card",
+        "tweet4_link"
+      ]
+    },
+    "tweet4_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "@aaronjmars",
+        "text": "funny timing — Aeon autonomously found and fixed a high-severity issue on the @vercel repo"
+      },
+      "children": []
+    },
+    "tweet4_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2045920304485044407"
+      },
+      "children": []
+    },
+    "tweet5_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet5_card",
+        "tweet5_link"
+      ]
+    },
+    "tweet5_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "@aaronjmars",
+        "text": "wow that sounds exactly like soul.md — on the challenge of building AI systems for knowledge workers: knowledge is distributed, unstructured, and contextual unlike code"
+      },
+      "children": []
+    },
+    "tweet5_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2045151503355109889"
+      },
+      "children": []
+    }
+  }
+}
