@@ -1,0 +1,171 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-01",
+        "description": "MiroShark — 7 commits by @aaronjmars"
+      },
+      "children": [
+        "feature1",
+        "feature2",
+        "sep1",
+        "keychanges",
+        "sep2",
+        "stats",
+        "sep3",
+        "recap"
+      ]
+    },
+    "feature1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "f1_title",
+        "f1_desc"
+      ]
+    },
+    "f1_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Chinese (zh-CN) Internationalization (PRs #61–#65)",
+        "level": "h3"
+      }
+    },
+    "f1_desc": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark now ships a complete Chinese localization stack — not just translated buttons, but localized simulation agent prompts, 138 backend error messages, 10 translated documentation files, and a prompt registry architecture that makes adding new languages a folder drop. The use_locale context manager propagates locale through Flask, threads, and subprocesses. A warning banner surfaces for first-time Chinese users explaining experimental prompt quality."
+      }
+    },
+    "feature2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "f2_title",
+        "f2_desc"
+      ]
+    },
+    "f2_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Belief Trajectory CSV / JSONL Export (PR #66)",
+        "level": "h3"
+      }
+    },
+    "f2_desc": {
+      "type": "Text",
+      "props": {
+        "text": "The fifth share/export surface — two new API endpoints serve per-round belief data (bullish/neutral/bearish %, agent counts, posts, engagements) as RFC 4180 CSV or newline-delimited JSON. Designed for pandas.read_csv() one-liner consumption. 17 unit tests, zero new dependencies."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "keychanges": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "kc_title",
+        "kc_list"
+      ]
+    },
+    "kc_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes:",
+        "level": "h4"
+      }
+    },
+    "kc_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "kc1",
+        "kc2",
+        "kc3"
+      ]
+    },
+    "kc1": {
+      "type": "Text",
+      "props": {
+        "text": "New prompt registry (app/prompts/) centralizes ~20 prompt sites into a locale-aware, cached, test-gated system — replaces 370 lines of hardcoded English strings across 8 service files"
+      }
+    },
+    "kc2": {
+      "type": "Text",
+      "props": {
+        "text": "trajectory_export.py uses the same ±0.2 stance threshold as every other surface — CSV numbers match what the gallery, share card, and webhook report"
+      }
+    },
+    "kc3": {
+      "type": "Text",
+      "props": {
+        "text": "contextvars-based locale propagation (use_locale) ensures Chinese mode works through async handlers, background threads, and simulation subprocesses"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat1",
+        "stat2",
+        "stat3"
+      ]
+    },
+    "stat1": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "~90"
+      }
+    },
+    "stat2": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines added",
+        "value": "+8,055"
+      }
+    },
+    "stat3": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines removed",
+        "value": "-2,441"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "recap": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-01.md"
+      }
+    }
+  }
+}
