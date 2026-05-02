@@ -1,0 +1,164 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "MiroShark Daily — 2026-05-02"
+      },
+      "children": [
+        "stack_stats",
+        "sep_main",
+        "stack_narrative",
+        "sep_link",
+        "link_chart"
+      ]
+    },
+    "stack_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat_price",
+        "stack_liquidity_volume",
+        "text_buys_sells",
+        "stack_performance"
+      ]
+    },
+    "stat_price": {
+      "type": "Stat",
+      "props": {
+        "label": "Price (24h)",
+        "value": "$0.000003592",
+        "delta": "-9.66%",
+        "trend": "down"
+      },
+      "children": []
+    },
+    "stack_liquidity_volume": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_liquidity",
+        "stat_volume"
+      ]
+    },
+    "stat_liquidity": {
+      "type": "Stat",
+      "props": {
+        "label": "Liquidity",
+        "value": "$232.1K"
+      },
+      "children": []
+    },
+    "stat_volume": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Volume",
+        "value": "$24.8K"
+      },
+      "children": []
+    },
+    "text_buys_sells": {
+      "type": "Text",
+      "props": {
+        "text": "Buys/Sells: 45/61",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "stack_performance": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_7d",
+        "stat_30d"
+      ]
+    },
+    "stat_7d": {
+      "type": "Stat",
+      "props": {
+        "label": "7d",
+        "value": "+44.7%",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "stat_30d": {
+      "type": "Stat",
+      "props": {
+        "label": "~30d",
+        "value": "+673%",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "sep_main": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stack_narrative": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_pullback",
+        "text_surge_context",
+        "text_ath"
+      ]
+    },
+    "text_pullback": {
+      "type": "Text",
+      "props": {
+        "text": "Pulling back after yesterday's +48% surge — sellers taking gains on light volume.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "text_surge_context": {
+      "type": "Text",
+      "props": {
+        "text": "ATH still -24.9% away ($4.784 set Apr 26).",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "text_ath": {
+      "type": "Text",
+      "props": {
+        "text": "",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep_link": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "link_chart": {
+      "type": "Link",
+      "props": {
+        "label": "Chart",
+        "href": "https://www.geckoterminal.com/base/pools/0x83a29b6619907f80e5a47d40f53d4af239a69980f22a08b10f43d357a9f06209"
+      },
+      "children": []
+    }
+  }
+}
