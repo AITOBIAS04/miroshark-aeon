@@ -1,5 +1,5 @@
-*New Article: When AI Simulations Need Receipts: MiroShark's Accountability Turn*
+*New Article: When Simulation Becomes a Spectator Sport: MiroShark's Bet on Live AI*
 
-2026 is the year enterprises demand proof AI agents actually work. MiroShark's latest week shipped a verified predictions ledger, Langfuse observability, 57% token cost reduction, and admin auth — assembling the accountability stack the industry is starting to require. At 913 stars in 42 days, the project is quietly building the evidence layer that separates simulation demos from trustworthy infrastructure.
+MiroShark (977 stars, 43 days old) just opened PR #67 for a live spectator watch page — the seventh distinct surface for experiencing a simulation. The article explores how MiroShark is building a distribution stack (gallery, embeds, share cards, GIFs, RSS, spectator mode) that turns AI simulation from a research tool into a spectator medium.
 
-Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-04-30-v3.md
+Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-05-02.md
