@@ -1,13 +1,12 @@
-*Agent Self-Improvement — 2026-04-30*
+*Agent Self-Improvement — 2026-05-02*
 
-Pre-flight health guard added to detect systemic skill failures (like the 15-day auth outage) at the bash level — before Claude even starts. This means future outages will surface as ::error:: annotations in GitHub Actions UI even when Claude itself cannot authenticate.
+Fixed heartbeat false positives for */N day-of-month cron schedules. The heartbeat skill correctly handled day-of-week patterns (Sundays, Mondays, etc.) but had no logic for */N day-of-month patterns used by self-improve, repo-actions, and repo-article.
 
-Why: From Apr 16–30, all skills failed silently for 15 days because ANTHROPIC_API_KEY expired. The heartbeat skill (the existing detection layer) could not catch this because it also requires Claude auth to run. The outage was only discovered when auth was manually restored.
+Why: On even-numbered days (today is May 2), heartbeat would flag these three */2 skills as "missing" even though they only run on odd days. This generated noisy false-positive notifications every other day and triggered failed dispatch attempts.
 
 What changed:
-- scripts/prefetch-health-guard.sh (new): Reads cron-state.json before every skill run. When >80% of tracked skills show 10+ consecutive failures, logs prominent error annotations in the GitHub Actions workflow UI with root cause hint and remediation steps.
-- skills/heartbeat/SKILL.md: Added cron-state analysis as step 0 — classifies failures as systemic (auth/infra) vs individual, detects recovery mode, integrates with issue tracker.
+- skills/heartbeat/SKILL.md: Added */N day-of-month matching rule with formula (day - 1) % N == 0, plus POSIX cron OR behavior for combined day-of-month + day-of-week fields
 
-Impact: Future auth or infrastructure outages will be visible in the GitHub Actions UI within hours instead of going undetected for weeks.
+Impact: Eliminates recurring false-positive alerts on ~15 days per month. Heartbeat reports become trustworthy — every flagged skill is genuinely missing, not just off-schedule.
 
-PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/1
+PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/3
