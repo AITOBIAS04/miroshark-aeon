@@ -49,6 +49,7 @@
 | Pre-Flight Health Guard | 2026-04-30 | Bash-level systemic failure detection in prefetch step; reads cron-state.json, logs ::error:: in GH Actions UI when >80% skills failing; works without Claude auth (PR #1 on miroshark-aeon) |
 | Atom Feed (/feed.xml) | 2026-04-30 | RFC 4287 Atom feed of completed sims; subscribe in Feedly/n8n/Zapier; stdlib XML, zero deps; RSS icon + Subscribe button in UI (code complete, push blocked — GH_GLOBAL not set) |
 | Pre-Run Cost Estimator | 2026-05-01 | Show estimated USD cost, tokens, and wall-clock time before simulation starts; built-in pricing table for 15+ models; colour-coded cost tier badge in Step 3 UI (code complete, push blocked — GH_GLOBAL not set) |
+| Jupyter Notebook Export | 2026-05-02 | One-click .ipynb export with pre-written pandas, matplotlib, and networkx analysis cells — belief drift chart, agent trajectories, interaction network, summary statistics (code complete, push blocked — GH_GLOBAL not set) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
