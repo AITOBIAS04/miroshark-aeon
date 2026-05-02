@@ -1,13 +1,13 @@
 *Hyperstitions Idea — 2026-05-02*
 
-"Will 5 independent forks of the Aeon framework ship custom skills (modified aeon.yml) by June 30, 2026?"
+"Will MiroShark get featured (review, tutorial, or showcase with 50+ upvotes) on a Chinese developer platform — Juejin, CSDN, SegmentFault, or OSChina — by June 15, 2026?"
 
-The coordination play: Right now, 187 people have forked miroshark-aeon. Exactly one has actually configured it. This market turns that embarrassing conversion rate into a call to action — every forker who sees the question realizes they are sitting on an unconfigured repo that could count toward the target. It requires humans to set up API keys, write custom skills, and configure GitHub Actions — the exact infrastructure work an AI agent cannot bootstrap for someone else.
+The coordination play: MiroShark just shipped a complete Chinese localization stack — not just UI strings, but simulation prompts, backend errors, 10 translated docs, and a bilingual README. The infrastructure is built. What it cannot do is introduce itself. That takes a Chinese-speaking developer writing a walkthrough on Juejin, posting a demo on CSDN, or sharing in WeChat groups. The market question turns "someone should write about this" into "I could be the one who does." One well-placed post could unlock an entire growth vector the English-language community cannot reach.
 
-Why now: The skill-leaderboard scan on Apr 30 revealed the 187:1 fork-to-deployment ratio. Aaron tweeted "just build on aeon" the same day. The framework has 40+ skills, Chinese i18n, and an Atom feed — the platform is ready for builders, but nobody is building yet.
+Why now: PRs #61–#65 landed this week — 90 files, 8,000 lines, a prompt registry system that makes simulation agents genuinely think in Chinese. The repo is at 973 stars with 30% of the global AI dev market being Chinese-speaking. The i18n is built. The distribution gap is 100% human-shaped.
 
-Resolution: On June 30, 2026, scan all public forks of aaronjmars/miroshark-aeon. Count forks where aeon.yml contains at least one skill definition not present in the upstream repo. Five or more unique forks = YES. Verified by the existing skill-leaderboard skill.
+Resolution: YES if a post about MiroShark (review, tutorial, demo, or showcase) on Juejin (juejin.cn), CSDN (csdn.net), SegmentFault (segmentfault.com), or OSChina (oschina.net) reaches 50+ upvotes/likes by June 15, 2026. Verified via public URL with visible vote count.
 
-Scores: Reflexivity 5/5 | Viral 4/5
+Scores: Reflexivity 4/5 | Viral 4/5
 
 Soon on https://www.hyperstitions.com/ ?
