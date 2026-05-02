@@ -1,0 +1,154 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Jupyter Notebook Export",
+        "description": "Feature Built — 2026-05-02"
+      },
+      "children": [
+        "intro-text",
+        "sep1",
+        "why-heading",
+        "why-text",
+        "sep2",
+        "what-heading",
+        "what-stack",
+        "sep3",
+        "how-heading",
+        "how-text",
+        "sep4",
+        "next-heading",
+        "next-text",
+        "sep5",
+        "alert-note"
+      ]
+    },
+    "intro-text": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark simulations can now be exported as runnable Jupyter notebooks. One click downloads a complete .ipynb file with all simulation data pre-loaded and six analysis sections ready to execute — belief drift charts, individual agent trajectories, an interaction network graph, engagement plots, and summary statistics. Open in Jupyter, Google Colab, or VS Code and run all cells."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "why-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Why this matters",
+        "level": "h3"
+      }
+    },
+    "why-text": {
+      "type": "Text",
+      "props": {
+        "text": "Until now, MiroShark's transcript and trajectory exports gave researchers data in raw form — Markdown for reading, CSV for spreadsheets. But a researcher who wants to run a t-test on belief drift, compute network centrality from the interaction graph, or produce publication-ready figures had to write all the analysis code from scratch. This was the #1 idea from repo-actions and closes the last mile between \"I ran a simulation\" and \"I can publish this.\" Academic users can now export to a notebook and cite the methodology directly. OASIS and AgentSim produce analysis-ready artifacts; MiroShark now does too."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "what-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What was built",
+        "level": "h3"
+      }
+    },
+    "what-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "what-item1",
+        "what-item2",
+        "what-item3",
+        "what-item4",
+        "what-item5"
+      ]
+    },
+    "what-item1": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/notebook_export.py: New pure-stdlib service that builds an nbformat-4 Jupyter notebook from trajectory.json, agent profiles, and the post SQLite databases. Data is encoded as base64 for safe embedding — no injection risks from post content containing special characters."
+      }
+    },
+    "what-item2": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/api/simulation.py: New GET /<id>/notebook.ipynb endpoint that reads on-disk artifacts and serves the generated .ipynb as an attachment download."
+      }
+    },
+    "what-item3": {
+      "type": "Text",
+      "props": {
+        "text": "frontend/src/components/Step4Report.vue: \"Notebook\" export button with a Jupyter-orange accent, placed alongside the existing JSON/CSV export buttons in the simulation results toolbar."
+      }
+    },
+    "what-item4": {
+      "type": "Text",
+      "props": {
+        "text": "frontend/src/components/EmbedDialog.vue: Download section in the share/embed panel with a description and one-click download link."
+      }
+    },
+    "what-item5": {
+      "type": "Text",
+      "props": {
+        "text": "frontend/src/api/simulation.js: exportNotebook() function for the Step4 button + getNotebookUrl() helper for the embed dialog."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "how-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "How it works",
+        "level": "h3"
+      }
+    },
+    "how-text": {
+      "type": "Text",
+      "props": {
+        "text": "The backend reads trajectory.json (per-round belief snapshots), reddit_profiles.json (agent metadata), and the Twitter/Reddit SQLite databases (post content and reply chains). It flattens trajectory data into a per-agent-per-round DataFrame with columns for round, agent_id, avg_position, and stance. All data is serialized as base64-encoded JSON and embedded directly in the notebook cells — this avoids any escaping issues with post content. The notebook has six sections: (1) setup and data loading, (2) stacked area chart of bullish/neutral/bearish % per round, (3) individual agent belief trajectory lines, (4) a networkx directed graph of reply interactions with degree centrality sizing, (5) summary statistics with stance volatility and change detection, and (6) post volume and engagement bar charts per round."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "next-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What's next",
+        "level": "h3"
+      }
+    },
+    "next-text": {
+      "type": "Text",
+      "props": {
+        "text": "Could add Google Colab one-click open (a URL that auto-loads the .ipynb from a gist or signed URL), or a pre-computed statistical summary cell with p-values for stance convergence."
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "alert-note": {
+      "type": "Alert",
+      "props": {
+        "title": "Deployment Status",
+        "message": "Code complete. Push to aaronjmars/MiroShark blocked — GH_GLOBAL token not configured.",
+        "type": "warning"
+      }
+    }
+  }
+}
