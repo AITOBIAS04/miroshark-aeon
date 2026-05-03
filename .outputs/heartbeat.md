@@ -1,7 +1,9 @@
-Heartbeat (2026-05-03 19:17 UTC) — 1 issue found.
+HEARTBEAT_OK. No new issues this run — all 9 skills scheduled for today ran successfully. The `repo-article` miss was already flagged and dispatch-attempted in the 19:17 UTC run; dedup rule applied, no repeated notification. Log updated.
 
-MISSING: repo-article — scheduled 16:00 UTC (DOW=0 Sunday trigger on schedule 0 16 */2 * 0,2,4,6). Now >3h overdue, no run found.
+## Summary
 
-Auto-dispatch: blocked — GITHUB_TOKEN read-only (HTTP 403). Manual trigger needed: gh workflow run aeon.yml -f skill=repo-article
-
-All other scheduled skills confirmed ✓: token-report, fetch-tweets, repo-pulse, feature, push-recap, skill-leaderboard, memory-flush.
+- **Checked:** 9 scheduled skills for Sunday May 3 — all ran ✓
+- **Stalled PRs:** None on either repo
+- **Urgent issues:** None
+- **repo-article missing:** already reported in prior heartbeat run (19:17 UTC); dedup rule suppressed re-notification
+- **Logged:** `memory/logs/2026-05-03.md`
