@@ -1,0 +1,261 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-03"
+      },
+      "children": [
+        "header_info",
+        "sep1",
+        "pr67_section",
+        "sep2",
+        "pr69_section",
+        "sep3",
+        "pr28_section",
+        "sep4",
+        "key_changes_section",
+        "sep5",
+        "stats_section",
+        "sep6",
+        "recap_link"
+      ]
+    },
+    "header_info": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "header_line1",
+        "header_line2"
+      ]
+    },
+    "header_line1": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 2 commits by @aaronjmars",
+        "variant": "body"
+      }
+    },
+    "header_line2": {
+      "type": "Text",
+      "props": {
+        "text": "miroshark-aeon — 1 PR + 22 automated by @aeonframework",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr67_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr67_title",
+        "pr67_desc",
+        "pr67_stats"
+      ]
+    },
+    "pr67_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Live Spectator Watch Page (PR #67)",
+        "level": "h3"
+      }
+    },
+    "pr67_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Adds /watch/<sim_id> as the seventh share surface — a self-contained HTML broadcast page for in-progress simulations. Vanilla-JS poller updates belief bars and progress every 15s; OG/Twitter meta tags unfurl as rich cards on paste. Backgrounded tabs stop polling (visibility gate), reduced-motion support, private-sim suppression.",
+        "variant": "body"
+      }
+    },
+    "pr67_stats": {
+      "type": "Text",
+      "props": {
+        "text": "+1,813 lines, 18 unit tests, zero new deps",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr69_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr69_title",
+        "pr69_desc",
+        "pr69_stats"
+      ]
+    },
+    "pr69_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Gallery Search & Filters (PR #69)",
+        "level": "h3"
+      }
+    },
+    "pr69_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Transforms /explore from a chronological scroll into a queryable research corpus. Full-text search, consensus/quality/outcome chip filters, sort by date/rounds/agents, URL-persisted state (bookmarkable filtered views). Pure-stdlib filter engine with the same ±0.2 stance threshold as every other surface.",
+        "variant": "body"
+      }
+    },
+    "pr69_stats": {
+      "type": "Text",
+      "props": {
+        "text": "+1,507 lines, 33 unit tests",
+        "variant": "caption"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr28_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr28_title",
+        "pr28_desc"
+      ]
+    },
+    "pr28_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Skill Hardening (PR #28)",
+        "level": "h3"
+      }
+    },
+    "pr28_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Fixes hyperstitions-ideas dedup failure — log header now mandatory with defensive backstop matching bare bullet patterns. Prevents duplicate dispatch when heartbeat checks for prior runs.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "key_changes_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "key_changes_heading",
+        "file1",
+        "file2",
+        "file3"
+      ]
+    },
+    "key_changes_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes:",
+        "level": "h4"
+      }
+    },
+    "file1": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/watch_renderer.py — 928-line pure-stdlib live page renderer with belief bars, progress, OG cards",
+        "variant": "body"
+      }
+    },
+    "file2": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/gallery_filters.py — 345-line composable filter engine (q + consensus + quality + outcome + sort)",
+        "variant": "body"
+      }
+    },
+    "file3": {
+      "type": "Text",
+      "props": {
+        "text": "frontend/src/views/ExploreView.vue — search bar, chip groups, sort dropdown, URL-param persistence (+473 lines)",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats_changes",
+        "stats_stars_section"
+      ]
+    },
+    "stats_changes": {
+      "type": "Text",
+      "props": {
+        "text": "Stats: 35 files changed, +3,531/-74 lines",
+        "variant": "body"
+      }
+    },
+    "stats_stars_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stats_stars_text",
+        "stats_stars_stat"
+      ]
+    },
+    "stats_stars_text": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark milestone: crossed 1K today",
+        "variant": "caption"
+      }
+    },
+    "stats_stars_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,022",
+        "delta": "+49",
+        "trend": "up"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {}
+    },
+    "recap_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-03.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

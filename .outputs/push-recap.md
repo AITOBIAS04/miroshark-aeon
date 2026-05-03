@@ -1,17 +1,17 @@
-*Push Recap — 2026-05-02*
-miroshark-aeon — 34 commits by aeonframework (autonomous)
-MiroShark — 0 commits (quiet day on main branch)
+*Push Recap — 2026-05-03*
+MiroShark — 2 commits by @aaronjmars | miroshark-aeon — 1 PR + 22 automated by @aeonframework
 
-Feature Build (PR #67 — Live Spectator Watch Page): Aeon built and opened a full live-broadcast page at /watch/<id>. Server-rendered HTML, no SPA dependency — tweet the URL mid-simulation and it unfurls as a rich OG card. Vanilla-JS polls every 15s showing belief bars, round counter, and progress. Transitions to final result + Fork CTA when the sim ends. 7th share surface, zero new deps.
+Live Spectator Watch Page (PR #67): Adds /watch/<sim_id> as the seventh share surface — a self-contained HTML broadcast page for in-progress simulations. Vanilla-JS poller updates belief bars and progress every 15s; OG/Twitter meta tags unfurl as rich cards on paste. Backgrounded tabs stop polling (visibility gate), reduced-motion support, private-sim suppression. +1,813 lines, 18 unit tests, zero new deps.
 
-Growth Intelligence (5 New Feature Ideas): Repo-actions generated — (1) 1-Click Cloud Deploy (Railway + Fly.io), (2) Gallery Full-Text Search, (3) Pre-Run Cost Estimator Widget, (4) Per-Agent Stance Sparklines, (5) Pre-filled Scenario URL. Deploy friction identified as highest-leverage gap before 1K.
+Gallery Search & Filters (PR #69): Transforms /explore from a chronological scroll into a queryable research corpus. Full-text search, consensus/quality/outcome chip filters, sort by date/rounds/agents, URL-persisted state (bookmarkable filtered views). Pure-stdlib filter engine with the same ±0.2 stance threshold as every other surface. +1,507 lines, 33 unit tests.
 
-Community: 974 stars (+30 today, 26 to 1K milestone). 8 new forks. Token at $0.000003592 (-9.66%, healthy pullback). Aaron active on X — "just build on aeon" positioning + fork engagement.
+Skill Hardening (PR #28): Fixes hyperstitions-ideas dedup failure — log header now mandatory with defensive backstop matching bare bullet patterns. Prevents duplicate dispatch when heartbeat checks for prior runs.
 
 Key changes:
-- watch_renderer.py (~600 LoC): Self-contained SSR HTML page with OG/Twitter meta, inline CSS, bootstrap JSON blob, vanilla-JS poller — works even with JS disabled
-- 5 repo-actions ideas targeting the star-to-contributor conversion gap before 1K
-- Heartbeat flagged 3 missing skills (dispatch blocked by read-only GITHUB_TOKEN) + 2 stalled PRs
+- backend/app/services/watch_renderer.py — 928-line pure-stdlib live page renderer with belief bars, progress, OG cards
+- backend/app/services/gallery_filters.py — 345-line composable filter engine (q + consensus + quality + outcome + sort)
+- frontend/src/views/ExploreView.vue — search bar, chip groups, sort dropdown, URL-param persistence (+473 lines)
 
-Stats: ~32 files changed, +2,775/-171 lines
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-02.md
+Stats: 35 files changed, +3,531/-74 lines
+MiroShark milestone: 1,022 stars (crossed 1K today, +49 in 24h)
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-03.md
