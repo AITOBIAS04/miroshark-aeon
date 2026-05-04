@@ -1,22 +1,23 @@
-*Feature Built — 2026-05-03*
+*Feature Built — 2026-05-04*
 
-Community Template Gallery
-MiroShark now has a community-driven scenario template gallery at /templates. Instead of starting from scratch or being limited to the 6 preset scenarios, users can browse 10 domain-specific simulation templates — covering US elections, EU AI Act regulation, DeFi governance tokens, corporate whistleblowing crises, climate policy votes, sports scandals, startup acquisitions, central bank rate decisions, product recalls, and scientific controversies — and launch any of them in one click. After running a simulation, users can also save their own scenario as a reusable template for the community.
+Programmatic Agent Interrogation API
+MiroShark's most distinctive feature — the Trace Interview, where you cross-examine a simulated agent on its actual posts and stance changes — was locked inside the browser UI. The Agent Interrogation API breaks it open for automation. Four new endpoints let any pipeline list agents, fetch full profiles with per-round belief trajectories, and ask agents trace-grounded questions programmatically with multi-turn session support.
 
 Why this matters:
-MiroShark just crossed 1,000 stars with 204 forks, but the path from 'install the repo' to 'run your first simulation' still had friction — users had to either upload a document, type a question, or pick from just 6 generic presets. The community template gallery drops that barrier to under 30 seconds: pick a domain, click launch. Each template is also a discovery entry point — someone searching for 'AI regulation simulation' or 'DeFi governance sentiment analysis' now has a direct path in. For the growing academic and research cohort, these templates are starter kits for domain-specific simulation studies.
+The completion webhook (PR #46) and OpenAPI spec opened MiroShark to programmatic use, but the feature that makes MiroShark unique — interrogating agents about their reasoning — had no API surface. Researchers running batch studies had to click through the UI agent by agent. n8n and Zapier workflows could trigger simulations and get final results but couldn't ask 'Why did the top agent flip bearish at round 7?' This was the #3 idea from repo-actions (May 2) and the highest-leverage small-effort addition: one API surface unlocks the most differentiated capability for the entire automation audience.
 
 What was built:
-- backend/app/api/templates.py: Five new API endpoints for community templates — list (with tag/search/sort filters), get, create, use (increments count + returns launch config), and admin-only delete. File-based JSON storage consistent with MiroShark's existing architecture.
-- backend/app/community_templates/ (10 files): Curated seed templates with rich scenario descriptions and pre-configured agent counts, rounds, and platform selections. Each includes a detailed seed document with data points, market context, and stakeholder dynamics.
-- frontend/src/views/TemplatesView.vue: New gallery page at /templates with tag chip filters (crypto, policy, crisis, etc.), full-text search, sort options (most used / newest / alphabetical), and one-click launch that pre-fills the simulation setup.
-- frontend/src/components/HistoryDatabase.vue: 'Save as Template' section added to the simulation detail modal for completed runs — name, description, tag picker, and save to the community gallery.
-- Navigation, README, OpenAPI spec, FEATURES.md, API.md all updated.
+- backend/app/api/simulation.py: 4 new endpoints — GET /agents (list all agents with metadata, stance, influence rank), GET /agents/<name>/profile (full bio + per-round belief history from trajectory.json), POST /agents/<name>/query (trace-grounded interrogation with server-side session management and rate limiting), GET /interview-sessions (list all saved sessions)
+- backend/openapi.yaml: New 'Agent Interrogation' tag with full request/response schemas, 8 example questions in the spec
+- frontend/src/api/simulation.js: 4 new API functions (listSimulationAgents, getAgentProfile, queryAgent, listInterviewSessions)
+- docs/API.md + docs/API.zh-CN.md: New section with curl examples
+- docs/FEATURES.md + docs/FEATURES.zh-CN.md: Feature documentation
+- README.md: Added to features table
 
 How it works:
-Community templates are stored as JSON files alongside the existing simulation data directory — no database needed, consistent with MiroShark's file-based architecture. Seed templates ship in backend/app/community_templates/ and user-created templates go to uploads/community_templates/. The frontend gallery fetches them via GET /api/templates/community with optional tag, search, and sort parameters. When a user clicks 'Use template', the backend increments the use count and returns the full config (simulation_requirement + seed_document), which gets injected into the simulation setup flow via the existing setPendingTemplate store. The 'Save as Template' flow in the history modal captures the simulation_requirement, platform config, and agent/round counts from the completed simulation and POSTs a new community template.
+The /query endpoint reuses the exact context-building logic from the UI trace interview: it loads the agent's profile from reddit_profiles.json, the simulation scenario from config, and builds a complete round-by-round trace from the JSONL action logs. The agent responds in character, citing specific posts and round numbers. Server-side sessions (via session_id parameter) persist the last 4 Q&A pairs on disk for multi-turn dialogue — callers don't need to manage history. Rate limiting (20 queries per simulation per 5 minutes) prevents cost explosions from automation loops. All queries are also saved to the shared interview transcript, so UI and API interrogations appear in the same history.
 
 What's next:
-Once GH_GLOBAL is configured, this PR can be pushed. Future enhancements: upvote/downvote on templates, template categories page, and auto-suggest templates based on trending topics.
+GH_GLOBAL secret still not set — this is the 4th consecutive feature blocked from pushing (May 1–4). Once the secret is configured, 4 PRs ship immediately. Next feature candidates: Fork/Counterfactual Diff View, Mid-Run Belief Threshold Alert Webhooks, Simulation Series Tracker.
 
-PR: code complete on branch feat/community-template-gallery (push blocked — GH_GLOBAL not set)
+Branch: feat/agent-interrogation-api (push blocked — GH_GLOBAL not set)
