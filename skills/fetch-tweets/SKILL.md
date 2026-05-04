@@ -13,7 +13,7 @@ Today is ${today}. Search X for tweets matching **${var}**.
    - If the query mentions a token/cashtag/crypto: include "crypto token", the chain name, and the contract address from `memory/MEMORY.md` in the Grok prompt. This eliminates false matches.
    - Example: instead of searching "aeon", search "the $AEON crypto token on Base chain (contract 0xbf8e...) in the last 7 days. Only return tweets about the cryptocurrency."
 
-2. **Load previously-reported tweet URLs** from the last 3 days of `memory/logs/`. Grep each log file for lines that match `https://x.com/` — collect all tweet URLs already reported. You'll use these to filter duplicates in step 4.
+2. **Load previously-reported tweet URLs** from the last 7 days of `memory/logs/`. Grep each log file for lines that match `https://x.com/` — collect all tweet URLs already reported. You'll use these to filter duplicates in step 4.
 
 3. **Search tweets.** Use whichever path is available:
 
@@ -40,10 +40,12 @@ Today is ${today}. Search X for tweets matching **${var}**.
    `site:x.com "${query_terms}" after:${FROM_DATE}`
    Note at the top of the log entry: "XAI_API_KEY not available; results compiled via WebSearch". WebSearch rankings favour high-engagement older tweets — **prioritise results that mention a date within the last 48 hours** when possible.
 
+   **Age filter (WebSearch only):** After collecting results, drop any tweet whose posted date is more than 14 days before today. WebSearch cannot reliably filter by date, so it often surfaces old high-engagement tweets (launch announcements, founding tweets) that are not newsworthy. If a tweet's date cannot be determined, keep it only if the surrounding context suggests it is recent.
+
 4. **Deduplicate against previously-reported tweets** (from step 2):
-   - Compare each candidate tweet URL against the collected set of already-reported URLs.
-   - Remove any tweet that was already reported in the last 3 days.
-   - If ALL tweets found are already in the recent logs: log "FETCH_TWEETS_NO_NEW: all results already reported" to `memory/logs/${today}.md` and **stop here — do NOT send any notification**.
+   - Compare each candidate tweet URL against the collected set of already-reported URLs from the last 7 days.
+   - Remove any tweet that was already reported.
+   - If ALL tweets found are already in the recent logs (or were dropped by the age filter): log "FETCH_TWEETS_NO_NEW: all results already reported or too old" to `memory/logs/${today}.md` and **stop here — do NOT send any notification**.
 
 5. **If no relevant tweets found** (no results, API error, or empty after dedup): log "FETCH_TWEETS_EMPTY" to `memory/logs/${today}.md` and **stop here — do NOT send any notification**.
 
