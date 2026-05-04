@@ -1,17 +1,14 @@
-*Push Recap — 2026-05-03*
-MiroShark — 2 commits by @aaronjmars | miroshark-aeon — 1 PR + 22 automated by @aeonframework
+*Push Recap — 2026-05-04*
+[MiroShark] — 1 commit by @aaronjmars (+ 25 automated on miroshark-aeon)
 
-Live Spectator Watch Page (PR #67): Adds /watch/<sim_id> as the seventh share surface — a self-contained HTML broadcast page for in-progress simulations. Vanilla-JS poller updates belief bars and progress every 15s; OG/Twitter meta tags unfurl as rich cards on paste. Backgrounded tabs stop polling (visibility gate), reduced-motion support, private-sim suppression. +1,813 lines, 18 unit tests, zero new deps.
+Shareable Scenario Links (PR #71, merged): The last missing distribution primitive lands. Drop a ?scenario=...&url=... URL into a tweet or blog post and readers land on the New Sim form already pre-filled — one click from launching their own run. Four independent params (scenario, url, ask, template) each sanitized by DOMPurify with length caps. A "Share as link" button beneath the Simulation Prompt textarea copies the URL from live form state. Template gallery cards gain a link icon for one-click ?template=<slug> CTAs. Pure frontend, zero new deps, 27 parser assertions pass.
 
-Gallery Search & Filters (PR #69): Transforms /explore from a chronological scroll into a queryable research corpus. Full-text search, consensus/quality/outcome chip filters, sort by date/rounds/agents, URL-persisted state (bookmarkable filtered views). Pure-stdlib filter engine with the same ±0.2 stance threshold as every other surface. +1,507 lines, 33 unit tests.
-
-Skill Hardening (PR #28): Fixes hyperstitions-ideas dedup failure — log header now mandatory with defensive backstop matching bare bullet patterns. Prevents duplicate dispatch when heartbeat checks for prior runs.
+Self-Improvement (PR #29, open): The project-lens angle rotation rule ("Never repeat in 14 days") was mathematically impossible — 8 categories on a daily cadence means day 9 forces a repeat. Every entry from Apr 22–May 2 violated the rule and wrote a rationalization. Replaced with least-recently-used selection + 6-day soft floor + explicit override paths.
 
 Key changes:
-- backend/app/services/watch_renderer.py — 928-line pure-stdlib live page renderer with belief bars, progress, OG cards
-- backend/app/services/gallery_filters.py — 345-line composable filter engine (q + consensus + quality + outcome + sort)
-- frontend/src/views/ExploreView.vue — search bar, chip groups, sort dropdown, URL-param persistence (+473 lines)
+- New frontend/src/utils/urlParams.js (116 LoC) — centralized URL param sanitization shared by read path (mount) and write path (share buttons)
+- Home.vue +385 lines — onMounted prefill, orange banner for shared-link awareness, share-as-link button with clipboard copy
+- TemplateGallery.vue — link icon on every template card for ?template=<slug> share URLs
 
-Stats: 35 files changed, +3,531/-74 lines
-MiroShark milestone: 1,022 stars (crossed 1K today, +49 in 24h)
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-03.md
+Stats: 6 files changed, +613/-12 lines
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-04.md

@@ -1,0 +1,180 @@
+{
+  "root": "push-recap",
+  "state": {},
+  "elements": {
+    "push-recap": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-04"
+      },
+      "children": [
+        "repo-info",
+        "sep1",
+        "feature1-section",
+        "sep2",
+        "feature2-section",
+        "sep3",
+        "summary-section"
+      ]
+    },
+    "repo-info": {
+      "type": "Text",
+      "props": {
+        "text": "[MiroShark] — 1 commit by @aaronjmars (+ 25 automated on miroshark-aeon)",
+        "variant": "muted"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "feature1-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "f1-title",
+        "f1-meta",
+        "f1-desc",
+        "f1-details",
+        "f1-changes-header",
+        "f1-files"
+      ]
+    },
+    "f1-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Shareable Scenario Links",
+        "level": "h2"
+      }
+    },
+    "f1-meta": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #71 • merged",
+        "variant": "secondary"
+      }
+    },
+    "f1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "The last missing distribution primitive lands. Drop a ?scenario=...&url=... URL into a tweet or blog post and readers land on the New Sim form already pre-filled — one click from launching their own run."
+      }
+    },
+    "f1-details": {
+      "type": "Text",
+      "props": {
+        "text": "Four independent params (scenario, url, ask, template) each sanitized by DOMPurify with length caps. A \"Share as link\" button beneath the Simulation Prompt textarea copies the URL from live form state. Template gallery cards gain a link icon for one-click ?template=<slug> CTAs. Pure frontend, zero new deps, 27 parser assertions pass."
+      }
+    },
+    "f1-changes-header": {
+      "type": "Text",
+      "props": {
+        "text": "Key changes:",
+        "variant": "lead"
+      }
+    },
+    "f1-files": {
+      "type": "Text",
+      "props": {
+        "text": "• frontend/src/utils/urlParams.js (116 LoC) — centralized URL param sanitization shared by read path (mount) and write path (share buttons)\n• Home.vue +385 lines — onMounted prefill, orange banner for shared-link awareness, share-as-link button with clipboard copy\n• TemplateGallery.vue — link icon on every template card for ?template=<slug> share URLs"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "feature2-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "f2-title",
+        "f2-meta",
+        "f2-problem-header",
+        "f2-problem-text",
+        "f2-solution-header",
+        "f2-solution-text"
+      ]
+    },
+    "f2-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Self-Improvement",
+        "level": "h2"
+      }
+    },
+    "f2-meta": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #29 • open",
+        "variant": "outline"
+      }
+    },
+    "f2-problem-header": {
+      "type": "Text",
+      "props": {
+        "text": "Problem:",
+        "variant": "lead"
+      }
+    },
+    "f2-problem-text": {
+      "type": "Text",
+      "props": {
+        "text": "The project-lens angle rotation rule (\"Never repeat in 14 days\") was mathematically impossible — 8 categories on a daily cadence means day 9 forces a repeat. Every entry from Apr 22–May 2 violated the rule and wrote a rationalization."
+      }
+    },
+    "f2-solution-header": {
+      "type": "Text",
+      "props": {
+        "text": "Solution:",
+        "variant": "lead"
+      }
+    },
+    "f2-solution-text": {
+      "type": "Text",
+      "props": {
+        "text": "Replaced with least-recently-used selection + 6-day soft floor + explicit override paths."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "summary-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "summary-stats",
+        "summary-link"
+      ]
+    },
+    "summary-stats": {
+      "type": "Text",
+      "props": {
+        "text": "6 files changed, +613/-12 lines"
+      }
+    },
+    "summary-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-04.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
