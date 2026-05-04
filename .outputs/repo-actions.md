@@ -1,19 +1,19 @@
-*Repo Action Ideas — 2026-05-02*
-MiroShark at 976 stars — 5 new ideas for the feature skill, distinct from the 10 suggested on Apr 30.
+*Repo Action Ideas — 2026-05-04*
+Generated from analysis of aaronjmars/MiroShark (1,064 stars, 0 open PRs, issue #70 from community contributor Cyril).
 
-1. Community Scenario Template Gallery (Growth/DX, Small)
-   Extend the 6 hardcoded presets into a user-created, browsable, forkable template gallery — each shared template is a domain-specific discovery entry point and the viral lever for the push to 1K stars.
+1. Private Impact Mode (Feature, Medium)
+   New simulation type for private relational networks — employees, clients, partners reacting to a decision. Issue #70 includes pre-written architecture from a willing collaborator.
 
-2. Fork / Counterfactual Diff View (Feature, Medium)
-   Side-by-side comparison of a fork against its parent simulation — overlaid belief drift chart, divergence round marker, final price delta, and agent overlap score. Closes the loop on the fork primitive as a publishable controlled-experiment surface.
+2. Simulation Impact Scorecard (Feature/DX, Small)
+   Four normalized metrics after every simulation: Polarization Index, Influence Concentration, Consensus Velocity, Narrative Volatility. Anchors qualitative results in comparable numbers — solves the interpretation gap Cyril flagged with MiroResult.
 
-3. Programmatic Agent Interrogation API (Integration, Small)
-   POST /api/simulation/:id/agents/:agent_id/query — API access to the Trace Interview feature (currently UI-only since PR #26). Unlocks agent interrogation for GitHub Actions, n8n, and research pipelines. Rate-limited; multi-turn via session_id.
+3. One-Click Tweet Composer (Growth, Small)
+   'Post to X' button with pre-composed tweet template (scenario excerpt + consensus outcome + share URL + #MiroShark). Pure client-side, no API key needed. Every simulation result becomes one-click organic reach.
 
-4. Mid-Run Belief Threshold Alert Webhooks (Integration, Small)
-   Webhook fires when agent consensus crosses a user-defined threshold mid-simulation (e.g., bearish > 60%). Complements the completion webhook with a real-time monitoring primitive — signal arrives 12 rounds earlier for a threshold hit at round 3 of 15.
+4. Embeddable Simulation Widget (Integration, Small)
+   /embed/<sim_id> iframe endpoint for newsletters, blog posts, and Substack articles. Shows belief drift chart, final consensus stats, and a 'Simulate anything →' CTA with UTM tracking. Turns external content into distribution nodes.
 
-5. Simulation Series / Longitudinal Study Tracker (Feature, Medium)
-   Group simulations into a named study with a time-series belief dashboard, recurring-agent table, and bundled ZIP export (summary CSV + transcripts + study-level Jupyter notebook). The research container that turns MiroShark into a longitudinal platform.
+5. Webhook Delivery Log & Replay (DX, Small)
+   Full delivery log for completion webhooks: timestamp, HTTP status, response excerpt, retry history. Replay button to re-fire without re-running the simulation. Makes webhooks trustworthy for production automation pipelines.
 
-Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-02.md
+Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-04.md

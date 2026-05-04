@@ -1,0 +1,349 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas",
+        "description": "2026-05-04"
+      },
+      "children": [
+        "context",
+        "separator1",
+        "action1",
+        "action2",
+        "action3",
+        "action4",
+        "action5",
+        "separator2",
+        "fullDetails"
+      ]
+    },
+    "context": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "context-intro",
+        "context-metrics",
+        "context-issue"
+      ]
+    },
+    "context-intro": {
+      "type": "Text",
+      "props": {
+        "text": "Generated from analysis of aaronjmars/MiroShark",
+        "variant": "muted"
+      }
+    },
+    "context-metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-stars",
+        "stat-prs"
+      ]
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,064"
+      }
+    },
+    "stat-prs": {
+      "type": "Stat",
+      "props": {
+        "label": "Open PRs",
+        "value": "0"
+      }
+    },
+    "context-issue": {
+      "type": "Text",
+      "props": {
+        "text": "Issue #70 from community contributor Cyril",
+        "variant": "muted"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "action1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action1-heading",
+        "action1-badges",
+        "action1-desc"
+      ]
+    },
+    "action1-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Private Impact Mode",
+        "level": "h3"
+      }
+    },
+    "action1-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "action1-badge1",
+        "action1-badge2"
+      ]
+    },
+    "action1-badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "action1-badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium",
+        "variant": "secondary"
+      }
+    },
+    "action1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "New simulation type for private relational networks — employees, clients, partners reacting to a decision. Issue #70 includes pre-written architecture from a willing collaborator.",
+        "variant": "body"
+      }
+    },
+    "action2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action2-heading",
+        "action2-badges",
+        "action2-desc"
+      ]
+    },
+    "action2-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Simulation Impact Scorecard",
+        "level": "h3"
+      }
+    },
+    "action2-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "action2-badge1",
+        "action2-badge2"
+      ]
+    },
+    "action2-badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature/DX",
+        "variant": "default"
+      }
+    },
+    "action2-badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "action2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Four normalized metrics after every simulation: Polarization Index, Influence Concentration, Consensus Velocity, Narrative Volatility. Anchors qualitative results in comparable numbers — solves the interpretation gap Cyril flagged with MiroResult.",
+        "variant": "body"
+      }
+    },
+    "action3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action3-heading",
+        "action3-badges",
+        "action3-desc"
+      ]
+    },
+    "action3-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "One-Click Tweet Composer",
+        "level": "h3"
+      }
+    },
+    "action3-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "action3-badge1",
+        "action3-badge2"
+      ]
+    },
+    "action3-badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Growth",
+        "variant": "default"
+      }
+    },
+    "action3-badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "action3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "'Post to X' button with pre-composed tweet template (scenario excerpt + consensus outcome + share URL + #MiroShark). Pure client-side, no API key needed. Every simulation result becomes one-click organic reach.",
+        "variant": "body"
+      }
+    },
+    "action4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action4-heading",
+        "action4-badges",
+        "action4-desc"
+      ]
+    },
+    "action4-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Embeddable Simulation Widget",
+        "level": "h3"
+      }
+    },
+    "action4-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "action4-badge1",
+        "action4-badge2"
+      ]
+    },
+    "action4-badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Integration",
+        "variant": "default"
+      }
+    },
+    "action4-badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "action4-desc": {
+      "type": "Text",
+      "props": {
+        "text": "/embed/<sim_id> iframe endpoint for newsletters, blog posts, and Substack articles. Shows belief drift chart, final consensus stats, and a 'Simulate anything →' CTA with UTM tracking. Turns external content into distribution nodes.",
+        "variant": "body"
+      }
+    },
+    "action5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action5-heading",
+        "action5-badges",
+        "action5-desc"
+      ]
+    },
+    "action5-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Webhook Delivery Log & Replay",
+        "level": "h3"
+      }
+    },
+    "action5-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "action5-badge1",
+        "action5-badge2"
+      ]
+    },
+    "action5-badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "DX",
+        "variant": "default"
+      }
+    },
+    "action5-badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "action5-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Full delivery log for completion webhooks: timestamp, HTTP status, response excerpt, retry history. Replay button to re-fire without re-running the simulation. Makes webhooks trustworthy for production automation pipelines.",
+        "variant": "body"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fullDetails": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full details",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-04.md"
+      }
+    }
+  }
+}
