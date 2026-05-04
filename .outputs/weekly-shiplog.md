@@ -1,12 +1,11 @@
-*Weekly Shiplog — 2026-04-30*
+*Weekly Shiplog — 2026-05-04*
 
-The week MiroShark became a platform. 16 PRs merged, 886 stars.
+MiroShark crossed 1,000 stars and shipped a complete distribution stack in the heaviest week since launch.
 
 Shipped:
-- Public simulation gallery + verified predictions hall — browse and prove track records
-- OpenAPI 3.1 spec, completion webhooks, MCP onboarding — full integration surface
-- Animated belief-replay GIFs + transcript export — shareable simulation artifacts
-- 57% agent env token reduction — faster, cheaper simulation rounds
+- Full Chinese localization from UI strings to simulation prompts (5 PRs, 115+ files)
+- Seven share surfaces complete: RSS/Atom, live spectator watch page, trajectory CSV/JSONL, gallery full-text search
+- 57% token compaction, Langfuse observability, admin auth, Wonderwall endpoint override
 
-Stats: 114 commits, 20 PRs merged, +13,600/-620 lines across 2 repos
-Full update: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/weekly-shiplog-2026-04-30.md
+Stats: 23 PRs merged, 234+ files changed, +17,558/-3,065 lines, 1,062 stars (+176)
+Full update: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/weekly-shiplog-2026-05-04.md
