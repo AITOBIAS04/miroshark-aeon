@@ -1,0 +1,171 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "heartbeat"
+      },
+      "children": [
+        "status",
+        "sep1",
+        "skills_section",
+        "sep2",
+        "pr_section",
+        "sep3",
+        "footer"
+      ]
+    },
+    "status": {
+      "type": "Alert",
+      "props": {
+        "message": "Heartbeat check complete — all clear",
+        "type": "success"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "skills_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "skills_heading",
+        "skills_grid"
+      ]
+    },
+    "skills_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scheduled Skills (10 ran today)",
+        "level": "h3"
+      }
+    },
+    "skills_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "sm"
+      },
+      "children": [
+        "skill1",
+        "skill2",
+        "skill3",
+        "skill4",
+        "skill5",
+        "skill6",
+        "skill7",
+        "skill8",
+        "skill9",
+        "skill10"
+      ]
+    },
+    "skill1": {
+      "type": "Badge",
+      "props": {
+        "text": "token-report"
+      }
+    },
+    "skill2": {
+      "type": "Badge",
+      "props": {
+        "text": "fetch-tweets"
+      }
+    },
+    "skill3": {
+      "type": "Badge",
+      "props": {
+        "text": "weekly-shiplog"
+      }
+    },
+    "skill4": {
+      "type": "Badge",
+      "props": {
+        "text": "feature"
+      }
+    },
+    "skill5": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse"
+      }
+    },
+    "skill6": {
+      "type": "Badge",
+      "props": {
+        "text": "self-improve"
+      }
+    },
+    "skill7": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-actions"
+      }
+    },
+    "skill8": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap"
+      }
+    },
+    "skill9": {
+      "type": "Badge",
+      "props": {
+        "text": "project-lens"
+      }
+    },
+    "skill10": {
+      "type": "Badge",
+      "props": {
+        "text": "heartbeat"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr_heading",
+        "pr_item"
+      ]
+    },
+    "pr_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Pull Requests",
+        "level": "h3"
+      }
+    },
+    "pr_item": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#29",
+        "href": "https://github.com/aeon/miroshark-aeon/pull/29",
+        "source": "miroshark-aeon",
+        "score": "<24h old"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "footer": {
+      "type": "Alert",
+      "props": {
+        "message": "No urgent issues. Nothing needs attention.",
+        "type": "info"
+      }
+    }
+  }
+}
