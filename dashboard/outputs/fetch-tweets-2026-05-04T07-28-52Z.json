@@ -1,0 +1,144 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Top Tweets — MIROSHARK"
+      },
+      "children": [
+        "main_stack"
+      ]
+    },
+    "main_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "header_line_stack",
+        "context_text",
+        "separator_1",
+        "tweet_1_stack",
+        "separator_2",
+        "tweet_2_stack"
+      ]
+    },
+    "header_line_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "header_start_text",
+        "github_link",
+        "date_text"
+      ]
+    },
+    "header_start_text": {
+      "type": "Text",
+      "props": {
+        "text": "MIROSHARK crypto token on Base chain AND",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "github_link": {
+      "type": "Link",
+      "props": {
+        "label": "GitHub",
+        "href": "https://github.com/aaronjmars/MiroShark"
+      },
+      "children": []
+    },
+    "date_text": {
+      "type": "Text",
+      "props": {
+        "text": "(2026-05-04)",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "context_text": {
+      "type": "Text",
+      "props": {
+        "text": "XAI_API_KEY not available; results compiled via WebSearch. No new tweets detected in the last 7 days — all recent posts already reported. WebSearch surfaced 2 high-engagement founding tweets not in the 3-day window.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tweet_1_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet_1_card",
+        "tweet_1_link"
+      ]
+    },
+    "tweet_1_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "Original MiroShark launch: built as a sanitized English fork of MiroFish with improved simulation flow, local run support, and any OpenAI-compatible API key"
+      },
+      "children": []
+    },
+    "tweet_1_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2035881020302430571"
+      },
+      "children": []
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tweet_2_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet_2_card",
+        "tweet_2_link"
+      ]
+    },
+    "tweet_2_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "Framework pitch: upload context, ask any question, MiroShark builds a Reddit + X (+Polymarket) simulation populated from context; agents post, talk, retweet; global report generated at the end"
+      },
+      "children": []
+    },
+    "tweet_2_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2036175623622660114"
+      },
+      "children": []
+    }
+  }
+}
