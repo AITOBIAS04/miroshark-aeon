@@ -46,6 +46,7 @@
 | Jupyter Notebook Export | 2026-05-02 | One-click .ipynb export with pre-written pandas, matplotlib, and networkx analysis cells — belief drift chart, agent trajectories, interaction network, summary statistics (code complete, push blocked — GH_GLOBAL not set) |
 | Community Template Gallery | 2026-05-03 | /templates page with 10 domain-specific seed scenarios, CRUD API, tag filters, search, one-click launch, "Save as Template" from completed sims (code complete, push blocked — GH_GLOBAL not set) |
 | Agent Interrogation API | 2026-05-04 | 4 endpoints: GET /agents, GET /agents/<name>/profile, POST /agents/<name>/query (rate-limited, session-based multi-turn), GET /interview-sessions; OpenAPI docs, frontend API, bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
+| Fetch-Tweets Dedup v2 | 2026-05-04 | Extended dedup window 3d→7d, added 14-day age filter for WebSearch fallback to stop old founding tweets resurfacing as "new" (PR #4 on miroshark-aeon) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`

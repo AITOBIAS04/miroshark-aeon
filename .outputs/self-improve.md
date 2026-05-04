@@ -1,13 +1,12 @@
-*Agent Self-Improvement — 2026-04-30*
+*Agent Self-Improvement — 2026-05-04*
 
-Pre-flight health guard added to detect systemic skill failures (like the 15-day auth outage) at the bash level — before Claude even starts. This means future outages will surface as ::error:: annotations in GitHub Actions UI even when Claude itself cannot authenticate.
+Fixed stale tweet resurfacing in fetch-tweets. The WebSearch fallback was reporting old founding tweets (March 20-21) as "new" because they fell outside the 3-day dedup window. Extended the window and added an age filter.
 
-Why: From Apr 16–30, all skills failed silently for 15 days because ANTHROPIC_API_KEY expired. The heartbeat skill (the existing detection layer) could not catch this because it also requires Claude auth to run. The outage was only discovered when auth was manually restored.
+Why: May 4 fetch-tweets logged 2 March founding tweets as new — WebSearch surfaces high-engagement old content and the 3-day dedup window let them through.
 
 What changed:
-- scripts/prefetch-health-guard.sh (new): Reads cron-state.json before every skill run. When >80% of tracked skills show 10+ consecutive failures, logs prominent error annotations in the GitHub Actions workflow UI with root cause hint and remediation steps.
-- skills/heartbeat/SKILL.md: Added cron-state analysis as step 0 — classifies failures as systemic (auth/infra) vs individual, detects recovery mode, integrates with issue tracker.
+- skills/fetch-tweets/SKILL.md: dedup window 3d → 7d, added 14-day age filter for WebSearch fallback path, updated dedup-empty log message
 
-Impact: Future auth or infrastructure outages will be visible in the GitHub Actions UI within hours instead of going undetected for weeks.
+Impact: Cleaner notifications — old founding/launch tweets won't resurface as "new" every few days when using the WebSearch fallback.
 
-PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/1
+PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/4

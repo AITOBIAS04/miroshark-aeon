@@ -1,0 +1,141 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Self-Improve"
+      },
+      "children": [
+        "heading_date",
+        "summary",
+        "sep1",
+        "heading_why",
+        "text_why",
+        "sep2",
+        "heading_changes",
+        "changes_stack",
+        "sep3",
+        "heading_impact",
+        "text_impact",
+        "sep4",
+        "pr"
+      ]
+    },
+    "heading_date": {
+      "type": "Heading",
+      "props": {
+        "text": "Agent Self-Improvement — 2026-05-04",
+        "level": "h2"
+      }
+    },
+    "summary": {
+      "type": "Text",
+      "props": {
+        "text": "Fixed stale tweet resurfacing in fetch-tweets. The WebSearch fallback was reporting old founding tweets (March 20-21) as \"new\" because they fell outside the 3-day dedup window. Extended the window and added an age filter.",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_why": {
+      "type": "Heading",
+      "props": {
+        "text": "Why",
+        "level": "h3"
+      }
+    },
+    "text_why": {
+      "type": "Text",
+      "props": {
+        "text": "May 4 fetch-tweets logged 2 March founding tweets as new — WebSearch surfaces high-engagement old content and the 3-day dedup window let them through.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "What changed",
+        "level": "h3"
+      }
+    },
+    "changes_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "change1": {
+      "type": "Text",
+      "props": {
+        "text": "skills/fetch-tweets/SKILL.md: dedup window 3d → 7d",
+        "variant": "body"
+      }
+    },
+    "change2": {
+      "type": "Text",
+      "props": {
+        "text": "added 14-day age filter for WebSearch fallback path",
+        "variant": "body"
+      }
+    },
+    "change3": {
+      "type": "Text",
+      "props": {
+        "text": "updated dedup-empty log message",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_impact": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h3"
+      }
+    },
+    "text_impact": {
+      "type": "Text",
+      "props": {
+        "text": "Cleaner notifications — old founding/launch tweets won't resurface as \"new\" every few days when using the WebSearch fallback.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #4: Fix stale tweet resurfacing",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/4",
+        "source": "GitHub"
+      }
+    }
+  }
+}
