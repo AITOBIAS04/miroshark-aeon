@@ -1,0 +1,152 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "MiroShark Daily — 2026-05-04"
+      },
+      "children": [
+        "main-stack"
+      ]
+    },
+    "main-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "price-stat",
+        "liquidity-volume-row",
+        "buysells-row",
+        "performance-row",
+        "separator1",
+        "narrative-text",
+        "separator2",
+        "chart-link"
+      ]
+    },
+    "price-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Price",
+        "value": "$0.000003576",
+        "delta": "-14.35%",
+        "trend": "down"
+      }
+    },
+    "liquidity-volume-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "liquidity-stat",
+        "volume-stat"
+      ]
+    },
+    "liquidity-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Liquidity",
+        "value": "$235.1K"
+      }
+    },
+    "volume-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Volume",
+        "value": "$27.1K"
+      }
+    },
+    "buysells-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "buys-stat",
+        "sells-stat",
+        "ratio-badge"
+      ]
+    },
+    "buys-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Buys",
+        "value": "38"
+      }
+    },
+    "sells-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Sells",
+        "value": "62"
+      }
+    },
+    "ratio-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "0.61x — Sell-dominated",
+        "variant": "destructive"
+      }
+    },
+    "performance-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "7d-stat",
+        "30d-stat"
+      ]
+    },
+    "7d-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "7d",
+        "value": "+5.5%",
+        "trend": "up"
+      }
+    },
+    "30d-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "30d",
+        "value": "+814%",
+        "trend": "up"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "narrative-text": {
+      "type": "Text",
+      "props": {
+        "text": "Steady distribution sell-off on declining volume; post-1K-stars cool-down continues, -25.2% from ATH $0.000004784 (Apr 26).",
+        "variant": "body"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "chart-link": {
+      "type": "Link",
+      "props": {
+        "label": "View Chart on GeckoTerminal",
+        "href": "https://www.geckoterminal.com/base/pools/0x83a29b6619907f80e5a47d40f53d4af239a69980f22a08b10f43d357a9f06209"
+      }
+    }
+  }
+}
