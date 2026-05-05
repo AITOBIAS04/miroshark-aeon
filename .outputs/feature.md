@@ -1,23 +1,22 @@
-*Feature Built — 2026-05-04*
+*Feature Built — 2026-05-05*
 
-Programmatic Agent Interrogation API
-MiroShark's most distinctive feature — the Trace Interview, where you cross-examine a simulated agent on its actual posts and stance changes — was locked inside the browser UI. The Agent Interrogation API breaks it open for automation. Four new endpoints let any pipeline list agents, fetch full profiles with per-round belief trajectories, and ask agents trace-grounded questions programmatically with multi-turn session support.
+Simulation Impact Scorecard
+Every MiroShark simulation now produces a quantitative scorecard — four normalized metrics that turn qualitative simulation output into machine-comparable numbers. Users can see at a glance how polarized the agents became, whether a few voices dominated, how fast consensus formed, and how turbulent the belief shifts were.
 
 Why this matters:
-The completion webhook (PR #46) and OpenAPI spec opened MiroShark to programmatic use, but the feature that makes MiroShark unique — interrogating agents about their reasoning — had no API surface. Researchers running batch studies had to click through the UI agent by agent. n8n and Zapier workflows could trigger simulations and get final results but couldn't ask 'Why did the top agent flip bearish at round 7?' This was the #3 idea from repo-actions (May 2) and the highest-leverage small-effort addition: one API surface unlocks the most differentiated capability for the entire automation audience.
+Until now, MiroShark simulations produced rich narrative output (articles, belief drift charts, leaderboards) but no numeric anchor for comparing runs. A researcher who ran 8 simulations had no way to say 'this one was more polarized than that one' without re-reading both articles. The Impact Scorecard solves the interpretation gap identified in community issue #70 (MiroResult) — but built directly into the product rather than requiring a separate scoring tool. It makes every simulation output programmatically comparable via a single API call.
 
 What was built:
-- backend/app/api/simulation.py: 4 new endpoints — GET /agents (list all agents with metadata, stance, influence rank), GET /agents/<name>/profile (full bio + per-round belief history from trajectory.json), POST /agents/<name>/query (trace-grounded interrogation with server-side session management and rate limiting), GET /interview-sessions (list all saved sessions)
-- backend/openapi.yaml: New 'Agent Interrogation' tag with full request/response schemas, 8 example questions in the spec
-- frontend/src/api/simulation.js: 4 new API functions (listSimulationAgents, getAgentProfile, queryAgent, listInterviewSessions)
-- docs/API.md + docs/API.zh-CN.md: New section with curl examples
-- docs/FEATURES.md + docs/FEATURES.zh-CN.md: Feature documentation
-- README.md: Added to features table
+- backend/app/services/scorecard.py: Pure-stdlib computation engine — Gini coefficient for polarization, Herfindahl-Hirschman Index for influence concentration, first-consensus-round ratio for velocity, mean absolute belief-change for volatility. All normalized to 0–100 with tier labels.
+- backend/app/api/simulation.py: New GET /api/simulation/:id/scorecard endpoint returning all four metrics with tier labels and hex colors. Returns 404 gracefully when trajectory data is insufficient.
+- frontend/src/components/ScorecardPanel.vue: 2×2 metric card grid — each card shows metric name (bilingual zh-CN), large numeric score, color-coded tier badge (LOW/MODERATE/HIGH/CRITICAL), and a context-aware one-line interpretation. Collapsible header, dark theme, responsive.
+- frontend/src/views/ExploreView.vue: Gallery cards now show a scorecard chip (e.g. 'Volatile' or 'Fast Consensus') based on the simulation's top-scoring metric — turns the gallery into a dynamics discovery surface.
+- backend/openapi.yaml: Full schema documentation for the scorecard endpoint.
 
 How it works:
-The /query endpoint reuses the exact context-building logic from the UI trace interview: it loads the agent's profile from reddit_profiles.json, the simulation scenario from config, and builds a complete round-by-round trace from the JSONL action logs. The agent responds in character, citing specific posts and round numbers. Server-side sessions (via session_id parameter) persist the last 4 Q&A pairs on disk for multi-turn dialogue — callers don't need to manage history. Rate limiting (20 queries per simulation per 5 minutes) prevents cost explosions from automation loops. All queries are also saved to the shared interview transcript, so UI and API interrogations appear in the same history.
+The scorecard reads trajectory.json (the same file that powers belief drift charts, export CSVs, and share cards) and computes four independent metrics. Polarization uses the Gini coefficient of the final round's bullish/neutral/bearish distribution. Influence Concentration applies the HHI formula to post-share distribution among the top 10 agents in the final 3 rounds. Consensus Velocity finds the first round where any stance exceeds 50% and inverts the ratio against total rounds. Narrative Volatility averages the absolute per-agent belief change across all round transitions. Each is normalized to 0–100 and assigned a tier at 25-point thresholds. The computation is stateless and on-demand — no writes, no caching, no side effects.
 
 What's next:
-GH_GLOBAL secret still not set — this is the 4th consecutive feature blocked from pushing (May 1–4). Once the secret is configured, 4 PRs ship immediately. Next feature candidates: Fork/Counterfactual Diff View, Mid-Run Belief Threshold Alert Webhooks, Simulation Series Tracker.
+Inject scorecard context into the article generator prompt so generated articles use quantitative framing ('deeply divided' when polarization is HIGH, 'a small cluster dominated' when influence is CRITICAL). Once GH_GLOBAL is set, this PR along with 4 others will push and merge.
 
-Branch: feat/agent-interrogation-api (push blocked — GH_GLOBAL not set)
+Status: Code complete, push blocked (GH_GLOBAL secret not configured — 5th consecutive feature waiting)
