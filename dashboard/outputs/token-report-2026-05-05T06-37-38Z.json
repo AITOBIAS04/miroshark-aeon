@@ -1,0 +1,119 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "MiroShark Daily — 2026-05-05"
+      },
+      "children": [
+        "price-stat",
+        "liquidity-volume-stack",
+        "separator-1",
+        "ratio-text",
+        "performance-section",
+        "separator-2",
+        "ath-stat",
+        "analysis-text",
+        "chart-link"
+      ]
+    },
+    "price-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Price",
+        "value": "$0.000003250",
+        "delta": "-8.57%",
+        "trend": "down"
+      }
+    },
+    "liquidity-volume-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "liquidity-stat",
+        "volume-stat"
+      ]
+    },
+    "liquidity-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Liquidity",
+        "value": "$214.4K"
+      }
+    },
+    "volume-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Volume",
+        "value": "$39.6K"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "ratio-text": {
+      "type": "Text",
+      "props": {
+        "text": "Buys/Sells: 44/55 (0.80 ratio)"
+      }
+    },
+    "performance-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "7d-stat",
+        "30d-stat"
+      ]
+    },
+    "7d-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "7d",
+        "value": "+2.2%",
+        "trend": "up"
+      }
+    },
+    "30d-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "30d",
+        "value": "+731%",
+        "trend": "up"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "ath-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "From ATH (Apr 26: $0.000004784)",
+        "value": "-32.1%",
+        "trend": "down"
+      }
+    },
+    "analysis-text": {
+      "type": "Text",
+      "props": {
+        "text": "Fourth consecutive corrective session since the May 1 spike; LP liquidity down $25K in 48h; orderly distribution, not a flush."
+      }
+    },
+    "chart-link": {
+      "type": "Link",
+      "props": {
+        "label": "View Chart on GeckoTerminal",
+        "href": "https://www.geckoterminal.com/base/pools/0x83a29b6619907f80e5a47d40f53d4af239a69980f22a08b10f43d357a9f06209"
+      }
+    }
+  }
+}
