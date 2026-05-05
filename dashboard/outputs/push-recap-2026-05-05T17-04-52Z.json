@@ -1,0 +1,379 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-05"
+      },
+      "children": [
+        "stack_content"
+      ]
+    },
+    "stack_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "section_repos",
+        "sep1",
+        "section_feature",
+        "sep2",
+        "section_content",
+        "sep3",
+        "section_market",
+        "sep4",
+        "section_keychanges",
+        "sep5",
+        "section_stats",
+        "sep6",
+        "link_recap"
+      ]
+    },
+    "section_repos": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_repos",
+        "stack_repo_items"
+      ]
+    },
+    "heading_repos": {
+      "type": "Heading",
+      "props": {
+        "text": "Repository Status",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "stack_repo_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_miroshark_aeon",
+        "text_miroshark"
+      ]
+    },
+    "text_miroshark_aeon": {
+      "type": "Text",
+      "props": {
+        "text": "[miroshark-aeon] — 25 commits by 1 author (aeonframework)"
+      },
+      "children": []
+    },
+    "text_miroshark": {
+      "type": "Text",
+      "props": {
+        "text": "[MiroShark] — 0 commits on main; PR #72 in CI"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section_feature": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_feature",
+        "text_feature_desc",
+        "text_feature_details",
+        "text_feature_tech",
+        "text_feature_note"
+      ]
+    },
+    "heading_feature": {
+      "type": "Heading",
+      "props": {
+        "text": "Feature Build (Tweet Thread Export)",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_feature_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Aeon autonomously built the tenth distribution surface for MiroShark — PR #72 adds GET /thread.txt and /thread.json endpoints that auto-format any published simulation into a paste-ready X thread."
+      },
+      "children": []
+    },
+    "text_feature_details": {
+      "type": "Text",
+      "props": {
+        "text": "One tweet per belief inflection point, ±0.2 hysteresis to filter noise rounds, truncation to 15 tweets max."
+      },
+      "children": []
+    },
+    "text_feature_tech": {
+      "type": "Text",
+      "props": {
+        "text": "430 LoC pure stdlib, 14 unit tests."
+      },
+      "children": []
+    },
+    "text_feature_note": {
+      "type": "Text",
+      "props": {
+        "text": "Second consecutive day of autonomous MiroShark authorship.",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_content",
+        "text_article1",
+        "text_article2"
+      ]
+    },
+    "heading_content": {
+      "type": "Heading",
+      "props": {
+        "text": "Content Pipeline (Two Articles)",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_article1": {
+      "type": "Text",
+      "props": {
+        "text": "'Aeon, Two Days Running' (repo-article) frames the autonomous-authorship pattern now that @russian_acai named it publicly."
+      },
+      "children": []
+    },
+    "text_article2": {
+      "type": "Text",
+      "props": {
+        "text": "'Friday, 9:14 AM' (project-lens) walks a DeFi analyst through the scenario-link-in / thread-export-out loop vs the Typefully/Nansen SaaS stack."
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section_market": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_market",
+        "stack_market_stats"
+      ]
+    },
+    "heading_market": {
+      "type": "Heading",
+      "props": {
+        "text": "Market & Community",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "stack_market_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat_price",
+        "text_consecutive_red",
+        "stat_liquidity",
+        "stat_stars",
+        "text_social_quiet"
+      ]
+    },
+    "stat_price": {
+      "type": "Stat",
+      "props": {
+        "label": "$MIROSHARK",
+        "value": "$0.000003250",
+        "delta": "-8.57%",
+        "trend": "down"
+      },
+      "children": []
+    },
+    "text_consecutive_red": {
+      "type": "Text",
+      "props": {
+        "text": "Fourth consecutive red session",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "stat_liquidity": {
+      "type": "Stat",
+      "props": {
+        "label": "LP Liquidity",
+        "value": "$214K",
+        "delta": "-$25K in 48h",
+        "trend": "down"
+      },
+      "children": []
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,071",
+        "delta": "+11"
+      },
+      "children": []
+    },
+    "text_social_quiet": {
+      "type": "Text",
+      "props": {
+        "text": "Social quiet — no new tweets indexed for 7 days",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section_keychanges": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_keychanges",
+        "text_pr72",
+        "text_articles",
+        "text_skillcycle"
+      ]
+    },
+    "heading_keychanges": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_pr72": {
+      "type": "Text",
+      "props": {
+        "text": "PR #72: thread_formatter.py (430 LoC) + test_unit_thread.py (14 tests) + EmbedDialog thread UI"
+      },
+      "children": []
+    },
+    "text_articles": {
+      "type": "Text",
+      "props": {
+        "text": "Two articles grounding today's PR #72 from different angles"
+      },
+      "children": []
+    },
+    "text_skillcycle": {
+      "type": "Text",
+      "props": {
+        "text": "Full skill cycle (9 skills, all green)"
+      },
+      "children": []
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_stats",
+        "text_files_changed",
+        "text_miroshark_aeon_lines",
+        "text_pr72_lines"
+      ]
+    },
+    "heading_stats": {
+      "type": "Heading",
+      "props": {
+        "text": "Overall Stats",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_files_changed": {
+      "type": "Text",
+      "props": {
+        "text": "~40 files changed"
+      },
+      "children": []
+    },
+    "text_miroshark_aeon_lines": {
+      "type": "Text",
+      "props": {
+        "text": "~+2,100/-150 lines (miroshark-aeon)"
+      },
+      "children": []
+    },
+    "text_pr72_lines": {
+      "type": "Text",
+      "props": {
+        "text": "PR #72 +1,565 lines (MiroShark)"
+      },
+      "children": []
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "link_recap": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-05.md",
+        "source": "GitHub"
+      },
+      "children": []
+    }
+  }
+}
