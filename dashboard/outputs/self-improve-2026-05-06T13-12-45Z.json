@@ -1,0 +1,204 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Agent Self-Improvement",
+        "description": "2026-05-06"
+      },
+      "children": [
+        "mainStack"
+      ]
+    },
+    "mainStack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading1",
+        "desc1",
+        "sep1",
+        "whyHeading",
+        "whyText",
+        "featuresHeading",
+        "featuresList",
+        "sep2",
+        "changedHeading",
+        "changedIntro",
+        "changedFile1",
+        "changedFile2",
+        "sep3",
+        "impactHeading",
+        "impactText",
+        "sep4",
+        "prLink"
+      ]
+    },
+    "heading1": {
+      "type": "Heading",
+      "props": {
+        "text": "Push-Access Pre-Flight Guard",
+        "level": "h2"
+      }
+    },
+    "desc1": {
+      "type": "Text",
+      "props": {
+        "text": "The feature and external-feature skills now check for push access to the target repo before doing any work. If GH_GLOBAL isn't set, they exit immediately instead of spending 10-30 minutes building code that can't be delivered."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "whyHeading": {
+      "type": "Heading",
+      "props": {
+        "text": "Why",
+        "level": "h3"
+      }
+    },
+    "whyText": {
+      "type": "Text",
+      "props": {
+        "text": "The feature skill ran 6 consecutive days (May 1–6), each time building a complete implementation (~1000+ lines), only to fail at the push step because the GH_GLOBAL secret isn't configured. Six features are stuck as local commits."
+      }
+    },
+    "featuresHeading": {
+      "type": "Heading",
+      "props": {
+        "text": "Stuck Features",
+        "level": "h3"
+      }
+    },
+    "featuresList": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "feature1",
+        "feature2",
+        "feature3",
+        "feature4",
+        "feature5",
+        "feature6"
+      ]
+    },
+    "feature1": {
+      "type": "Badge",
+      "props": {
+        "text": "Pre-Run Cost Estimator",
+        "variant": "outline"
+      }
+    },
+    "feature2": {
+      "type": "Badge",
+      "props": {
+        "text": "Jupyter Notebook Export",
+        "variant": "outline"
+      }
+    },
+    "feature3": {
+      "type": "Badge",
+      "props": {
+        "text": "Community Template Gallery",
+        "variant": "outline"
+      }
+    },
+    "feature4": {
+      "type": "Badge",
+      "props": {
+        "text": "Agent Interrogation API",
+        "variant": "outline"
+      }
+    },
+    "feature5": {
+      "type": "Badge",
+      "props": {
+        "text": "Simulation Impact Scorecard",
+        "variant": "outline"
+      }
+    },
+    "feature6": {
+      "type": "Badge",
+      "props": {
+        "text": "One-Click Share to X",
+        "variant": "outline"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "changedHeading": {
+      "type": "Heading",
+      "props": {
+        "text": "What Changed",
+        "level": "h3"
+      }
+    },
+    "changedIntro": {
+      "type": "Text",
+      "props": {
+        "text": "Added push-access verification steps before picking features, cloning repos, or writing code:"
+      }
+    },
+    "changedFile1": {
+      "type": "Text",
+      "props": {
+        "text": "skills/feature/SKILL.md: Added step 2 — verify push access via gh api repos/.../permissions.push",
+        "variant": "body"
+      }
+    },
+    "changedFile2": {
+      "type": "Text",
+      "props": {
+        "text": "skills/external-feature/SKILL.md: Added step 3 — same push-access guard before cloning or implementing",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "impactHeading": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h3"
+      }
+    },
+    "impactText": {
+      "type": "Text",
+      "props": {
+        "text": "Prevents wasting compute and tokens on features that can't be pushed. Until GH_GLOBAL is set, these skills will exit cleanly in seconds instead of running full build cycles. Once the secret is configured, the guard passes and skills resume normal operation."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "prLink": {
+      "type": "StoryLink",
+      "props": {
+        "title": "View PR #5",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/5",
+        "source": "GitHub"
+      }
+    }
+  }
+}
