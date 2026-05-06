@@ -1,0 +1,299 @@
+{
+  "root": "root",
+  "state": {},
+  "elements": {
+    "root": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas — 2026-05-06"
+      },
+      "children": [
+        "intro_text",
+        "sep1",
+        "ideas_container",
+        "sep2",
+        "full_details"
+      ]
+    },
+    "intro_text": {
+      "type": "Text",
+      "props": {
+        "text": "Generated from analysis of aaronjmars/MiroShark (1,099 stars, 219 forks) — five ideas the feature skill can autonomously build. Excluded all 25 suggestions from May 2, May 4, and April 30 batches."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "ideas_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "idea1",
+        "idea2",
+        "idea3",
+        "idea4",
+        "idea5"
+      ]
+    },
+    "idea1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea1_heading",
+        "idea1_badges",
+        "idea1_desc"
+      ]
+    },
+    "idea1_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Multi-Seed Confidence Bands",
+        "variant": "lead"
+      }
+    },
+    "idea1_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "idea1_badge1",
+        "idea1_badge2"
+      ]
+    },
+    "idea1_badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature"
+      }
+    },
+    "idea1_badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium"
+      }
+    },
+    "idea1_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Run the same sim 3× with different random seeds — render a shaded min/max band on the belief chart; turns single-run illustrations into statistically citable findings."
+      }
+    },
+    "idea2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea2_heading",
+        "idea2_badges",
+        "idea2_desc"
+      ]
+    },
+    "idea2_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Director Mode Intervention Scripts",
+        "variant": "lead"
+      }
+    },
+    "idea2_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "idea2_badge1",
+        "idea2_badge2"
+      ]
+    },
+    "idea2_badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature/DX"
+      }
+    },
+    "idea2_badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small"
+      }
+    },
+    "idea2_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Named, saved, shareable event sequences for Director Mode — pre-defined round-by-round injection scripts that make experimental protocols reproducible and publishable."
+      }
+    },
+    "idea3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea3_heading",
+        "idea3_badges",
+        "idea3_desc"
+      ]
+    },
+    "idea3_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Per-Round Annotation Layer",
+        "variant": "lead"
+      }
+    },
+    "idea3_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "idea3_badge1",
+        "idea3_badge2"
+      ]
+    },
+    "idea3_badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "DX"
+      }
+    },
+    "idea3_badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small"
+      }
+    },
+    "idea3_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Let users attach text notes to specific rounds on the belief chart — shows as chart markers, exports in article and transcript, and adds an 'Annotated' badge to gallery cards."
+      }
+    },
+    "idea4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea4_heading",
+        "idea4_badges",
+        "idea4_desc"
+      ]
+    },
+    "idea4_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Simulation Quality Guard",
+        "variant": "lead"
+      }
+    },
+    "idea4_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "idea4_badge1",
+        "idea4_badge2"
+      ]
+    },
+    "idea4_badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature/DX"
+      }
+    },
+    "idea4_badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small"
+      }
+    },
+    "idea4_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Real-time checks after each round detect dominance, stagnation, hard lock, and neutral collapse — surfaces in-UI warnings with diagnosis and fix suggestions; 'Clean run' badge in gallery."
+      }
+    },
+    "idea5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea5_heading",
+        "idea5_badges",
+        "idea5_desc"
+      ]
+    },
+    "idea5_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Multilingual Article Export",
+        "variant": "lead"
+      }
+    },
+    "idea5_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "idea5_badge1",
+        "idea5_badge2"
+      ]
+    },
+    "idea5_badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature"
+      }
+    },
+    "idea5_badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small"
+      }
+    },
+    "idea5_desc": {
+      "type": "Text",
+      "props": {
+        "text": "output_language parameter on the article generator (FR, DE, ES, JA, PT, AR) — one prompt instruction, zero new infrastructure, direct reach to the non-English 20%+ of daily new stars."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "full_details": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full details",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-06.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

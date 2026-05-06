@@ -1,19 +1,19 @@
-*Repo Action Ideas — 2026-05-04*
-Generated from analysis of aaronjmars/MiroShark (1,064 stars, 0 open PRs, issue #70 from community contributor Cyril).
+*Repo Action Ideas — 2026-05-06*
+Generated from analysis of aaronjmars/MiroShark (1,099 stars, 219 forks) — five ideas the feature skill can autonomously build. Excluded all 25 suggestions from May 2, May 4, and April 30 batches.
 
-1. Private Impact Mode (Feature, Medium)
-   New simulation type for private relational networks — employees, clients, partners reacting to a decision. Issue #70 includes pre-written architecture from a willing collaborator.
+1. Multi-Seed Confidence Bands (Feature, Medium)
+   Run the same sim 3× with different random seeds — render a shaded min/max band on the belief chart; turns single-run illustrations into statistically citable findings.
 
-2. Simulation Impact Scorecard (Feature/DX, Small)
-   Four normalized metrics after every simulation: Polarization Index, Influence Concentration, Consensus Velocity, Narrative Volatility. Anchors qualitative results in comparable numbers — solves the interpretation gap Cyril flagged with MiroResult.
+2. Director Mode Intervention Scripts (Feature/DX, Small)
+   Named, saved, shareable event sequences for Director Mode — pre-defined round-by-round injection scripts that make experimental protocols reproducible and publishable.
 
-3. One-Click Tweet Composer (Growth, Small)
-   'Post to X' button with pre-composed tweet template (scenario excerpt + consensus outcome + share URL + #MiroShark). Pure client-side, no API key needed. Every simulation result becomes one-click organic reach.
+3. Per-Round Annotation Layer (DX, Small)
+   Let users attach text notes to specific rounds on the belief chart — shows as chart markers, exports in article and transcript, and adds an 'Annotated' badge to gallery cards.
 
-4. Embeddable Simulation Widget (Integration, Small)
-   /embed/<sim_id> iframe endpoint for newsletters, blog posts, and Substack articles. Shows belief drift chart, final consensus stats, and a 'Simulate anything →' CTA with UTM tracking. Turns external content into distribution nodes.
+4. Simulation Quality Guard (Feature/DX, Small)
+   Real-time checks after each round detect dominance, stagnation, hard lock, and neutral collapse — surfaces in-UI warnings with diagnosis and fix suggestions; 'Clean run' badge in gallery.
 
-5. Webhook Delivery Log & Replay (DX, Small)
-   Full delivery log for completion webhooks: timestamp, HTTP status, response excerpt, retry history. Replay button to re-fire without re-running the simulation. Makes webhooks trustworthy for production automation pipelines.
+5. Multilingual Article Export (Feature, Small)
+   output_language parameter on the article generator (FR, DE, ES, JA, PT, AR) — one prompt instruction, zero new infrastructure, direct reach to the non-English 20%+ of daily new stars.
 
-Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-04.md
+Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-06.md
