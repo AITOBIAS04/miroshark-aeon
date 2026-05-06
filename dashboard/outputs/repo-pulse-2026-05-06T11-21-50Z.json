@@ -1,0 +1,367 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Pulse",
+        "description": "aaronjmars/MiroShark — 2026-05-06"
+      },
+      "children": [
+        "stats_stack",
+        "sep1",
+        "stargazers_section",
+        "sep2",
+        "forks_section"
+      ]
+    },
+    "stats_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_stars",
+        "stat_forks"
+      ]
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1098",
+        "delta": "+26",
+        "trend": "up"
+      }
+    },
+    "stat_forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "219",
+        "delta": "+6",
+        "trend": "up"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stargazers_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stargazers_heading",
+        "stargazers_grid"
+      ]
+    },
+    "stargazers_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Stargazers (26)",
+        "level": "h3"
+      }
+    },
+    "stargazers_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "sm"
+      },
+      "children": [
+        "user_1",
+        "user_2",
+        "user_3",
+        "user_4",
+        "user_5",
+        "user_6",
+        "user_7",
+        "user_8",
+        "user_9",
+        "user_10",
+        "user_11",
+        "user_12",
+        "user_13",
+        "user_14",
+        "user_15",
+        "user_16",
+        "user_17",
+        "user_18",
+        "user_19",
+        "user_20",
+        "user_21",
+        "user_22",
+        "user_23",
+        "user_24",
+        "user_25",
+        "user_26"
+      ]
+    },
+    "user_1": {
+      "type": "Link",
+      "props": {
+        "label": "MertCapkin",
+        "href": "https://github.com/MertCapkin"
+      }
+    },
+    "user_2": {
+      "type": "Link",
+      "props": {
+        "label": "AyushMaria",
+        "href": "https://github.com/AyushMaria"
+      }
+    },
+    "user_3": {
+      "type": "Link",
+      "props": {
+        "label": "amirtanveershah",
+        "href": "https://github.com/amirtanveershah"
+      }
+    },
+    "user_4": {
+      "type": "Link",
+      "props": {
+        "label": "eak723",
+        "href": "https://github.com/eak723"
+      }
+    },
+    "user_5": {
+      "type": "Link",
+      "props": {
+        "label": "de-ansh",
+        "href": "https://github.com/de-ansh"
+      }
+    },
+    "user_6": {
+      "type": "Link",
+      "props": {
+        "label": "MartinCampbell1",
+        "href": "https://github.com/MartinCampbell1"
+      }
+    },
+    "user_7": {
+      "type": "Link",
+      "props": {
+        "label": "qiqi1qiqi",
+        "href": "https://github.com/qiqi1qiqi"
+      }
+    },
+    "user_8": {
+      "type": "Link",
+      "props": {
+        "label": "BullishMomentum56",
+        "href": "https://github.com/BullishMomentum56"
+      }
+    },
+    "user_9": {
+      "type": "Link",
+      "props": {
+        "label": "puzzlepeaches",
+        "href": "https://github.com/puzzlepeaches"
+      }
+    },
+    "user_10": {
+      "type": "Link",
+      "props": {
+        "label": "reedj94",
+        "href": "https://github.com/reedj94"
+      }
+    },
+    "user_11": {
+      "type": "Link",
+      "props": {
+        "label": "amadex",
+        "href": "https://github.com/amadex"
+      }
+    },
+    "user_12": {
+      "type": "Link",
+      "props": {
+        "label": "RumskiRubes",
+        "href": "https://github.com/RumskiRubes"
+      }
+    },
+    "user_13": {
+      "type": "Link",
+      "props": {
+        "label": "bdouble",
+        "href": "https://github.com/bdouble"
+      }
+    },
+    "user_14": {
+      "type": "Link",
+      "props": {
+        "label": "XIAOCUICUII",
+        "href": "https://github.com/XIAOCUICUII"
+      }
+    },
+    "user_15": {
+      "type": "Link",
+      "props": {
+        "label": "JM2197",
+        "href": "https://github.com/JM2197"
+      }
+    },
+    "user_16": {
+      "type": "Link",
+      "props": {
+        "label": "MightyJax",
+        "href": "https://github.com/MightyJax"
+      }
+    },
+    "user_17": {
+      "type": "Link",
+      "props": {
+        "label": "FreyjasWrath",
+        "href": "https://github.com/FreyjasWrath"
+      }
+    },
+    "user_18": {
+      "type": "Link",
+      "props": {
+        "label": "Buckeyes22",
+        "href": "https://github.com/Buckeyes22"
+      }
+    },
+    "user_19": {
+      "type": "Link",
+      "props": {
+        "label": "thesovereignman",
+        "href": "https://github.com/thesovereignman"
+      }
+    },
+    "user_20": {
+      "type": "Link",
+      "props": {
+        "label": "official-ildephonse",
+        "href": "https://github.com/official-ildephonse"
+      }
+    },
+    "user_21": {
+      "type": "Link",
+      "props": {
+        "label": "irazasyed",
+        "href": "https://github.com/irazasyed"
+      }
+    },
+    "user_22": {
+      "type": "Link",
+      "props": {
+        "label": "Nas20two",
+        "href": "https://github.com/Nas20two"
+      }
+    },
+    "user_23": {
+      "type": "Link",
+      "props": {
+        "label": "yuwri",
+        "href": "https://github.com/yuwri"
+      }
+    },
+    "user_24": {
+      "type": "Link",
+      "props": {
+        "label": "biobitworks",
+        "href": "https://github.com/biobitworks"
+      }
+    },
+    "user_25": {
+      "type": "Link",
+      "props": {
+        "label": "Sakolkrit",
+        "href": "https://github.com/Sakolkrit"
+      }
+    },
+    "user_26": {
+      "type": "Link",
+      "props": {
+        "label": "CriptoNuno2024",
+        "href": "https://github.com/CriptoNuno2024"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "forks_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "forks_heading",
+        "forks_stack"
+      ]
+    },
+    "forks_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Forks (6)",
+        "level": "h3"
+      }
+    },
+    "forks_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fork_1",
+        "fork_2",
+        "fork_3",
+        "fork_4",
+        "fork_5",
+        "fork_6"
+      ]
+    },
+    "fork_1": {
+      "type": "StoryLink",
+      "props": {
+        "title": "ModRanger/MiroShark",
+        "href": "https://github.com/ModRanger/MiroShark"
+      }
+    },
+    "fork_2": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Ravix-3/MiroShark",
+        "href": "https://github.com/Ravix-3/MiroShark"
+      }
+    },
+    "fork_3": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Aigov-consulting/MiroShark",
+        "href": "https://github.com/Aigov-consulting/MiroShark"
+      }
+    },
+    "fork_4": {
+      "type": "StoryLink",
+      "props": {
+        "title": "volcano-claw/MiroShark",
+        "href": "https://github.com/volcano-claw/MiroShark"
+      }
+    },
+    "fork_5": {
+      "type": "StoryLink",
+      "props": {
+        "title": "RumskiRubes/MiroShark",
+        "href": "https://github.com/RumskiRubes/MiroShark"
+      }
+    },
+    "fork_6": {
+      "type": "StoryLink",
+      "props": {
+        "title": "FreyjasWrath/MiroShark",
+        "href": "https://github.com/FreyjasWrath/MiroShark"
+      }
+    }
+  }
+}
