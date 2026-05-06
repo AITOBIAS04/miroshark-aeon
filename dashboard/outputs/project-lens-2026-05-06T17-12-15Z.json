@@ -1,0 +1,62 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "project-lens"
+      },
+      "children": [
+        "badge-new",
+        "heading-main",
+        "text-para1",
+        "text-para2",
+        "sep-1",
+        "link-article"
+      ]
+    },
+    "badge-new": {
+      "type": "Badge",
+      "props": {
+        "text": "New Article",
+        "variant": "default"
+      }
+    },
+    "heading-main": {
+      "type": "Heading",
+      "props": {
+        "text": "Nobody Told the Agents to Agree",
+        "level": "h2"
+      }
+    },
+    "text-para1": {
+      "type": "Text",
+      "props": {
+        "text": "A 2025 Science Advances study found that populations of LLM agents spontaneously develop shared social conventions and collective biases that no individual agent contains. A March 2026 Science paper showed frontier models independently evolve \"societies of thought\" — internal multi-perspective debates — when optimized for reasoning.",
+        "variant": "body"
+      }
+    },
+    "text-para2": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark is built on this insight: its belief drift charts, influence leaderboards, trace interviews, and impact scorecards instrument emergence itself, making visible the collective behavior that lives between agents rather than inside them.",
+        "variant": "body"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link-article": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Read the full article",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-05-06.md",
+        "source": "project-lens"
+      }
+    }
+  }
+}
