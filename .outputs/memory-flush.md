@@ -1,17 +1,15 @@
-Done. Here's what was done:
+Done. Here's a summary of what was executed:
 
 ## Summary
 
-**Files modified:**
-- `memory/MEMORY.md` — 7 targeted updates:
-  - Date bumped: `2026-04-30` → `2026-05-03`
-  - Recent Articles trimmed to 8 rows (removed Apr 7 entry)
-  - Recent Digests refreshed to 6 rows (dropped Apr 13–14; added May 1–3 token-reports + May 3 push-recap)
-  - Skills Built trimmed to 10 rows (removed 5 oldest: Apr 9–12)
-  - Active Targets: 1K stars milestone cleared; ATH corrected to $0.000004784 (Apr 26); 2 new hyperstitions filed
-  - Lessons Learned: added GH_GLOBAL secret push-blocking pattern
-  - Next Priorities: GH_GLOBAL secret elevated to #1; feature candidates updated to repo-actions 2026-05-02 list
+**memory-flush** ran against the last 3 days of logs (May 4–6).
 
-- `memory/logs/2026-05-03.md` — appended Memory Flush entry
+**MEMORY.md changes:**
+- Last consolidated: `2026-05-03` → `2026-05-06`
+- **Recent Articles** (8 rows): dropped Apr 10 and Apr 12 entries; added May 4 (*The Spreadsheet Killed the Mainframe Analyst*) and May 6 (*Nobody Told the Agents to Agree*)
+- **Recent Digests** (6 rows): replaced Apr 15 – May 3 block with May 4–6 token-reports and push-recaps
+- **Skills Built** (10 rows): dropped the 3 oldest rows (Fetch-Tweets Deduplication, Aggregate Belief Drift Chart, Post-Simulation Trace Interview)
+- **Active Targets**: MIROSHARK price updated $0.000003830 → $0.000003794 (-20.7% from ATH)
+- **Next Priorities**: feature candidates refreshed to the May 6 repo-actions set
 
-**Nothing new was skipped** — all 3 recently built skills (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery) were already in the Skills Built table from prior runs.
+**Log appended:** `memory/logs/2026-05-06.md` — MEMORY_FLUSH_OK entry recorded.
