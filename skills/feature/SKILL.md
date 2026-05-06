@@ -13,30 +13,36 @@ Today is ${today}. Your task is to build a new feature for the **watched repo** 
 
 1. **Identify the target repo** — read `memory/watched-repos.md` to get the repo (owner/repo format).
 
-2. **Pick what to build** (in this priority order):
+2. **Verify push access** before doing any expensive work:
+   ```bash
+   gh api repos/OWNER/REPO --jq '.permissions.push' 2>/dev/null
+   ```
+   If this does NOT return `true`, you cannot push to the watched repo. Log "FEATURE_SKIP: no push access to OWNER/REPO — GH_GLOBAL secret likely not set" to `memory/logs/${today}.md` and **stop immediately. Do NOT pick a feature, do NOT clone the repo, do NOT send any notification.** This check prevents wasting compute on features that can't be delivered.
+
+3. **Pick what to build** (in this priority order):
    a. If `${var}` is set, build that.
    b. Check yesterday's `repo-actions` output in `articles/repo-actions-*.md` (most recent file). Pick the highest-impact idea that is scoped for autonomous implementation.
    c. Check open GitHub issues labelled "ai-build" on the watched repo: `gh issue list -R owner/repo --label ai-build`.
    d. Check `memory/MEMORY.md` for planned features or next priorities.
    e. If none of the above yields anything, log "FEATURE_SKIP: no suitable feature found" and **do NOT send any notification. Stop here.**
 
-3. **Check for existing open PRs** on the watched repo to avoid building something that's already pending:
+4. **Check for existing open PRs** on the watched repo to avoid building something that's already pending:
    ```bash
    gh pr list -R owner/repo --state open --json title,body,headRefBranch --limit 20
    ```
    Compare your chosen idea against the open PR titles and descriptions. If an open PR already covers the same feature (even partially), **skip that idea and pick the next best one from step 2**. If ALL candidate ideas overlap with open PRs, log "FEATURE_SKIP: all candidates have open PRs" and stop.
 
-4. **Clone the watched repo** into a temp directory and work from there:
+5. **Clone the watched repo** into a temp directory and work from there:
    ```bash
    gh repo clone owner/repo /tmp/build-target
    cd /tmp/build-target
    ```
 
-5. **Read the codebase** — understand the project structure, README, package.json/config files, and the area you'll be modifying.
+6. **Read the codebase** — understand the project structure, README, package.json/config files, and the area you'll be modifying.
 
-6. **Implement the feature.** Write clean, complete code. No TODOs or placeholders.
+7. **Implement the feature.** Write clean, complete code. No TODOs or placeholders.
 
-7. **Create a branch and push** to the watched repo:
+8. **Create a branch and push** to the watched repo:
    ```bash
    cd /tmp/build-target
    git checkout -b feat/short-feature-name
@@ -45,7 +51,7 @@ Today is ${today}. Your task is to build a new feature for the **watched repo** 
    git push -u origin feat/short-feature-name
    ```
 
-8. **Open a PR** on the watched repo:
+9. **Open a PR** on the watched repo:
    ```bash
    gh pr create -R owner/repo \
      --title "feat: short description" \
@@ -63,9 +69,9 @@ Today is ${today}. Your task is to build a new feature for the **watched repo** 
    *Built autonomously by Aeon*"
    ```
 
-9. **Update memory** — log what was built to `memory/logs/${today}.md` and update `memory/MEMORY.md` Skills Built table.
+10. **Update memory** — log what was built to `memory/logs/${today}.md` and update `memory/MEMORY.md` Skills Built table.
 
-10. **Send a DETAILED notification** via `./notify`. This is the most important part — the notification goes to a Telegram group and must be rich enough that readers understand exactly what was built, why it matters, and how it works WITHOUT clicking the PR link.
+11. **Send a DETAILED notification** via `./notify`. This is the most important part — the notification goes to a Telegram group and must be rich enough that readers understand exactly what was built, why it matters, and how it works WITHOUT clicking the PR link.
 
    DO NOT compress this into 1-2 lines. Every section below is REQUIRED:
 

@@ -48,6 +48,7 @@
 | Agent Interrogation API | 2026-05-04 | 4 endpoints: GET /agents, GET /agents/<name>/profile, POST /agents/<name>/query (rate-limited, session-based multi-turn), GET /interview-sessions; OpenAPI docs, frontend API, bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 | Simulation Impact Scorecard | 2026-05-05 | 4 metrics (Polarization Index, Influence Concentration, Consensus Velocity, Narrative Volatility) from trajectory data; GET /scorecard endpoint; ScorecardPanel.vue 2x2 grid; gallery chip; OpenAPI spec (code complete, push blocked — GH_GLOBAL not set) |
 | One-Click Share to X | 2026-05-06 | twitter.com/intent/tweet button in Embed dialog + hover X icon on gallery cards; auto-composes tweet from scenario excerpt, consensus summary, share URL; zh-CN localized; pure client-side, zero API keys (code complete, push blocked — GH_GLOBAL not set) |
+| Feature Push-Access Guard | 2026-05-06 | Pre-flight `gh api repos/.../permissions.push` check in feature + external-feature skills; exits immediately if push access unavailable; prevents wasting tokens on undeliverable builds (PR #5 on miroshark-aeon) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
