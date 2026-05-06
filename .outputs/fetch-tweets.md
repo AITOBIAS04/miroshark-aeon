@@ -1,10 +1,9 @@
-Log written. No notification sent.
-
 ## Summary
 
-- **Method:** WebSearch fallback (XAI_API_KEY not set)
-- **Dedup:** 17 previously-reported URLs loaded from May 2–4 logs
-- **Search:** 10 queries across multiple angles (MIROSHARK token, MiroShark GitHub, aaronjmars profile, community accounts, May 2026 date filters)
-- **Result:** All surfaced tweets already in the dedup list. One uncatalogued URL (`2044116409110933972`, ~Apr 27) had no descriptive text — just a bare `t.co` link — insufficient for a notification entry
-- **Action:** Logged `FETCH_TWEETS_EMPTY` to `memory/logs/2026-05-05.md`; notification suppressed per skill rules
-- **Root cause:** Same pattern as recent days — WebSearch indexes high-engagement older tweets, no new indexed content from the last 7 days is surfacing; would resolve with `XAI_API_KEY` set
+**Skill:** `fetch-tweets` — query: `MIROSHARK crypto token on Base chain AND https://github.com/aaronjmars/MiroShark`
+
+- **Path:** WebSearch fallback (XAI_API_KEY not set)
+- **Dedup check:** Loaded 18 already-reported tweet URLs from the last 3 days of logs
+- **Searches run:** 6 queries covering the token contract, @aaronjmars, @mirosharkai, @miroshark_, and recent date ranges
+- **Result:** `FETCH_TWEETS_NO_NEW` — every tweet URL returned by WebSearch was already reported in the May 3–5 logs. No notification sent.
+- **Log written:** `memory/logs/2026-05-06.md` (committed)
