@@ -1,0 +1,337 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-07"
+      },
+      "children": [
+        "stack_repos",
+        "sep_1",
+        "stack_observability",
+        "sep_2",
+        "stack_heartbeat",
+        "sep_3",
+        "stack_content",
+        "sep_4",
+        "stack_changes",
+        "sep_5",
+        "stack_stats"
+      ]
+    },
+    "stack_repos": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_miroshark",
+        "badge_aeon"
+      ]
+    },
+    "badge_miroshark": {
+      "type": "Badge",
+      "props": {
+        "text": "MiroShark — 2 commits by @aaronjmars"
+      }
+    },
+    "badge_aeon": {
+      "type": "Badge",
+      "props": {
+        "text": "miroshark-aeon — 35 commits by aeonframework"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_observability": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_obs",
+        "text_obs_intro",
+        "stack_pr74",
+        "stack_pr73",
+        "text_obs_notes"
+      ]
+    },
+    "heading_obs": {
+      "type": "Heading",
+      "props": {
+        "text": "Operator Observability",
+        "level": "h2"
+      }
+    },
+    "text_obs_intro": {
+      "type": "Text",
+      "props": {
+        "text": "Two PRs merged 14 minutes apart to close both sides of the distribution loop."
+      }
+    },
+    "stack_pr74": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_pr74",
+        "text_pr74_desc"
+      ]
+    },
+    "badge_pr74": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #74: Surface Usage Analytics",
+        "variant": "secondary"
+      }
+    },
+    "text_pr74_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Adds per-share-surface request counters — every time a share card, replay GIF, transcript, trajectory, thread, watch page, or feed is served, a counter increments. New \"📊 Distribution\" panel in the EmbedDialog."
+      }
+    },
+    "stack_pr73": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_pr73",
+        "text_pr73_desc"
+      ]
+    },
+    "badge_pr73": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #73: Webhook Delivery Log",
+        "variant": "secondary"
+      }
+    },
+    "text_pr73_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Records every outbound webhook attempt with HTTP status, latency, and trigger type, plus a one-click retry for failed deliveries. New \"📡 Delivery history\" panel."
+      }
+    },
+    "text_obs_notes": {
+      "type": "Text",
+      "props": {
+        "text": "Both are publish-gated, admin-token-protected, and use atomic writes. Zero new dependencies — 14th consecutive clean PR.",
+        "variant": "muted"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_heartbeat": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_hb",
+        "text_hb"
+      ]
+    },
+    "heading_hb": {
+      "type": "Heading",
+      "props": {
+        "text": "Heartbeat Bug Fix",
+        "level": "h2"
+      }
+    },
+    "text_hb": {
+      "type": "Text",
+      "props": {
+        "text": "PR #31 on miroshark-aeon fixed a false-positive in skill-ran detection. Short names like \"feature\" were matching body text in other log sections, masking genuine outages. Now uses header-only regex matching."
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_content",
+        "text_content_intro",
+        "text_articles_intro",
+        "stack_articles"
+      ]
+    },
+    "heading_content": {
+      "type": "Heading",
+      "props": {
+        "text": "Content Pipeline",
+        "level": "h2"
+      }
+    },
+    "text_content_intro": {
+      "type": "Text",
+      "props": {
+        "text": "Full skill cycle green. Aeon built Simulation Quality Guard (blocked by GH_GLOBAL) and Surface Usage Analytics (merged as PR #74)."
+      }
+    },
+    "text_articles_intro": {
+      "type": "Text",
+      "props": {
+        "text": "Two articles:"
+      }
+    },
+    "stack_articles": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "article_1",
+        "article_2"
+      ]
+    },
+    "article_1": {
+      "type": "StoryLink",
+      "props": {
+        "title": "MiroShark Stops Flying Blind",
+        "source": "observability analysis"
+      }
+    },
+    "article_2": {
+      "type": "StoryLink",
+      "props": {
+        "title": "The Hourglass Won the Internet",
+        "source": "architecture essay connecting sim_dir to the thin-waist model"
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_changes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_changes",
+        "stack_changes_items"
+      ]
+    },
+    "heading_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h2"
+      }
+    },
+    "stack_changes_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_change1",
+        "text_change2",
+        "text_change3"
+      ]
+    },
+    "text_change1": {
+      "type": "Text",
+      "props": {
+        "text": "• New surface-stats.json per simulation: atomic counters for 11 share surfaces with fire-and-forget increment"
+      }
+    },
+    "text_change2": {
+      "type": "Text",
+      "props": {
+        "text": "• New webhook-log.jsonl per simulation: 50-line capped delivery log with 5s retry cooldown"
+      }
+    },
+    "text_change3": {
+      "type": "Text",
+      "props": {
+        "text": "• Heartbeat now does ^## header-only matching for all 13 tracked skills"
+      }
+    },
+    "sep_5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_stats",
+        "text_stat_files",
+        "grid_repo_stats",
+        "link_recap"
+      ]
+    },
+    "heading_stats": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h2"
+      }
+    },
+    "text_stat_files": {
+      "type": "Text",
+      "props": {
+        "text": "~40 files changed, +3,050/-15 lines"
+      }
+    },
+    "grid_repo_stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_stars",
+        "stat_forks"
+      ]
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,111"
+      }
+    },
+    "stat_forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "221"
+      }
+    },
+    "link_recap": {
+      "type": "Link",
+      "props": {
+        "label": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-07.md"
+      }
+    }
+  }
+}
