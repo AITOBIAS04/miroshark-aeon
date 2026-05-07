@@ -1,9 +1,9 @@
 ## Summary
 
-**Skill:** `fetch-tweets` — query: `MIROSHARK crypto token on Base chain AND https://github.com/aaronjmars/MiroShark`
+**Skill:** `fetch-tweets` — MIROSHARK crypto token on Base chain AND https://github.com/aaronjmars/MiroShark
 
-- **Path:** WebSearch fallback (XAI_API_KEY not set)
-- **Dedup check:** Loaded 18 already-reported tweet URLs from the last 3 days of logs
-- **Searches run:** 6 queries covering the token contract, @aaronjmars, @mirosharkai, @miroshark_, and recent date ranges
-- **Result:** `FETCH_TWEETS_NO_NEW` — every tweet URL returned by WebSearch was already reported in the May 3–5 logs. No notification sent.
-- **Log written:** `memory/logs/2026-05-06.md` (committed)
+**What happened:** XAI_API_KEY is not set, so fell back to WebSearch (Path B). Ran 8 search queries across all relevant angles: token, GitHub repo, @aaronjmars, @mirosharkai, @miroshark_, with recency filters after:2026-05-05 and after:2026-05-06. Every MIROSHARK/MiroShark tweet URL returned was already present in the May 4–6 logs (18 previously reported URLs).
+
+**Result:** `FETCH_TWEETS_NO_NEW` — no notification sent, per skill rules.
+
+**Files modified:** `memory/logs/2026-05-07.md` (created, committed)
