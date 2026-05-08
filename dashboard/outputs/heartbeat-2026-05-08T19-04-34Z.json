@@ -1,0 +1,186 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat — 2026-05-08"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "alert_missing_skill",
+        "sep1",
+        "heading_stalled",
+        "text_pr_context",
+        "stack_prs",
+        "sep2",
+        "heading_other_skills",
+        "stack_skills"
+      ]
+    },
+    "alert_missing_skill": {
+      "type": "Alert",
+      "props": {
+        "title": "Missing Skill: repo-article",
+        "message": "Scheduled 16:00 UTC (DOM=8 even+DOW=4). 3h overdue — no run found. Auto-trigger attempted but blocked (HTTP 403, integration token lacks workflow dispatch permission). Manual trigger required.",
+        "type": "error"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_stalled": {
+      "type": "Heading",
+      "props": {
+        "text": "Stalled PRs (self-improve)",
+        "level": "h3"
+      }
+    },
+    "text_pr_context": {
+      "type": "Text",
+      "props": {
+        "text": "All open in miroshark-aeon, awaiting review",
+        "variant": "muted"
+      }
+    },
+    "stack_prs": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr1",
+        "pr2",
+        "pr3",
+        "pr4",
+        "pr5"
+      ]
+    },
+    "pr1": {
+      "type": "Text",
+      "props": {
+        "text": "#1 (8d)"
+      }
+    },
+    "pr2": {
+      "type": "Text",
+      "props": {
+        "text": "#2 (8d)"
+      }
+    },
+    "pr3": {
+      "type": "Text",
+      "props": {
+        "text": "#3 (6d)"
+      }
+    },
+    "pr4": {
+      "type": "Text",
+      "props": {
+        "text": "#4 (4d)"
+      }
+    },
+    "pr5": {
+      "type": "Text",
+      "props": {
+        "text": "#5 (2d)"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_other_skills": {
+      "type": "Heading",
+      "props": {
+        "text": "All Other Skills",
+        "level": "h3"
+      }
+    },
+    "stack_skills": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "skill1",
+        "skill2",
+        "skill3",
+        "skill4",
+        "skill5",
+        "skill6",
+        "skill7",
+        "skill8"
+      ]
+    },
+    "skill1": {
+      "type": "Badge",
+      "props": {
+        "text": "token-report ✓",
+        "variant": "default"
+      }
+    },
+    "skill2": {
+      "type": "Badge",
+      "props": {
+        "text": "fetch-tweets ✓",
+        "variant": "default"
+      }
+    },
+    "skill3": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse ✓",
+        "variant": "default"
+      }
+    },
+    "skill4": {
+      "type": "Badge",
+      "props": {
+        "text": "feature ✓",
+        "variant": "default"
+      }
+    },
+    "skill5": {
+      "type": "Badge",
+      "props": {
+        "text": "self-improve ✓",
+        "variant": "default"
+      }
+    },
+    "skill6": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap ✓",
+        "variant": "default"
+      }
+    },
+    "skill7": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-actions ✓",
+        "variant": "default"
+      }
+    },
+    "skill8": {
+      "type": "Badge",
+      "props": {
+        "text": "project-lens ✓",
+        "variant": "default"
+      }
+    }
+  }
+}

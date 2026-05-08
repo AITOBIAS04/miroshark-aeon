@@ -1,12 +1,7 @@
-Heartbeat — 2026-05-07
+**Heartbeat — 2026-05-08**
 
-**Missing skill detected:** repo-article (scheduled 16:00 UTC, ~4h overdue)
-- DOW=4 (Thursday) matches 0,2,4,6 schedule — expected run did not appear in workflow history
-- Auto-dispatch attempted but blocked (HTTP 403 — integration token lacks workflow dispatch permission)
-- Manual trigger needed: gh workflow run aeon.yml -f skill="repo-article"
+**Missing skill:** repo-article (scheduled 16:00 UTC, DOM=8 even+DOW=4 — 3h overdue, no run found). Auto-trigger attempted — blocked (HTTP 403, integration token lacks workflow dispatch permission). Manual trigger required.
 
-**All other skills:** OK
-- token-report ✓ 07:34 | fetch-tweets ✓ 07:34 | repo-pulse ✓ 10:04 | feature ✓ 12:02 | push-recap ✓ 16:28
+**Stalled PRs (self-improve):** #1 (8d), #2 (8d), #3 (6d), #4 (4d), #5 (2d) — all open in miroshark-aeon, awaiting review.
 
-**Open PRs:** 0 | **Urgent issues:** 0
-**GH_GLOBAL secret still unset** — 7 feature PRs blocked (ongoing)
+**All other skills:** token-report ✓, fetch-tweets ✓, repo-pulse ✓, feature ✓, self-improve ✓, push-recap ✓, repo-actions ✓, project-lens ✓
