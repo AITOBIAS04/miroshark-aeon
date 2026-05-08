@@ -1,0 +1,327 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap",
+        "description": "2026-05-08"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stack-commits",
+        "separator-1",
+        "stack-pr75",
+        "separator-2",
+        "stack-pr32",
+        "separator-3",
+        "stack-blocked",
+        "separator-4",
+        "heading-key-changes",
+        "text-file-repro",
+        "text-file-embed",
+        "text-ideas",
+        "separator-5",
+        "heading-stats",
+        "grid-stats",
+        "separator-6",
+        "link-full-recap"
+      ]
+    },
+    "stack-commits": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-commits",
+        "text-miroshark-commit",
+        "text-aeon-commits"
+      ]
+    },
+    "heading-commits": {
+      "type": "Heading",
+      "props": {
+        "text": "Recent Commits",
+        "level": "h3"
+      }
+    },
+    "text-miroshark-commit": {
+      "type": "Text",
+      "props": {
+        "text": "[MiroShark] — 1 commit by @aaronjmars + Aeon",
+        "variant": "body"
+      }
+    },
+    "text-aeon-commits": {
+      "type": "Text",
+      "props": {
+        "text": "[miroshark-aeon] — 34 commits by aeonframework",
+        "variant": "body"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack-pr75": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-pr75",
+        "text-pr75-main",
+        "text-pr75-impl",
+        "stat-pr75-lines"
+      ]
+    },
+    "heading-pr75": {
+      "type": "Heading",
+      "props": {
+        "text": "Reproducibility Config Export (PR #75)",
+        "level": "h3"
+      }
+    },
+    "text-pr75-main": {
+      "type": "Text",
+      "props": {
+        "text": "The capstone of the share surface arc. New GET /api/simulation/<id>/reproduce.json endpoint exports every parameter needed to reproduce a simulation — scenario, agents, rounds, platforms, time-config, director events, fork lineage — in a bytewise-stable JSON blob.",
+        "variant": "body"
+      }
+    },
+    "text-pr75-impl": {
+      "type": "Text",
+      "props": {
+        "text": "Pure stdlib, 22 tests, collapsible EmbedDialog panel with curl snippet and download button. Turns published MiroShark runs from 'shareable' to 'reproducible and citeable.'",
+        "variant": "body"
+      }
+    },
+    "stat-pr75-lines": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines added across 11 files",
+        "value": "+1,916"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack-pr32": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-pr32",
+        "text-pr32-full",
+        "stat-pr32-reduction"
+      ]
+    },
+    "heading-pr32": {
+      "type": "Heading",
+      "props": {
+        "text": "Memory Index Compaction (PR #32)",
+        "level": "h3"
+      }
+    },
+    "text-pr32-full": {
+      "type": "Text",
+      "props": {
+        "text": "Self-improve caught MEMORY.md bloating to 76KB/31K tokens — past the Read tool limit. Filed a PR that compresses it to 9.4KB (-87%) and adds per-row character caps to memory-flush so it can't recur.",
+        "variant": "body"
+      }
+    },
+    "stat-pr32-reduction": {
+      "type": "Stat",
+      "props": {
+        "label": "Compression ratio",
+        "value": "-87%",
+        "trend": "down"
+      }
+    },
+    "separator-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack-blocked": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-blocked",
+        "badge-blocked",
+        "text-blocked-desc",
+        "text-blocked-status",
+        "stat-blocked-lines"
+      ]
+    },
+    "heading-blocked": {
+      "type": "Heading",
+      "props": {
+        "text": "Per-Round Annotation Layer",
+        "level": "h3"
+      }
+    },
+    "badge-blocked": {
+      "type": "Badge",
+      "props": {
+        "text": "push blocked",
+        "variant": "destructive"
+      }
+    },
+    "text-blocked-desc": {
+      "type": "Text",
+      "props": {
+        "text": "9th consecutive feature built locally but stuck — annotations on individual simulation rounds with purple markers on the belief drift chart, gallery badges, transcript export integration.",
+        "variant": "body"
+      }
+    },
+    "text-blocked-status": {
+      "type": "Text",
+      "props": {
+        "text": "Blocked on GH_GLOBAL",
+        "variant": "muted"
+      }
+    },
+    "stat-blocked-lines": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines added, 22 tests",
+        "value": "+1,183"
+      }
+    },
+    "separator-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-key-changes": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h3"
+      }
+    },
+    "text-file-repro": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/repro_export.py — new 487-line service with SCHEMA_VERSION locking and REQUIRED_KEYS frozenset for downstream parser stability",
+        "variant": "body"
+      }
+    },
+    "text-file-embed": {
+      "type": "Text",
+      "props": {
+        "text": "frontend/src/components/EmbedDialog.vue — 484 lines added: collapsible Reproducibility Config panel with lineage badges, curl snippet, download button",
+        "variant": "body"
+      }
+    },
+    "text-ideas": {
+      "type": "Text",
+      "props": {
+        "text": "Repo-actions surfaced 5 interconnection-layer ideas — trending sort, oEmbed, lineage navigator, peak-round snapshot, operator profile",
+        "variant": "body"
+      }
+    },
+    "separator-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-stats": {
+      "type": "Heading",
+      "props": {
+        "text": "Repository Stats",
+        "level": "h3"
+      }
+    },
+    "grid-stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-files",
+        "stat-added",
+        "stat-removed",
+        "stat-stars",
+        "stat-forks"
+      ]
+    },
+    "stat-files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "~50"
+      }
+    },
+    "stat-added": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines added",
+        "value": "+3,770"
+      }
+    },
+    "stat-removed": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines removed",
+        "value": "-150"
+      }
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "MiroShark stars",
+        "value": "1,117"
+      }
+    },
+    "stat-forks": {
+      "type": "Stat",
+      "props": {
+        "label": "MiroShark forks",
+        "value": "222"
+      }
+    },
+    "separator-6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link-full-recap": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-08.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

@@ -1,16 +1,17 @@
-*Push Recap — 2026-05-07*
-MiroShark — 2 commits by @aaronjmars | miroshark-aeon — 35 commits by aeonframework
+*Push Recap — 2026-05-08*
+[MiroShark] — 1 commit by @aaronjmars + Aeon
+[miroshark-aeon] — 34 commits by aeonframework
 
-Operator Observability: Two PRs merged 14 minutes apart to close both sides of the distribution loop. PR #74 (Surface Usage Analytics) adds per-share-surface request counters — every time a share card, replay GIF, transcript, trajectory, thread, watch page, or feed is served, a counter increments. New "📊 Distribution" panel in the EmbedDialog. PR #73 (Webhook Delivery Log) records every outbound webhook attempt with HTTP status, latency, and trigger type, plus a one-click retry for failed deliveries. New "📡 Delivery history" panel. Both are publish-gated, admin-token-protected, and use atomic writes. Zero new dependencies — 14th consecutive clean PR.
+Reproducibility Config Export (PR #75): The capstone of the share surface arc. New GET /api/simulation/<id>/reproduce.json endpoint exports every parameter needed to reproduce a simulation — scenario, agents, rounds, platforms, time-config, director events, fork lineage — in a bytewise-stable JSON blob. Pure stdlib, 22 tests, collapsible EmbedDialog panel with curl snippet and download button. +1,916 lines across 11 files. Turns published MiroShark runs from 'shareable' to 'reproducible and citeable.'
 
-Heartbeat Bug Fix: PR #31 on miroshark-aeon fixed a false-positive in skill-ran detection. Short names like "feature" were matching body text in other log sections, masking genuine outages. Now uses header-only regex matching.
+Memory Index Compaction (PR #32): Self-improve caught MEMORY.md bloating to 76KB/31K tokens — past the Read tool limit. Filed a PR that compresses it to 9.4KB (-87%) and adds per-row character caps to memory-flush so it can't recur.
 
-Content Pipeline: Full skill cycle green. Aeon built Simulation Quality Guard (blocked by GH_GLOBAL) and Surface Usage Analytics (merged as PR #74). Two articles: "MiroShark Stops Flying Blind" (observability analysis) and "The Hourglass Won the Internet" (architecture essay connecting sim_dir to the thin-waist model).
+Per-Round Annotation Layer (push blocked): 9th consecutive feature built locally but stuck — annotations on individual simulation rounds with purple markers on the belief drift chart, gallery badges, transcript export integration. +1,183 lines, 22 tests. Blocked on GH_GLOBAL.
 
 Key changes:
-- New surface-stats.json per simulation: atomic counters for 11 share surfaces with fire-and-forget increment
-- New webhook-log.jsonl per simulation: 50-line capped delivery log with 5s retry cooldown
-- Heartbeat now does ^## header-only matching for all 13 tracked skills
+- backend/app/services/repro_export.py — new 487-line service with SCHEMA_VERSION locking and REQUIRED_KEYS frozenset for downstream parser stability
+- frontend/src/components/EmbedDialog.vue — 484 lines added: collapsible Reproducibility Config panel with lineage badges, curl snippet, download button
+- Repo-actions surfaced 5 interconnection-layer ideas — trending sort, oEmbed, lineage navigator, peak-round snapshot, operator profile
 
-Stats: ~40 files changed, +3,050/-15 lines | 1,111 stars, 221 forks
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-07.md
+Stats: ~50 files changed, +3,770/-150 lines | MiroShark: 1,117 stars, 222 forks
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-08.md
