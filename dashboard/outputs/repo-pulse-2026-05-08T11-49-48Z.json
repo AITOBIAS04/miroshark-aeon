@@ -1,0 +1,209 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Pulse — 2026-05-08"
+      },
+      "children": [
+        "repo-header",
+        "sep1",
+        "stats-section",
+        "sep2",
+        "stargazers-section",
+        "sep3",
+        "forks-section"
+      ]
+    },
+    "repo-header": {
+      "type": "Heading",
+      "props": {
+        "text": "aaronjmars/MiroShark",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat-stars",
+        "stat-forks"
+      ]
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1116",
+        "delta": "+6",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "stat-forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "222",
+        "delta": "+2",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stargazers-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stargazers-heading",
+        "stargazers-list"
+      ]
+    },
+    "stargazers-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Stargazers",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stargazers-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link-0x5845",
+        "link-negatrait",
+        "link-alrz2007-sys",
+        "link-SKPloft",
+        "link-SCOTTNBRYANT",
+        "link-Revatesh-Main"
+      ]
+    },
+    "link-0x5845": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/0x5845",
+        "href": "https://github.com/0x5845"
+      },
+      "children": []
+    },
+    "link-negatrait": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/negatrait",
+        "href": "https://github.com/negatrait"
+      },
+      "children": []
+    },
+    "link-alrz2007-sys": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/alrz2007-sys",
+        "href": "https://github.com/alrz2007-sys"
+      },
+      "children": []
+    },
+    "link-SKPloft": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/SKPloft",
+        "href": "https://github.com/SKPloft"
+      },
+      "children": []
+    },
+    "link-SCOTTNBRYANT": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/SCOTTNBRYANT",
+        "href": "https://github.com/SCOTTNBRYANT"
+      },
+      "children": []
+    },
+    "link-Revatesh-Main": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/Revatesh-Main",
+        "href": "https://github.com/Revatesh-Main"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "forks-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "forks-heading",
+        "forks-list"
+      ]
+    },
+    "forks-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Forks",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "forks-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fork-SCOTTNBRYANT",
+        "fork-gskfilmmaker"
+      ]
+    },
+    "fork-SCOTTNBRYANT": {
+      "type": "StoryLink",
+      "props": {
+        "title": "SCOTTNBRYANT/miroshark",
+        "href": "https://github.com/SCOTTNBRYANT/miroshark"
+      },
+      "children": []
+    },
+    "fork-gskfilmmaker": {
+      "type": "StoryLink",
+      "props": {
+        "title": "gskfilmmaker/MiroShark",
+        "href": "https://github.com/gskfilmmaker/MiroShark"
+      },
+      "children": []
+    }
+  }
+}
