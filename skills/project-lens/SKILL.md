@@ -14,7 +14,7 @@ This is NOT a repo progress update. `repo-article` and `push-recap` already cove
 
 ## Angle Selection
 
-If `${var}` is empty, pick from the angle categories below. **Never repeat an angle used in the last 14 days** — check recent `articles/project-lens-*.md` files and memory logs to see what's been done.
+If `${var}` is empty, pick from the angle categories below. **Never repeat an angle category used in the last 14 days** — Step 2 below defines the exact dedup procedure. If all 8 categories are exhausted, skip this run entirely.
 
 ### Angle categories (rotate through these):
 
@@ -35,7 +35,12 @@ If `${var}` is empty, pick from the angle categories below. **Never repeat an an
    ```
    Also read 2-3 recent `articles/repo-article-*.md` and `articles/push-recap-*.md` to know what's been shipped lately.
 
-2. **Check what angles have been used recently** — read any `articles/project-lens-*.md` from the last 14 days. Pick a different angle category.
+2. **Deduplicate angle selection** — before picking an angle, you MUST:
+   a. List all `articles/project-lens-*.md` files from the last 14 days and read their opening paragraphs to identify the angle category used.
+   b. Read `memory/logs/` from the last 14 days and find all `## Project Lens` sections — extract the **Angle category** value from each.
+   c. Build a combined list of used angle category numbers (1–8) from both sources.
+   d. Pick an angle category that is **NOT** in the used list.
+   e. If ALL 8 categories have been used in the last 14 days, log `PROJECT_LENS_SKIP: all 8 angle categories used in last 14 days — no notification sent` to `memory/logs/${today}.md` and **stop**. Do not write an article or send a notification.
 
 3. **Research the external connection**:
    - Use WebSearch to find 3-5 current articles, discussions, or events related to the chosen angle
