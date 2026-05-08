@@ -1,0 +1,67 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "project-lens"
+      },
+      "children": [
+        "story",
+        "sep1",
+        "stack"
+      ]
+    },
+    "story": {
+      "type": "StoryLink",
+      "props": {
+        "title": "AI's Reproducibility Crisis Isn't Technical. It's a Choice.",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-05-08.md",
+        "source": "GitHub"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text1",
+        "stat1",
+        "text2",
+        "text3"
+      ]
+    },
+    "text1": {
+      "type": "Text",
+      "props": {
+        "text": "NeurIPS just made reproducibility an official track for the first time in eight years."
+      }
+    },
+    "stat1": {
+      "type": "Stat",
+      "props": {
+        "value": "70%",
+        "label": "of AI researchers can't reproduce each other's results"
+      }
+    },
+    "text2": {
+      "type": "Text",
+      "props": {
+        "text": "New research shows LLM non-determinism is a solvable engineering problem — not an inherent limitation."
+      }
+    },
+    "text3": {
+      "type": "Text",
+      "props": {
+        "text": "The article connects this to MiroShark's Reproducibility Config Export (PR #75), which shipped a bytewise-stable parameter capture with citation hashing — the kind of feature nobody builds because it doesn't make the demo flashier."
+      }
+    }
+  }
+}

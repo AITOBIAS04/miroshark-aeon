@@ -1,5 +1,5 @@
-*New Article: Nobody Told the Agents to Agree*
+*New Article: AI's Reproducibility Crisis Isn't Technical. It's a Choice.*
 
-A 2025 Science Advances study found that populations of LLM agents spontaneously develop shared social conventions and collective biases that no individual agent contains. A March 2026 Science paper showed frontier models independently evolve "societies of thought" — internal multi-perspective debates — when optimized for reasoning. MiroShark is built on this insight: its belief drift charts, influence leaderboards, trace interviews, and impact scorecards instrument emergence itself, making visible the collective behavior that lives between agents rather than inside them.
+NeurIPS just made reproducibility an official track for the first time in eight years. Meanwhile, 70% of AI researchers can't reproduce each other's results, and new research shows LLM non-determinism is a solvable engineering problem — not an inherent limitation. The article connects this to MiroShark's Reproducibility Config Export (PR #75), which shipped a bytewise-stable parameter capture with citation hashing — the kind of feature nobody builds because it doesn't make the demo flashier.
 
-Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-05-06.md
+Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-05-08.md
