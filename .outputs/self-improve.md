@@ -1,13 +1,13 @@
-*Agent Self-Improvement — 2026-04-30*
+*Agent Self-Improvement — 2026-05-08*
 
-Pre-flight health guard added to detect systemic skill failures (like the 15-day auth outage) at the bash level — before Claude even starts. This means future outages will surface as ::error:: annotations in GitHub Actions UI even when Claude itself cannot authenticate.
+Enforced structured angle deduplication in the project-lens skill. The previous prompt told the model to "check recent articles and pick a different angle" without defining a strict procedure — dedup was best-effort. Now Step 2 is a mandatory 5-part checklist: read recent article files, cross-reference memory log angle categories, build an exclusion list, pick only from unused categories, and skip entirely if all 8 are exhausted.
 
-Why: From Apr 16–30, all skills failed silently for 15 days because ANTHROPIC_API_KEY expired. The heartbeat skill (the existing detection layer) could not catch this because it also requires Claude auth to run. The outage was only discovered when auth was manually restored.
+Why: project-lens runs 3x/week with 8 angle categories. Without structured dedup, the model could repeat angles, producing repetitive articles. The vague instruction also had no fallback — if all angles were used, it would force a duplicate rather than gracefully skipping.
 
 What changed:
-- scripts/prefetch-health-guard.sh (new): Reads cron-state.json before every skill run. When >80% of tracked skills show 10+ consecutive failures, logs prominent error annotations in the GitHub Actions workflow UI with root cause hint and remediation steps.
-- skills/heartbeat/SKILL.md: Added cron-state analysis as step 0 — classifies failures as systemic (auth/infra) vs individual, detects recovery mode, integrates with issue tracker.
+- skills/project-lens/SKILL.md: Replaced Step 2 with structured 5-part dedup procedure (read articles + logs → build exclusion list → pick unused → skip if exhausted)
+- Added PROJECT_LENS_SKIP log pattern for graceful exhaustion handling
 
-Impact: Future auth or infrastructure outages will be visible in the GitHub Actions UI within hours instead of going undetected for weeks.
+Impact: More diverse articles across the 3x/week schedule. No more risk of repeating the same angle category within 14 days. Graceful degradation when the rotation is exhausted.
 
-PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/1
+PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/6

@@ -1,0 +1,192 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "self-improve",
+        "description": "Agent Self-Improvement — 2026-05-08"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_issue",
+        "text_issue",
+        "separator_1",
+        "heading_solution",
+        "text_solution",
+        "text_checklist_intro",
+        "stack_checklist",
+        "separator_2",
+        "heading_changes",
+        "stack_changes",
+        "separator_3",
+        "heading_impact",
+        "text_impact",
+        "separator_4",
+        "link_pr"
+      ]
+    },
+    "heading_issue": {
+      "type": "Heading",
+      "props": {
+        "text": "Problem",
+        "level": "h3"
+      }
+    },
+    "text_issue": {
+      "type": "Text",
+      "props": {
+        "text": "project-lens runs 3x/week with 8 angle categories. The previous prompt told the model to \"check recent articles and pick a different angle\" without defining a strict procedure — dedup was best-effort. This allowed the model to repeat angles, producing repetitive articles. The vague instruction also had no fallback — if all angles were used, it would force a duplicate rather than gracefully skipping."
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_solution": {
+      "type": "Heading",
+      "props": {
+        "text": "Solution: Structured Angle Deduplication",
+        "level": "h3"
+      }
+    },
+    "text_solution": {
+      "type": "Text",
+      "props": {
+        "text": "Enforced a mandatory 5-part checklist for Step 2 in project-lens skill."
+      }
+    },
+    "text_checklist_intro": {
+      "type": "Text",
+      "props": {
+        "text": "The 5-part procedure:",
+        "variant": "lead"
+      }
+    },
+    "stack_checklist": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ]
+    },
+    "item_1": {
+      "type": "Text",
+      "props": {
+        "text": "1. Read recent article files"
+      }
+    },
+    "item_2": {
+      "type": "Text",
+      "props": {
+        "text": "2. Cross-reference memory log angle categories"
+      }
+    },
+    "item_3": {
+      "type": "Text",
+      "props": {
+        "text": "3. Build an exclusion list"
+      }
+    },
+    "item_4": {
+      "type": "Text",
+      "props": {
+        "text": "4. Pick only from unused categories"
+      }
+    },
+    "item_5": {
+      "type": "Text",
+      "props": {
+        "text": "5. Skip entirely if all 8 are exhausted"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "Changes Made",
+        "level": "h3"
+      }
+    },
+    "stack_changes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change_1",
+        "change_2"
+      ]
+    },
+    "change_1": {
+      "type": "Text",
+      "props": {
+        "text": "skills/project-lens/SKILL.md: Replaced Step 2 with structured 5-part dedup procedure (read articles + logs → build exclusion list → pick unused → skip if exhausted)"
+      }
+    },
+    "change_2": {
+      "type": "Text",
+      "props": {
+        "text": "Added PROJECT_LENS_SKIP log pattern for graceful exhaustion handling"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_impact": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h3"
+      }
+    },
+    "text_impact": {
+      "type": "Text",
+      "props": {
+        "text": "More diverse articles across the 3x/week schedule. No more risk of repeating the same angle category within 14 days. Graceful degradation when the rotation is exhausted."
+      }
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link_pr": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Enforced structured angle deduplication in project-lens skill",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/6",
+        "source": "GitHub PR #6"
+      }
+    }
+  }
+}
