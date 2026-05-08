@@ -56,4 +56,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-07,feature,claude-opus-4-6,158,46121,17987517,181019
 2026-05-07,push-recap,claude-opus-4-6,25,13337,1367682,68404
 2026-05-07,heartbeat,claude-sonnet-4-6,14,7401,439355,28052
-2026-05-08,fetch-tweets,claude-sonnet-4-6,2384,7546,526330,34926
+2026-05-08,token-report,claude-sonnet-4-6,3021,14156,605862,50608
