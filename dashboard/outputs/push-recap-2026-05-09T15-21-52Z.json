@@ -1,0 +1,403 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-09"
+      },
+      "children": [
+        "repo-overview",
+        "sep1",
+        "lineage-section",
+        "sep2",
+        "pipeline-section",
+        "sep3",
+        "steady-state-section",
+        "sep4",
+        "key-changes-section",
+        "sep5",
+        "stats-section",
+        "sep6",
+        "recap-link"
+      ]
+    },
+    "repo-overview": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 1 commit (PR #76, open) · miroshark-aeon — 29 chore commits",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "lineage-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "lineage-title",
+        "lineage-desc",
+        "lineage-stats"
+      ]
+    },
+    "lineage-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Simulation Lineage Navigator (PR #76)",
+        "level": "h3"
+      }
+    },
+    "lineage-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Direct sequel to yesterday's PR #75 reproducibility config. Turns the one-directional parent_simulation_id pointer into a navigable graph — new GET /api/simulation/<id>/lineage endpoint returns parent + every public child with fork/counterfactual kind + trigger metadata. EmbedDialog gains a 🌳 Lineage panel that auto-shows only when there's something to navigate to."
+      }
+    },
+    "lineage-stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "lineage-lines",
+        "lineage-tests",
+        "lineage-deps"
+      ]
+    },
+    "lineage-lines": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines added",
+        "value": "+1,778"
+      }
+    },
+    "lineage-tests": {
+      "type": "Stat",
+      "props": {
+        "label": "Tests",
+        "value": "16"
+      }
+    },
+    "lineage-deps": {
+      "type": "Stat",
+      "props": {
+        "label": "New dependencies",
+        "value": "0 (16th consecutive)"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pipeline-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pipeline-title",
+        "token-stat",
+        "tweets-stat",
+        "allocation-text",
+        "mention-text",
+        "hyperstition-text"
+      ]
+    },
+    "pipeline-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Content Pipeline",
+        "level": "h3"
+      }
+    },
+    "token-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Token price",
+        "value": "$0.000005080",
+        "delta": "+15.48%",
+        "trend": "up"
+      }
+    },
+    "tweets-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "New tweets found",
+        "value": "10"
+      }
+    },
+    "allocation-text": {
+      "type": "Text",
+      "props": {
+        "text": "$10 allocated to 5 tweet authors"
+      }
+    },
+    "mention-text": {
+      "type": "Text",
+      "props": {
+        "text": "Top mention: @soboltoshi citing MiroShark as peer-review layer for cancer research"
+      }
+    },
+    "hyperstition-text": {
+      "type": "Text",
+      "props": {
+        "text": "New hyperstition — external Aeon operator by June 30"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "steady-state-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "steady-title",
+        "steady-status",
+        "steady-metrics",
+        "heatmap-alert",
+        "pr32-text"
+      ]
+    },
+    "steady-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Steady-state",
+        "level": "h3"
+      }
+    },
+    "steady-status": {
+      "type": "Badge",
+      "props": {
+        "text": "All skills green",
+        "variant": "default"
+      }
+    },
+    "steady-metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stars-stat",
+        "forks-stat"
+      ]
+    },
+    "stars-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,122",
+        "delta": "+6",
+        "trend": "up"
+      }
+    },
+    "forks-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "223",
+        "delta": "+1",
+        "trend": "up"
+      }
+    },
+    "heatmap-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Agent Belief Heatmap",
+        "message": "Built but push blocked (10th consecutive, GH_GLOBAL still missing)",
+        "type": "warning"
+      }
+    },
+    "pr32-text": {
+      "type": "Text",
+      "props": {
+        "text": "PR #32 on aeon still open",
+        "variant": "caption"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "key-changes-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "changes-title",
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "changes-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h3"
+      }
+    },
+    "change1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change1-file",
+        "change1-desc"
+      ]
+    },
+    "change1-file": {
+      "type": "Heading",
+      "props": {
+        "text": "backend/app/services/lineage_service.py",
+        "level": "h4"
+      }
+    },
+    "change1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "+390 lines, pure stdlib. MAX_CHILDREN=50, public-only filter, corrupt-state resilience, oldest-first sort"
+      }
+    },
+    "change2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change2-file",
+        "change2-desc"
+      ]
+    },
+    "change2-file": {
+      "type": "Heading",
+      "props": {
+        "text": "test_unit_lineage.py",
+        "level": "h4"
+      }
+    },
+    "change2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "501-line test pin with OpenAPI drift guard + route-decorator guards"
+      }
+    },
+    "change3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change3-title",
+        "change3-desc"
+      ]
+    },
+    "change3-title": {
+      "type": "Heading",
+      "props": {
+        "text": "EmbedDialog 🌳 panel",
+        "level": "h4"
+      }
+    },
+    "change3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Inline counterfactual trigger rendering (\"At round 12 (ceo_resigns)\")"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats-title",
+        "stats-files",
+        "stats-miroshark-line",
+        "stats-aeon-line",
+        "stats-commits"
+      ]
+    },
+    "stats-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "stats-files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "11 (MiroShark) + ~40 (aeon) = ~51 total"
+      }
+    },
+    "stats-miroshark-line": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark: +1,778 / -0"
+      }
+    },
+    "stats-aeon-line": {
+      "type": "Text",
+      "props": {
+        "text": "aeon: +1,650 / -100"
+      }
+    },
+    "stats-commits": {
+      "type": "Stat",
+      "props": {
+        "label": "Total commits",
+        "value": "30"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "recap-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-09.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

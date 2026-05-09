@@ -1,17 +1,16 @@
-*Push Recap — 2026-05-08*
-[MiroShark] — 1 commit by @aaronjmars + Aeon
-[miroshark-aeon] — 34 commits by aeonframework
+*Push Recap — 2026-05-09*
+MiroShark — 1 commit (PR #76, open) · miroshark-aeon — 29 chore commits
 
-Reproducibility Config Export (PR #75): The capstone of the share surface arc. New GET /api/simulation/<id>/reproduce.json endpoint exports every parameter needed to reproduce a simulation — scenario, agents, rounds, platforms, time-config, director events, fork lineage — in a bytewise-stable JSON blob. Pure stdlib, 22 tests, collapsible EmbedDialog panel with curl snippet and download button. +1,916 lines across 11 files. Turns published MiroShark runs from 'shareable' to 'reproducible and citeable.'
+Simulation Lineage Navigator (PR #76): Direct sequel to yesterday's PR #75 reproducibility config. Turns the one-directional parent_simulation_id pointer into a navigable graph — new GET /api/simulation/<id>/lineage endpoint returns parent + every public child with fork/counterfactual kind + trigger metadata. EmbedDialog gains a 🌳 Lineage panel that auto-shows only when there's something to navigate to. +1,778 lines, 16 tests, zero new deps (16th consecutive).
 
-Memory Index Compaction (PR #32): Self-improve caught MEMORY.md bloating to 76KB/31K tokens — past the Read tool limit. Filed a PR that compresses it to 9.4KB (-87%) and adds per-row character caps to memory-flush so it can't recur.
+Content pipeline: Token at $0.000005080 (+15.48%), 10 new tweets found (top: @soboltoshi citing MiroShark as peer-review layer for cancer research), $10 allocated to 5 tweet authors, new hyperstition — external Aeon operator by June 30.
 
-Per-Round Annotation Layer (push blocked): 9th consecutive feature built locally but stuck — annotations on individual simulation rounds with purple markers on the belief drift chart, gallery badges, transcript export integration. +1,183 lines, 22 tests. Blocked on GH_GLOBAL.
+Steady-state: All skills green. 1,122 stars (+6), 223 forks (+1). Agent Belief Heatmap built but push blocked (10th consecutive, GH_GLOBAL still missing). PR #32 on aeon still open.
 
 Key changes:
-- backend/app/services/repro_export.py — new 487-line service with SCHEMA_VERSION locking and REQUIRED_KEYS frozenset for downstream parser stability
-- frontend/src/components/EmbedDialog.vue — 484 lines added: collapsible Reproducibility Config panel with lineage badges, curl snippet, download button
-- Repo-actions surfaced 5 interconnection-layer ideas — trending sort, oEmbed, lineage navigator, peak-round snapshot, operator profile
+- New backend/app/services/lineage_service.py (+390, pure stdlib): MAX_CHILDREN=50, public-only filter, corrupt-state resilience, oldest-first sort
+- 501-line test pin (test_unit_lineage.py) with OpenAPI drift guard + route-decorator guards
+- EmbedDialog 🌳 panel with inline counterfactual trigger rendering ("At round 12 (ceo_resigns)")
 
-Stats: ~50 files changed, +3,770/-150 lines | MiroShark: 1,117 stars, 222 forks
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-08.md
+Stats: 11 files, +1,778/-0 (MiroShark) · ~40 files, +1,650/-100 (aeon) · 30 commits total
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-09.md
