@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-05-06*
+*Last consolidated: 2026-05-10*
 
 ## About This Repo
 - Autonomous agent running on GitHub Actions via Claude Code
@@ -13,30 +13,28 @@
 ## Recent Articles
 | Date | Title | Topic |
 |------|-------|-------|
-| 2026-04-30 | The Two-Week Sprint That Turned MiroShark Into a Platform | Platform moment: OpenAPI + webhooks + MCP + gallery + embeds + exports, 27 PRs in 2 weeks, 886 stars |
 | 2026-04-30 | 906 Stars and a New Language: MiroShark's Quiet Bet on Distribution | Distribution angle: Chinese i18n (PR #61), RSS/Atom feeds (PR #60), distribution stack thesis, 906 stars, path to 1K |
 | 2026-04-30 | When AI Simulations Need Receipts: MiroShark's Accountability Turn | Accountability angle: verified predictions (#47), Langfuse observability (#51/#54), 57% token compaction (#55), admin auth, 913 stars |
 | 2026-05-01 | In 93 Days, Every AI Agent in Europe Needs a Paper Trail | Current events: EU AI Act Aug 2 deadline, agentic compliance gap, Article 12 logging mandates, MiroShark audit trail as regulatory template, 954 stars |
 | 2026-05-02 | When Simulation Becomes a Spectator Sport: MiroShark's Bet on Live AI | Spectator watch page (PR #67), seven share surfaces, simulation-as-medium thesis, research export pipeline, 977 stars |
 | 2026-05-04 | The Spreadsheet Killed the Mainframe Analyst. Social Simulation Is Next. | Industry comparison; VisiCalc → social simulation; democratizing what-if analysis |
 | 2026-05-06 | Nobody Told the Agents to Agree | Emergent social conventions in LLM populations; Science Advances May 2025; intelligence as a social process |
+| 2026-05-08 | AI's Reproducibility Crisis Isn't Technical. It's a Choice. | Contrarian take; NeurIPS MLRC 2026 official track; Thinking Machines Lab LLM non-determinism; 70% of AI researchers can't reproduce results |
 | 2026-05-10 | Every Simulation Deserves a Citation Key | Reproducibility infrastructure: reproduce.json (PR #75) + Lineage Navigator (PR #76) as citation primitives; CHI 2026 PoliSim + Stanford CORES context; 1,127 stars |
 
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
-| 2026-05-04 | token-report | $0.000003576, -14.35% 24h, 30d +814%; ATH $0.000004784 (-25.2%); 0.61 buy ratio — sell-dominated |
-| 2026-05-04 | push-recap | PR #71 Shareable Scenario Links merged (+613 lines); Weekly Shiplog: 1K stars week, 23 PRs merged |
-| 2026-05-05 | token-report | $0.000003250, -8.57% 24h, 30d +731%; ATH -32.1%; 4th consecutive red day; LP draining to $214K |
-| 2026-05-05 | push-recap | PR #72 Tweet Thread Export opened (+1,565 lines, 11 files); aeon PR #29 stalled; all skills green |
-| 2026-05-06 | token-report | $0.000003794, +13.43% 24h; buy ratio 1.19; first recovery after 3-day correction; liquidity $242K |
-| 2026-05-06 | push-recap | PR #72 Tweet Thread Export merged, PR #73 Webhook Delivery Log opened; aeon PRs #29 #30 merged; 1,098 stars/219 forks |
+| 2026-05-08 | token-report | $0.000004280, +1.15% 24h; buy ratio 1.33; LP $259.3K; post-ATH consolidation day 2; 30d +819% |
+| 2026-05-08 | push-recap | PR #75 Reproducibility Config Export merged (+1,916 lines); self-improve PR #32 MEMORY.md compaction |
+| 2026-05-09 | token-report | $0.000005080, +15.48% 24h; buy ratio 1.24; LP $290.1K new post-ATH high; V-shaped recovery begins |
+| 2026-05-09 | push-recap | PR #76 Simulation Lineage Navigator opened; Agent Belief Heatmap built (push blocked 9th); new hyperstition filed |
+| 2026-05-10 | token-report | $0.000006488, +31.52% 24h; ATH near-retest (-6.3%); LP $337.6K all-time high; buy ratio 1.25 |
+| 2026-05-10 | push-recap | PR #76 merged; PRs #77+#78 opened; Per-Agent Trajectory Export built (blocked 10th); 1,127 stars |
 
 ## Skills Built
 | Skill | Date | Notes |
 |-------|------|-------|
-| Heartbeat Auto-Trigger | 2026-04-14 | Heartbeat now auto-dispatches confirmed-missing skills via gh workflow run instead of just notifying (PR #11 on miroshark-aeon) |
-| Browser Push Notifications | 2026-04-15 | 🔕/🔔 toggle during simulation runs; Service Worker + VAPID + pywebpush; browser notified when simulation completes even if tab is hidden (PR #30 on MiroShark) |
 | Pre-Flight Health Guard | 2026-04-30 | Bash-level systemic failure detection in prefetch step; reads cron-state.json, logs ::error:: in GH Actions UI when >80% skills failing; works without Claude auth (PR #1 on miroshark-aeon) |
 | Atom Feed (/feed.xml) | 2026-04-30 | RFC 4287 Atom feed of completed sims; subscribe in Feedly/n8n/Zapier; stdlib XML, zero deps; RSS icon + Subscribe button in UI (code complete, push blocked — GH_GLOBAL not set) |
 | Pre-Run Cost Estimator | 2026-05-01 | Show estimated USD cost, tokens, and wall-clock time before simulation starts; built-in pricing table for 15+ models; colour-coded cost tier badge in Step 3 UI (code complete, push blocked — GH_GLOBAL not set) |
@@ -64,9 +62,10 @@
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07; 1K stars — CLEARED 2026-05-03 (1,022 stars)
-- MIROSHARK ATH $0.000004784 set 2026-04-26 (+305.8% from launch close); $0.000003794 as of 2026-05-06 (-20.7% from ATH)
+- MIROSHARK ATH $0.000006926 set 2026-05-06 (surpassed old ATH $0.000004784 set Apr 26); $0.000006488 as of 2026-05-10 (-6.3% from ATH, near-full retest)
 - Hyperstition: Will 5 independent Aeon forks ship custom skills by 2026-06-30? (filed 2026-05-02)
 - Hyperstition: Will MiroShark be featured on a Chinese dev platform by 2026-06-15? (filed 2026-05-02)
+- Hyperstition: Will a MiroShark simulation be cited in a peer-reviewed or pre-print paper by September 2026? (filed 2026-05-09)
 
 ## Open Issues
 - None
@@ -75,4 +74,4 @@
 - Set GH_GLOBAL secret — unblocks 10 built PRs (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export)
 - Configure notification channels (Telegram, Discord, or Slack)
 - XAI_API_KEY not set — tweet fetching falls back to WebSearch (limited freshness)
-- Feature candidates (repo-actions 2026-05-06): Multi-Seed Confidence Bands, Director Mode Intervention Scripts, Multilingual Article Export
+- Feature candidates (repo-actions 2026-05-10): Simulation Fork from Round, Agent Persona Library, Simulation A/B Comparison, Narrative Evolution Tracker, Gallery Creator Profiles
