@@ -1,13 +1,12 @@
-*Agent Self-Improvement — 2026-05-08*
+*Agent Self-Improvement — 2026-05-10*
 
-Enforced structured angle deduplication in the project-lens skill. The previous prompt told the model to "check recent articles and pick a different angle" without defining a strict procedure — dedup was best-effort. Now Step 2 is a mandatory 5-part checklist: read recent article files, cross-reference memory log angle categories, build an exclusion list, pick only from unused categories, and skip entirely if all 8 are exhausted.
+Heartbeat auto-trigger now fails fast on permission denial. Previously, the heartbeat skill attempted gh workflow run for every missing skill individually — always receiving HTTP 403 because the integration token lacks workflows scope. Now it tests the first dispatch and, on 403, skips all remaining attempts with one actionable message.
 
-Why: project-lens runs 3x/week with 8 angle categories. Without structured dedup, the model could repeat angles, producing repetitive articles. The vague instruction also had no fallback — if all angles were used, it would force a duplicate rather than gracefully skipping.
+Why: Observed on May 8, 9, and 10 — heartbeat tried and failed to dispatch repo-article and fetch-tweets, creating repetitive "blocked (HTTP 403)" log entries each time. The permission issue is persistent, not transient.
 
 What changed:
-- skills/project-lens/SKILL.md: Replaced Step 2 with structured 5-part dedup procedure (read articles + logs → build exclusion list → pick unused → skip if exhausted)
-- Added PROJECT_LENS_SKIP log pattern for graceful exhaustion handling
+- skills/heartbeat/SKILL.md: Added "Permission pre-check" section — tests first dispatch, bails on 403, consolidates failure into single actionable line
 
-Impact: More diverse articles across the 3x/week schedule. No more risk of repeating the same angle category within 14 days. Graceful degradation when the rotation is exhausted.
+Impact: Cleaner heartbeat logs (one failure message vs. one per missing skill), more actionable notifications (tells operator to add workflows scope to PAT), less wasted CI time.
 
-PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/6
+PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/7

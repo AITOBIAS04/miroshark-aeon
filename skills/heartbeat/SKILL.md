@@ -37,7 +37,17 @@ Before sending any notification, grep the last 48h of logs for the same issue. I
 If nothing needs attention, log "HEARTBEAT_OK" and end your response.
 
 If something needs attention:
-1. **Auto-trigger missing skills** — for each skill confirmed missing (not just stalled PRs or issues), dispatch it if not already running:
+1. **Auto-trigger missing skills** — for each skill confirmed missing (not just stalled PRs or issues), attempt to dispatch it:
+
+   **Permission pre-check — test once before dispatching:**
+   Before attempting any dispatches, run a single test dispatch to verify the token has `workflows` scope:
+   ```bash
+   gh workflow run aeon.yml -f skill="heartbeat" --dry-run 2>&1 || \
+   gh api repos/{owner}/{repo}/actions/workflows -q '.total_count' 2>&1
+   ```
+   If the first `gh workflow run` attempt for any skill returns HTTP 403 or "Resource not accessible by integration", **stop all dispatch attempts immediately**. Log: "Auto-trigger unavailable — token lacks `workflows` scope." In the notification, list all missing skills but note once: "Auto-trigger unavailable (token needs `workflows` scope) — manual dispatch required." Do NOT attempt remaining dispatches — they will all fail the same way.
+
+   **If dispatch IS available**, proceed with dedup + dispatch:
 
    **Dedup guard — check before dispatching:**
    Before firing `gh workflow run` for a skill, check whether a run for that skill is already `queued` or `in_progress`:
@@ -51,5 +61,5 @@ If something needs attention:
    ```
    Skip auto-trigger for: `heartbeat` itself, `memory-flush`, `self-improve`, `reflect`, `self-review` (meta/housekeeping skills). For all other confirmed-missing daily or weekly skills that pass the dedup check, dispatch them.
 
-2. Send a concise notification via `./notify` listing what was flagged, what was auto-triggered, and what was skipped (already queued/in-progress).
+2. Send a concise notification via `./notify` listing what was flagged, what was auto-triggered (or why auto-trigger was skipped), and what was already queued/in-progress.
 3. Log the finding and action taken to memory/logs/${today}.md.
