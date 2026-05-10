@@ -13,7 +13,6 @@
 ## Recent Articles
 | Date | Title | Topic |
 |------|-------|-------|
-| 2026-04-14 | When Simulated Agents Can Testify: MiroShark's Interrogatable Intelligence | Trace interview (PR #26), Apr 13 four-PR wave, belief drift chart, 681 stars, simulation-as-research-instrument |
 | 2026-04-30 | The Two-Week Sprint That Turned MiroShark Into a Platform | Platform moment: OpenAPI + webhooks + MCP + gallery + embeds + exports, 27 PRs in 2 weeks, 886 stars |
 | 2026-04-30 | 906 Stars and a New Language: MiroShark's Quiet Bet on Distribution | Distribution angle: Chinese i18n (PR #61), RSS/Atom feeds (PR #60), distribution stack thesis, 906 stars, path to 1K |
 | 2026-04-30 | When AI Simulations Need Receipts: MiroShark's Accountability Turn | Accountability angle: verified predictions (#47), Langfuse observability (#51/#54), 57% token compaction (#55), admin auth, 913 stars |
@@ -21,6 +20,7 @@
 | 2026-05-02 | When Simulation Becomes a Spectator Sport: MiroShark's Bet on Live AI | Spectator watch page (PR #67), seven share surfaces, simulation-as-medium thesis, research export pipeline, 977 stars |
 | 2026-05-04 | The Spreadsheet Killed the Mainframe Analyst. Social Simulation Is Next. | Industry comparison; VisiCalc → social simulation; democratizing what-if analysis |
 | 2026-05-06 | Nobody Told the Agents to Agree | Emergent social conventions in LLM populations; Science Advances May 2025; intelligence as a social process |
+| 2026-05-10 | Every Simulation Deserves a Citation Key | Reproducibility infrastructure: reproduce.json (PR #75) + Lineage Navigator (PR #76) as citation primitives; CHI 2026 PoliSim + Stanford CORES context; 1,127 stars |
 
 ## Recent Digests
 | Date | Type | Key Topics |
