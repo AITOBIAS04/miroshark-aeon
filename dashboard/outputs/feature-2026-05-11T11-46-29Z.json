@@ -1,0 +1,300 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "🔬 Feature Built: Simulation A/B Comparison View"
+      },
+      "children": [
+        "text_desc",
+        "sep1",
+        "heading_whatsnew",
+        "stack_whatsnew",
+        "sep2",
+        "heading_also",
+        "stack_also",
+        "sep3",
+        "heading_stats",
+        "stack_stats",
+        "sep4",
+        "badge_branch",
+        "sep5",
+        "alert_warning"
+      ]
+    },
+    "text_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Today's feature adds a full comparison mode to MiroShark — pick any two simulations and see exactly how they differ."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_whatsnew": {
+      "type": "Heading",
+      "props": {
+        "text": "What's new",
+        "level": "h2"
+      }
+    },
+    "stack_whatsnew": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_backend",
+        "stack_backend_content",
+        "sep_backend",
+        "heading_compview",
+        "stack_compview_content",
+        "sep_compview",
+        "heading_gallery",
+        "text_gallery"
+      ]
+    },
+    "heading_backend": {
+      "type": "Heading",
+      "props": {
+        "text": "Backend",
+        "level": "h3"
+      }
+    },
+    "stack_backend_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_backend_endpoint",
+        "text_backend_returns",
+        "text_backend_metrics",
+        "text_backend_metrics_list",
+        "text_backend_delta"
+      ]
+    },
+    "text_backend_endpoint": {
+      "type": "Text",
+      "props": {
+        "text": "The /compare endpoint now returns:",
+        "variant": "lead"
+      }
+    },
+    "text_backend_returns": {
+      "type": "Text",
+      "props": {
+        "text": "• Belief drift trajectories\n• Quality diagnostics\n• Scenario text\n• Scorecard object with 4 metrics"
+      }
+    },
+    "text_backend_metrics": {
+      "type": "Text",
+      "props": {
+        "text": "The 4 scorecard metrics are:",
+        "variant": "body"
+      }
+    },
+    "text_backend_metrics_list": {
+      "type": "Text",
+      "props": {
+        "text": "1. Participation rate\n2. Stance diversity\n3. Convergence round\n4. Cross-platform rate"
+      }
+    },
+    "text_backend_delta": {
+      "type": "Text",
+      "props": {
+        "text": "Each metric shows values for both simulations plus a delta. The scorecard highlights which metric diverges most."
+      }
+    },
+    "sep_backend": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_compview": {
+      "type": "Heading",
+      "props": {
+        "text": "ComparisonView",
+        "level": "h3"
+      }
+    },
+    "stack_compview_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_compview_rewrite",
+        "text_compview_modes_intro",
+        "text_compview_modes_list",
+        "text_compview_features"
+      ]
+    },
+    "text_compview_rewrite": {
+      "type": "Text",
+      "props": {
+        "text": "Complete rewrite (~640 lines)",
+        "variant": "lead"
+      }
+    },
+    "text_compview_modes_intro": {
+      "type": "Text",
+      "props": {
+        "text": "Two display modes for belief drift:"
+      }
+    },
+    "text_compview_modes_list": {
+      "type": "Text",
+      "props": {
+        "text": "1. Side-by-side: Independent charts per sim\n2. Overlay: Shared axis, Sim A in orange, Sim B in green, bearish lines dashed"
+      }
+    },
+    "text_compview_features": {
+      "type": "Text",
+      "props": {
+        "text": "• Scorecard table color-codes each metric by quality tier with a Δ column\n• Health badges\n• Scenario cards\n• Share button"
+      }
+    },
+    "sep_compview": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_gallery": {
+      "type": "Heading",
+      "props": {
+        "text": "Gallery Compare Mode",
+        "level": "h3"
+      }
+    },
+    "text_gallery": {
+      "type": "Text",
+      "props": {
+        "text": "Hover any card in the gallery and a compare checkbox appears. Select two simulations → a floating banner slides up from the bottom with a 'Compare selected →' button. Third click replaces the oldest selection."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_also": {
+      "type": "Heading",
+      "props": {
+        "text": "Also",
+        "level": "h2"
+      }
+    },
+    "stack_also": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_tests",
+        "badge_openapi",
+        "badge_docs_en",
+        "badge_docs_zh",
+        "badge_readme"
+      ]
+    },
+    "badge_tests": {
+      "type": "Badge",
+      "props": {
+        "text": "9 unit tests for scorecard diff logic",
+        "variant": "default"
+      }
+    },
+    "badge_openapi": {
+      "type": "Badge",
+      "props": {
+        "text": "OpenAPI spec updates",
+        "variant": "default"
+      }
+    },
+    "badge_docs_en": {
+      "type": "Badge",
+      "props": {
+        "text": "Bilingual docs: EN",
+        "variant": "secondary"
+      }
+    },
+    "badge_docs_zh": {
+      "type": "Badge",
+      "props": {
+        "text": "Bilingual docs: ZH",
+        "variant": "secondary"
+      }
+    },
+    "badge_readme": {
+      "type": "Badge",
+      "props": {
+        "text": "README update",
+        "variant": "default"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_stats": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h2"
+      }
+    },
+    "stack_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_files",
+        "stat_insertions"
+      ]
+    },
+    "stat_files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "8"
+      }
+    },
+    "stat_insertions": {
+      "type": "Stat",
+      "props": {
+        "label": "Insertions",
+        "value": "1,051"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "badge_branch": {
+      "type": "Badge",
+      "props": {
+        "text": "Branch: feat/ab-comparison-view",
+        "variant": "outline"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "alert_warning": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "Push Blocked",
+        "message": "GH_GLOBAL secret not set (day 11). PR could not be opened. 11 features now waiting as local commits."
+      }
+    }
+  }
+}
