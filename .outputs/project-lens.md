@@ -1,5 +1,5 @@
-*New Article: AI's Reproducibility Crisis Isn't Technical. It's a Choice.*
+*New Article: The Twelfth Category Nobody Drew on the Map*
 
-NeurIPS just made reproducibility an official track for the first time in eight years. Meanwhile, 70% of AI researchers can't reproduce each other's results, and new research shows LLM non-determinism is a solvable engineering problem — not an inherent limitation. The article connects this to MiroShark's Reproducibility Config Export (PR #75), which shipped a bytewise-stable parameter capture with citation hashing — the kind of feature nobody builds because it doesn't make the demo flashier.
+The biggest AI agent landscape map — 120+ tools across 11 categories — has zero simulation tools. But a parallel ecosystem of social simulation platforms (OASIS, AgentSociety, Concordia, PolicySim, MiroShark, and 30+ others) has quietly grown into a serious field that nobody mapping 'AI agents' has noticed. This article maps where MiroShark sits in that invisible 12th category and why execution-focused landscape maps are about to need a new section.
 
-Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-05-08.md
+Read: https://github.com/aaronjmars/miroshark-aeon/blob/main/articles/project-lens-2026-05-11.md
