@@ -1,0 +1,292 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-11"
+      },
+      "children": [
+        "content-stack"
+      ]
+    },
+    "content-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "repos-stack",
+        "sep1",
+        "surface-stats-stack",
+        "sep2",
+        "memory-stack",
+        "sep3",
+        "operations-stack",
+        "sep4",
+        "key-changes-stack",
+        "sep5",
+        "stats-stack",
+        "full-recap-link"
+      ]
+    },
+    "repos-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo1-text",
+        "repo2-text"
+      ]
+    },
+    "repo1-text": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 2 commits by aaronjmars"
+      }
+    },
+    "repo2-text": {
+      "type": "Text",
+      "props": {
+        "text": "miroshark-aeon — 30 commits by aeonframework"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "surface-stats-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "ss-heading",
+        "ss-prs",
+        "ss-body"
+      ]
+    },
+    "ss-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Surface-Stats Discovery Loop",
+        "level": "h3"
+      }
+    },
+    "ss-prs": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "pr77-badge",
+        "pr78-badge"
+      ]
+    },
+    "pr77-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #77"
+      }
+    },
+    "pr78-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #78"
+      }
+    },
+    "ss-body": {
+      "type": "Text",
+      "props": {
+        "text": "The surface-stats counter system now tracks all 11 share surfaces including reproduce.json and lineage. PR #78 wired that counter total into a new trending sort on /explore — the first feedback loop where what readers pull from the platform determines what it shows them. Sims that get shared via any surface now organically rise in the gallery."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "memory-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "mem-heading",
+        "mem-pr",
+        "mem-body"
+      ]
+    },
+    "mem-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Memory Index Repair",
+        "level": "h3"
+      }
+    },
+    "mem-pr": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #33"
+      }
+    },
+    "mem-body": {
+      "type": "Text",
+      "props": {
+        "text": "MEMORY.md had ballooned to 81KB/33K+ tokens, breaking every skill's context-loading step. Condensed to 7.7KB with per-row caps enforced in memory-flush to prevent re-bloating."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "operations-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "ops-heading",
+        "ops-body",
+        "token-stat"
+      ]
+    },
+    "ops-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Content & Operations",
+        "level": "h3"
+      }
+    },
+    "ops-body": {
+      "type": "Text",
+      "props": {
+        "text": "Weekly shiplog published (From Many Surfaces to a Surface Network), project-lens ecosystem-map article mapping MiroShark as simulation substrate in the four-neighborhood AI forecasting stack, 2 new tweets captured."
+      }
+    },
+    "token-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Token Price (24h)",
+        "value": "$0.000007517",
+        "delta": "+16.53%",
+        "trend": "up"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "key-changes-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "kc-heading",
+        "kc-file1",
+        "kc-file2",
+        "kc-file3"
+      ]
+    },
+    "kc-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h3"
+      }
+    },
+    "kc-file1": {
+      "type": "Text",
+      "props": {
+        "text": "gallery_filters.py: new trending sort key ranks by cumulative _serves_total with date tie-break",
+        "variant": "body"
+      }
+    },
+    "kc-file2": {
+      "type": "Text",
+      "props": {
+        "text": "simulation.py: trending sweep injects per-sim surface-stats total, strips before serialization",
+        "variant": "body"
+      }
+    },
+    "kc-file3": {
+      "type": "Text",
+      "props": {
+        "text": "surface_stats.py: SURFACE_KEYS expanded from 9 to 11 (reproduce_json + lineage)",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats-heading",
+        "files-stat",
+        "lines-stat",
+        "commits-stat"
+      ]
+    },
+    "stats-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "files-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "~80"
+      }
+    },
+    "lines-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines changed",
+        "value": "+1,800 / -150"
+      }
+    },
+    "commits-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Commits",
+        "value": "32"
+      }
+    },
+    "full-recap-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-11.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

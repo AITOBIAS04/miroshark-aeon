@@ -1,17 +1,16 @@
-*Push Recap — 2026-05-10*
-aaronjmars/MiroShark — 1 commit merged + 2 PRs opened
-aaronjmars/miroshark-aeon — 31 automation commits, all skills green
+*Push Recap — 2026-05-11*
+MiroShark — 2 commits by aaronjmars | miroshark-aeon — 30 commits by aeonframework
 
-Lineage Navigator (PR #76 merged): Bidirectional fork/counterfactual graph traversal is now live. GET /api/simulation/<id>/lineage returns parent + public children for any published sim. EmbedDialog gains a 🌳 Lineage panel — click any row to navigate to that sim. Closes the one-directional pointer gap PR #75 created. +1,778 lines across 11 files, 16 tests, pure stdlib.
+Surface-Stats Discovery Loop (PRs #77 + #78): The surface-stats counter system now tracks all 11 share surfaces including reproduce.json and lineage. PR #78 wired that counter total into a new trending sort on /explore — the first feedback loop where what readers pull from the platform determines what it shows them. Sims that get shared via any surface now organically rise in the gallery.
 
-Distribution → Discovery Pipeline (PRs #77 + #78 opened): Trending sort adds sort=trending to the gallery, ranking sims by cumulative serve count. Surface-stats extension tracks reproduce.json + lineage hits. Together they close the analytics → discovery → sharing → analytics loop.
+Memory Index Repair (PR #33): MEMORY.md had ballooned to 81KB/33K+ tokens, breaking every skill's context-loading step. Condensed to 7.7KB with per-row caps enforced in memory-flush to prevent re-bloating.
 
-Token Near-ATH: $MIROSHARK at $0.00000646 (+30.6% 24h), only -6.7% from ATH. LP at new high $336.7K. VC interest signal from Lorimer Ventures.
+Content & Operations: Weekly shiplog published (From Many Surfaces to a Surface Network), project-lens ecosystem-map article mapping MiroShark as simulation substrate in the four-neighborhood AI forecasting stack, token hit new ATH at $0.000007517 (+16.53% 24h), 2 new tweets captured.
 
 Key changes:
-- New lineage_service.py (390 LoC) — read-only corpus scan building graph slices from existing state.json files
-- EmbedDialog.vue +505 lines — 🌳 panel with parent/child rows, kind badges, counterfactual markers, responsive CSS
-- Self-improve caught MEMORY.md at 81KB, opened PR #33 with structural caps
+- gallery_filters.py: new trending sort key ranks by cumulative _serves_total with date tie-break
+- simulation.py: trending sweep injects per-sim surface-stats total, strips before serialization
+- surface_stats.py: SURFACE_KEYS expanded from 9 to 11 (reproduce_json + lineage)
 
-Stats: ~50 files changed, +3,000/-50 lines across 32 commits
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-10.md
+Stats: ~80 files changed, +1,800/-150 lines across 32 commits
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-11.md
