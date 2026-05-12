@@ -1,0 +1,193 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat 2026-05-12 — 1 missing skill, 7 stalled PRs"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-missing",
+        "alert-self-improve",
+        "separator-1",
+        "heading-prs",
+        "text-not-reported",
+        "stack-prs",
+        "separator-2",
+        "heading-summary",
+        "text-summary-1",
+        "text-summary-2",
+        "text-summary-3"
+      ]
+    },
+    "heading-missing": {
+      "type": "Heading",
+      "props": {
+        "text": "Missing skill",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "alert-self-improve": {
+      "type": "Alert",
+      "props": {
+        "title": "self-improve",
+        "message": "Scheduled 13:00 UTC (even DOM=12), 6h overdue, no workflow run found. Auto-dispatch skipped (meta/housekeeping skill — manual trigger required).",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading-prs": {
+      "type": "Heading",
+      "props": {
+        "text": "Stalled PRs",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text-not-reported": {
+      "type": "Text",
+      "props": {
+        "text": "miroshark-aeon, not reported in last 48h",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "stack-prs": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr-7",
+        "pr-6",
+        "pr-5",
+        "pr-4",
+        "pr-3",
+        "pr-2",
+        "pr-1"
+      ]
+    },
+    "pr-7": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#7: heartbeat auto-trigger fails fast on permission denial",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/7",
+        "source": "May 10 — 2d"
+      },
+      "children": []
+    },
+    "pr-6": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#6: enforce structured angle deduplication in project-lens",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/6",
+        "source": "May 8 — 4d"
+      },
+      "children": []
+    },
+    "pr-5": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#5: add push-access pre-flight check to feature skills",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/5",
+        "source": "May 6 — 6d"
+      },
+      "children": []
+    },
+    "pr-4": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#4: extend fetch-tweets dedup window and add age filter",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/4",
+        "source": "May 4 — 8d"
+      },
+      "children": []
+    },
+    "pr-3": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#3: fix heartbeat false positives for */N day-of-month schedules",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/3",
+        "source": "May 2 — 10d"
+      },
+      "children": []
+    },
+    "pr-2": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#2: post-outage cron-state recovery",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/2",
+        "source": "Apr 30 — 12d"
+      },
+      "children": []
+    },
+    "pr-1": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#1: pre-flight health guard for systemic failure detection",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/1",
+        "source": "Apr 30 — 12d"
+      },
+      "children": []
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading-summary": {
+      "type": "Heading",
+      "props": {
+        "text": "Summary",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text-summary-1": {
+      "type": "Text",
+      "props": {
+        "text": "All 7 are self-improve PRs awaiting merge.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "text-summary-2": {
+      "type": "Text",
+      "props": {
+        "text": "GH_GLOBAL still not set (12+ consecutive build blocks on feature skill).",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "text-summary-3": {
+      "type": "Text",
+      "props": {
+        "text": "No urgent GitHub issues (repo has issues disabled).",
+        "variant": "body"
+      },
+      "children": []
+    }
+  }
+}
