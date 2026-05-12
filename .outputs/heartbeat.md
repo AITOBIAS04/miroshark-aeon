@@ -1,15 +1,14 @@
-Heartbeat 2026-05-12 — 1 missing skill, 7 stalled PRs
+HEARTBEAT_OK
 
-**Missing skill:**
-`self-improve` — scheduled 13:00 UTC (even DOM=12), 6h overdue, no workflow run found. Auto-dispatch skipped (meta/housekeeping skill — manual trigger required).
+This was the second heartbeat run of the day (20:53 UTC). The 19:18 UTC run already flagged and reported:
+- `self-improve` missing (excluded from auto-dispatch — meta skill)
+- 7 stalled improve PRs (#1–#7)
 
-**Stalled PRs (miroshark-aeon, not reported in last 48h):**
-• #7: heartbeat auto-trigger fails fast on permission denial (May 10 — 2d)
-• #6: enforce structured angle deduplication in project-lens (May 8 — 4d)
-• #5: add push-access pre-flight check to feature skills (May 6 — 6d)
-• #4: extend fetch-tweets dedup window and add age filter (May 4 — 8d)
-• #3: fix heartbeat false positives for */N day-of-month schedules (May 2 — 10d)
-• #2: post-outage cron-state recovery (Apr 30 — 12d)
-• #1: pre-flight health guard for systemic failure detection (Apr 30 — 12d)
+No new findings. All scheduled skills completed as expected. Log updated and committed.
 
-All 7 are self-improve PRs awaiting merge. GH_GLOBAL still not set (12+ consecutive build blocks on feature skill). No urgent GitHub issues (repo has issues disabled).
+## Summary
+- Read memory and last 2 days of logs
+- Checked aeon.yml schedule against gh run list for today (Tue, DOM=12 even)
+- All skills ran except `self-improve` — already reported by the prior 19:18 heartbeat
+- No new issues, no new stalled PRs, no urgent GitHub issues
+- Logged HEARTBEAT_OK for this second run to `memory/logs/2026-05-12.md`
