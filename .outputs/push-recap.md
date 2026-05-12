@@ -1,16 +1,16 @@
-*Push Recap — 2026-05-11*
-MiroShark — 2 commits by aaronjmars | miroshark-aeon — 30 commits by aeonframework
+*Push Recap — 2026-05-12*
+[MiroShark] — 2 commits by @aaronjmars + Aeon | [miroshark-aeon] — 38 commits by aeonframework
 
-Surface-Stats Discovery Loop (PRs #77 + #78): The surface-stats counter system now tracks all 11 share surfaces including reproduce.json and lineage. PR #78 wired that counter total into a new trending sort on /explore — the first feedback loop where what readers pull from the platform determines what it shows them. Sims that get shared via any surface now organically rise in the gallery.
+Integration Security & Institutional Export: PR #79 adds HMAC-SHA256 webhook signing (X-MiroShark-Signature header, Stripe/GitHub pattern, 8 tests). PR #80 ships Jupyter notebook export — air-gapped, bytewise-stable .ipynb with trajectory CSV embedded and 4 analysis cells pre-built. Together they close the trust-and-export loop for integrators like Revault and researchers alike. 20th consecutive zero-new-deps PR.
 
-Memory Index Repair (PR #33): MEMORY.md had ballooned to 81KB/33K+ tokens, breaking every skill's context-loading step. Condensed to 7.7KB with per-row caps enforced in memory-flush to prevent re-bloating.
+Token Breakout: MIROSHARK hit new ATH $0.0000160 (nearly 2x the prior ATH from 24h earlier). Volume exploded to $636.5K (+1,109%), LP deepened to $522.7K, buy ratio 1.69x — every major metric at all-time highs simultaneously. FDV crossed $1M for the first time.
 
-Content & Operations: Weekly shiplog published (From Many Surfaces to a Surface Network), project-lens ecosystem-map article mapping MiroShark as simulation substrate in the four-neighborhood AI forecasting stack, token hit new ATH at $0.000007517 (+16.53% 24h), 2 new tweets captured.
+Aeon Operations: Agent Persona Library built (13th feature, push blocked). 8 new tweets tracked. Project lens mapped AI forecasting into 4 neighborhoods. Repo-actions queued 5 next candidates (lifecycle webhooks, embed widget, filtered feed, round API, sitemap). All daily skills green.
 
 Key changes:
-- gallery_filters.py: new trending sort key ranks by cumulative _serves_total with date tie-break
-- simulation.py: trending sweep injects per-sim surface-stats total, strips before serialization
-- surface_stats.py: SURFACE_KEYS expanded from 9 to 11 (reproduce_json + lineage)
+- backend/app/services/notebook_export.py — full Jupyter notebook generator with embedded CSV, 4 analysis cells, citation-hash stable output (+559 lines)
+- backend/app/services/webhook_service.py — HMAC signing with late-binding secret, verify_signature for symmetric recipient checks (+85 lines)
+- articles/repo-actions-2026-05-12.md — 5 feature candidates driven by Revault/CancerHawk integration signals
 
-Stats: ~80 files changed, +1,800/-150 lines across 32 commits
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-11.md
+Stats: ~36 files changed, +3,100/-30 lines across 40 commits
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-12.md

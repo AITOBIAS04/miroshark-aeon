@@ -1,0 +1,412 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-12"
+      },
+      "children": [
+        "project_info",
+        "sep1",
+        "integration_section",
+        "sep2",
+        "token_section",
+        "sep3",
+        "aeon_section",
+        "sep4",
+        "key_changes_section",
+        "sep5",
+        "stats_section",
+        "sep6",
+        "link_section"
+      ]
+    },
+    "project_info": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_miroshark",
+        "text_miroshark_commits",
+        "badge_miroshark_aeon",
+        "text_aeon_commits"
+      ]
+    },
+    "badge_miroshark": {
+      "type": "Badge",
+      "props": {
+        "text": "MiroShark",
+        "variant": "default"
+      }
+    },
+    "text_miroshark_commits": {
+      "type": "Text",
+      "props": {
+        "text": "2 commits by @aaronjmars + Aeon"
+      }
+    },
+    "badge_miroshark_aeon": {
+      "type": "Badge",
+      "props": {
+        "text": "miroshark-aeon",
+        "variant": "default"
+      }
+    },
+    "text_aeon_commits": {
+      "type": "Text",
+      "props": {
+        "text": "38 commits by aeonframework"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "integration_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "integration_heading",
+        "integration_text",
+        "integration_items"
+      ]
+    },
+    "integration_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Integration Security & Institutional Export",
+        "level": "h2"
+      }
+    },
+    "integration_text": {
+      "type": "Text",
+      "props": {
+        "text": "PR #79 adds HMAC-SHA256 webhook signing (X-MiroShark-Signature header, Stripe/GitHub pattern, 8 tests). PR #80 ships Jupyter notebook export — air-gapped, bytewise-stable .ipynb with trajectory CSV embedded and 4 analysis cells pre-built. Together they close the trust-and-export loop for integrators like Revault and researchers alike. 20th consecutive zero-new-deps PR.",
+        "variant": "body"
+      }
+    },
+    "integration_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_pr79",
+        "badge_pr80"
+      ]
+    },
+    "badge_pr79": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #79: HMAC-SHA256 + 8 tests",
+        "variant": "outline"
+      }
+    },
+    "badge_pr80": {
+      "type": "Badge",
+      "props": {
+        "text": "PR #80: Jupyter export + embedded CSV",
+        "variant": "outline"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "token_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "token_heading",
+        "token_description",
+        "metrics_grid"
+      ]
+    },
+    "token_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Token Breakout",
+        "level": "h2"
+      }
+    },
+    "token_description": {
+      "type": "Text",
+      "props": {
+        "text": "Every major metric at all-time highs simultaneously",
+        "variant": "muted"
+      }
+    },
+    "metrics_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat_ath",
+        "stat_multiplier",
+        "stat_volume",
+        "stat_lp",
+        "stat_buy_ratio",
+        "stat_fdv"
+      ]
+    },
+    "stat_ath": {
+      "type": "Stat",
+      "props": {
+        "label": "ATH Price",
+        "value": "$0.0000160",
+        "trend": "up"
+      }
+    },
+    "stat_multiplier": {
+      "type": "Stat",
+      "props": {
+        "label": "vs 24h Prior ATH",
+        "value": "~1.96x",
+        "trend": "up"
+      }
+    },
+    "stat_volume": {
+      "type": "Stat",
+      "props": {
+        "label": "Volume",
+        "value": "$636.5K",
+        "delta": "+1,109%",
+        "trend": "up"
+      }
+    },
+    "stat_lp": {
+      "type": "Stat",
+      "props": {
+        "label": "LP Depth",
+        "value": "$522.7K",
+        "trend": "up"
+      }
+    },
+    "stat_buy_ratio": {
+      "type": "Stat",
+      "props": {
+        "label": "Buy Ratio",
+        "value": "1.69x",
+        "trend": "up"
+      }
+    },
+    "stat_fdv": {
+      "type": "Stat",
+      "props": {
+        "label": "FDV Milestone",
+        "value": "$1M+",
+        "trend": "up"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "aeon_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "aeon_heading",
+        "aeon_items"
+      ]
+    },
+    "aeon_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Aeon Operations",
+        "level": "h2"
+      }
+    },
+    "aeon_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "aeon_item1",
+        "aeon_item2",
+        "aeon_item3",
+        "aeon_item4",
+        "aeon_item5"
+      ]
+    },
+    "aeon_item1": {
+      "type": "Text",
+      "props": {
+        "text": "Agent Persona Library built (13th feature, push blocked)"
+      }
+    },
+    "aeon_item2": {
+      "type": "Text",
+      "props": {
+        "text": "8 new tweets tracked"
+      }
+    },
+    "aeon_item3": {
+      "type": "Text",
+      "props": {
+        "text": "Project lens mapped AI forecasting into 4 neighborhoods"
+      }
+    },
+    "aeon_item4": {
+      "type": "Text",
+      "props": {
+        "text": "Repo-actions queued 5 candidates: lifecycle webhooks, embed widget, filtered feed, round API, sitemap"
+      }
+    },
+    "aeon_item5": {
+      "type": "Text",
+      "props": {
+        "text": "All daily skills green"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "key_changes_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "changes_heading",
+        "changes_list"
+      ]
+    },
+    "changes_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h2"
+      }
+    },
+    "changes_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "change1": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/notebook_export.py — full Jupyter notebook generator with embedded CSV, 4 analysis cells, citation-hash stable output (+559 lines)"
+      }
+    },
+    "change2": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/webhook_service.py — HMAC signing with late-binding secret, verify_signature for symmetric recipient checks (+85 lines)"
+      }
+    },
+    "change3": {
+      "type": "Text",
+      "props": {
+        "text": "articles/repo-actions-2026-05-12.md — 5 feature candidates driven by Revault/CancerHawk integration signals"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats_heading",
+        "stats_grid"
+      ]
+    },
+    "stats_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Statistics",
+        "level": "h2"
+      }
+    },
+    "stats_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat_files",
+        "stat_lines",
+        "stat_commits"
+      ]
+    },
+    "stat_files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files Changed",
+        "value": "36"
+      }
+    },
+    "stat_lines": {
+      "type": "Stat",
+      "props": {
+        "label": "Additions / Deletions",
+        "value": "+3,100 / -30"
+      }
+    },
+    "stat_commits": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Commits",
+        "value": "40"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link_section": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Push Recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-12.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
