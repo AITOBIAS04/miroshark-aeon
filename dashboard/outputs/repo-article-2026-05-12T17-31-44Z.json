@@ -1,0 +1,175 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Nine PRs in Seven Days: The Week MiroShark Built the Pipes"
+      },
+      "children": [
+        "intro_section",
+        "sep1",
+        "features_section",
+        "sep2",
+        "metrics_section",
+        "sep3",
+        "closing_text",
+        "article_link"
+      ]
+    },
+    "intro_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "intro_label",
+        "period_text"
+      ]
+    },
+    "intro_label": {
+      "type": "Text",
+      "props": {
+        "text": "New Article Released"
+      }
+    },
+    "period_text": {
+      "type": "Text",
+      "props": {
+        "text": "Between May 6 and May 12, MiroShark merged nine pull requests that together form a distribution flywheel."
+      }
+    },
+    "sep1": {
+      "type": "Separator"
+    },
+    "features_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "features_label",
+        "features_list"
+      ]
+    },
+    "features_label": {
+      "type": "Heading",
+      "props": {
+        "text": "Features",
+        "level": "h4"
+      }
+    },
+    "features_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_tweet",
+        "badge_analytics",
+        "badge_webhook",
+        "badge_jupyter"
+      ]
+    },
+    "badge_tweet": {
+      "type": "Badge",
+      "props": {
+        "text": "Tweet thread export"
+      }
+    },
+    "badge_analytics": {
+      "type": "Badge",
+      "props": {
+        "text": "Surface analytics"
+      }
+    },
+    "badge_webhook": {
+      "type": "Badge",
+      "props": {
+        "text": "Webhook HMAC signing"
+      }
+    },
+    "badge_jupyter": {
+      "type": "Badge",
+      "props": {
+        "text": "Jupyter notebook export"
+      }
+    },
+    "sep2": {
+      "type": "Separator"
+    },
+    "metrics_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "metrics_label",
+        "metrics_grid"
+      ]
+    },
+    "metrics_label": {
+      "type": "Heading",
+      "props": {
+        "text": "Token Metrics",
+        "level": "h4"
+      }
+    },
+    "metrics_grid": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat_ath",
+        "stat_fdv",
+        "stat_liquidity"
+      ]
+    },
+    "stat_ath": {
+      "type": "Stat",
+      "props": {
+        "label": "New ATH",
+        "value": "$0.0000160"
+      }
+    },
+    "stat_fdv": {
+      "type": "Stat",
+      "props": {
+        "label": "FDV",
+        "value": "$1M+"
+      }
+    },
+    "stat_liquidity": {
+      "type": "Stat",
+      "props": {
+        "label": "Liquidity",
+        "value": "$527K"
+      }
+    },
+    "sep3": {
+      "type": "Separator"
+    },
+    "closing_text": {
+      "type": "Text",
+      "props": {
+        "text": "The pipes after the simulation are becoming the product.",
+        "variant": "lead"
+      }
+    },
+    "article_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Read the full article",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-05-12.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

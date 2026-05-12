@@ -86,3 +86,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-12,repo-pulse,claude-sonnet-4-6,12,5861,358944,31014
 2026-05-12,feature,claude-opus-4-6,63,27946,6127198,124955
 2026-05-12,repo-actions,claude-sonnet-4-6,23,16855,1139413,61296
+2026-05-12,repo-article,claude-opus-4-6,901,7642,778481,39535
