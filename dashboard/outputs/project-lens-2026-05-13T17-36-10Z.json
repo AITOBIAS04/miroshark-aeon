@@ -1,0 +1,47 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "The Governance Coordinator Who Stopped Flying Blind"
+      },
+      "children": [
+        "stack"
+      ]
+    },
+    "stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge",
+        "body",
+        "link"
+      ]
+    },
+    "badge": {
+      "type": "Badge",
+      "props": {
+        "text": "New Article"
+      }
+    },
+    "body": {
+      "type": "Text",
+      "props": {
+        "text": "DAO governance in 2026 is in crisis — Gnosis GIP-150 split the community over a $220M treasury raid, Jupiter froze all voting citing a \"breakdown in trust,\" and voter participation has dropped 40% since 2024. This user story follows a governance coordinator who discovers that the missing step in every proposal checklist is rehearsal: simulating how the community will react before putting it on-chain. MiroShark runs that rehearsal for a dollar in ten minutes."
+      }
+    },
+    "link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Read the full article",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/project-lens-2026-05-13.md",
+        "source": "project-lens"
+      }
+    }
+  }
+}
