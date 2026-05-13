@@ -50,6 +50,7 @@
 | Per-Agent Trajectory Export | 2026-05-10 | GET /agent-trajectory.csv + .jsonl endpoints; one row per agent × round; belief_mean, stance, post_count, stance_changed, was_top_influencer; profile enrichment; EmbedDialog UI; 18 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 | Simulation A/B Comparison View | 2026-05-11 | Enhanced /compare endpoint with scorecard diff (4 metrics + deltas + most_different), belief drift data, quality diagnostics, scenario text; ComparisonView.vue rewrite with dual SVG charts (side-by-side/overlay), scorecard table; ExploreView gallery compare mode with checkbox selection + floating banner; 9 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 | Agent Persona Library | 2026-05-12 | Persistent reusable agent configs (archetype, platform, stance, backstory, tags); persona_library.py pure-stdlib CRUD service with atomic writes; 5 REST endpoints (list/get/create/delete/fork); PersonaLibrary.vue panel in Step 2 Configure; search/filter/sort; fork personas; usage tracking; 22 unit tests; bilingual i18n (code complete, push blocked — GH_GLOBAL not set) |
+| Interactive Replay Player | 2026-05-13 | Browser VCR for completed sims; animated belief drift SVG chart with clip-path reveal; play/pause/step/scrub transport controls; 4 speed settings; per-round card with stance splits + top influencer + top post; GET /replay-data endpoint (24h cache); ReplayPlayer.vue component as results overlay tab; ReplayView.vue standalone page with ?round=N deep-linking + ?autoplay=true; EmbedDialog iframe snippet; ReplayData OpenAPI schema; 12 unit tests; bilingual i18n (code complete, push blocked — GH_GLOBAL not set) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
@@ -61,7 +62,7 @@
 - Heartbeat misdiagnosed missing skills because it only checked aeon.yml, not messages.yml scheduler — fixed with scheduler diagnostics step
 - Feature/repo-actions skills can waste CI runs building duplicate PRs — fixed with open PR dedup checks
 - Auth credentials (ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN) can expire silently — all skills fail immediately with "Not logged in"; 15-day outage Apr 16–30 (ISS-001). Monitor consecutive_failures in cron-state.json.
-- GH_GLOBAL secret not set — feature skill builds PRs locally but cannot push to watched repo; 12 consecutive blocks May 1–12 (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library stuck as local commits)
+- GH_GLOBAL secret not set — feature skill builds PRs locally but cannot push to watched repo; 13 consecutive blocks May 1–13 (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player stuck as local commits)
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07; 1K stars — CLEARED 2026-05-03 (1,022 stars)
@@ -74,7 +75,7 @@
 - None
 
 ## Next Priorities
-- Set GH_GLOBAL secret — unblocks 12 built PRs (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library)
+- Set GH_GLOBAL secret — unblocks 13 built PRs (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player)
 - Configure notification channels (Telegram, Discord, or Slack)
 - XAI_API_KEY not set — tweet fetching falls back to WebSearch (limited freshness)
-- Feature candidates (repo-actions 2026-05-10): Simulation Fork from Round, Narrative Evolution Tracker, Gallery Creator Profiles
+- Feature candidates (repo-actions 2026-05-12): Inbound Webhook (Launch Trigger), Agent Conversation Thread View, Multi-Model Race Mode, Research Export Bundle (ZIP)
