@@ -1,18 +1,12 @@
-*Top Tweets — MIROSHARK crypto token on Base chain \& MiroShark GitHub (2026-05-12)*
+*Top Tweets — MIROSHARK crypto token on Base chain AND https://github.com/aaronjmars/MiroShark (2026-05-13)*
 
-_Note: XAI\_API\_KEY not set — results via WebSearch_
+_Note: XAI\_API\_KEY not set — results via WebSearch (engagement data unavailable)_
 
-1. x.com/RoundtableSpace — 0xMarioNawfal amplifies MiroShark to his large audience: simulation framework that lets AI model how Reddit, X & Polymarket would react to any idea.
-[View tweet](https://x.com/RoundtableSpace/status/2036242843816305095)
+1. x.com/aaronjmars — Framework overview thread: upload context, generate hundreds of AI agents simulating Reddit, X & Polymarket simultaneously — profiles post, argue, and shift opinions across rounds in real time
+[View tweet](https://x.com/aaronjmars/status/2036175623622660114)
 
-2. x.com/github\_repo — GitHub Trending picks up MiroShark: "Multi-agent simulation engine — upload any document, generates hundreds of AI agents with unique personalities simulating public reaction on social media."
-[View tweet](https://x.com/github_repo/status/2043803689907786095)
+2. x.com/aaronjmars — Initial release: "Built a sanitized version of MiroFish called MiroShark — translated to English, improved simulation flow, recommended models, runs locally or with any OpenAI-compatible API key"
+[View tweet](https://x.com/aaronjmars/status/2035881020302430571)
 
-3. x.com/BioStone\_chad — Community spots low-cap: "$Miroshark \#Base 70k MC — upgraded swarm AI from mirofish, trades + uses fees for ads/burns/coordination. DEV just confirmed roadmap."
-[View tweet](https://x.com/BioStone_chad/status/2036824963689411046)
-
-4. x.com/BranaRakic — DKG V9 + MiroShark simulating the future together.
-[View tweet](https://x.com/BranaRakic/status/2036747635751633047)
-
-5. x.com/aaronjmars — Creator roadmap drop: both miroshark \& aeon tokenized via \@bankrbot; miroshark = universal swarm intelligence engine; aeon = framework that makes software autonomous \& alive on GitHub.
-[View tweet](https://x.com/aaronjmars/status/2036818584937095581)
+3. x.com/anger\_trading — Trader cashtag mention: "$miroshark"
+[View tweet](https://x.com/anger_trading/status/2041985239858475105)

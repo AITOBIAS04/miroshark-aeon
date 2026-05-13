@@ -1,0 +1,162 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Top Tweets — MIROSHARK",
+        "description": "Crypto token on Base chain"
+      },
+      "children": [
+        "github_link",
+        "date_text",
+        "sep_1",
+        "note_alert",
+        "sep_2",
+        "tweet1_stack",
+        "sep_3",
+        "tweet2_stack",
+        "sep_4",
+        "tweet3_stack"
+      ]
+    },
+    "github_link": {
+      "type": "Link",
+      "props": {
+        "label": "github.com/aaronjmars/MiroShark",
+        "href": "https://github.com/aaronjmars/MiroShark"
+      },
+      "children": []
+    },
+    "date_text": {
+      "type": "Text",
+      "props": {
+        "text": "2026-05-13",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "note_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Data Source",
+        "message": "XAI_API_KEY not set — results via WebSearch (engagement data unavailable)",
+        "type": "info"
+      },
+      "children": []
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tweet1_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet1_card",
+        "tweet1_link"
+      ]
+    },
+    "tweet1_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "Framework overview thread: upload context, generate hundreds of AI agents simulating Reddit, X & Polymarket simultaneously — profiles post, argue, and shift opinions across rounds in real time"
+      },
+      "children": []
+    },
+    "tweet1_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2036175623622660114"
+      },
+      "children": []
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tweet2_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet2_card",
+        "tweet2_link"
+      ]
+    },
+    "tweet2_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "Initial release: \"Built a sanitized version of MiroFish called MiroShark — translated to English, improved simulation flow, recommended models, runs locally or with any OpenAI-compatible API key\""
+      },
+      "children": []
+    },
+    "tweet2_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2035881020302430571"
+      },
+      "children": []
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "tweet3_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet3_card",
+        "tweet3_link"
+      ]
+    },
+    "tweet3_card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "anger_trading",
+        "handle": "anger_trading",
+        "text": "Trader cashtag mention: $miroshark"
+      },
+      "children": []
+    },
+    "tweet3_link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/anger_trading/status/2041985239858475105"
+      },
+      "children": []
+    }
+  }
+}
