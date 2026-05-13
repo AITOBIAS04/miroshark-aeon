@@ -1,0 +1,18 @@
+*Push Recap — 2026-05-13*
+[miroshark-aeon] — 26 commits by 1 author | [MiroShark] — 0 commits
+
+Feature Development: Built Interactive Replay Player — browser-based VCR for completed simulations with animated SVG belief drift chart, play/pause/step/scrub controls, 4 speed settings, deep-linking, and iframe embeds. 12 unit tests. Push-blocked (13th consecutive). Also shipped Filtered RSS / Atom Feed as PR #81 — first feature to land in 13 days, adds query param filtering to Atom/RSS endpoints.
+
+Token Market: $MIROSHARK at $0.000009780 (-21.6% 24h), classic post-ATH consolidation from yesterday's $0.0000160 peak. FDV holding near $1M. Buy ratio 1.68 — dip-buying not panic. 7d still +87%, 30d +285%.
+
+Social & Rewards: 7 new tweets found across two fetch-tweets runs. Tweet allocator paid $10 to 3 contributors — @Concept_felipe enterprise infrastructure framing earned top reward at $6.53.
+
+Content: Two articles — "From Citable to Runnable" (PR #80 Jupyter export) and "1 in 277" (Lancet fabricated citations study).
+
+Key changes:
+- Interactive Replay Player: GET /replay-data endpoint + ReplayPlayer.vue + ReplayView.vue rewrite (+1,544/-902 lines, 9 files)
+- PR #81 Filtered RSS Feed: query param filtering on /api/feed endpoints
+- Repo pulse: 1,143 stars (+9), 226 forks (+2) — star growth accelerating
+
+Stats: ~22 files changed, +1,300/-150 lines
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-13.md
