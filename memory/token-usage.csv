@@ -94,4 +94,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-13,feature,claude-opus-4-6,114,46129,12298438,135649
 2026-05-13,push-recap,claude-opus-4-6,35,25867,2003434,62094
 2026-05-13,project-lens,claude-opus-4-6,1958,7845,830503,46994
-2026-05-13,heartbeat,claude-sonnet-4-6,8,6738,208850,29203
+2026-05-13,memory-flush,claude-sonnet-4-6,15,13586,543997,37490
