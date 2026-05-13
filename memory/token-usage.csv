@@ -90,3 +90,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-12,heartbeat,claude-sonnet-4-6,11,8236,340987,34715
 2026-05-12,heartbeat,claude-sonnet-4-6,8,3550,198440,25661
 2026-05-13,fetch-tweets,claude-sonnet-4-6,1751,9204,507816,43858
+2026-05-13,repo-pulse,claude-sonnet-4-6,15,4342,482707,30221
