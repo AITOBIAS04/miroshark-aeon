@@ -17,14 +17,21 @@ Check the following:
 - [ ] Scan aeon.yml for enabled scheduled skills — cross-reference with today's log (`memory/logs/${today}.md`) to find any that haven't run when expected.
 
   **Matching skill names to log entries:**
-  Skills log under human-readable `## Headers`, not their aeon.yml kebab-case names. To check if a skill ran, do a **case-insensitive search** of the log file for the skill name with hyphens replaced by spaces. Examples:
-  - `token-report` → search for "token report" (matches `## Token Report`, `## Token Report (Update)`)
-  - `push-recap` → search for "push recap" (matches `## Push Recap`, `## Push Recap (MiroShark)`)
-  - `fetch-tweets` → search for "fetch tweets" (matches `## Fetch Tweets — MIROSHARK`)
-  - `feature` → search for "feature" (matches `## Feature Build — ...`)
+  Skills log under `## Headers` that may use the kebab-case name or a human-readable variant. To check if a skill ran, do **two case-insensitive searches**: one for the original name (with hyphens) and one with hyphens replaced by spaces. A match on either confirms the skill ran. Examples for all enabled skills:
+  - `token-report` → search for "token-report" OR "token report" (matches `## Token Report — $MiroShark`)
+  - `push-recap` → search for "push-recap" OR "push recap" (matches `## Push Recap — 2026-...`)
+  - `fetch-tweets` → search for "fetch-tweets" OR "fetch tweets" (matches `## fetch-tweets — MIROSHARK`)
+  - `feature` → search for "feature" (matches `## Feature Skill — ...`, `## Feature: ...`, `## Feature Build — ...`)
+  - `repo-pulse` → search for "repo-pulse" OR "repo pulse" (matches `## Repo Pulse`)
+  - `project-lens` → search for "project-lens" OR "project lens" (matches `## Project Lens`)
+  - `repo-actions` → search for "repo-actions" OR "repo actions"
+  - `repo-article` → search for "repo-article" OR "repo article"
+  - `weekly-shiplog` → search for "weekly-shiplog" OR "weekly shiplog" OR "shiplog"
+  - `skill-leaderboard` → search for "skill-leaderboard" OR "skill leaderboard" OR "leaderboard"
   - `hyperstitions-ideas` → search for "hyperstitions" (matches `## Hyperstitions Ideas`)
-  - `memory-flush` → search for "memory flush"
-  - `self-improve` → search for "self-improve" or "self improve" or "agent self-improvement"
+  - `memory-flush` → search for "memory-flush" OR "memory flush" (matches `## Memory Flush — ...`)
+  - `self-improve` → search for "self-improve" OR "self improve" OR "agent self-improvement"
+  - `heartbeat` → search for "heartbeat" (matches `## Heartbeat — ...`)
 
   **Timing rules (avoid false positives):**
   - GitHub Actions cron has ±10 min jitter and skills take 5-15 min to complete.
