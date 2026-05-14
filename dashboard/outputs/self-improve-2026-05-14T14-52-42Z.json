@@ -1,0 +1,138 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Agent Self-Improvement"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_title",
+        "text_summary",
+        "separator_1",
+        "heading_why",
+        "text_why",
+        "separator_2",
+        "heading_what",
+        "text_what",
+        "separator_3",
+        "heading_impact",
+        "text_impact",
+        "separator_4",
+        "storylink_pr"
+      ]
+    },
+    "heading_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Agent Self-Improvement — 2026-05-14",
+        "level": "h1"
+      },
+      "children": []
+    },
+    "text_summary": {
+      "type": "Text",
+      "props": {
+        "text": "Completed heartbeat skill-name-to-log matching for all 14 enabled skills and fixed a broken matching strategy.",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_why": {
+      "type": "Heading",
+      "props": {
+        "text": "Why",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_why": {
+      "type": "Text",
+      "props": {
+        "text": "The heartbeat health monitor only had explicit log-header mappings for 7 of 14 enabled skills (repo-pulse, project-lens, repo-actions, repo-article, weekly-shiplog, skill-leaderboard, and heartbeat itself were missing). Worse, the matching strategy said \"replace hyphens with spaces\" but some skills log with hyphens in their headers (e.g. fetch-tweets logs as \"## fetch-tweets —\"), so the space-only search misses them — causing false \"missing skill\" alerts and unnecessary CI auto-dispatches.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_what": {
+      "type": "Heading",
+      "props": {
+        "text": "What changed",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_what": {
+      "type": "Text",
+      "props": {
+        "text": "skills/heartbeat/SKILL.md: Added dual-search strategy (search for BOTH original kebab-case name AND space-separated version) and complete mappings for all 14 enabled skills with real log header examples from recent runs.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_impact": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_impact": {
+      "type": "Text",
+      "props": {
+        "text": "Heartbeat can now reliably detect whether any enabled skill has run, preventing false missing-skill alerts and wasted CI dispatches. This is a multiplier improvement — better health monitoring means faster detection of real issues across all skills.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "storylink_pr": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #8: Fix heartbeat skill-name-to-log matching",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/8",
+        "source": "GitHub"
+      },
+      "children": []
+    }
+  }
+}

@@ -1,13 +1,12 @@
-*Agent Self-Improvement — 2026-05-08*
+*Agent Self-Improvement — 2026-05-14*
 
-Enforced structured angle deduplication in the project-lens skill. The previous prompt told the model to "check recent articles and pick a different angle" without defining a strict procedure — dedup was best-effort. Now Step 2 is a mandatory 5-part checklist: read recent article files, cross-reference memory log angle categories, build an exclusion list, pick only from unused categories, and skip entirely if all 8 are exhausted.
+Completed heartbeat skill-name-to-log matching for all 14 enabled skills and fixed a broken matching strategy.
 
-Why: project-lens runs 3x/week with 8 angle categories. Without structured dedup, the model could repeat angles, producing repetitive articles. The vague instruction also had no fallback — if all angles were used, it would force a duplicate rather than gracefully skipping.
+Why: The heartbeat health monitor only had explicit log-header mappings for 7 of 14 enabled skills (repo-pulse, project-lens, repo-actions, repo-article, weekly-shiplog, skill-leaderboard, and heartbeat itself were missing). Worse, the matching strategy said "replace hyphens with spaces" but some skills log with hyphens in their headers (e.g. fetch-tweets logs as "## fetch-tweets —"), so the space-only search misses them — causing false "missing skill" alerts and unnecessary CI auto-dispatches.
 
 What changed:
-- skills/project-lens/SKILL.md: Replaced Step 2 with structured 5-part dedup procedure (read articles + logs → build exclusion list → pick unused → skip if exhausted)
-- Added PROJECT_LENS_SKIP log pattern for graceful exhaustion handling
+- skills/heartbeat/SKILL.md: Added dual-search strategy (search for BOTH original kebab-case name AND space-separated version) and complete mappings for all 14 enabled skills with real log header examples from recent runs.
 
-Impact: More diverse articles across the 3x/week schedule. No more risk of repeating the same angle category within 14 days. Graceful degradation when the rotation is exhausted.
+Impact: Heartbeat can now reliably detect whether any enabled skill has run, preventing false missing-skill alerts and wasted CI dispatches. This is a multiplier improvement — better health monitoring means faster detection of real issues across all skills.
 
-PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/6
+PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/8
