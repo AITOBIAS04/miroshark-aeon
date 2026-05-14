@@ -96,3 +96,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-13,project-lens,claude-opus-4-6,1958,7845,830503,46994
 2026-05-13,memory-flush,claude-sonnet-4-6,15,13586,543997,37490
 2026-05-14,repo-pulse,claude-sonnet-4-6,16,4050,524614,31108
+2026-05-14,feature,claude-opus-4-6,103,41700,11509294,131154

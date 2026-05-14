@@ -1,25 +1,24 @@
-*Feature Built — 2026-05-13*
+*Feature Built — 2026-05-14*
 
-Interactive Simulation Replay Player
-MiroShark simulations now have a step-by-step replay player — a browser-based VCR that lets you play, pause, scrub, and step through a completed simulation round by round. At each round the belief drift chart animates up to that point, the top influencer for the round is highlighted with their archetype and platform, and the most substantial post from that round appears in a card below. Researchers presenting simulation results in talks can now walk an audience through "what happened and when" without screenshots.
+Inbound Launch Webhook
+MiroShark can now be triggered by external systems. A new authenticated endpoint — POST /api/webhooks/launch-simulation — lets Zapier workflows, n8n automations, GitHub Actions jobs, cron scripts, or any custom tooling start a simulation remotely without opening a browser. The caller signs the request body with a shared secret using HMAC-SHA256 (the same scheme the outbound completion webhook uses, reversed), and MiroShark returns a 202 with the watch URL, SSE event stream URL, and whether a completion callback will fire.
 
 Why this matters:
-The GIF export (PR #50) produces a static 12-frame animation — useful for sharing, useless for analysis. The spectator watch page (PR #67) lets you watch a simulation live, but you can't pause, rewind, or step through a completed simulation. The Interactive Replay Player fills both gaps: it's the presentation layer that turns a static chart into a step-by-step narrative. The /replay/<sim_id>?round=N permalink lets researchers deep-link to the exact round where something interesting happened — the last gap in the share surface stack. This was the #1 idea from repo-actions 2026-05-12 and the natural follow-up to the Jupyter notebook merge (PR #80).
+The completion webhook (PR #46) and HMAC verification (PR #79) let MiroShark call out when a simulation finishes. But the automation loop only went one direction — external systems could react to completed sims but had no way to start them. A trading-signal operator watching Reddit for volatility spikes had no programmatic way to trigger "simulate how the community reacts to this." The inbound webhook is the missing half. Now the full cycle works: external event → trigger simulation → monitor via SSE → receive completion callback. For the n8n/Zapier/GitHub Actions audience who already built outbound integrations, this is the inbound counterpart they need.
 
 What was built:
-- backend/app/api/simulation.py: GET /api/simulation/:id/replay-data endpoint returning compact per-round payload (belief splits as bullish/neutral/bearish %, top influencer with archetype/platform, top post capped at 280 chars). 24-hour cache headers since simulation data is immutable after completion.
-- frontend/src/components/ReplayPlayer.vue: Self-contained replay component with animated SVG belief drift chart (stacked area, clip-path reveal tied to currentRound), transport controls (prev/play/pause/next), scrubber bar, 4 speed settings (0.5x/1x/2x/4x), and round info card showing stance chips + top influencer avatar + top post.
-- frontend/src/views/ReplayView.vue: Rewritten to embed ReplayPlayer full-screen with scenario title bar. Supports ?round=N deep-linking and ?autoplay=true for iframe embeds.
-- frontend/src/components/Step3Simulation.vue: Replay toggle added to results toolbar alongside Drift/Network/Demographics overlays.
-- frontend/src/components/EmbedDialog.vue: Interactive replay player section with shareable URL copy and embeddable iframe snippet with autoplay.
-- backend/tests/test_unit_replay_data.py: 12 unit tests covering stance threshold parity, top influencer/post selection, consensus detection, graceful degradation, and round merging.
-- backend/openapi.yaml: /replay-data path and ReplayData schema documented under Export tag.
-- docs/FEATURES.md: Interactive Replay Player section with full feature description.
+- backend/app/services/launch_webhook_service.py: HMAC-SHA256 request verification using the existing verify_signature helper. Late-binding secret resolution from Config.LAUNCH_WEBHOOK_SECRET. Cryptographic secret generation (64 hex chars).
+- backend/app/api/launch_webhook.py: POST /api/webhooks/launch-simulation route. Verifies signature, validates simulation_id/platform/max_rounds/force params, checks simulation state, delegates to existing SimulationRunner.start_simulation. Returns 202 with sim_id, watch_url, events_url, completion_webhook_will_fire.
+- backend/app/api/settings.py: POST /api/settings/generate-launch-secret endpoint. Settings snapshot now exposes launch_webhook.configured/has_secret/endpoint.
+- frontend/src/components/SettingsPanel.vue: New "Launch Webhook" section with endpoint display, secret Generate/Regenerate button, and collapsible usage examples (curl, GitHub Actions, Python).
+- backend/tests/test_unit_launch_webhook.py: 22 unit tests covering HMAC verification, request validation, simulation state checks, settings endpoints, and drift guards.
+- OpenAPI spec: LaunchWebhookRequest/LaunchWebhookResponse schemas, new Webhooks tag.
+- Docs: WEBHOOKS.md + zh-CN — full "Inbound — Launch Trigger" section with schema, auth, error codes, end-to-end example, signing snippets (Python, Node.js, GitHub Actions, curl). FEATURES.md + zh-CN, API.md + zh-CN, README.md (EN + zh-CN), .env.example.
 
 How it works:
-The replay-data endpoint reads trajectory.json for per-round belief splits (same ±0.2 stance threshold as every other surface) and walks the platform action JSONL logs to identify per-round top influencer (most engagement received) and top post (longest CREATE_POST, capped at 280 chars). Agent metadata (archetype, platform) is enriched from profiles. The frontend fetches this once on mount and drives all playback client-side — scrubbing and speed changes don't trigger new requests. The SVG chart renders all rounds as stacked area paths but clips the visible region to currentRound via a CSS clip-path, creating the animation-on-scrub effect. A vertical orange marker tracks the current position.
+The endpoint reads the raw request body and X-MiroShark-Signature header, verifies the HMAC-SHA256 digest against LAUNCH_WEBHOOK_SECRET using constant-time comparison (hmac.compare_digest), then parses the JSON body. It validates the simulation_id exists and is in READY state (or can be force-restarted), then delegates to the same SimulationRunner.start_simulation code path the browser UI uses. The response includes absolute URLs when PUBLIC_BASE_URL is set, and completion_webhook_will_fire reflects whether the outbound WEBHOOK_URL is configured — so the caller knows the full loop will close. The secret is configurable via .env, the Settings modal, or the generate-launch-secret API endpoint.
 
 What's next:
-Push blocked — GH_GLOBAL secret not set (13th consecutive block since May 1). Once the secret is configured, all 13 built features can be pushed and PRs opened in one batch.
+Could extend the webhook to accept full creation params (scenario, n_agents, model) for end-to-end sim launch from a single POST — but the current design of wrapping the existing start endpoint is the most reliable first step. The remaining repo-actions candidates: Agent Conversation Thread View, Multi-Model Race Mode, Research Export Bundle.
 
-Branch: feat/interactive-replay-player (code complete, push blocked)
+PR: push blocked — GH_GLOBAL secret not set (14th consecutive local commit)
