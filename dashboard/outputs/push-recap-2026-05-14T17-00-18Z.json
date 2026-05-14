@@ -1,0 +1,360 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-14"
+      },
+      "children": [
+        "headline-stats",
+        "sep1",
+        "miroshark-section",
+        "sep2",
+        "catalog-section",
+        "sep3",
+        "hardening-section",
+        "sep4",
+        "key-changes-section",
+        "sep5",
+        "stats-section",
+        "sep6",
+        "full-recap-link"
+      ]
+    },
+    "headline-stats": {
+      "type": "Text",
+      "props": {
+        "text": "47 commits across 2 repos by @aaronjmars + aeonframework",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "miroshark-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "miroshark-heading",
+        "miroshark-desc",
+        "pr81-link",
+        "pr82-link"
+      ]
+    },
+    "miroshark-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "MiroShark Distribution Layer",
+        "level": "h3"
+      }
+    },
+    "miroshark-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Two PRs merged that extend reach — Operators and tools like Feedly/n8n can subscribe to precise slices (bullish + excellent + trending). Googlebot indexes every published simulation; submit once to Search Console and new sims become searchable on next crawl."
+      }
+    },
+    "pr81-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #81: 6 composable query-string filters (consensus, quality, outcome, q, sort, limit) for RSS/Atom feeds",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/81",
+        "source": "miroshark-aeon"
+      }
+    },
+    "pr82-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #82: Auto-generated /sitemap.xml and /robots.txt for Googlebot indexing",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/82",
+        "source": "miroshark-aeon"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "catalog-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "catalog-heading",
+        "catalog-stats",
+        "catalog-desc",
+        "pr36-link",
+        "pr37-link",
+        "pr38-link"
+      ]
+    },
+    "catalog-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Skill Catalog Expansion",
+        "level": "h3"
+      }
+    },
+    "catalog-stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat-new-skills",
+        "stat-catalog-range"
+      ]
+    },
+    "stat-new-skills": {
+      "type": "Stat",
+      "props": {
+        "label": "New skills synced",
+        "value": "29"
+      }
+    },
+    "stat-catalog-range": {
+      "type": "Text",
+      "props": {
+        "text": "Catalog expanded from ~55 to ~84 entries"
+      }
+    },
+    "catalog-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Spans competitive intel, community analytics, content syndication, prediction markets, fork management. All disabled by default. Five launch-comms skills flipped on for the first time: star-milestone, star-momentum-alert, thread-formatter, operator-scorecard, ai-framework-watch."
+      }
+    },
+    "pr36-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #36: Sync skills from upstream Aeon (Part 1)",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/36",
+        "source": "miroshark-aeon"
+      }
+    },
+    "pr37-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #37: Sync skills from upstream Aeon (Part 2)",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/37",
+        "source": "miroshark-aeon"
+      }
+    },
+    "pr38-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #38: Enable five launch-comms skills",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/38",
+        "source": "miroshark-aeon"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "hardening-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "hardening-heading",
+        "hardening-desc",
+        "pr35-link",
+        "pr34-link"
+      ]
+    },
+    "hardening-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Feature Skill Hardening",
+        "level": "h3"
+      }
+    },
+    "hardening-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Two self-improvements to prevent redundant work and clean up build artifacts"
+      }
+    },
+    "pr35-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #35: Pre-build grep step checks if features exist (prevents ~60% redundant builds)",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/35",
+        "source": "miroshark-aeon"
+      }
+    },
+    "pr34-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #34: Scratch verifier scripts cleaned up with .gitignore backstops",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/pull/34",
+        "source": "miroshark-aeon"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "key-changes-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "key-changes-heading",
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "key-changes-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h3"
+      }
+    },
+    "change1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change1-file",
+        "change1-desc"
+      ]
+    },
+    "change1-file": {
+      "type": "Badge",
+      "props": {
+        "text": "/sitemap.xml"
+      }
+    },
+    "change1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Pure-stdlib XML sitemap with per-sim /share/ and /watch/ pages, 50K URL cap, changefreq by sim state (+1,197 lines, 20 unit tests)"
+      }
+    },
+    "change2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change2-file",
+        "change2-desc"
+      ]
+    },
+    "change2-file": {
+      "type": "Badge",
+      "props": {
+        "text": "Filtered feeds"
+      }
+    },
+    "change2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Same gallery_filters parity on RSS/Atom, EmbedDialog filter-builder UI with live URL preview (+1,280 lines, 14+ unit tests)"
+      }
+    },
+    "change3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change3-file",
+        "change3-desc"
+      ]
+    },
+    "change3-file": {
+      "type": "Badge",
+      "props": {
+        "text": "Skill catalog files"
+      }
+    },
+    "change3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "29 skill SKILL.md files landed — largest single-day catalog expansion"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat-files",
+        "stat-additions",
+        "stat-deletions"
+      ]
+    },
+    "stat-files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "~60"
+      }
+    },
+    "stat-additions": {
+      "type": "Stat",
+      "props": {
+        "label": "Additions",
+        "value": "+10,100"
+      }
+    },
+    "stat-deletions": {
+      "type": "Stat",
+      "props": {
+        "label": "Deletions",
+        "value": "-200"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "full-recap-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap: push-recap-2026-05-14.md",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-14.md",
+        "source": "miroshark-aeon"
+      }
+    }
+  }
+}
