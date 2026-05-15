@@ -1,16 +1,18 @@
-*Push Recap — 2026-05-14*
-47 commits across 2 repos by @aaronjmars + aeonframework
+*Push Recap — 2026-05-15*
+miroshark-aeon — 38 commits by aeonframework | MiroShark — 0 commits (quiet day)
 
-MiroShark Distribution Layer: Two PRs merged that extend reach — PR #81 adds 6 composable query-string filters (consensus, quality, outcome, q, sort, limit) to RSS/Atom feeds so operators and tools like Feedly/n8n can subscribe to precise slices ("bullish + excellent + trending"). PR #82 ships auto-generated /sitemap.xml and /robots.txt so Googlebot indexes every published simulation — submit once to Search Console and new sims become searchable on next crawl.
+New Feature — Discord + Slack Rich Notifications (PR #83): Feature skill shipped a full notification integration layer for MiroShark. Discord gets rich embeds with consensus-coloured borders, Slack gets Block Kit messages with belief bar charts. Both opt-in, fire-and-forget, zero new deps (22nd consecutive PR). 57 tests. Closes May-14 repo-actions idea #1.
 
-Skill Catalog Expansion: 29 new skills synced from upstream Aeon (#36, #37), bringing the catalog from ~55 to ~84 entries. Spans competitive intel, community analytics, content syndication, prediction markets, fork management. All disabled by default. Five launch-comms skills (star-milestone, star-momentum-alert, thread-formatter, operator-scorecard, ai-framework-watch) flipped on for the first time (#38).
+Token & Social Intelligence: $MIROSHARK at $0.000011778 (-1.74% 24h) with a dramatic 65% intraday swing — dipped to $0.00000848 overnight, ripped to $0.0000140, settled at $0.0000118. Buy ratio 1.61×. 12 new tweets found (elevated volume), $10 allocated to 5 tweets across 4 authors.
 
-Feature Skill Hardening: Two self-improvements — a pre-build grep step now checks if features already exist before building (#35, prevents ~60% redundant builds), and scratch verifier scripts cleaned up with .gitignore backstops (#34).
+Community Growth: 1,156 stars (+12), 231 forks (+4). Star pace ~5/day — 1,500 milestone projected late July.
+
+Content Pipeline: 5-tweet thread on PR #82 (sitemap), project-lens article on Quora vs Stack Overflow crawlability, repo-article 'Nobody Indexes a Simulation.'
 
 Key changes:
-- /sitemap.xml: pure-stdlib XML sitemap with per-sim /share/ and /watch/ pages, 50K URL cap, changefreq by sim state (+1,197 lines, 20 unit tests)
-- Filtered feeds: same gallery_filters parity on RSS/Atom, EmbedDialog filter-builder UI with live URL preview (+1,280 lines, 14+ unit tests)
-- 29 skill SKILL.md files landed — largest single-day catalog expansion
+- discord_notify.py (~390 LoC) + slack_notify.py (~370 LoC) — full notification stack for MiroShark sims
+- 12 new tweets captured + $10 in rewards allocated (pending manual send)
+- star-momentum-state.json — new persistent state pattern for cross-run skill memory
 
-Stats: ~60 files changed, +10,100/-200 lines
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-14.md
+Stats: ~35 files changed, +3,000/-250 lines across 38 commits
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-15.md

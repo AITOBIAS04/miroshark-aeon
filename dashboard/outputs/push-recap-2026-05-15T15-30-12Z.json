@@ -1,0 +1,433 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-15"
+      },
+      "children": [
+        "repo-summary",
+        "sep1",
+        "feature-section",
+        "sep2",
+        "token-section",
+        "sep3",
+        "community-section",
+        "sep4",
+        "content-section",
+        "sep5",
+        "key-changes-section",
+        "sep6",
+        "stats-section",
+        "sep7",
+        "recap-link-section"
+      ]
+    },
+    "repo-summary": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-heading",
+        "repo-text"
+      ]
+    },
+    "repo-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Repository Activity",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "repo-text": {
+      "type": "Text",
+      "props": {
+        "text": "miroshark-aeon — 38 commits by aeonframework | MiroShark — 0 commits (quiet day)"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "feature-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "feature-heading",
+        "feature-title",
+        "feature-desc",
+        "feature-meta"
+      ]
+    },
+    "feature-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Feature",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "feature-title": {
+      "type": "Text",
+      "props": {
+        "text": "Discord + Slack Rich Notifications (PR #83)",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "feature-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Feature skill shipped a full notification integration layer for MiroShark. Discord gets rich embeds with consensus-coloured borders, Slack gets Block Kit messages with belief bar charts. Both opt-in, fire-and-forget, zero new deps (22nd consecutive PR)."
+      },
+      "children": []
+    },
+    "feature-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "feature-badge",
+        "feature-closes"
+      ]
+    },
+    "feature-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "57 tests",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "feature-closes": {
+      "type": "Text",
+      "props": {
+        "text": "Closes May-14 repo-actions idea #1",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "token-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "token-heading",
+        "price-stat",
+        "change-stat",
+        "intraday-text",
+        "buy-ratio-stat",
+        "tweets-stat",
+        "allocation-stat"
+      ]
+    },
+    "token-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Token & Social Intelligence",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "price-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "$MIROSHARK Price",
+        "value": "$0.000011778"
+      },
+      "children": []
+    },
+    "change-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Change",
+        "value": "-1.74%",
+        "trend": "down"
+      },
+      "children": []
+    },
+    "intraday-text": {
+      "type": "Text",
+      "props": {
+        "text": "Dramatic 65% intraday swing — dipped to $0.00000848 overnight, ripped to $0.0000140, settled at $0.0000118",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "buy-ratio-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Buy Ratio",
+        "value": "1.61×"
+      },
+      "children": []
+    },
+    "tweets-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "New Tweets Found",
+        "value": "12 (elevated volume)"
+      },
+      "children": []
+    },
+    "allocation-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Rewards Allocated",
+        "value": "$10 to 5 tweets across 4 authors"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "community-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "community-heading",
+        "stars-stat",
+        "forks-stat",
+        "pace-text",
+        "milestone-text"
+      ]
+    },
+    "community-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Community Growth",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "stars-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,156",
+        "delta": "+12"
+      },
+      "children": []
+    },
+    "forks-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "231",
+        "delta": "+4"
+      },
+      "children": []
+    },
+    "pace-text": {
+      "type": "Text",
+      "props": {
+        "text": "Star pace ~5/day",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "milestone-text": {
+      "type": "Text",
+      "props": {
+        "text": "1,500 stars milestone projected late July",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "content-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "content-heading",
+        "content-item-1",
+        "content-item-2",
+        "content-item-3"
+      ]
+    },
+    "content-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Content Pipeline",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "content-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "5-tweet thread on PR #82 (sitemap)"
+      },
+      "children": []
+    },
+    "content-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "Project-lens article on Quora vs Stack Overflow crawlability"
+      },
+      "children": []
+    },
+    "content-item-3": {
+      "type": "Text",
+      "props": {
+        "text": "Repo article 'Nobody Indexes a Simulation.'"
+      },
+      "children": []
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "key-changes-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "changes-heading",
+        "change-1",
+        "change-2",
+        "change-3"
+      ]
+    },
+    "changes-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "change-1": {
+      "type": "Text",
+      "props": {
+        "text": "discord_notify.py (~390 LoC) + slack_notify.py (~370 LoC) — full notification stack for MiroShark sims"
+      },
+      "children": []
+    },
+    "change-2": {
+      "type": "Text",
+      "props": {
+        "text": "12 new tweets captured + $10 in rewards allocated (pending manual send)"
+      },
+      "children": []
+    },
+    "change-3": {
+      "type": "Text",
+      "props": {
+        "text": "star-momentum-state.json — new persistent state pattern for cross-run skill memory"
+      },
+      "children": []
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stats-heading",
+        "stats-text"
+      ]
+    },
+    "stats-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Commit Statistics",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "stats-text": {
+      "type": "Text",
+      "props": {
+        "text": "~35 files changed, +3,000/-250 lines across 38 commits"
+      },
+      "children": []
+    },
+    "sep7": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "recap-link-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "recap-heading",
+        "recap-link"
+      ]
+    },
+    "recap-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Full Recap",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "recap-link": {
+      "type": "Link",
+      "props": {
+        "label": "articles/push-recap-2026-05-15.md",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-15.md"
+      },
+      "children": []
+    }
+  }
+}
