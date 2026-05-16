@@ -37,7 +37,15 @@ Before sending any notification, grep the last 48h of logs for the same issue. I
 If nothing needs attention, log "HEARTBEAT_OK" and end your response.
 
 If something needs attention:
-1. **Auto-trigger missing skills** — for each skill confirmed missing (not just stalled PRs or issues), dispatch it if not already running:
+1. **Attempt auto-dispatch for missing skills** (if permissions allow):
+
+   First, test whether you have dispatch permissions:
+   ```bash
+   gh workflow run aeon.yml -f skill="heartbeat" 2>&1 || true
+   ```
+   If this returns a 403 or "permission denied" error, **skip ALL auto-dispatch attempts** — the scheduler (messages.yml, which runs every 5 minutes with `actions: write` permissions) already handles dispatching missed skills via catch-up logic. Log: "Auto-dispatch unavailable (actions: read only) — scheduler will catch up."
+
+   If dispatch IS available, proceed:
 
    **Dedup guard — check before dispatching:**
    Before firing `gh workflow run` for a skill, check whether a run for that skill is already `queued` or `in_progress`:
@@ -51,5 +59,5 @@ If something needs attention:
    ```
    Skip auto-trigger for: `heartbeat` itself, `memory-flush`, `self-improve`, `reflect`, `self-review` (meta/housekeeping skills). For all other confirmed-missing daily or weekly skills that pass the dedup check, dispatch them.
 
-2. Send a concise notification via `./notify` listing what was flagged, what was auto-triggered, and what was skipped (already queued/in-progress).
+2. Send a concise notification via `./notify` listing what was flagged and the dispatch status (dispatched, skipped, or scheduler-deferred).
 3. Log the finding and action taken to memory/logs/${today}.md.
