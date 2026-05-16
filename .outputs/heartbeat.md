@@ -1,10 +1,15 @@
-HEARTBEAT 2026-05-15 — 3 skills missing, auto-dispatch blocked (HTTP 403, GH_GLOBAL unset).
+**Heartbeat — 2026-05-16**
 
-Missing:
-• token-report (06:00 UTC — also missed May 14, persistent)
-• fetch-tweets (06:30 UTC — also missed May 14, persistent)
-• feature (11:00 UTC — new today)
+All 9 scheduled skills completed ✓ (token-report, fetch-tweets, repo-pulse, hyperstitions-ideas, feature, self-improve, repo-actions, push-recap, repo-article).
 
-Ran OK: repo-pulse ✓, push-recap ✓, project-lens ✓
-Open PRs: 0 | Urgent issues: 0
-Action needed: set GH_GLOBAL secret to unblock dispatch + unblock 14 built PRs
+**8 stalled PRs in miroshark-aeon (not flagged before):**
+- #8 improve: complete heartbeat skill-name-to-log matching (2d)
+- #7 improve: heartbeat auto-trigger fails fast on permission denial (6d)
+- #6 improve: enforce structured angle deduplication in project-lens (8d)
+- #5 improve: add push-access pre-flight check to feature skills (10d)
+- #4 improve: extend fetch-tweets dedup window and add age filter (12d)
+- #3 improve: fix heartbeat false positives for */N day-of-month schedules (14d)
+- #2 improve: post-outage cron-state recovery (16d)
+- #1 improve: pre-flight health guard for systemic failure detection (16d)
+
+These are self-improve PRs awaiting operator review. No auto-trigger (no missing skills). GH_GLOBAL still unset (15 blocked feature builds).

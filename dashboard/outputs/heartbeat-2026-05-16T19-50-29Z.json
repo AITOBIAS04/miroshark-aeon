@@ -1,0 +1,260 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat",
+        "description": "2026-05-16"
+      },
+      "children": [
+        "status-section",
+        "sep-1",
+        "stalled-section",
+        "sep-2",
+        "note-section"
+      ]
+    },
+    "status-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "status-text",
+        "skills-stack"
+      ]
+    },
+    "status-text": {
+      "type": "Text",
+      "props": {
+        "text": "All 9 scheduled skills completed ✓",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "skills-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "skill-1",
+        "skill-2",
+        "skill-3",
+        "skill-4",
+        "skill-5",
+        "skill-6",
+        "skill-7",
+        "skill-8",
+        "skill-9"
+      ]
+    },
+    "skill-1": {
+      "type": "Badge",
+      "props": {
+        "text": "token-report",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-2": {
+      "type": "Badge",
+      "props": {
+        "text": "fetch-tweets",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-3": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-4": {
+      "type": "Badge",
+      "props": {
+        "text": "hyperstitions-ideas",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-5": {
+      "type": "Badge",
+      "props": {
+        "text": "feature",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-6": {
+      "type": "Badge",
+      "props": {
+        "text": "self-improve",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-7": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-actions",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-8": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "skill-9": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-article",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stalled-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stalled-intro",
+        "prs-stack"
+      ]
+    },
+    "stalled-intro": {
+      "type": "Text",
+      "props": {
+        "text": "8 stalled PRs in miroshark-aeon (not flagged before):",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "prs-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr-8",
+        "pr-7",
+        "pr-6",
+        "pr-5",
+        "pr-4",
+        "pr-3",
+        "pr-2",
+        "pr-1"
+      ]
+    },
+    "pr-8": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#8 improve: complete heartbeat skill-name-to-log matching (2d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/8",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-7": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#7 improve: heartbeat auto-trigger fails fast on permission denial (6d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/7",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-6": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#6 improve: enforce structured angle deduplication in project-lens (8d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/6",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-5": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#5 improve: add push-access pre-flight check to feature skills (10d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/5",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-4": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#4 improve: extend fetch-tweets dedup window and add age filter (12d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/4",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-3": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#3 improve: fix heartbeat false positives for */N day-of-month schedules (14d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/3",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-2": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#2 improve: post-outage cron-state recovery (16d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/2",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "pr-1": {
+      "type": "StoryLink",
+      "props": {
+        "title": "#1 improve: pre-flight health guard for systemic failure detection (16d)",
+        "href": "https://github.com/miroshark-aeon/miroshark-aeon/pull/1",
+        "source": "GitHub PR"
+      },
+      "children": []
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "note-section": {
+      "type": "Alert",
+      "props": {
+        "title": "Self-Improve Status",
+        "message": "These are self-improve PRs awaiting operator review. No auto-trigger (no missing skills). GH_GLOBAL still unset (15 blocked feature builds).",
+        "type": "info"
+      },
+      "children": []
+    }
+  }
+}
