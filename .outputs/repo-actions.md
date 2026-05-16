@@ -1,19 +1,19 @@
-*Repo Action Ideas — 2026-05-14*
-Generated from analysis of aaronjmars/MiroShark (1,147 stars · 227 forks · 0 open PRs). Five ideas the feature skill can build tomorrow — all distinct from the 20 suggested across May 8–12.
+*Repo Action Ideas — 2026-05-16*
+Generated from analysis of aaronjmars/MiroShark (1,164 stars · 232 forks · 1 open PR).
 
-1. Coalition Detection in Interaction Network (Feature, Small)
-   Community detection on the agent graph reveals echo chambers and coalitions — which agents clustered together and how cohesive they were. Transforms the network view from a wiring diagram into a social structure analyzer.
+1. Private Share Links with Expiry (Feature, Small)
+   Token-signed, expiring URLs for sharing unpublished simulations privately — no gallery indexing, per-link revocation, configurable 24h/7d/never TTL.
 
-2. Simulation Lifecycle Webhooks — State Machine Events (Integration, Small)
-   Extends the completion webhook to fire on every lifecycle transition: simulation.created, simulation.round_complete, simulation.consensus_reached (mid-run!), simulation.completed, simulation.failed. Per-event subscriptions, same HMAC infrastructure.
+2. Adversarial Stress-Test Mode (Feature, Small)
+   Designate 1–3 agents as adversarial challengers; computes a consensus robustness verdict (HIGH/MEDIUM/LOW/COLLAPSE) showing whether the finding holds under direct rhetorical pressure.
 
-3. Scenario Starter Kit — 80-Prompt Library + Inspire Me Button (DX, Small)
-   Curated scenarios/library.json with 80 pre-written prompts across crypto, geopolitics, tech, and social domains. 'Inspire Me →' button in Step 1 surfaces 5 shuffled suggestions. Directly addresses the blank-field conversion drop-off.
+3. Weekly Simulation Digest (Feature/Community, Small)
+   Auto-generated /digest/latest page + GET /api/digest/weekly JSON — top 5 simulations by composite engagement score, plus an Atom digest-feed variant for RSS subscribers.
 
-4. miroshark-sdk — Python Client Package (Integration, Medium)
-   pip-installable zero-dependency Python client wrapping all API endpoints. client.run() blocks until complete. sim.trajectory_df, sim.citation('bibtex'), client.batch_run(scenarios). Ships with 3 example Jupyter notebooks.
+4. Curator Collections (Community/Feature, Small)
+   Named, ordered lists of published simulations with shareable /collections/<id> URLs — lets researchers build citation bundles and curated arguments, not just browse the algorithmic feed.
 
-5. OpenMetrics / Prometheus Export Endpoint (Integration, Small)
-   GET /metrics in Prometheus text format — simulation throughput, model usage, consensus rates, duration histograms, webhook error rate. Ships with monitoring/grafana-dashboard.json for one-click Grafana import.
+5. Scenario Pre-flight Analyzer (DX, Small)
+   Pure-heuristic GET /api/scenario/analyze endpoint analyzes scenario text before launch: controversy score, consensus lean, recommended agent count, and quality risk flags — zero LLM cost, instant feedback in the Step 1 UI.
 
-Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-14.md
+Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-16.md

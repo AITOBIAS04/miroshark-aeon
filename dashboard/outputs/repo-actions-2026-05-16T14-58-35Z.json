@@ -1,0 +1,324 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas",
+        "description": "Generated from analysis of aaronjmars/MiroShark (1,164 stars · 232 forks · 1 open PR)"
+      },
+      "children": [
+        "stack-items"
+      ]
+    },
+    "stack-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "item-1",
+        "sep-1",
+        "item-2",
+        "sep-2",
+        "item-3",
+        "sep-3",
+        "item-4",
+        "sep-4",
+        "item-5",
+        "sep-5",
+        "link-details"
+      ]
+    },
+    "item-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "title-1",
+        "desc-1"
+      ]
+    },
+    "title-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-1",
+        "badge-feature-1",
+        "badge-size-1"
+      ]
+    },
+    "heading-1": {
+      "type": "Heading",
+      "props": {
+        "text": "Private Share Links with Expiry",
+        "level": "h3"
+      }
+    },
+    "badge-feature-1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "badge-size-1": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "desc-1": {
+      "type": "Text",
+      "props": {
+        "text": "Token-signed, expiring URLs for sharing unpublished simulations privately — no gallery indexing, per-link revocation, configurable 24h/7d/never TTL."
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "item-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "title-2",
+        "desc-2"
+      ]
+    },
+    "title-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-2",
+        "badge-feature-2",
+        "badge-size-2"
+      ]
+    },
+    "heading-2": {
+      "type": "Heading",
+      "props": {
+        "text": "Adversarial Stress-Test Mode",
+        "level": "h3"
+      }
+    },
+    "badge-feature-2": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "badge-size-2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "desc-2": {
+      "type": "Text",
+      "props": {
+        "text": "Designate 1–3 agents as adversarial challengers; computes a consensus robustness verdict (HIGH/MEDIUM/LOW/COLLAPSE) showing whether the finding holds under direct rhetorical pressure."
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "item-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "title-3",
+        "desc-3"
+      ]
+    },
+    "title-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-3",
+        "badge-feature-3",
+        "badge-size-3"
+      ]
+    },
+    "heading-3": {
+      "type": "Heading",
+      "props": {
+        "text": "Weekly Simulation Digest",
+        "level": "h3"
+      }
+    },
+    "badge-feature-3": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature/Community",
+        "variant": "default"
+      }
+    },
+    "badge-size-3": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "desc-3": {
+      "type": "Text",
+      "props": {
+        "text": "Auto-generated /digest/latest page + GET /api/digest/weekly JSON — top 5 simulations by composite engagement score, plus an Atom digest-feed variant for RSS subscribers."
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "item-4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "title-4",
+        "desc-4"
+      ]
+    },
+    "title-4": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-4",
+        "badge-feature-4",
+        "badge-size-4"
+      ]
+    },
+    "heading-4": {
+      "type": "Heading",
+      "props": {
+        "text": "Curator Collections",
+        "level": "h3"
+      }
+    },
+    "badge-feature-4": {
+      "type": "Badge",
+      "props": {
+        "text": "Community/Feature",
+        "variant": "default"
+      }
+    },
+    "badge-size-4": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "desc-4": {
+      "type": "Text",
+      "props": {
+        "text": "Named, ordered lists of published simulations with shareable /collections/<id> URLs — lets researchers build citation bundles and curated arguments, not just browse the algorithmic feed."
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "item-5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "title-5",
+        "desc-5"
+      ]
+    },
+    "title-5": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-5",
+        "badge-feature-5",
+        "badge-size-5"
+      ]
+    },
+    "heading-5": {
+      "type": "Heading",
+      "props": {
+        "text": "Scenario Pre-flight Analyzer",
+        "level": "h3"
+      }
+    },
+    "badge-feature-5": {
+      "type": "Badge",
+      "props": {
+        "text": "DX",
+        "variant": "default"
+      }
+    },
+    "badge-size-5": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "desc-5": {
+      "type": "Text",
+      "props": {
+        "text": "Pure-heuristic GET /api/scenario/analyze endpoint analyzes scenario text before launch: controversy score, consensus lean, recommended agent count, and quality risk flags — zero LLM cost, instant feedback in the Step 1 UI."
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link-details": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full details",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-16.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
