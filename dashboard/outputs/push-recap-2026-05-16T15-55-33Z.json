@@ -1,0 +1,411 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-16"
+      },
+      "children": [
+        "stat_commits",
+        "sep_1",
+        "section_miroshark",
+        "sep_2",
+        "section_aeon",
+        "sep_3",
+        "section_changes",
+        "sep_4",
+        "stats_footer"
+      ]
+    },
+    "stat_commits": {
+      "type": "Stat",
+      "props": {
+        "value": "48",
+        "label": "commits across 2 repos by 2 authors"
+      }
+    },
+    "sep_1": {
+      "type": "Separator"
+    },
+    "section_miroshark": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_miroshark",
+        "pr84_group",
+        "pr83_group",
+        "pr86_group"
+      ]
+    },
+    "heading_miroshark": {
+      "type": "Heading",
+      "props": {
+        "text": "aaronjmars/MiroShark",
+        "level": "h2"
+      }
+    },
+    "pr84_group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr84_link",
+        "pr84_desc",
+        "pr84_meta"
+      ]
+    },
+    "pr84_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "On-Chain Provenance (PR #84)",
+        "href": "https://github.com/aaronjmars/MiroShark/pull/84"
+      }
+    },
+    "pr84_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Simulations can now be anchored to the OriginTrail Decentralized Knowledge Graph as permanent Knowledge Assets. One click in the share dialog hashes reproduce.json, walks the DKG daemon pipeline, and returns a UAL + Merkle root + tx hash — a tamper-proof citation that survives the host going away.",
+        "variant": "body"
+      }
+    },
+    "pr84_meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_stdlib",
+        "badge_env_gated",
+        "badge_idempotent"
+      ]
+    },
+    "badge_stdlib": {
+      "type": "Badge",
+      "props": {
+        "text": "Stdlib only"
+      }
+    },
+    "badge_env_gated": {
+      "type": "Badge",
+      "props": {
+        "text": "env-gated"
+      }
+    },
+    "badge_idempotent": {
+      "type": "Badge",
+      "props": {
+        "text": "idempotent"
+      }
+    },
+    "pr83_group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr83_link",
+        "pr83_desc",
+        "pr83_details",
+        "pr83_badges"
+      ]
+    },
+    "pr83_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Discord + Slack Notifications (PR #83)",
+        "href": "https://github.com/aaronjmars/MiroShark/pull/83"
+      }
+    },
+    "pr83_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Completion events now fire channel-native rich notifications — Discord embeds with consensus-coloured borders and belief fields, Slack Block Kit messages with mrkdwn belief bars and action buttons. Both opt-in, independent, deduped.",
+        "variant": "body"
+      }
+    },
+    "pr83_details": {
+      "type": "Text",
+      "props": {
+        "text": "57 tests, zero new deps (23rd consecutive)",
+        "variant": "caption"
+      }
+    },
+    "pr83_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_discord",
+        "badge_slack",
+        "badge_optin"
+      ]
+    },
+    "badge_discord": {
+      "type": "Badge",
+      "props": {
+        "text": "Discord"
+      }
+    },
+    "badge_slack": {
+      "type": "Badge",
+      "props": {
+        "text": "Slack"
+      }
+    },
+    "badge_optin": {
+      "type": "Badge",
+      "props": {
+        "text": "opt-in"
+      }
+    },
+    "pr86_group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr86_link",
+        "pr86_desc",
+        "pr86_details"
+      ]
+    },
+    "pr86_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Model Swap (PR #86)",
+        "href": "https://github.com/aaronjmars/MiroShark/pull/86"
+      }
+    },
+    "pr86_desc": {
+      "type": "Text",
+      "props": {
+        "text": "xAI deprecated grok-4.1-fast (404 on every call). Swapped Smart, NER, and WEB_SEARCH slots to google/gemini-3-flash-preview. Verified end-to-end: ontology ~11s, graph 22 entities, web enrichment working.",
+        "variant": "body"
+      }
+    },
+    "pr86_details": {
+      "type": "Text",
+      "props": {
+        "text": "Replacement: google/gemini-3-flash-preview",
+        "variant": "caption"
+      }
+    },
+    "sep_2": {
+      "type": "Separator"
+    },
+    "section_aeon": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_aeon",
+        "aeon_summary",
+        "aeon_items"
+      ]
+    },
+    "heading_aeon": {
+      "type": "Heading",
+      "props": {
+        "text": "aaronjmars/miroshark-aeon",
+        "level": "h2"
+      }
+    },
+    "aeon_summary": {
+      "type": "Text",
+      "props": {
+        "text": "45 commits by aeonframework — Aeon ran 12 skills autonomously",
+        "variant": "lead"
+      }
+    },
+    "aeon_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "aeon_coalition",
+        "aeon_monitoring",
+        "aeon_token",
+        "aeon_allocation",
+        "aeon_ideas",
+        "aeon_hyperstition"
+      ]
+    },
+    "aeon_coalition": {
+      "type": "Text",
+      "props": {
+        "text": "Coalition Detection feature for MiroShark (blocked by GH_GLOBAL — 16th consecutive)",
+        "variant": "body"
+      }
+    },
+    "aeon_monitoring": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Fixed monitoring data quality via self-improve PR #9",
+        "href": "https://github.com/aaronjmars/miroshark-aeon/pull/9"
+      }
+    },
+    "aeon_token": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "aeon_token_label",
+        "aeon_token_stats"
+      ]
+    },
+    "aeon_token_label": {
+      "type": "Text",
+      "props": {
+        "text": "Generated token report",
+        "variant": "body"
+      }
+    },
+    "aeon_token_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_token_ath",
+        "stat_lp_ath"
+      ]
+    },
+    "stat_token_ath": {
+      "type": "Stat",
+      "props": {
+        "label": "Token ATH",
+        "value": "$0.0000162"
+      }
+    },
+    "stat_lp_ath": {
+      "type": "Stat",
+      "props": {
+        "label": "LP ATH",
+        "value": "$574.8K"
+      }
+    },
+    "aeon_allocation": {
+      "type": "Text",
+      "props": {
+        "text": "Allocated $9.99 to 3 tweet authors",
+        "variant": "body"
+      }
+    },
+    "aeon_ideas": {
+      "type": "Text",
+      "props": {
+        "text": "Produced 5 feature ideas",
+        "variant": "body"
+      }
+    },
+    "aeon_hyperstition": {
+      "type": "Text",
+      "props": {
+        "text": "Filed \"LP $1M by July\" hyperstition",
+        "variant": "body"
+      }
+    },
+    "sep_3": {
+      "type": "Separator"
+    },
+    "section_changes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_changes",
+        "changes_list"
+      ]
+    },
+    "heading_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h3"
+      }
+    },
+    "changes_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change_dkg",
+        "change_discord_slack",
+        "change_cloud"
+      ]
+    },
+    "change_dkg": {
+      "type": "Text",
+      "props": {
+        "text": "DKG publisher: 709-line stdlib service + 2 API routes + EmbedDialog citation card (+1,988 lines)",
+        "variant": "body"
+      }
+    },
+    "change_discord_slack": {
+      "type": "Text",
+      "props": {
+        "text": "Discord/Slack notifiers: 873 lines of channel-native formatters + 57 tests + config probe endpoint (+2,269 lines)",
+        "variant": "body"
+      }
+    },
+    "change_cloud": {
+      "type": "Text",
+      "props": {
+        "text": "Cloud preset restored after xAI deprecation — Gemini 3 Flash replaces Grok-4.1 across 13 files",
+        "variant": "body"
+      }
+    },
+    "sep_4": {
+      "type": "Separator"
+    },
+    "stats_footer": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats_summary",
+        "recap_link"
+      ]
+    },
+    "stats_summary": {
+      "type": "Text",
+      "props": {
+        "text": "~75 files changed, +6,400/-250 lines",
+        "variant": "lead"
+      }
+    },
+    "recap_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-16.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

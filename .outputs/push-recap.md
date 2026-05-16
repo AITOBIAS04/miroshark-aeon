@@ -1,18 +1,22 @@
-*Push Recap — 2026-05-15*
-miroshark-aeon — 38 commits by aeonframework | MiroShark — 0 commits (quiet day)
+*Push Recap — 2026-05-16*
+48 commits across 2 repos by 2 authors
 
-New Feature — Discord + Slack Rich Notifications (PR #83): Feature skill shipped a full notification integration layer for MiroShark. Discord gets rich embeds with consensus-coloured borders, Slack gets Block Kit messages with belief bar charts. Both opt-in, fire-and-forget, zero new deps (22nd consecutive PR). 57 tests. Closes May-14 repo-actions idea #1.
+*aaronjmars/MiroShark* — 3 commits by @aaronjmars
 
-Token & Social Intelligence: $MIROSHARK at $0.000011778 (-1.74% 24h) with a dramatic 65% intraday swing — dipped to $0.00000848 overnight, ripped to $0.0000140, settled at $0.0000118. Buy ratio 1.61×. 12 new tweets found (elevated volume), $10 allocated to 5 tweets across 4 authors.
+On-Chain Provenance (PR #84): Simulations can now be anchored to the OriginTrail Decentralized Knowledge Graph as permanent Knowledge Assets. One click in the share dialog hashes reproduce.json, walks the DKG daemon pipeline, and returns a UAL + Merkle root + tx hash — a tamper-proof citation that survives the host going away. Stdlib only, env-gated, idempotent.
 
-Community Growth: 1,156 stars (+12), 231 forks (+4). Star pace ~5/day — 1,500 milestone projected late July.
+Discord + Slack Notifications (PR #83): Completion events now fire channel-native rich notifications — Discord embeds with consensus-coloured borders and belief fields, Slack Block Kit messages with mrkdwn belief bars and action buttons. Both opt-in, independent, deduped. 57 tests, zero new deps (23rd consecutive).
 
-Content Pipeline: 5-tweet thread on PR #82 (sitemap), project-lens article on Quora vs Stack Overflow crawlability, repo-article 'Nobody Indexes a Simulation.'
+Model Swap (PR #86): xAI deprecated grok-4.1-fast (404 on every call). Swapped Smart, NER, and WEB_SEARCH slots to google/gemini-3-flash-preview. Verified end-to-end: ontology ~11s, graph 22 entities, web enrichment working.
+
+*aaronjmars/miroshark-aeon* — 45 commits by aeonframework
+
+Aeon ran 12 skills autonomously: built Coalition Detection feature for MiroShark (blocked by GH_GLOBAL — 16th consecutive), fixed monitoring data quality via self-improve PR #9, generated token report (new ATH $0.0000162, LP ATH $574.8K), allocated $9.99 to 3 tweet authors, produced 5 feature ideas, filed "LP $1M by July" hyperstition.
 
 Key changes:
-- discord_notify.py (~390 LoC) + slack_notify.py (~370 LoC) — full notification stack for MiroShark sims
-- 12 new tweets captured + $10 in rewards allocated (pending manual send)
-- star-momentum-state.json — new persistent state pattern for cross-run skill memory
+- DKG publisher: 709-line stdlib service + 2 API routes + EmbedDialog citation card (+1,988 lines)
+- Discord/Slack notifiers: 873 lines of channel-native formatters + 57 tests + config probe endpoint (+2,269 lines)
+- Cloud preset restored after xAI deprecation — Gemini 3 Flash replaces Grok-4.1 across 13 files
 
-Stats: ~35 files changed, +3,000/-250 lines across 38 commits
-Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-15.md
+Stats: ~75 files changed, +6,400/-250 lines
+Full recap: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/push-recap-2026-05-16.md
