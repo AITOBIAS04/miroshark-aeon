@@ -1,0 +1,230 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Hyperstitions Idea",
+        "description": "2026-05-16"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-question",
+        "sep1",
+        "section-coordination",
+        "sep2",
+        "section-why-now",
+        "sep3",
+        "section-resolution",
+        "sep4",
+        "section-scores",
+        "sep5",
+        "link-hyperstitions"
+      ]
+    },
+    "heading-question": {
+      "type": "Heading",
+      "props": {
+        "text": "Will $MIROSHARK liquidity pool depth exceed $1M by July 1, 2026?",
+        "level": "h2"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-coordination": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-coordination",
+        "text-coordination"
+      ]
+    },
+    "heading-coordination": {
+      "type": "Heading",
+      "props": {
+        "text": "The Coordination Play",
+        "level": "h3"
+      }
+    },
+    "text-coordination": {
+      "type": "Text",
+      "props": {
+        "text": "Liquidity provision is a purely human act — no agent can deploy capital to a pool. This market turns LP depth into a scoreboard. Every addition is visible on-chain, creating social proof for the next provider. Holders already long are incentivized to pair tokens with ETH and deepen the floor under the asset rather than just sitting on a spot position.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-why-now": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-why-now",
+        "grid-stats",
+        "text-why-now"
+      ]
+    },
+    "heading-why-now": {
+      "type": "Heading",
+      "props": {
+        "text": "Why Now",
+        "level": "h3"
+      }
+    },
+    "grid-stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-current-lp",
+        "stat-prior-ath",
+        "stat-24h-change",
+        "stat-fdv"
+      ]
+    },
+    "stat-current-lp": {
+      "type": "Stat",
+      "props": {
+        "label": "Current LP Depth (New ATH)",
+        "value": "$574.8K"
+      }
+    },
+    "stat-prior-ath": {
+      "type": "Stat",
+      "props": {
+        "label": "Prior ATH (May 12)",
+        "value": "$527.7K"
+      }
+    },
+    "stat-24h-change": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Recovery",
+        "value": "+28.56%",
+        "trend": "up"
+      }
+    },
+    "stat-fdv": {
+      "type": "Stat",
+      "props": {
+        "label": "Current FDV",
+        "value": "$1.45M"
+      }
+    },
+    "text-why-now": {
+      "type": "Text",
+      "props": {
+        "text": "LP just set a new all-time high at $574.8K today, surpassing the prior ATH of $527.7K from May 12. This happened during a recovery phase, not a euphoric run-up — liquidity growing while price consolidates is a structural signal, not momentum noise.",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-resolution": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-resolution",
+        "text-resolution-date",
+        "text-resolution-check",
+        "badge-contract"
+      ]
+    },
+    "heading-resolution": {
+      "type": "Heading",
+      "props": {
+        "text": "Resolution",
+        "level": "h3"
+      }
+    },
+    "text-resolution-date": {
+      "type": "Text",
+      "props": {
+        "text": "On July 1, 2026, check the main MIROSHARK/WETH pool on Base via GeckoTerminal or DexScreener.",
+        "variant": "body"
+      }
+    },
+    "text-resolution-check": {
+      "type": "Text",
+      "props": {
+        "text": "Total pool liquidity >= $1,000,000 = YES",
+        "variant": "lead"
+      }
+    },
+    "badge-contract": {
+      "type": "Badge",
+      "props": {
+        "text": "Contract: 0xd7bc...1ba3",
+        "variant": "outline"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section-scores": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge-reflexivity",
+        "badge-viral"
+      ]
+    },
+    "badge-reflexivity": {
+      "type": "Badge",
+      "props": {
+        "text": "Reflexivity 4/5",
+        "variant": "secondary"
+      }
+    },
+    "badge-viral": {
+      "type": "Badge",
+      "props": {
+        "text": "Viral 4/5",
+        "variant": "secondary"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "link-hyperstitions": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Soon on Hyperstitions",
+        "href": "https://www.hyperstitions.com/",
+        "source": "hyperstitions.com"
+      }
+    }
+  }
+}
