@@ -1,12 +1,12 @@
-*Top Tweets — MIROSHARK crypto token on Base chain AND https://github.com/aaronjmars/MiroShark (2026-05-13)*
+## Summary
 
-_Note: XAI\_API\_KEY not set — results via WebSearch (engagement data unavailable)_
+**fetch-tweets skill run — 2026-05-16**
 
-1. x.com/aaronjmars — Framework overview thread: upload context, generate hundreds of AI agents simulating Reddit, X & Polymarket simultaneously — profiles post, argue, and shift opinions across rounds in real time
-[View tweet](https://x.com/aaronjmars/status/2036175623622660114)
+- **Search query:** MIROSHARK crypto token on Base chain (0xd7bc6a05a56655fb2052f742b012d1dfd66e1ba3) AND https://github.com/aaronjmars/MiroShark
+- **Method:** WebSearch fallback (XAI_API_KEY not set)
+- **Searches run:** 8 queries across different angles (recent date filters, community mentions, account-specific, cashtag variations)
+- **Result:** FETCH_TWEETS_NO_NEW — all meaningful results were already in the 3-day dedup list (13 URLs from logs May 13–15). The only unseen URL (2035881065953272104) was a media-only companion tweet from the March 2026 launch with no textual content.
+- **No notification sent** (per skill rules)
+- **Log written:** `memory/logs/2026-05-16.md` and committed
 
-2. x.com/aaronjmars — Initial release: "Built a sanitized version of MiroFish called MiroShark — translated to English, improved simulation flow, recommended models, runs locally or with any OpenAI-compatible API key"
-[View tweet](https://x.com/aaronjmars/status/2035881020302430571)
-
-3. x.com/anger\_trading — Trader cashtag mention: "$miroshark"
-[View tweet](https://x.com/anger_trading/status/2041985239858475105)
+WebSearch's known limitation applies here — it heavily favors high-engagement older posts. Fresh May 14–16 tweets are not surfacing. Setting `XAI_API_KEY` would unlock the Grok X Search API for genuinely real-time results.
