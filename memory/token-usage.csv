@@ -105,3 +105,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-15,project-lens,claude-opus-4-6,5699,13706,1469944,60773
 2026-05-15,heartbeat,claude-sonnet-4-6,13,11654,494998,44350
 2026-05-16,token-report,claude-sonnet-4-6,15,14488,440242,40059
+2026-05-16,repo-pulse,claude-sonnet-4-6,15,4345,438385,27226
