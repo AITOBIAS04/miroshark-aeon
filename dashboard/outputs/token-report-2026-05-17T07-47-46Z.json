@@ -1,0 +1,163 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "MiroShark Daily — 2026-05-17"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "stat-price",
+        "stack-liquidity-volume",
+        "stack-trading",
+        "stack-performance",
+        "separator-main",
+        "text-narrative",
+        "separator-chart",
+        "link-chart"
+      ]
+    },
+    "stat-price": {
+      "type": "Stat",
+      "props": {
+        "label": "Price",
+        "value": "$0.00002118",
+        "delta": "+47.55%",
+        "trend": "up"
+      }
+    },
+    "stack-liquidity-volume": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stack-liquidity",
+        "stat-volume"
+      ]
+    },
+    "stack-liquidity": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat-liquidity",
+        "badge-ath"
+      ]
+    },
+    "stat-liquidity": {
+      "type": "Stat",
+      "props": {
+        "label": "Liquidity",
+        "value": "$761.0K"
+      }
+    },
+    "badge-ath": {
+      "type": "Badge",
+      "props": {
+        "text": "new ATH",
+        "variant": "secondary"
+      }
+    },
+    "stat-volume": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Volume",
+        "value": "$513.3K"
+      }
+    },
+    "stack-trading": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-buys-sells",
+        "text-ratio"
+      ]
+    },
+    "text-buys-sells": {
+      "type": "Text",
+      "props": {
+        "text": "Buys: 694 | Sells: 494",
+        "variant": "body"
+      }
+    },
+    "text-ratio": {
+      "type": "Text",
+      "props": {
+        "text": "Buy Ratio: 1.40",
+        "variant": "caption"
+      }
+    },
+    "stack-performance": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-7d",
+        "stat-30d"
+      ]
+    },
+    "stat-7d": {
+      "type": "Stat",
+      "props": {
+        "label": "7d Change",
+        "value": "+237.6%",
+        "trend": "up"
+      }
+    },
+    "stat-30d": {
+      "type": "Stat",
+      "props": {
+        "label": "30d Change",
+        "value": "+1009%",
+        "trend": "up"
+      }
+    },
+    "separator-main": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text-narrative": {
+      "type": "Text",
+      "props": {
+        "text": "FDV crossed $2M for the first time ($2.12M new ATH). LP hit a new record at $761K — the pool is deeper than it's ever been.",
+        "variant": "body"
+      }
+    },
+    "separator-chart": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link-chart": {
+      "type": "StoryLink",
+      "props": {
+        "title": "View Chart on Geckoterminal",
+        "href": "https://www.geckoterminal.com/base/pools/0x83a29b6619907f80e5a47d40f53d4af239a69980f22a08b10f43d357a9f06209",
+        "source": "Geckoterminal"
+      }
+    }
+  }
+}
