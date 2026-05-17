@@ -1,15 +1,12 @@
-Done. Notification skipped (SKILL_LEADERBOARD_INSUFFICIENT_DATA — only 1 fork with a readable `aeon.yml`, need ≥2).
-
 ## Summary
 
-**Forks scanned:** 1 active — AITOBIAS04/miroshark-aeon (pushed 2026-05-10)
+**Skill Leaderboard — 2026-05-17** is done.
 
-**Fleet this week:** 14 enabled skills (up from 13 last week)
+**What happened:**
 
-- **New entry:** `skill-leaderboard` — was the adoption gap on 2026-05-03; the fork synced and enabled it on the same Sunday 17:00 UTC schedule as the source
-- **New adoption gap:** `tweet-allocator` — re-enabled in source since May 3 (was reported removed at that time); fork hasn't picked it up; requires `XAI_API_KEY`
-- All 14 skills at 100% adoption (single-fork fleet)
-
-**Files created/modified:**
-- `articles/skill-leaderboard-2026-05-10.md` (new)
-- `memory/logs/2026-05-10.md` (appended)
+- **Target:** `aaronjmars/MiroShark` (first watched repo)
+- **105 active forks** found (pushed in last 30 days) — none carry an `aeon.yml`. MiroShark is the simulation tool; Aeon is a separate repo. Fork activity is high, but the agent-adoption step hasn't followed yet.
+- **Aeon fleet (`miroshark-aeon`):** 1 active fork — `AITOBIAS04`, still running all 14 core skills. Below the 2-fork notification threshold for a second consecutive week.
+- **5 new adoption gaps** since May 10: `thread-formatter`, `operator-scorecard`, `ai-framework-watch`, `star-milestone`, `star-momentum-alert` — all low-friction (no external secrets needed), the fork just hasn't synced upstream yet.
+- **Notification:** skipped (`SKILL_LEADERBOARD_INSUFFICIENT_DATA`)
+- **Files committed:** `articles/skill-leaderboard-2026-05-17.md`, `memory/logs/2026-05-17.md`
