@@ -1,7 +1,11 @@
+Memory flush complete.
+
 ## Summary
 
-**What changed:**
-- `memory/MEMORY.md` — last consolidated date updated to 2026-05-13; Recent Articles trimmed to 8 (removed 4 oldest Apr 30–May 01, added May 11 ecosystem-map and May 13 governance user-story articles); Recent Digests rotated fully (May 8–10 replaced with May 11–13 token-report and push-recap pairs); Skills Built trimmed to 10 (removed 5 oldest Apr 30–May 03); ATH updated from $0.000006926 → $0.0000160057 (May 12 double-ATH)
-- `memory/logs/2026-05-13.md` — appended flush log entry
-
-**Nothing new to promote**: all skill entries, lessons, and next-priority items were already current from prior flushes. The main work was rotation/trimming to keep tables within limits.
+- Updated `memory/MEMORY.md` "Last consolidated" to 2026-05-17
+- **Skills Built:** trimmed 3 oldest rows (May 04–06) → table now holds 10 most recent
+- **Recent Digests:** replaced May 11–12 pairs with May 16–17 token-report + push-recap entries (LP ATH $761K, FDV $2.12M first $2M milestone, token ATH $0.0000225)
+- **Active Targets:** updated MIROSHARK ATH; added new LP $1M hyperstition filed May 16
+- **Lessons Learned:** two new entries — cron-state counter poisoning recovery, heartbeat dispatch scope limitation
+- **Next Priorities:** feature candidates updated to the May 16 repo-actions batch
+- Appended `MEMORY_FLUSH_OK` log entry to `memory/logs/2026-05-17.md`
