@@ -1,0 +1,196 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Pulse"
+      },
+      "children": [
+        "repo_link",
+        "stats_section",
+        "separator1",
+        "stargazers_section",
+        "separator2",
+        "forks_section"
+      ]
+    },
+    "repo_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "aaronjmars/MiroShark",
+        "href": "https://github.com/aaronjmars/MiroShark",
+        "source": "2026-05-17"
+      },
+      "children": []
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_stars",
+        "stat_forks"
+      ]
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1166",
+        "delta": "+4",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "stat_forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "235",
+        "delta": "+3",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stargazers_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stargazers_heading",
+        "stargazers_stack"
+      ]
+    },
+    "stargazers_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Stargazers",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stargazers_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link_olddqn",
+        "link_moegilani",
+        "link_DailySuicide",
+        "link_lairulan"
+      ]
+    },
+    "link_olddqn": {
+      "type": "Link",
+      "props": {
+        "label": "olddqn",
+        "href": "https://github.com/olddqn"
+      },
+      "children": []
+    },
+    "link_moegilani": {
+      "type": "Link",
+      "props": {
+        "label": "moegilani",
+        "href": "https://github.com/moegilani"
+      },
+      "children": []
+    },
+    "link_DailySuicide": {
+      "type": "Link",
+      "props": {
+        "label": "DailySuicide",
+        "href": "https://github.com/DailySuicide"
+      },
+      "children": []
+    },
+    "link_lairulan": {
+      "type": "Link",
+      "props": {
+        "label": "lairulan",
+        "href": "https://github.com/lairulan"
+      },
+      "children": []
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "forks_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "forks_heading",
+        "forks_stack"
+      ]
+    },
+    "forks_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New Forks",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "forks_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story_DailySuicide",
+        "story_Greyjedix",
+        "story_VigilantCipher"
+      ]
+    },
+    "story_DailySuicide": {
+      "type": "StoryLink",
+      "props": {
+        "title": "DailySuicide/MiroShark",
+        "href": "https://github.com/DailySuicide/MiroShark",
+        "source": "Fork"
+      },
+      "children": []
+    },
+    "story_Greyjedix": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Greyjedix/MiroShark",
+        "href": "https://github.com/Greyjedix/MiroShark",
+        "source": "Fork"
+      },
+      "children": []
+    },
+    "story_VigilantCipher": {
+      "type": "StoryLink",
+      "props": {
+        "title": "VigilantCipher/MiroShark",
+        "href": "https://github.com/VigilantCipher/MiroShark",
+        "source": "Fork"
+      },
+      "children": []
+    }
+  }
+}
