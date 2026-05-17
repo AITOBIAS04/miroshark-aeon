@@ -47,6 +47,7 @@
 | Interactive Replay Player | 2026-05-13 | Browser VCR for completed sims; animated belief drift SVG chart with clip-path reveal; play/pause/step/scrub transport controls; 4 speed settings; per-round card with stance splits + top influencer + top post; GET /replay-data endpoint (24h cache); ReplayPlayer.vue component as results overlay tab; ReplayView.vue standalone page with ?round=N deep-linking + ?autoplay=true; EmbedDialog iframe snippet; ReplayData OpenAPI schema; 12 unit tests; bilingual i18n (code complete, push blocked — GH_GLOBAL not set) |
 | Inbound Launch Webhook | 2026-05-14 | POST /api/webhooks/launch-simulation with HMAC-SHA256 verification; closes automation loop (trigger→monitor→receive); wraps existing start code path; returns 202 with sim_id + watch_url + events_url + completion_webhook_will_fire; LAUNCH_WEBHOOK_SECRET config; Settings UI with Generate/Regenerate + usage examples (curl, GitHub Actions, Python); POST /api/settings/generate-launch-secret; 22 unit tests; OpenAPI LaunchWebhookRequest/Response schemas; bilingual docs + i18n (code complete, push blocked — GH_GLOBAL not set) |
 | Coalition Detection | 2026-05-16 | Greedy modularity-maximization community detection on interaction graph; GET /coalitions endpoint; coalitions.json cache; coalition ellipses + legend chips + detail cards in InteractionNetwork.vue; echo chamber warning; click-to-highlight; 11 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
+| Private Share Links with Expiry | 2026-05-17 | Token-signed expiring URLs for sharing unpublished sims; share_links.py pure-stdlib service; 3 admin-gated endpoints (POST/GET/DELETE share-links); GET /share/private/<token> landing route; share-token bypass on publish gates; EmbedDialog private link section with generate/copy/revoke; private_share surface stat; 20 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 
 ## Watched Repos
 - `aaronjmars/aeon` — tracked in `memory/watched-repos.md`
@@ -58,7 +59,7 @@
 - Heartbeat misdiagnosed missing skills because it only checked aeon.yml, not messages.yml scheduler — fixed with scheduler diagnostics step
 - Feature/repo-actions skills can waste CI runs building duplicate PRs — fixed with open PR dedup checks
 - Auth credentials (ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN) can expire silently — all skills fail immediately with "Not logged in"; 15-day outage Apr 16–30 (ISS-001). Monitor consecutive_failures in cron-state.json.
-- GH_GLOBAL secret not set — feature skill builds PRs locally but cannot push to watched repo; 15 consecutive blocks May 1–16 (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player, Inbound Launch Webhook, Coalition Detection stuck as local commits)
+- GH_GLOBAL secret not set — feature skill builds PRs locally but cannot push to watched repo; 16 consecutive blocks May 1–17 (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player, Inbound Launch Webhook, Coalition Detection, Private Share Links stuck as local commits)
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07; 1K stars — CLEARED 2026-05-03 (1,022 stars)
@@ -71,7 +72,7 @@
 - None
 
 ## Next Priorities
-- Set GH_GLOBAL secret — unblocks 15 built PRs (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player, Inbound Launch Webhook, Coalition Detection)
+- Set GH_GLOBAL secret — unblocks 16 built PRs (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player, Inbound Launch Webhook, Coalition Detection, Private Share Links)
 - Configure notification channels (Telegram, Discord, or Slack)
 - XAI_API_KEY not set — tweet fetching falls back to WebSearch (limited freshness)
 - Feature candidates (repo-actions 2026-05-12): Agent Conversation Thread View, Multi-Model Race Mode, Research Export Bundle (ZIP)
