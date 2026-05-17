@@ -86,8 +86,8 @@
     "last_success": "2026-05-17T07:48:01Z"
   },
   "repo-pulse": {
-    "last_dispatch": "2026-05-16T11:02:47Z",
-    "last_status": "success",
+    "last_dispatch": "2026-05-17T10:50:06Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-30T09:01:50Z",
     "total_runs": 322,
     "total_successes": 19,
