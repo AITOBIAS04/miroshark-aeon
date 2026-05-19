@@ -1,0 +1,167 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "🫀 Heartbeat 2026-05-19"
+      },
+      "children": [
+        "status_alert",
+        "sep1",
+        "missing_skills_stack",
+        "sep2",
+        "dispatch_stack",
+        "sep3",
+        "prs_stack"
+      ]
+    },
+    "status_alert": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "MISSING SKILLS",
+        "message": "Three scheduled skills did not run today"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "missing_skills_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "skills_heading",
+        "skills_badges_stack",
+        "skills_timing"
+      ]
+    },
+    "skills_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Missing Skills",
+        "level": "h3"
+      }
+    },
+    "skills_badges_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_token_report",
+        "badge_fetch_tweets",
+        "badge_repo_pulse"
+      ]
+    },
+    "badge_token_report": {
+      "type": "Badge",
+      "props": {
+        "text": "token-report",
+        "variant": "destructive"
+      }
+    },
+    "badge_fetch_tweets": {
+      "type": "Badge",
+      "props": {
+        "text": "fetch-tweets",
+        "variant": "destructive"
+      }
+    },
+    "badge_repo_pulse": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse",
+        "variant": "destructive"
+      }
+    },
+    "skills_timing": {
+      "type": "Text",
+      "props": {
+        "text": "Scheduled 06:00, 06:30, and 10:00 UTC — 10–14h overdue",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "dispatch_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "dispatch_heading",
+        "dispatch_alert"
+      ]
+    },
+    "dispatch_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Auto-dispatch",
+        "level": "h3"
+      }
+    },
+    "dispatch_alert": {
+      "type": "Alert",
+      "props": {
+        "type": "error",
+        "title": "HTTP 403",
+        "message": "Blocked (actions:read scope) — deferred to messages.yml scheduler"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "prs_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "prs_heading",
+        "prs_status",
+        "prs_note",
+        "issues_note"
+      ]
+    },
+    "prs_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Open PRs",
+        "level": "h3"
+      }
+    },
+    "prs_status": {
+      "type": "Text",
+      "props": {
+        "text": "PRs #1–#9 stalled (all previously reported, dedup applied)",
+        "variant": "body"
+      }
+    },
+    "prs_note": {
+      "type": "Badge",
+      "props": {
+        "text": "#1 #2 #3 #4 #5 #6 #7 #8 #9",
+        "variant": "secondary"
+      }
+    },
+    "issues_note": {
+      "type": "Text",
+      "props": {
+        "text": "No urgent issues filed",
+        "variant": "muted"
+      }
+    }
+  }
+}

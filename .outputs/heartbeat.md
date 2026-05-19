@@ -1,1 +1,7 @@
-Heartbeat 2026-05-18 — 5 skills missed today (token-report 06:00, fetch-tweets 06:30, repo-pulse 10:00, self-improve 13:00, repo-actions 14:00). All are past their 2h window with no active or queued runs. Auto-dispatch attempted but blocked (HTTP 403, actions:read scope). Scheduler (messages.yml) will catch them on next tick. Stalled PRs #1-9 already reported — skipped. self-improve excluded from dispatch per policy.
+🫀 Heartbeat 2026-05-19 — MISSING SKILLS
+
+token-report, fetch-tweets, and repo-pulse did not run today (scheduled 06:00, 06:30, and 10:00 UTC — 10–14h overdue).
+
+Auto-dispatch blocked (HTTP 403, actions:read scope) — deferred to messages.yml scheduler.
+
+Open PRs #1–#9 stalled (all previously reported, dedup applied). No urgent issues filed.
