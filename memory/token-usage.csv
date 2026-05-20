@@ -127,4 +127,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-19,push-recap,claude-opus-4-6,20,12674,966781,78187
 2026-05-19,heartbeat,claude-sonnet-4-6,10,6936,280020,27587
 2026-05-20,feature,claude-opus-4-6,90,38122,8045638,114547
-2026-05-20,push-recap,claude-opus-4-6,25,16250,1166862,52248
+2026-05-20,repo-actions,claude-sonnet-4-6,7686,19795,748857,63729

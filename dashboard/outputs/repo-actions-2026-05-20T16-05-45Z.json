@@ -1,0 +1,308 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas — 2026-05-20"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "subtitle",
+        "sep-1",
+        "heading-1",
+        "badges-1",
+        "desc-1",
+        "sep-2",
+        "heading-2",
+        "badges-2",
+        "desc-2",
+        "sep-3",
+        "heading-3",
+        "badges-3",
+        "desc-3",
+        "sep-4",
+        "heading-4",
+        "badges-4",
+        "desc-4",
+        "sep-5",
+        "heading-5",
+        "badges-5",
+        "desc-5",
+        "sep-6",
+        "link-details"
+      ]
+    },
+    "subtitle": {
+      "type": "Text",
+      "props": {
+        "text": "Generated from analysis of aaronjmars/MiroShark (1,182 stars · 239 forks · 0 open PRs · all May-16 ideas now built).",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading-1": {
+      "type": "Heading",
+      "props": {
+        "text": "1. Agent Journey View",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "badges-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-cat-1",
+        "badge-size-1"
+      ]
+    },
+    "badge-cat-1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-size-1": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "desc-1": {
+      "type": "Text",
+      "props": {
+        "text": "Character-arc timeline for a single agent — stance per round, full post history, flip-moment highlight. The missing detective mode for individual persuasion dynamics.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading-2": {
+      "type": "Heading",
+      "props": {
+        "text": "2. Polymarket / Manifold Calibration",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "badges-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-cat-2",
+        "badge-size-2"
+      ]
+    },
+    "badge-cat-2": {
+      "type": "Badge",
+      "props": {
+        "text": "Integration",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-size-2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "desc-2": {
+      "type": "Text",
+      "props": {
+        "text": "Pre-fetch a matching prediction market price at simulation completion; compare MiroShark's consensus to live market pricing. The credibility benchmark the quant-tools stack is missing.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading-3": {
+      "type": "Heading",
+      "props": {
+        "text": "3. Gallery Community Upvotes",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "badges-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-cat-3",
+        "badge-size-3"
+      ]
+    },
+    "badge-cat-3": {
+      "type": "Badge",
+      "props": {
+        "text": "Community",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-size-3": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "desc-3": {
+      "type": "Text",
+      "props": {
+        "text": "One-tap upvote on gallery cards — IP-hashed, anonymous, sortable. Direct quality signal distinct from the algorithmic trending sort.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading-4": {
+      "type": "Heading",
+      "props": {
+        "text": "4. Academic Citation Generator",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "badges-4": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-cat-4",
+        "badge-size-4"
+      ]
+    },
+    "badge-cat-4": {
+      "type": "Badge",
+      "props": {
+        "text": "DX",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-size-4": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "desc-4": {
+      "type": "Text",
+      "props": {
+        "text": "GET /api/simulation/:id/citation?format=bibtex|apa|chicago|mla — pure string formatting, no LLM. Closes the last meter between \"I ran this simulation\" and \"I cited this simulation.\"",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading-5": {
+      "type": "Heading",
+      "props": {
+        "text": "5. Simulation Outcome Auto-Resolution",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "badges-5": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-cat-5",
+        "badge-size-5"
+      ]
+    },
+    "badge-cat-5": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-size-5": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "desc-5": {
+      "type": "Text",
+      "props": {
+        "text": "Set a resolution_date and resolution_url at launch; prefetch script checks on the due date and auto-marks verified/incorrect. Closes the feedback loop the verified-predictions feature left open.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-6": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "link-details": {
+      "type": "Link",
+      "props": {
+        "label": "Full details",
+        "href": "https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-20.md"
+      },
+      "children": []
+    }
+  }
+}
