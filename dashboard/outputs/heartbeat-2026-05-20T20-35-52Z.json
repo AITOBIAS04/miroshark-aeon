@@ -1,0 +1,185 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat 2026-05-20"
+      },
+      "children": [
+        "heading_status",
+        "sep1",
+        "alert_missing",
+        "sep2",
+        "table_missing",
+        "sep3",
+        "text_consecutive",
+        "sep4",
+        "alert_dispatch",
+        "sep5",
+        "heading_completed",
+        "badges_stack",
+        "sep6",
+        "text_issues_prs"
+      ]
+    },
+    "heading_status": {
+      "type": "Heading",
+      "props": {
+        "text": "5 missing skills on Wednesday cycle",
+        "level": "h2"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "alert_missing": {
+      "type": "Alert",
+      "props": {
+        "title": "Missing Skills (all >2h past schedule)",
+        "type": "warning"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "table_missing": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Scheduled (UTC)",
+          "Overdue"
+        ],
+        "rows": [
+          [
+            "token-report",
+            "06:00",
+            "~14.5h"
+          ],
+          [
+            "fetch-tweets",
+            "06:30",
+            "~14h"
+          ],
+          [
+            "repo-pulse",
+            "10:00",
+            "~10.5h"
+          ],
+          [
+            "self-improve",
+            "13:00",
+            "~7.5h"
+          ],
+          [
+            "project-lens",
+            "16:00",
+            "~4.5h"
+          ]
+        ]
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_consecutive": {
+      "type": "Text",
+      "props": {
+        "text": "Note: token-report, fetch-tweets, repo-pulse also missed yesterday; now 2nd consecutive day for these three.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "alert_dispatch": {
+      "type": "Alert",
+      "props": {
+        "title": "Auto-dispatch blocked",
+        "message": "HTTP 403, actions:read scope (same as May 19). Deferred to scheduler (messages.yml).",
+        "type": "error"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_completed": {
+      "type": "Heading",
+      "props": {
+        "text": "Completed today",
+        "level": "h3"
+      }
+    },
+    "badges_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_feature",
+        "badge_repo_actions",
+        "badge_push_recap",
+        "badge_memory_flush"
+      ]
+    },
+    "badge_feature": {
+      "type": "Badge",
+      "props": {
+        "text": "feature ✓",
+        "variant": "default"
+      }
+    },
+    "badge_repo_actions": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-actions ✓",
+        "variant": "default"
+      }
+    },
+    "badge_push_recap": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap ✓",
+        "variant": "default"
+      }
+    },
+    "badge_memory_flush": {
+      "type": "Badge",
+      "props": {
+        "text": "memory-flush ✓",
+        "variant": "default"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_issues_prs": {
+      "type": "Text",
+      "props": {
+        "text": "No open issues. Stalled PRs #1–#9 previously reported, dedup applied.",
+        "variant": "body"
+      }
+    }
+  }
+}
