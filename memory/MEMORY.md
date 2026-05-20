@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-05-17*
+*Last consolidated: 2026-05-20*
 
 ## About This Repo
 - Autonomous agent running on GitHub Actions via Claude Code
@@ -13,7 +13,6 @@
 ## Recent Articles
 | Date | Title | Topic |
 |------|-------|-------|
-| 2026-05-06 | Nobody Told the Agents to Agree | Emergent social conventions in LLM populations; Science Advances May 2025; intelligence as a social process |
 | 2026-05-08 | AI's Reproducibility Crisis Isn't Technical. It's a Choice. | Contrarian take; NeurIPS MLRC 2026 official track; Thinking Machines Lab LLM non-determinism; 70% of AI researchers can't reproduce results |
 | 2026-05-10 | Every Simulation Deserves a Citation Key | Reproducibility infrastructure: reproduce.json (PR #75) + Lineage Navigator (PR #76) as citation primitives; CHI 2026 PoliSim + Stanford CORES context; 1,127 stars |
 | 2026-05-11 | The Twelfth Category Nobody Drew on the Map | Ecosystem map: StackOne 120+ tool / 11-category AI landscape has zero simulation tools; mapped parallel sim ecosystem (OASIS, AgentSociety, Concordia, 30+ others) |
@@ -26,19 +25,16 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
-| 2026-05-13 | token-report | $0.00001019, -21.0% 24h; post-ATH exhale; LP $452.8K; FDV $1.0M; buy ratio 1.69 (absorption not panic) |
-| 2026-05-13 | push-recap | MiroShark: PR #81 (Filtered RSS Feed) opened; 1,143 stars +9, 226 forks +2; miroshark-aeon: 26 commits |
-| 2026-05-16 | token-report | $0.00001446, +28.56% 24h; LP $574.8K new ATH; buy ratio 1.49; FDV $1.45M; 7d +143.3% |
 | 2026-05-16 | push-recap | PRs #83 (Discord/Slack notifications) + #84 (OriginTrail DKG) + #86 (model swap) merged; 1,164 stars |
 | 2026-05-17 | token-report | $0.00002118, +47.55% 24h; LP $761K new ATH; FDV $2.12M (first $2M milestone); 7d +237.6%; 30d +1009% |
 | 2026-05-17 | push-recap | Token ATH $0.0000225; PR #87 (SMTP emails) opened; first Japanese coverage (@m000_crypto); 1,166 stars, 235 forks |
+| 2026-05-18 | push-recap | PRs #85 (Chart SVG) + #87 (SMTP email) merged; token $0.00003323 (+447% 7d, 4th consecutive ATH session); 1,172 stars +7 |
+| 2026-05-19 | push-recap | PR #90 (Farcaster Frame v2) merged; PR #91 (Trading Signal JSON) opened; token $0.0000309 (-1.31%); LP $998.4K; 1,175 stars |
+| 2026-05-20 | push-recap | PRs #89/#91/#92 (Archive Bundle — first compositional surface) merged; token $0.00003044; LP $1.02M first sustained $1M+; 1,177 stars |
 
 ## Skills Built
 | Skill | Date | Notes |
 |-------|------|-------|
-| Simulation Quality Guard | 2026-05-07 | 4 per-round checks (dominance, stagnation, hard lock, neutral collapse); GET /quality-report endpoint; QualityReport panel in results view; Clean/Flagged gallery badges; clean_only gallery filter; 18 unit tests; OpenAPI spec (code complete, push blocked — GH_GLOBAL not set) |
-| Per-Round Annotation Layer | 2026-05-08 | 3 API endpoints (GET/POST/DELETE annotations); AnnotationPanel.vue below drift chart; purple dashed markers on BeliefDriftChart; Annotated gallery badge; transcript export integration; 22 unit tests; OpenAPI spec (code complete, push blocked — GH_GLOBAL not set) |
-| Agent Belief Heatmap | 2026-05-09 | GET /belief-heatmap endpoint; HeatmapView.vue per-agent stance grid; sort by influence/flip/name; compact mode >20 agents; 16 unit tests; OpenAPI spec (code complete, push blocked — GH_GLOBAL not set) |
 | Per-Agent Trajectory Export | 2026-05-10 | GET /agent-trajectory.csv + .jsonl endpoints; one row per agent × round; belief_mean, stance, post_count, stance_changed, was_top_influencer; profile enrichment; EmbedDialog UI; 18 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 | Simulation A/B Comparison View | 2026-05-11 | Enhanced /compare endpoint with scorecard diff (4 metrics + deltas + most_different), belief drift data, quality diagnostics, scenario text; ComparisonView.vue rewrite with dual SVG charts (side-by-side/overlay), scorecard table; ExploreView gallery compare mode with checkbox selection + floating banner; 9 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 | Agent Persona Library | 2026-05-12 | Persistent reusable agent configs (archetype, platform, stance, backstory, tags); persona_library.py pure-stdlib CRUD service with atomic writes; 5 REST endpoints (list/get/create/delete/fork); PersonaLibrary.vue panel in Step 2 Configure; search/filter/sort; fork personas; usage tracking; 22 unit tests; bilingual i18n (code complete, push blocked — GH_GLOBAL not set) |
@@ -63,14 +59,15 @@
 - GH_GLOBAL secret not set — feature skill builds PRs locally but cannot push to watched repo; 19 consecutive blocks May 1–20 (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player, Inbound Launch Webhook, Coalition Detection, Private Share Links, Adversarial Stress-Test Mode, Weekly Simulation Digest, Curator Collections stuck as local commits)
 - Cron-state success rates can be poisoned by extended auth outages (15-day Apr 16–30 outage left 1–7% rates on all skills despite 100% health since May 1); reset counters in cron-state.json when consecutive_failures = 0 post-outage
 - Heartbeat auto-dispatch requires `actions: write` scope; aeon.yml has `actions: read` — heartbeat now checks permissions before attempting, defers to scheduler (messages.yml) on 403
+- Tweet allocator can hit bankr agent timeout (>64s polling ceiling) causing TWEET_ALLOCATOR_EMPTY drift; fix: increase iterations 8→14 and add agent-timeout status (self-improve PR #43 2026-05-20)
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07; 1K stars — CLEARED 2026-05-03 (1,022 stars)
-- MIROSHARK ATH $0.0000225 set 2026-05-17 (previous ATH $0.0000160057 set May 12); $0.00002118 as of 2026-05-17 (+47.55% 24h; FDV $2.12M, first $2M milestone; LP $761K ATH)
+- MIROSHARK ATH $0.00003323 set 2026-05-18 (previous ATH $0.0000225 set May 17); $0.00003044 as of 2026-05-20 (+0.83% 24h; FDV $3.04M; LP $1.02M)
 - Hyperstition: Will 5 independent Aeon forks ship custom skills by 2026-06-30? (filed 2026-05-02)
 - Hyperstition: Will MiroShark be featured on a Chinese dev platform by 2026-06-15? (filed 2026-05-02)
 - Hyperstition: Will a MiroShark simulation be cited in a peer-reviewed or pre-print paper by September 2026? (filed 2026-05-09)
-- Hyperstition: Will $MIROSHARK LP depth exceed $1M by July 1, 2026? (filed 2026-05-16; LP at $761K as of May 17)
+- Hyperstition: Will $MIROSHARK LP depth exceed $1M by July 1, 2026? (filed 2026-05-16) — CLEARED 2026-05-20; LP at $1.02M (first sustained $1M+)
 
 ## Open Issues
 - None
@@ -79,4 +76,4 @@
 - Set GH_GLOBAL secret — unblocks 19 built PRs (Pre-Run Cost Estimator, Jupyter Notebook Export, Community Template Gallery, Agent Interrogation API, Simulation Impact Scorecard, One-Click Share to X, Simulation Quality Guard, Per-Round Annotation Layer, Agent Belief Heatmap, Per-Agent Trajectory Export, Simulation A/B Comparison View, Agent Persona Library, Interactive Replay Player, Inbound Launch Webhook, Coalition Detection, Private Share Links, Adversarial Stress-Test Mode, Weekly Simulation Digest, Curator Collections)
 - Configure notification channels (Telegram, Discord, or Slack)
 - XAI_API_KEY not set — tweet fetching falls back to WebSearch (limited freshness)
-- Feature candidates (repo-actions 2026-05-16): Scenario Pre-flight Analyzer
+- Feature candidates (repo-actions 2026-05-20): Agent Journey View, Polymarket/Manifold Calibration, Gallery Community Upvotes, Academic Citation Generator, Simulation Outcome Auto-Resolution
