@@ -1,0 +1,303 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Feature Built — 2026-05-21"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "section-journey",
+        "sep-1",
+        "section-matters",
+        "sep-2",
+        "section-built",
+        "sep-3",
+        "section-how",
+        "sep-4",
+        "section-next",
+        "sep-5",
+        "alert-build"
+      ]
+    },
+    "section-journey": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-journey",
+        "text-journey-desc"
+      ]
+    },
+    "heading-journey": {
+      "type": "Heading",
+      "props": {
+        "text": "Agent Journey View",
+        "level": "h2"
+      }
+    },
+    "text-journey-desc": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark simulations now have a \"detective mode\" for individual agents. Instead of reading aggregate charts or scanning through entire conversation threads, you can select any agent and see their complete story: how their stance evolved round by round, what they posted, who influenced them (with post excerpts), and which other agents they swayed. Stance-flip moments get highlighted so you can instantly find the turning point in any agent's arc."
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-matters": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-matters",
+        "text-matters-content"
+      ]
+    },
+    "heading-matters": {
+      "type": "Heading",
+      "props": {
+        "text": "Why this matters",
+        "level": "h3"
+      }
+    },
+    "text-matters-content": {
+      "type": "Text",
+      "props": {
+        "text": "Until now, answering \"why did this Risk Manager flip from NO to YES in round 7?\" required cross-referencing three panels — the belief drift chart, the interaction network, and the thread view. The Agent Journey View reconstructs that arc as a single vertical timeline. For researchers studying persuasion dynamics, this is the character-arc layer that makes individual narrative shifts legible. For anyone using MiroShark to illustrate how opinions change, the journey is the story you can quote from. This was the #1 ranked idea from yesterday's repo-actions analysis."
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-built": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-built",
+        "stack-components",
+        "text-tests"
+      ]
+    },
+    "heading-built": {
+      "type": "Heading",
+      "props": {
+        "text": "What was built",
+        "level": "h3"
+      }
+    },
+    "stack-components": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "component-1",
+        "component-2",
+        "component-3",
+        "component-4"
+      ]
+    },
+    "component-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-file-1",
+        "text-component-1"
+      ]
+    },
+    "badge-file-1": {
+      "type": "Badge",
+      "props": {
+        "text": "backend/app/services/agent_journey.py (366 LoC)",
+        "variant": "outline"
+      }
+    },
+    "text-component-1": {
+      "type": "Text",
+      "props": {
+        "text": "Pure-stdlib service that computes per-round stance arc, posts, influenced-by (top 3 per round with 80-char post excerpts), and influenced (with old→new stance transitions). Uses the same ±0.2 stance threshold as every other surface. Results cached per agent in agent_journey_cache/."
+      }
+    },
+    "component-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-file-2",
+        "text-component-2"
+      ]
+    },
+    "badge-file-2": {
+      "type": "Badge",
+      "props": {
+        "text": "backend/app/api/simulation.py",
+        "variant": "outline"
+      }
+    },
+    "text-component-2": {
+      "type": "Text",
+      "props": {
+        "text": "GET /agent-journey?agent_name endpoint. Without agent_name, returns the list of available agents (for the picker). With agent_name, returns the full journey. Path-traversal-safe caching."
+      }
+    },
+    "component-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-file-3",
+        "text-component-3"
+      ]
+    },
+    "badge-file-3": {
+      "type": "Badge",
+      "props": {
+        "text": "frontend/src/components/AgentJourneyView.vue (610 lines)",
+        "variant": "outline"
+      }
+    },
+    "text-component-3": {
+      "type": "Text",
+      "props": {
+        "text": "Vue component — searchable agent picker, vertical timeline with round cards, stance badges (bullish/neutral/bearish colors), belief values, post text with expand/collapse, influenced-by with clickable agent names, influenced with stance-shift dot indicators, flip-moment orange highlights, mini SVG sparkline header. Clicking any agent name in the influence list navigates to that agent's journey."
+      }
+    },
+    "component-4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-file-4",
+        "text-component-4"
+      ]
+    },
+    "badge-file-4": {
+      "type": "Badge",
+      "props": {
+        "text": "frontend/src/components/InteractionNetwork.vue",
+        "variant": "outline"
+      }
+    },
+    "text-component-4": {
+      "type": "Text",
+      "props": {
+        "text": "\"View journey →\" link added to node tooltip — click any agent in the network graph to open their journey directly."
+      }
+    },
+    "text-tests": {
+      "type": "Text",
+      "props": {
+        "text": "22 unit tests covering stance classification, archetype detection, journey structure, stance tracking, post truncation, influence capping, edge cases."
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-how": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-how",
+        "text-how-content"
+      ]
+    },
+    "heading-how": {
+      "type": "Heading",
+      "props": {
+        "text": "How it works",
+        "level": "h3"
+      }
+    },
+    "text-how-content": {
+      "type": "Text",
+      "props": {
+        "text": "The service reads three data sources per simulation: trajectory.json (belief positions per round per agent), profiles.json (agent ID↔name mapping + archetype), and platform action logs (twitter/reddit/polymarket actions.jsonl). For each round, it looks up the target agent's belief value, classifies their stance, finds their posts, identifies who they engaged with (influenced_by — likes, reposts, quotes, comments on others' content), and who engaged with them (influenced — with stance transition tracking). The timeline is assembled once and cached as immutable JSON per agent."
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-next": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-next",
+        "text-next-content"
+      ]
+    },
+    "heading-next": {
+      "type": "Heading",
+      "props": {
+        "text": "What's next",
+        "level": "h3"
+      }
+    },
+    "text-next-content": {
+      "type": "Text",
+      "props": {
+        "text": "Could extend with a \"compare two agents\" overlay, or integrate journey data into the article generator for richer narrative construction around flip moments."
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "alert-build": {
+      "type": "Alert",
+      "props": {
+        "title": "Build Status",
+        "message": "PR: Push blocked — GH_GLOBAL secret not set (20th consecutive build). Feature is code-complete on local branch feat/agent-journey-view.",
+        "type": "warning"
+      }
+    }
+  }
+}
