@@ -1,19 +1,19 @@
-*Repo Action Ideas — 2026-05-20*
-Generated from analysis of aaronjmars/MiroShark (1,182 stars · 239 forks · 0 open PRs · all May-16 ideas now built).
+*Repo Action Ideas — 2026-05-22*
+Generated from analysis of aaronjmars/MiroShark (1,190 stars, 243 forks) — these are ideas that could be autonomously built by the feature skill tomorrow.
 
-1. Agent Journey View (Feature, Small)
-   Character-arc timeline for a single agent — stance per round, full post history, flip-moment highlight. The missing detective mode for individual persuasion dynamics.
+1. MiroShark as MCP Tool Server (Integration, Small)
+   Expose MiroShark as a Model Context Protocol server so Claude, Cursor, and any MCP-compatible AI assistant can launch and query simulations directly from a conversation — no web UI required.
 
-2. Polymarket / Manifold Calibration (Integration, Small)
-   Pre-fetch a matching prediction market price at simulation completion; compare MiroShark's consensus to live market pricing. The credibility benchmark the quant-tools stack is missing.
+2. Simulation Tag System (Feature, Small)
+   Let operators add 1–5 semantic tags at publish time ("macro", "governance", "crypto") with gallery filtering by tag and a /tags browse page — the vocabulary layer that makes the corpus semantically navigable.
 
-3. Gallery Community Upvotes (Community, Small)
-   One-tap upvote on gallery cards — IP-hashed, anonymous, sortable. Direct quality signal distinct from the algorithmic trending sort.
+3. Cross-Simulation Archetype Leaderboard (Feature/Analytics, Small)
+   Aggregate influence rate, flip rate, and coalition membership across all published simulations per agent archetype — the first feature that turns the accumulated gallery into a publishable behavioral dataset.
 
-4. Academic Citation Generator (DX, Small)
-   GET /api/simulation/:id/citation?format=bibtex|apa|chicago|mla — pure string formatting, no LLM. Closes the last meter between "I ran this simulation" and "I cited this simulation."
+4. Discussion Threads on Watch Pages (Community, Small)
+   Lightweight public comments on every published simulation's watch page — name + text + optional round reference, no account needed, with operator moderation — the first surface where visitors can add interpretive conversation alongside simulation data.
 
-5. Simulation Outcome Auto-Resolution (Feature, Small)
-   Set a resolution_date and resolution_url at launch; prefetch script checks on the due date and auto-marks verified/incorrect. Closes the feedback loop the verified-predictions feature left open.
+5. Recurring Simulation Series (Feature, Medium)
+   Set a weekly/biweekly/monthly recurrence on any simulation config; results stack as a time-series showing how AI agent consensus evolves over time, with a /series page and trend chart.
 
-Full details: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-actions-2026-05-20.md
+Full details: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-actions-2026-05-22.md

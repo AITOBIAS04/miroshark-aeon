@@ -1,0 +1,321 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas — 2026-05-22"
+      },
+      "children": [
+        "subtitle",
+        "sep1",
+        "item1",
+        "sep2",
+        "item2",
+        "sep3",
+        "item3",
+        "sep4",
+        "item4",
+        "sep5",
+        "item5",
+        "sep6",
+        "details"
+      ]
+    },
+    "subtitle": {
+      "type": "Text",
+      "props": {
+        "text": "Generated from analysis of aaronjmars/MiroShark (1,190 stars, 243 forks) — these are ideas that could be autonomously built by the feature skill tomorrow.",
+        "variant": "muted"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "item1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item1-title",
+        "item1-badges",
+        "item1-desc"
+      ]
+    },
+    "item1-title": {
+      "type": "Heading",
+      "props": {
+        "text": "1. MiroShark as MCP Tool Server",
+        "level": "h3"
+      }
+    },
+    "item1-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge1a",
+        "badge1b"
+      ]
+    },
+    "badge1a": {
+      "type": "Badge",
+      "props": {
+        "text": "Integration",
+        "variant": "outline"
+      }
+    },
+    "badge1b": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "item1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Expose MiroShark as a Model Context Protocol server so Claude, Cursor, and any MCP-compatible AI assistant can launch and query simulations directly from a conversation — no web UI required.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "item2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item2-title",
+        "item2-badges",
+        "item2-desc"
+      ]
+    },
+    "item2-title": {
+      "type": "Heading",
+      "props": {
+        "text": "2. Simulation Tag System",
+        "level": "h3"
+      }
+    },
+    "item2-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge2a",
+        "badge2b"
+      ]
+    },
+    "badge2a": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "outline"
+      }
+    },
+    "badge2b": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "item2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Let operators add 1–5 semantic tags at publish time (\"macro\", \"governance\", \"crypto\") with gallery filtering by tag and a /tags browse page — the vocabulary layer that makes the corpus semantically navigable.",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "item3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item3-title",
+        "item3-badges",
+        "item3-desc"
+      ]
+    },
+    "item3-title": {
+      "type": "Heading",
+      "props": {
+        "text": "3. Cross-Simulation Archetype Leaderboard",
+        "level": "h3"
+      }
+    },
+    "item3-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge3a",
+        "badge3b"
+      ]
+    },
+    "badge3a": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature/Analytics",
+        "variant": "outline"
+      }
+    },
+    "badge3b": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "item3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Aggregate influence rate, flip rate, and coalition membership across all published simulations per agent archetype — the first feature that turns the accumulated gallery into a publishable behavioral dataset.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "item4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item4-title",
+        "item4-badges",
+        "item4-desc"
+      ]
+    },
+    "item4-title": {
+      "type": "Heading",
+      "props": {
+        "text": "4. Discussion Threads on Watch Pages",
+        "level": "h3"
+      }
+    },
+    "item4-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge4a",
+        "badge4b"
+      ]
+    },
+    "badge4a": {
+      "type": "Badge",
+      "props": {
+        "text": "Community",
+        "variant": "outline"
+      }
+    },
+    "badge4b": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "item4-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Lightweight public comments on every published simulation's watch page — name + text + optional round reference, no account needed, with operator moderation — the first surface where visitors can add interpretive conversation alongside simulation data.",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "item5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item5-title",
+        "item5-badges",
+        "item5-desc"
+      ]
+    },
+    "item5-title": {
+      "type": "Heading",
+      "props": {
+        "text": "5. Recurring Simulation Series",
+        "level": "h3"
+      }
+    },
+    "item5-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge5a",
+        "badge5b"
+      ]
+    },
+    "badge5a": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "outline"
+      }
+    },
+    "badge5b": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium",
+        "variant": "secondary"
+      }
+    },
+    "item5-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Set a weekly/biweekly/monthly recurrence on any simulation config; results stack as a time-series showing how AI agent consensus evolves over time, with a /series page and trend chart.",
+        "variant": "body"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {}
+    },
+    "details": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full details",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-actions-2026-05-22.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
