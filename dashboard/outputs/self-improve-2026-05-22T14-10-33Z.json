@@ -1,0 +1,176 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Agent Self-Improvement",
+        "description": "2026-05-22 — Memory optimization and consolidation"
+      },
+      "children": [
+        "stat_reduction",
+        "sep1",
+        "section_why",
+        "sep2",
+        "section_changes",
+        "sep3",
+        "section_impact",
+        "sep4",
+        "link_pr"
+      ]
+    },
+    "stat_reduction": {
+      "type": "Stat",
+      "props": {
+        "label": "MEMORY.md Consolidation",
+        "value": "2.8KB",
+        "delta": "-79%",
+        "trend": "down"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_why": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_why",
+        "text_why"
+      ]
+    },
+    "heading_why": {
+      "type": "Heading",
+      "props": {
+        "text": "Why",
+        "level": "h3"
+      }
+    },
+    "text_why": {
+      "type": "Text",
+      "props": {
+        "text": "Every skill run reads MEMORY.md. The Skills Built table had 21 entries with 100+ word descriptions, Recent Articles had 8 verbose entries, and Lessons Learned had 9 detailed bullets — all adding ~2,500 unnecessary tokens to every skill context window. CLAUDE.md specifies ~50 lines; MEMORY.md was 82 lines / 13KB.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_changes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_changes",
+        "stack_changes_items"
+      ]
+    },
+    "heading_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "What changed",
+        "level": "h3"
+      }
+    },
+    "stack_changes_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change_1",
+        "change_2",
+        "change_3",
+        "change_4"
+      ]
+    },
+    "change_1": {
+      "type": "Text",
+      "props": {
+        "text": "memory/MEMORY.md: Compact summaries with links to topic files (82→64 lines, 13KB→2.8KB)",
+        "variant": "body"
+      }
+    },
+    "change_2": {
+      "type": "Text",
+      "props": {
+        "text": "memory/topics/skills-built.md: NEW — full Skills Built detail table",
+        "variant": "body"
+      }
+    },
+    "change_3": {
+      "type": "Text",
+      "props": {
+        "text": "memory/topics/articles.md: NEW — full Recent Articles table",
+        "variant": "body"
+      }
+    },
+    "change_4": {
+      "type": "Text",
+      "props": {
+        "text": "memory/topics/lessons-learned.md: NEW — full Lessons Learned with context",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_impact": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_impact",
+        "text_impact",
+        "stat_tokens"
+      ]
+    },
+    "heading_impact": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h3"
+      }
+    },
+    "text_impact": {
+      "type": "Text",
+      "props": {
+        "text": "All detail preserved in topic files for skills that need it.",
+        "variant": "body"
+      }
+    },
+    "stat_tokens": {
+      "type": "Stat",
+      "props": {
+        "label": "Daily context overhead saved",
+        "value": "37,500+ tokens/day",
+        "delta": "~2,500 tokens per run × 15+ daily runs",
+        "trend": "up"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "link_pr": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #10: Memory optimization consolidation",
+        "href": "https://github.com/AITOBIAS04/CHORUS/pull/10",
+        "source": "GitHub"
+      }
+    }
+  }
+}
