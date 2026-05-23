@@ -1,0 +1,74 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Top Tweets"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stack-header",
+        "alert-api",
+        "stat-count",
+        "link-digest"
+      ]
+    },
+    "stack-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "text-account",
+        "text-date"
+      ]
+    },
+    "text-account": {
+      "type": "Text",
+      "props": {
+        "text": "MIROSHARK / MiroShark"
+      }
+    },
+    "text-date": {
+      "type": "Text",
+      "props": {
+        "text": "2026-05-23",
+        "variant": "muted"
+      }
+    },
+    "alert-api": {
+      "type": "Alert",
+      "props": {
+        "title": "API Configuration",
+        "message": "XAI_API_KEY not set; results via WebSearch",
+        "type": "info"
+      }
+    },
+    "stat-count": {
+      "type": "Stat",
+      "props": {
+        "label": "Tweets Found",
+        "value": "5"
+      }
+    },
+    "link-digest": {
+      "type": "Link",
+      "props": {
+        "label": "View full digest",
+        "href": "memory/logs/2026-05-23.md"
+      }
+    }
+  }
+}
