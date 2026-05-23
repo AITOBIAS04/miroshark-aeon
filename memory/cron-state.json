@@ -86,8 +86,8 @@
     "last_success": "2026-05-23T07:48:51Z"
   },
   "repo-pulse": {
-    "last_dispatch": "2026-05-22T11:42:10Z",
-    "last_status": "success",
+    "last_dispatch": "2026-05-23T10:54:30Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-30T09:01:50Z",
     "total_runs": 324,
     "total_successes": 21,
@@ -134,7 +134,7 @@
     "last_success": "2026-05-16T16:45:08Z"
   },
   "hyperstitions-ideas": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-04-30T09:02:14Z",
     "total_runs": 287,
     "total_successes": 5,
@@ -142,7 +142,7 @@
     "consecutive_failures": 0,
     "success_rate": 0.02,
     "last_error": "421e44a\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
-    "last_dispatch": "2026-05-16T11:02:47Z",
+    "last_dispatch": "2026-05-23T10:54:30Z",
     "last_success": "2026-05-16T11:06:15Z"
   },
   "skill-leaderboard": {
