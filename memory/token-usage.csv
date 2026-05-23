@@ -139,3 +139,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-22,heartbeat,claude-sonnet-4-6,9,5063,232563,24894
 2026-05-23,fetch-tweets,claude-sonnet-4-6,1212,13957,881136,43676
 2026-05-23,hyperstitions-ideas,claude-opus-4-6,9,4878,249737,26999
+2026-05-23,feature,claude-opus-4-6,101,37468,8881806,105414
