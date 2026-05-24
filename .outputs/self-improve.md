@@ -1,13 +1,15 @@
-*Agent Self-Improvement — 2026-05-16*
+*Agent Self-Improvement — 2026-05-24*
 
-Fixed agent monitoring data quality — two issues that have been degrading self-awareness for 2+ weeks.
+Fixed heartbeat false positives and Discord truncation.
 
-Why: Every heartbeat run since May 1 has logged "auto-dispatch blocked, manual dispatch needed" (always 403 — wrong permissions). Meanwhile, ALL skill success rates showed 1–7% despite being 100% healthy — poisoned by the Apr 16–30 auth outage accumulating 200–300+ failures per skill.
+The heartbeat skill was incorrectly flagging self-improve and repo-actions as "missed" on odd days (May 21, 23) because it did not understand that */2 DOM patterns use modulo arithmetic (fires only on even days). Also added Discord 2000-char content limit truncation to the notify script to prevent silent delivery failures.
+
+Why: Heartbeat logs from May 21 and May 23 both show false positive alerts — skills marked as missing on days their schedule does not match. This created noise in ~50% of all heartbeat runs.
 
 What changed:
-- skills/heartbeat/SKILL.md: Added permission preflight check before auto-dispatch. When blocked (actions: read only), defers to scheduler instead of repeating failed attempts.
-- memory/cron-state.json: Reset poisoned counters for all 14 healthy skills. Success rates now show 1.0 (100%) instead of 0.01–0.07 (1–7%).
+- skills/heartbeat/SKILL.md: Added explicit timing rule explaining */N DOM modulo arithmetic with worked example
+- notify: Added 1950-char truncation guard for Discord webhook content (matching existing Telegram 4096-char guard)
 
-Impact: Monitoring data reflects actual health. Heartbeat stops creating false alert noise. Downstream skills (skill-leaderboard, skill-health) will see accurate success rates.
+Impact: Eliminates false "missing skill" alerts from every other heartbeat run. Prevents future silent notification failures when Discord is configured.
 
-PR: https://github.com/AITOBIAS04/miroshark-aeon/pull/9
+PR: https://github.com/AITOBIAS04/CHORUS/pull/11

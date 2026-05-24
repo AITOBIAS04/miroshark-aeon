@@ -1,0 +1,155 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Self-Improvement"
+      },
+      "children": [
+        "heading",
+        "summary_text",
+        "separator1",
+        "why_section",
+        "separator2",
+        "what_changed_section",
+        "separator3",
+        "impact_section",
+        "separator4",
+        "pr_link"
+      ]
+    },
+    "heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Agent Self-Improvement — 2026-05-24",
+        "level": "h2"
+      }
+    },
+    "summary_text": {
+      "type": "Text",
+      "props": {
+        "text": "Fixed heartbeat false positives and Discord truncation.",
+        "variant": "lead"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "why_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "why_heading",
+        "why_text"
+      ]
+    },
+    "why_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Why",
+        "level": "h3"
+      }
+    },
+    "why_text": {
+      "type": "Text",
+      "props": {
+        "text": "Heartbeat logs from May 21 and May 23 both show false positive alerts — skills marked as missing on days their schedule does not match. This created noise in ~50% of all heartbeat runs. The heartbeat skill was incorrectly flagging self-improve and repo-actions as \"missed\" on odd days (May 21, 23) because it did not understand that */2 DOM patterns use modulo arithmetic (fires only on even days). Also added Discord 2000-char content limit truncation to the notify script to prevent silent delivery failures.",
+        "variant": "body"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "what_changed_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "what_heading",
+        "change_stack"
+      ]
+    },
+    "what_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What changed",
+        "level": "h3"
+      }
+    },
+    "change_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change_item_1",
+        "change_item_2"
+      ]
+    },
+    "change_item_1": {
+      "type": "Text",
+      "props": {
+        "text": "skills/heartbeat/SKILL.md: Added explicit timing rule explaining */N DOM modulo arithmetic with worked example",
+        "variant": "body"
+      }
+    },
+    "change_item_2": {
+      "type": "Text",
+      "props": {
+        "text": "notify: Added 1950-char truncation guard for Discord webhook content (matching existing Telegram 4096-char guard)",
+        "variant": "body"
+      }
+    },
+    "separator3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "impact_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "impact_heading",
+        "impact_text"
+      ]
+    },
+    "impact_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Impact",
+        "level": "h3"
+      }
+    },
+    "impact_text": {
+      "type": "Text",
+      "props": {
+        "text": "Eliminates false \"missing skill\" alerts from every other heartbeat run. Prevents future silent notification failures when Discord is configured.",
+        "variant": "body"
+      }
+    },
+    "separator4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #11",
+        "href": "https://github.com/AITOBIAS04/CHORUS/pull/11",
+        "source": "GitHub"
+      }
+    }
+  }
+}
