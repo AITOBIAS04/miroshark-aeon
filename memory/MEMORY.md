@@ -21,6 +21,7 @@
 | 2026-05-14 | Nobody Indexes a Simulation | Simulations as web content type: sitemap (PR #82) + filtered RSS (PR #81) make results crawlable/subscribable; RSS revival 2026; Google AI indexing; 1,147 stars |
 | 2026-05-16 | The Simulation That Outlives Its Server | Cryptographic permanence: OriginTrail DKG citation (PR #84) anchors sim provenance on decentralized knowledge graph; EU AI Act Aug 2026 deadline; 1,164 stars |
 | 2026-05-18 | When the Bots Don't Need a Boss | Current events: USC autonomous propaganda study (Web Conference 2026); 30-state deepfake laws; midterm synthetic ads; coalition detection + adversarial stress-test as defender rehearsal; 1,172 stars |
+| 2026-05-24 | Your Simulated Crowd Was Never Real. Now It Might Be. | Demographic grounding: NVIDIA Nemotron-Personas (PR #103) as credibility inflection; Springer Nature bias study; 3 external contributors; credibility stack thesis; 1,194 stars |
 
 ## Recent Digests
 | Date | Type | Key Topics |

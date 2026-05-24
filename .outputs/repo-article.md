@@ -1,5 +1,5 @@
-*New Article: The Simulation That Outlives Its Server*
+*New Article: Your Simulated Crowd Was Never Real. Now It Might Be.*
 
-MiroShark (1,164 stars) just shipped OriginTrail DKG citation — simulation provenance now anchors to a decentralized knowledge graph as a cryptographically verifiable Knowledge Asset. With the EU AI Act logging deadline 77 days away, this is a working prototype of the infrastructure regulated AI operators are scrambling to build.
+MiroShark integrated NVIDIA Nemotron-Personas for census-grounded agent demographics — the first time simulated crowds reflect real population distributions. The article traces how this, alongside three new external contributors and a growing credibility stack (reproducibility, citations, on-chain provenance), is transforming MiroShark from a simulation curiosity into something you might stake a decision on.
 
-Read: https://github.com/AITOBIAS04/miroshark-aeon/blob/main/articles/repo-article-2026-05-16.md
+Read: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-article-2026-05-24.md
