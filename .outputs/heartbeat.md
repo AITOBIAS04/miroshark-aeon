@@ -1,7 +1,1 @@
-Heartbeat 2026-05-23 — 3 skills missed their scheduled windows today (DOM=23, Saturday):
-
-• self-improve (13:00 UTC, +6h overdue) — auto-trigger skipped (meta skill)
-• repo-actions (14:00 UTC, +5h overdue) — dispatch failed: actions: read scope (403), deferred to scheduler
-• repo-article (16:00 UTC, +3h overdue) — dispatch failed: actions: read scope (403), deferred to scheduler
-
-7 of 10 expected skills ran successfully. No open PRs or urgent issues.
+Heartbeat 2026-05-24: 2 skills missed this morning — token-report (06:00 UTC, ~14h overdue) and fetch-tweets (06:30 UTC) absent from today's run list. Auto-dispatch blocked: 403 (actions:read scope). Deferred to scheduler (messages.yml). All other Sunday skills completed: repo-pulse, feature, repo-actions, self-improve, push-recap, repo-article, skill-leaderboard, memory-flush. 10 self-improve PRs stalled (#2–#11) on miroshark-aeon — chronic backlog, no new escalation.

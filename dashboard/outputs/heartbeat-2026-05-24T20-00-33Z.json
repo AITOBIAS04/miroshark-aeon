@@ -1,0 +1,254 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat 2026-05-24"
+      },
+      "children": [
+        "missed-section",
+        "separator1",
+        "dispatch-section",
+        "separator2",
+        "completed-section",
+        "separator3",
+        "stalled-section"
+      ]
+    },
+    "missed-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "missed-heading",
+        "missed-item1",
+        "missed-item2",
+        "missed-info"
+      ]
+    },
+    "missed-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Missed Skills",
+        "level": "h3"
+      }
+    },
+    "missed-item1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "missed1-name",
+        "missed1-time",
+        "missed1-status"
+      ]
+    },
+    "missed1-name": {
+      "type": "Text",
+      "props": {
+        "text": "token-report"
+      }
+    },
+    "missed1-time": {
+      "type": "Text",
+      "props": {
+        "text": "06:00 UTC",
+        "variant": "caption"
+      }
+    },
+    "missed1-status": {
+      "type": "Badge",
+      "props": {
+        "text": "~14h overdue",
+        "variant": "destructive"
+      }
+    },
+    "missed-item2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "missed2-name",
+        "missed2-time",
+        "missed2-status"
+      ]
+    },
+    "missed2-name": {
+      "type": "Text",
+      "props": {
+        "text": "fetch-tweets"
+      }
+    },
+    "missed2-time": {
+      "type": "Text",
+      "props": {
+        "text": "06:30 UTC",
+        "variant": "caption"
+      }
+    },
+    "missed2-status": {
+      "type": "Badge",
+      "props": {
+        "text": "absent from run list",
+        "variant": "destructive"
+      }
+    },
+    "missed-info": {
+      "type": "Text",
+      "props": {
+        "text": "2 skills absent from today's run list",
+        "variant": "muted"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "dispatch-section": {
+      "type": "Alert",
+      "props": {
+        "title": "Auto-dispatch Blocked",
+        "message": "403 (actions:read scope). Deferred to scheduler (messages.yml).",
+        "type": "error"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "completed-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "completed-heading",
+        "completed-list"
+      ]
+    },
+    "completed-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Completed Skills",
+        "level": "h3"
+      }
+    },
+    "completed-list": {
+      "type": "Grid",
+      "props": {
+        "columns": 4,
+        "gap": "sm"
+      },
+      "children": [
+        "skill1",
+        "skill2",
+        "skill3",
+        "skill4",
+        "skill5",
+        "skill6",
+        "skill7",
+        "skill8"
+      ]
+    },
+    "skill1": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse",
+        "variant": "default"
+      }
+    },
+    "skill2": {
+      "type": "Badge",
+      "props": {
+        "text": "feature",
+        "variant": "default"
+      }
+    },
+    "skill3": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-actions",
+        "variant": "default"
+      }
+    },
+    "skill4": {
+      "type": "Badge",
+      "props": {
+        "text": "self-improve",
+        "variant": "default"
+      }
+    },
+    "skill5": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap",
+        "variant": "default"
+      }
+    },
+    "skill6": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-article",
+        "variant": "default"
+      }
+    },
+    "skill7": {
+      "type": "Badge",
+      "props": {
+        "text": "skill-leaderboard",
+        "variant": "default"
+      }
+    },
+    "skill8": {
+      "type": "Badge",
+      "props": {
+        "text": "memory-flush",
+        "variant": "default"
+      }
+    },
+    "separator3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stalled-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stalled-heading",
+        "stalled-alert"
+      ]
+    },
+    "stalled-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Stalled PRs",
+        "level": "h3"
+      }
+    },
+    "stalled-alert": {
+      "type": "Alert",
+      "props": {
+        "message": "10 self-improve PRs stalled (#2–#11) on miroshark-aeon — chronic backlog, no new escalation.",
+        "type": "warning"
+      }
+    }
+  }
+}
