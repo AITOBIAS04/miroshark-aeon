@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+MSG="$1"
+
+# Always save to .pending-notify/ for post-run delivery (sandbox fallback)
+mkdir -p .pending-notify
+TS=$(date -u +%s)
+echo "$MSG" > ".pending-notify/${TS}.md"
+
+# Attempt immediate delivery (may fail in sandbox — post-run step retries)
+
+# Telegram: 4096 char limit, strict Markdown parsing
+if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
+  TG_MSG="$MSG"
+  if [ ${#TG_MSG} -gt 4000 ]; then
+    TG_MSG="${TG_MSG:0:3990}
+
+...(truncated)"
+  fi
+  TG_RESULT=$(curl -s -w "\n%{http_code}" -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$TG_MSG" '{chat_id: $chat, text: $text, parse_mode: "Markdown"}')" 2>/dev/null) || true
+  TG_HTTP=$(echo "$TG_RESULT" | tail -1)
+  TG_OK=$(echo "$TG_RESULT" | sed '$d' | jq -r '.ok // false' 2>/dev/null || echo "false")
+  if [ "$TG_HTTP" != "200" ] || [ "$TG_OK" != "true" ]; then
+    curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+      -H "Content-Type: application/json" \
+      -d "$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$TG_MSG" '{chat_id: $chat, text: $text}')" > /dev/null 2>&1 || true
+  fi
+fi
+
+if [ -n "${DISCORD_WEBHOOK_URL:-}" ]; then
+  DC_MSG="$MSG"
+  if [ ${#DC_MSG} -gt 1950 ]; then
+    DC_MSG="${DC_MSG:0:1940}
+
+...(truncated)"
+  fi
+  curl -sf -X POST "$DISCORD_WEBHOOK_URL" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg text "$DC_MSG" '{content: $text}')" > /dev/null || true
+fi
+if [ -n "${SLACK_WEBHOOK_URL:-}" ]; then
+  curl -sf -X POST "$SLACK_WEBHOOK_URL" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n --arg text "$MSG" '{text: $text}')" > /dev/null || true
+fi
+# Email via SendGrid
+if [ -n "${SENDGRID_API_KEY:-}" ] && [ -n "${NOTIFY_EMAIL_TO:-}" ]; then
+  FROM="${NOTIFY_EMAIL_FROM:-aeon@notifications.aeon.bot}"
+  PREFIX="${NOTIFY_EMAIL_SUBJECT_PREFIX:-[Aeon]}"
+  SUBJECT="$PREFIX ${SKILL_NAME:-notification}"
+  HTML_BODY=$(printf '%s' "$MSG" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+  HTML_BODY="<html><body><pre style=\"font-family:monospace;white-space:pre-wrap;\">${HTML_BODY}</pre></body></html>"
+  curl -sf -X POST "https://api.sendgrid.com/v3/mail/send" \
+    -H "Authorization: Bearer ${SENDGRID_API_KEY}" \
+    -H "Content-Type: application/json" \
+    -d "$(jq -n \
+      --arg from "$FROM" \
+      --arg to "$NOTIFY_EMAIL_TO" \
+      --arg subject "$SUBJECT" \
+      --arg html "$HTML_BODY" \
+      --arg text "$MSG" \
+      '{personalizations:[{to:[{email:$to}]}],from:{email:$from},subject:$subject,content:[{type:"text/plain",value:$text},{type:"text/html",value:$html}]}')" > /dev/null 2>&1 || true
+fi
+# json-render channel — save raw message for post-run conversion
+if [ "${JSONRENDER_ENABLED:-false}" = "true" ] && [ -n "${SKILL_NAME:-}" ]; then
+  mkdir -p dashboard/outputs
+  echo "$MSG" > "dashboard/outputs/.pending-${SKILL_NAME}.md"
+fi

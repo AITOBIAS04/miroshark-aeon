@@ -31,6 +31,7 @@ Check the following:
   - Only flag a skill as missing if its scheduled time was **more than 2 hours ago**.
   - Also check `gh run list --workflow=aeon.yml --created=$(date -u +%Y-%m-%d) --json displayTitle,status` — if the skill is currently `in_progress` or `queued`, don't flag it.
   - For day-of-week schedules (e.g. `0 20 * * 0` for Sundays), only check on the matching day.
+  - For day-of-month `*/N` patterns, the scheduler uses **modulo arithmetic**: `*/2` fires when `DOM % 2 == 0` (even days: 2, 4, 6, ..., 30), `*/3` fires when `DOM % 3 == 0` (days 3, 6, 9, ..., 30). Compute today's DOM and check divisibility before flagging. Example: `self-improve` has schedule `0 13 */2 * *` — only expect it on even-numbered days.
 
 Before sending any notification, grep the last 48h of logs for the same issue. If the same missing-skill or stalled-PR was already reported, skip it. Batch all findings into a single notification.
 
