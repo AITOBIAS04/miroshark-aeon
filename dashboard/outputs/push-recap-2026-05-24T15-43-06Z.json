@@ -1,0 +1,152 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-24"
+      },
+      "children": [
+        "text_author",
+        "sep_1",
+        "heading_pr103",
+        "text_pr103",
+        "heading_pr99",
+        "text_pr99",
+        "heading_pr98_102",
+        "text_pr98_102",
+        "heading_pr100",
+        "text_pr100",
+        "sep_2",
+        "heading_key_changes",
+        "text_change1",
+        "text_change2",
+        "text_change3",
+        "text_change4",
+        "sep_3",
+        "text_stats",
+        "sep_4",
+        "link_recap"
+      ]
+    },
+    "text_author": {
+      "type": "Text",
+      "props": {
+        "text": "[MiroShark] — 5 commits by 3 authors (@aaronjmars, Void Freud, AntFleet)"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_pr103": {
+      "type": "Heading",
+      "props": {
+        "text": "Demographic Grounding (#103)",
+        "level": "h2"
+      }
+    },
+    "text_pr103": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark agents can now be anchored to real census demographics via NVIDIA Nemotron-Personas parquet on HuggingFace. Each agent gets a real age/sex/geography/occupation seed from country-specific data (Singapore + US ship by default). Purely additive — missing deps or unreachable HF degrade silently. Breaks the 31-PR zero-new-deps streak (adds duckdb + huggingface-hub)."
+      }
+    },
+    "heading_pr99": {
+      "type": "Heading",
+      "props": {
+        "text": "Polymarket Prediction JSON (#99)",
+        "level": "h2"
+      }
+    },
+    "text_pr99": {
+      "type": "Text",
+      "props": {
+        "text": "The 15th share surface and the first shaped for a specific external integrator. Reshapes signal.json into binary YES/NO probability envelope for Polymarket trading bots. Direction-aware: Bullish swarms emit high yes_probability, Bearish emit low, Neutral lands at 0.5. Four-bucket confidence tier for position-sizing logic. 30+ unit tests."
+      }
+    },
+    "heading_pr98_102": {
+      "type": "Heading",
+      "props": {
+        "text": "Security & CI Hardening (#98, #102)",
+        "level": "h2"
+      }
+    },
+    "text_pr98_102": {
+      "type": "Text",
+      "props": {
+        "text": "AntFleet's path-traversal fix closes a real vulnerability in project_id validation — found by two-model consensus review (Opus 4.7 + GPT-5). CI fix clears WaybackClaw test drift that left main red."
+      }
+    },
+    "heading_pr100": {
+      "type": "Heading",
+      "props": {
+        "text": "Cloud Neo4j (#100)",
+        "level": "h2"
+      }
+    },
+    "text_pr100": {
+      "type": "Text",
+      "props": {
+        "text": "Void Freud contributed a 5-line fix so the launcher skips local Neo4j startup when a remote Aura URI is configured."
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading_key_changes": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes:",
+        "level": "h2"
+      }
+    },
+    "text_change1": {
+      "type": "Text",
+      "props": {
+        "text": "demographic_sampler.py (+360 lines): HuggingFace parquet → duckdb sampling → LLM prompt injection pipeline"
+      }
+    },
+    "text_change2": {
+      "type": "Text",
+      "props": {
+        "text": "polymarket_service.py (+253 lines): Pure signal_service derivation with direction-aware YES/NO probabilities"
+      }
+    },
+    "text_change3": {
+      "type": "Text",
+      "props": {
+        "text": "project.py path-traversal fix: strict regex validation at _get_project_dir entry point"
+      }
+    },
+    "text_change4": {
+      "type": "Text",
+      "props": {
+        "text": "3rd external contributor PR merged — 3/10 toward the Aug 1 hyperstition target"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "text_stats": {
+      "type": "Text",
+      "props": {
+        "text": "Stats: 30 files changed, +3,004/-18 lines"
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "link_recap": {
+      "type": "Link",
+      "props": {
+        "label": "Full recap",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-24.md"
+      }
+    }
+  }
+}

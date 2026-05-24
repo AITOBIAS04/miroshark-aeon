@@ -1,14 +1,19 @@
-*Push Recap — 2026-05-23*
-MiroShark — 1 commit by @aaronjmars · miroshark-aeon — 35 commits (full skill cycle)
+*Push Recap — 2026-05-24*
+[MiroShark] — 5 commits by 3 authors (@aaronjmars, Void Freud, AntFleet)
 
-WaybackClaw AI Agent Archive (PR #97): New decentralized archiving surface for finished simulations. One POST to api.waybackclaw.space pins the snapshot to IPFS (content-addressed CID) and broadcasts a NIP-01 note to Nostr relays (decentralized distribution). Sibling of the OriginTrail DKG citation — DKG anchors on-chain, WaybackClaw anchors to IPFS + Nostr. Free for agents, stdlib-only, zero new deps.
+Demographic Grounding (#103): MiroShark agents can now be anchored to real census demographics via NVIDIA Nemotron-Personas parquet on HuggingFace. Each agent gets a real age/sex/geography/occupation seed from country-specific data (Singapore + US ship by default). Purely additive — missing deps or unreachable HF degrade silently. Breaks the 31-PR zero-new-deps streak (adds duckdb + huggingface-hub).
 
-Daily Skill Cycle: All 13 skills completed. Feature skill built MCP Simulation Tools (5 tools for the MCP server — push blocked, 22nd consecutive GH_GLOBAL miss). Token at $0.00001292 (-40.73% 24h, -61% from ATH). 1,192 stars (+2), 246 forks (+3).
+Polymarket Prediction JSON (#99): The 15th share surface and the first shaped for a specific external integrator. Reshapes signal.json into binary YES/NO probability envelope for Polymarket trading bots. Direction-aware: Bullish swarms emit high yes_probability, Bearish emit low, Neutral lands at 0.5. Four-bucket confidence tier for position-sizing logic. 30+ unit tests.
+
+Security & CI Hardening (#98, #102): AntFleet's path-traversal fix closes a real vulnerability in project_id validation — found by two-model consensus review (Opus 4.7 + GPT-5). CI fix clears WaybackClaw test drift that left main red.
+
+Cloud Neo4j (#100): Void Freud contributed a 5-line fix so the launcher skips local Neo4j startup when a remote Aura URI is configured.
 
 Key changes:
-- waybackclaw_publisher.py: 634-line stdlib publisher — build_submission + submit_snapshot + idempotent on-disk record + health probe
-- simulation.py: GET /waybackclaw-record + POST /publish-waybackclaw with full HTTP status mapping (503/504/429/502)
-- EmbedDialog.vue: Full archive card — submit button, snapshot ID, IPFS CID with gateway link, Nostr event ID, bilingual
+- demographic_sampler.py (+360 lines): HuggingFace parquet → duckdb sampling → LLM prompt injection pipeline
+- polymarket_service.py (+253 lines): Pure signal_service derivation with direction-aware YES/NO probabilities
+- project.py path-traversal fix: strict regex validation at _get_project_dir entry point
+- 3rd external contributor PR merged — 3/10 toward the Aug 1 hyperstition target
 
-Stats: 9 files changed, +1,480/-3 lines
-Full recap: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-23.md
+Stats: 30 files changed, +3,004/-18 lines
+Full recap: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-24.md
