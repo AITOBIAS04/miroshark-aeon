@@ -1,0 +1,262 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-25"
+      },
+      "children": [
+        "header_stats",
+        "separator_1",
+        "pr_107",
+        "pr_105",
+        "pr_104",
+        "separator_2",
+        "miroshark_aeon",
+        "separator_3",
+        "key_changes",
+        "separator_4",
+        "stats_section",
+        "separator_5",
+        "recap_link"
+      ]
+    },
+    "header_stats": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 3 commits by 2 authors | miroshark-aeon — ~47 commits (cron cycle)",
+        "variant": "lead"
+      }
+    },
+    "separator_1": {
+      "type": "Separator"
+    },
+    "pr_107": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr_107_title",
+        "pr_107_desc"
+      ]
+    },
+    "pr_107_title": {
+      "type": "Heading",
+      "props": {
+        "text": "oEmbed Auto-Unfurl (PR #107)",
+        "level": "h3"
+      }
+    },
+    "pr_107_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Share links now auto-unfurl into rich preview cards on Notion, Ghost, Substack, and WordPress. These writing platforms read oEmbed discovery tags, not Open Graph — so every organic citation was degrading to a bare URL. Pure-stdlib provider (oembed_service.py) parses sim IDs from share/embed/simulation URLs with host allow-listing, builds a type:rich payload with the existing share-card thumbnail + /embed iframe. 21st surface key. 18 tests."
+      }
+    },
+    "pr_105": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr_105_title",
+        "pr_105_desc"
+      ]
+    },
+    "pr_105_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Platform Stats API + Badge (PR #105)",
+        "level": "h3"
+      }
+    },
+    "pr_105_desc": {
+      "type": "Text",
+      "props": {
+        "text": "The first endpoints describing MiroShark itself, not individual sims. GET /api/stats collapses every public, completed sim into one envelope — total count, consensus distribution, avg confidence, surface views, unique projects, newest sim. GET /api/stats/badge.svg renders a Shields.io pill (platform-blue #0ea5e9) for any README. ETag/304 support, 60s cache, 27 tests. Zero new deps (32-PR streak)."
+      }
+    },
+    "pr_104": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr_104_title",
+        "pr_104_desc"
+      ]
+    },
+    "pr_104_title": {
+      "type": "Heading",
+      "props": {
+        "text": "gitignore Cleanup (PR #104)",
+        "level": "h3"
+      }
+    },
+    "pr_104_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Void Freud collapsed the explicit .env profile list into .env.* wildcard — one line absorbs future profiles."
+      }
+    },
+    "separator_2": {
+      "type": "Separator"
+    },
+    "miroshark_aeon": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "miroshark_aeon_title",
+        "miroshark_aeon_trap",
+        "miroshark_aeon_framework"
+      ]
+    },
+    "miroshark_aeon_title": {
+      "type": "Heading",
+      "props": {
+        "text": "miroshark-aeon",
+        "level": "h3"
+      }
+    },
+    "miroshark_aeon_trap": {
+      "type": "Text",
+      "props": {
+        "text": "bankr-prefetch EXIT trap (PR #45) stamps crashed status so tweet-allocator can diagnose silent prefetch failures."
+      }
+    },
+    "miroshark_aeon_framework": {
+      "type": "Text",
+      "props": {
+        "text": "ai-framework-watch flagged RELEASE WEEK — pydantic-ai shipped V2 beta (b1/b2/b3) alongside stable v1.102; langgraph 1.2.1; crewai 1.14.5; mastra core 1.35.0. Aeon +76 stars (+20.8%) leads cohort by % growth."
+      }
+    },
+    "separator_3": {
+      "type": "Separator"
+    },
+    "key_changes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "key_changes_title",
+        "key_changes_list"
+      ]
+    },
+    "key_changes_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h3"
+      }
+    },
+    "key_changes_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "key_change_1",
+        "key_change_2",
+        "key_change_3"
+      ]
+    },
+    "key_change_1": {
+      "type": "Text",
+      "props": {
+        "text": "• /oembed endpoint (root-mounted, oEmbed 1.0) — Notion/Ghost/Substack/WordPress auto-unfurl"
+      }
+    },
+    "key_change_2": {
+      "type": "Text",
+      "props": {
+        "text": "• /api/stats + /api/stats/badge.svg — platform-level aggregate + Shields.io pill"
+      }
+    },
+    "key_change_3": {
+      "type": "Text",
+      "props": {
+        "text": "• prefetch-bankr.sh EXIT trap — crash vs never-ran disambiguation"
+      }
+    },
+    "separator_4": {
+      "type": "Separator"
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats_title",
+        "stats_text",
+        "repo_stats"
+      ]
+    },
+    "stats_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "stats_text": {
+      "type": "Text",
+      "props": {
+        "text": "~30 files changed, +2,390/-8 lines (MiroShark); ~47 cron commits (miroshark-aeon)"
+      }
+    },
+    "repo_stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_stars",
+        "stat_forks"
+      ]
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Repo stars",
+        "value": "1,195",
+        "delta": "+1",
+        "trend": "up"
+      }
+    },
+    "stat_forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Repo forks",
+        "value": "248",
+        "delta": "+1",
+        "trend": "up"
+      }
+    },
+    "separator_5": {
+      "type": "Separator"
+    },
+    "recap_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-25.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
