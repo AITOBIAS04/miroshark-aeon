@@ -1,0 +1,171 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Simulation Confidence Score",
+        "description": "Feature Built — 2026-05-25"
+      },
+      "children": [
+        "main_stack"
+      ]
+    },
+    "main_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "opening_para",
+        "sep1",
+        "why_heading",
+        "why_para",
+        "sep2",
+        "what_heading",
+        "what_item1",
+        "what_item2",
+        "what_item3",
+        "what_item4",
+        "what_item5",
+        "what_item6",
+        "sep3",
+        "how_heading",
+        "how_para",
+        "sep4",
+        "next_heading",
+        "next_para",
+        "sep5",
+        "blocking_alert"
+      ]
+    },
+    "opening_para": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark simulations now carry a single-number trust signal — a Confidence Score from 0 to 100 — that tells downstream tools, curators, and governance teams how much they can rely on a given simulation consensus. Instead of eyeballing a green/yellow/red quality badge, a quant pipeline can now filter by ?min_confidence=75 and only act on high-trust runs.",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "why_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Why this matters",
+        "level": "h2"
+      }
+    },
+    "why_para": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark is becoming infrastructure that other tools consume (signal.json for trading bots, polymarket.json for prediction markets, the gallery API for dashboards). Those integrators need a finer-grained trust gate than the coarse quality_health label. The Confidence Score fills that gap: a score of 87 means the consensus stabilized, agents participated broadly, and the adversarial variant (if run) did not collapse it. A score of 23 means the run was noisy, split, or fragile. This is the signal that makes automated workflows production-safe rather than experimental.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "what_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What was built",
+        "level": "h2"
+      }
+    },
+    "what_item1": {
+      "type": "Text",
+      "props": {
+        "text": "confidence_service.py: Pure-stdlib service computing four components — Stability (did consensus hold in the second half?), Convergence (how decisive was the final outcome?), Participation (did agents actually post?), Robustness (did adversarial agents break it?) — each 0-25, summed to 0-100. Cached deterministically to confidence.json.",
+        "variant": "body"
+      }
+    },
+    "what_item2": {
+      "type": "Text",
+      "props": {
+        "text": "GET /api/simulation/id/confidence: New analytics endpoint returning the score with full component breakdown. Same publish gate as every other surface.",
+        "variant": "body"
+      }
+    },
+    "what_item3": {
+      "type": "Text",
+      "props": {
+        "text": "Gallery integration: confidence_score field on every gallery card, ?min_confidence filter with chips (60+/75+/90+) in the Explore view, and a blue confidence badge on cards scoring 70+.",
+        "variant": "body"
+      }
+    },
+    "what_item4": {
+      "type": "Text",
+      "props": {
+        "text": "signal.json: confidence_score now rides inside the trading signal payload at zero additional API cost.",
+        "variant": "body"
+      }
+    },
+    "what_item5": {
+      "type": "Text",
+      "props": {
+        "text": "EmbedDialog: Confidence section showing the 0-100 score with all four component bars.",
+        "variant": "body"
+      }
+    },
+    "what_item6": {
+      "type": "Text",
+      "props": {
+        "text": "14 unit tests, OpenAPI ConfidenceResponse schema, bilingual docs.",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "how_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "How it works",
+        "level": "h2"
+      }
+    },
+    "how_para": {
+      "type": "Text",
+      "props": {
+        "text": "The service reads trajectory.json and computes Stability as the inverse of round-over-round std dev in the second half of rounds, and Convergence as distance of the final bullish pct from 50 pct. Participation comes from quality.json participation_rate. Robustness checks adversarial_report.json first (mapping high/medium/low/collapse to 25/18/8/0), falls back to coalition modularity, or defaults to 15. All four components are clamped 0-25; sum clamped 0-100. Written atomically to confidence.json and never recomputed.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "next_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "What is next",
+        "level": "h2"
+      }
+    },
+    "next_para": {
+      "type": "Text",
+      "props": {
+        "text": "Could add confidence-weighted trending sort or minimum confidence thresholds for automated webhook triggers.",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "blocking_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Status",
+        "message": "Code complete, push blocked — GH_GLOBAL not set",
+        "type": "warning"
+      }
+    }
+  }
+}
