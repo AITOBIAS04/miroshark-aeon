@@ -1,0 +1,278 @@
+{
+  "root": "card_heartbeat",
+  "state": {},
+  "elements": {
+    "card_heartbeat": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat 2026-05-26"
+      },
+      "children": [
+        "stat_summary",
+        "sep_1",
+        "new_misses_section",
+        "sep_2",
+        "chronic_misses_section",
+        "sep_3",
+        "pattern_alert",
+        "sep_4",
+        "completed_section",
+        "sep_5",
+        "additional_notes"
+      ]
+    },
+    "stat_summary": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Misses",
+        "value": "6",
+        "delta": "+3 new",
+        "trend": "down"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "new_misses_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_new_misses",
+        "table_new_misses"
+      ]
+    },
+    "heading_new_misses": {
+      "type": "Heading",
+      "props": {
+        "text": "New Misses (First-time today)",
+        "level": "h2"
+      }
+    },
+    "table_new_misses": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Time (UTC)",
+          "Overdue",
+          "Status",
+          "Details"
+        ],
+        "rows": [
+          [
+            "feature",
+            "11:00",
+            "8h",
+            "Deferred",
+            "Auto-trigger 403 (actions:read scope), deferred to scheduler"
+          ],
+          [
+            "self-improve",
+            "13:00",
+            "6h",
+            "Skipped",
+            "Housekeeping rule"
+          ],
+          [
+            "repo-actions",
+            "14:00",
+            "5h",
+            "Deferred",
+            "Auto-trigger 403 (actions:read scope), deferred to scheduler"
+          ]
+        ]
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "chronic_misses_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_chronic_misses",
+        "badges_chronic"
+      ]
+    },
+    "heading_chronic_misses": {
+      "type": "Heading",
+      "props": {
+        "text": "Chronic Misses (3rd consecutive daily miss, flagged yesterday)",
+        "level": "h2"
+      }
+    },
+    "badges_chronic": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_token_report",
+        "badge_fetch_tweets",
+        "badge_repo_pulse"
+      ]
+    },
+    "badge_token_report": {
+      "type": "Badge",
+      "props": {
+        "text": "token-report",
+        "variant": "destructive"
+      }
+    },
+    "badge_fetch_tweets": {
+      "type": "Badge",
+      "props": {
+        "text": "fetch-tweets",
+        "variant": "destructive"
+      }
+    },
+    "badge_repo_pulse": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse",
+        "variant": "destructive"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pattern_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Possible Scheduler Disruption",
+        "message": "All 6 misses occurred in the 06:00–14:00 UTC window. Push-recap (15:00) and repo-article (16:00) ran fine. Pattern suggests early-window scheduler disruption today.",
+        "type": "warning"
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "completed_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_completed",
+        "completed_list"
+      ]
+    },
+    "heading_completed": {
+      "type": "Heading",
+      "props": {
+        "text": "Completed Successfully",
+        "level": "h2"
+      }
+    },
+    "completed_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "completed_item_1",
+        "completed_item_2"
+      ]
+    },
+    "completed_item_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_pushrecap",
+        "text_pushrecap_time"
+      ]
+    },
+    "badge_pushrecap": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap ✓",
+        "variant": "default"
+      }
+    },
+    "text_pushrecap_time": {
+      "type": "Text",
+      "props": {
+        "text": "15:00 UTC",
+        "variant": "caption"
+      }
+    },
+    "completed_item_2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_repoarticle",
+        "text_repoarticle_time"
+      ]
+    },
+    "badge_repoarticle": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-article ✓",
+        "variant": "default"
+      }
+    },
+    "text_repoarticle_time": {
+      "type": "Text",
+      "props": {
+        "text": "16:00 UTC",
+        "variant": "caption"
+      }
+    },
+    "sep_5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "additional_notes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_additional",
+        "note_github",
+        "note_stalled_prs"
+      ]
+    },
+    "heading_additional": {
+      "type": "Heading",
+      "props": {
+        "text": "Additional Notes",
+        "level": "h2"
+      }
+    },
+    "note_github": {
+      "type": "Alert",
+      "props": {
+        "message": "No urgent GitHub issues",
+        "type": "info"
+      }
+    },
+    "note_stalled_prs": {
+      "type": "Text",
+      "props": {
+        "text": "Stalled PRs: 11 self-improve (#1–#11)",
+        "variant": "body"
+      }
+    }
+  }
+}

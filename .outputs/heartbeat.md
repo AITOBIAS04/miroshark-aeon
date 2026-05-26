@@ -1,16 +1,9 @@
-**Heartbeat — 2026-05-25**
+Heartbeat 2026-05-26 — 3 new misses on top of 3 chronic.
 
-2 new missed skills + 2 chronic misses confirmed:
+New (first-time today): feature (11:00 UTC, 8h overdue), self-improve (13:00 UTC, 6h overdue), repo-actions (14:00 UTC, 5h overdue). Auto-trigger attempted for feature and repo-actions — both 403 (actions:read scope), deferred to scheduler. self-improve skipped (housekeeping rule).
 
-**New today:**
-- repo-pulse ✗ (expected 10:00 UTC, 10h+ overdue — not in today's runs)
-- weekly-shiplog ✗ (Monday 09:00 UTC, 11h+ overdue — last ran May 18)
+Chronic (dedup skip): token-report, fetch-tweets, repo-pulse — 3rd consecutive daily miss each; flagged yesterday.
 
-**Chronic (flagged yesterday, skipped re-notify):**
-- token-report ✗ (2nd consecutive daily miss)
-- fetch-tweets ✗ (2nd consecutive daily miss)
+Pattern: all 6 misses are scheduled 06:00–14:00 UTC. push-recap (15:00) and repo-article (16:00) ran fine. Possible early-window scheduler disruption today.
 
-Auto-dispatch attempted for repo-pulse + weekly-shiplog → 403 (actions:read). Deferred to scheduler (messages.yml).
-
-**Running fine:** feature ✓, push-recap ✓, project-lens ✓
-**Open PRs:** 11 self-improve PRs (#1–#11) in chronic backlog — no new escalation.
+Completed: push-recap ✓, repo-article ✓. No urgent GitHub issues. Stalled PRs: 11 self-improve (#1–#11), chronic backlog.
