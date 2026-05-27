@@ -1,0 +1,339 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-27"
+      },
+      "children": [
+        "header",
+        "sep1",
+        "sparklines",
+        "sep2",
+        "cleanup",
+        "sep3",
+        "bugfixes",
+        "sep4",
+        "regen",
+        "sep5",
+        "miroshark_section",
+        "sep6",
+        "key_changes",
+        "sep7",
+        "stats_section",
+        "sep8",
+        "recap_link"
+      ]
+    },
+    "header": {
+      "type": "Heading",
+      "props": {
+        "text": "MiroShark — 7 commits by 3 authors (@aaronjmars, shak, Aeon)",
+        "level": "h2"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "sparklines": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "sparklines_title",
+        "sparklines_text"
+      ]
+    },
+    "sparklines_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Per-Agent Belief Sparklines (#115)",
+        "level": "h3"
+      }
+    },
+    "sparklines_text": {
+      "type": "Text",
+      "props": {
+        "text": "New share surface exposes each individual agent's belief trajectory as inline SVG sparklines, colored by final stance. The agent-level layer under chart.svg's aggregate curve — answers \"which agent anchored the consensus?\" without parsing the transcript. 23rd share surface, zero new deps."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "cleanup": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "cleanup_title",
+        "cleanup_text",
+        "cleanup_stats"
+      ]
+    },
+    "cleanup_title": {
+      "type": "Heading",
+      "props": {
+        "text": "8-Pass Code-Quality Cleanup (#116)",
+        "level": "h3"
+      }
+    },
+    "cleanup_text": {
+      "type": "Text",
+      "props": {
+        "text": "Systematic sweep across 61 files — deleted 238-line dead retry.py, removed 27 unused imports, deduplicated CommandType enum and SVG-badge/event builders, tightened types (WebhookPayload TypedDict, Literal annotations), narrowed 5 catch-all exception handlers."
+      }
+    },
+    "cleanup_stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "cleanup_stat1",
+        "cleanup_stat2"
+      ]
+    },
+    "cleanup_stat1": {
+      "type": "Stat",
+      "props": {
+        "label": "Tests Passed",
+        "value": "971"
+      }
+    },
+    "cleanup_stat2": {
+      "type": "Stat",
+      "props": {
+        "label": "Ruff",
+        "value": "156",
+        "delta": "-2"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "bugfixes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "bugfixes_title",
+        "bugfixes_text"
+      ]
+    },
+    "bugfixes_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Bug Fixes (#110–#112)",
+        "level": "h3"
+      }
+    },
+    "bugfixes_text": {
+      "type": "Text",
+      "props": {
+        "text": "Fixed reranker hanging indefinitely on Apple Silicon (MPS Metal shader compilation), fixed two null-response crash paths in report generation (LLM content + agent interview response)."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "regen": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "regen_title",
+        "regen_text"
+      ]
+    },
+    "regen_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Regenerate Report Button (#113) & ECOSYSTEM.md (#114)",
+        "level": "h3"
+      }
+    },
+    "regen_text": {
+      "type": "Text",
+      "props": {
+        "text": "One-click re-run from the report view UI. ECOSYSTEM.md: ZER0 added by community contributor shak."
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "miroshark_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "miroshark_title",
+        "miroshark_text"
+      ]
+    },
+    "miroshark_title": {
+      "type": "Heading",
+      "props": {
+        "text": "miroshark-aeon",
+        "level": "h3"
+      }
+    },
+    "miroshark_text": {
+      "type": "Text",
+      "props": {
+        "text": "Disabled 5 skills (fetch-tweets, tweet-allocator, hyperstitions-ideas, skill-leaderboard, ai-framework-watch) to focus CI compute. Full Tuesday skill cycle ran successfully."
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "key_changes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "key_changes_title",
+        "changes_list"
+      ]
+    },
+    "key_changes_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes",
+        "level": "h3"
+      }
+    },
+    "changes_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "change1": {
+      "type": "Text",
+      "props": {
+        "text": "agent_sparklines_service.py: 279-line pure-stdlib service deriving per-agent belief paths from trajectory.json (+1,088 lines total with frontend/tests/docs)"
+      }
+    },
+    "change2": {
+      "type": "Text",
+      "props": {
+        "text": "retry.py deleted: 238 lines of dead code removed, badge_service.py refactored from 109→37 lines via shared builder"
+      }
+    },
+    "change3": {
+      "type": "Text",
+      "props": {
+        "text": "reranker_service.py: New _select_device() auto-detects CUDA/CPU, skips MPS — fixes Apple Silicon hang"
+      }
+    },
+    "sep7": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stats_files",
+        "stats_added",
+        "stats_deleted"
+      ]
+    },
+    "stats_files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files Changed",
+        "value": "~70"
+      }
+    },
+    "stats_added": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines Added",
+        "value": "2,916"
+      }
+    },
+    "stats_deleted": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines Deleted",
+        "value": "547"
+      }
+    },
+    "sep8": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "recap_link": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "recap_text",
+        "recap_url"
+      ]
+    },
+    "recap_text": {
+      "type": "Text",
+      "props": {
+        "text": "Full recap:",
+        "variant": "body"
+      }
+    },
+    "recap_url": {
+      "type": "Link",
+      "props": {
+        "label": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-27.md",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-27.md"
+      }
+    }
+  }
+}
