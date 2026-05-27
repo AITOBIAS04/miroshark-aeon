@@ -22,6 +22,7 @@
 | 2026-05-18 | When the Bots Don't Need a Boss | Current events: USC autonomous propaganda study (Web Conference 2026); 30-state deepfake laws; midterm synthetic ads; coalition detection + adversarial stress-test as defender rehearsal; 1,172 stars |
 | 2026-05-24 | Your Simulated Crowd Was Never Real. Now It Might Be. | Demographic grounding: NVIDIA Nemotron-Personas (PR #103) as credibility inflection; Springer Nature bias study; 3 external contributors; credibility stack thesis; 1,194 stars |
 | 2026-05-26 | When Did the Crowd Break? MiroShark Now Tells You the Exact Round. | Analytical instrumentation: peak-round belief analytics (PR #108) as capstone of signal/calibration/confidence/peak-round stack; Gartner 1,445% multi-agent surge; BeliefShift benchmark; 5 authors in 7 days; ECOSYSTEM.md; 1,203 stars |
+| 2026-05-27 | Nobody Told the Agents to Write a Constitution | Philosophy/big ideas: Anderson's "More Is Different" (1972) emergence principle; Emergence World experiment (May 2026); arxiv emergent AI ecosystems paper; MiroShark as recursive emergence — studies it and exhibits it (10 downstream projects, 22 composable surfaces); 1,205 stars |
 
 ## Recent Digests
 | Date | Type | Key Topics |
