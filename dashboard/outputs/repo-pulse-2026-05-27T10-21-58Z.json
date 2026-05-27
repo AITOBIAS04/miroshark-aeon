@@ -1,0 +1,192 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Pulse — 2026-05-27"
+      },
+      "children": [
+        "repo-name",
+        "separator-1",
+        "stats-section",
+        "separator-2",
+        "stargazers-section",
+        "separator-3",
+        "forks-section"
+      ]
+    },
+    "repo-name": {
+      "type": "Text",
+      "props": {
+        "text": "aaronjmars/MiroShark",
+        "variant": "lead"
+      }
+    },
+    "separator-1": {
+      "type": "Separator"
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-stars",
+        "stat-forks"
+      ]
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,204",
+        "delta": "+5",
+        "trend": "up"
+      }
+    },
+    "stat-forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "255",
+        "delta": "+4",
+        "trend": "up"
+      }
+    },
+    "separator-2": {
+      "type": "Separator"
+    },
+    "stargazers-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stargazers-heading",
+        "stargazers-list"
+      ]
+    },
+    "stargazers-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New stargazers",
+        "level": "h3"
+      }
+    },
+    "stargazers-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link-clawvivor",
+        "link-jokiatgithub",
+        "link-iPhysicat",
+        "link-FrankFolley",
+        "link-bernardjouvel"
+      ]
+    },
+    "link-clawvivor": {
+      "type": "Link",
+      "props": {
+        "label": "clawvivor",
+        "href": "https://github.com/clawvivor"
+      }
+    },
+    "link-jokiatgithub": {
+      "type": "Link",
+      "props": {
+        "label": "jokiatgithub",
+        "href": "https://github.com/jokiatgithub"
+      }
+    },
+    "link-iPhysicat": {
+      "type": "Link",
+      "props": {
+        "label": "iPhysicat",
+        "href": "https://github.com/iPhysicat"
+      }
+    },
+    "link-FrankFolley": {
+      "type": "Link",
+      "props": {
+        "label": "FrankFolley",
+        "href": "https://github.com/FrankFolley"
+      }
+    },
+    "link-bernardjouvel": {
+      "type": "Link",
+      "props": {
+        "label": "bernardjouvel",
+        "href": "https://github.com/bernardjouvel"
+      }
+    },
+    "separator-3": {
+      "type": "Separator"
+    },
+    "forks-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "forks-heading",
+        "forks-list"
+      ]
+    },
+    "forks-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New forks",
+        "level": "h3"
+      }
+    },
+    "forks-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link-fork-1",
+        "link-fork-2",
+        "link-fork-3",
+        "link-fork-4"
+      ]
+    },
+    "link-fork-1": {
+      "type": "Link",
+      "props": {
+        "label": "0xShak/MiroShark",
+        "href": "https://github.com/0xShak/MiroShark"
+      }
+    },
+    "link-fork-2": {
+      "type": "Link",
+      "props": {
+        "label": "SahilParikh03/MiroShark",
+        "href": "https://github.com/SahilParikh03/MiroShark"
+      }
+    },
+    "link-fork-3": {
+      "type": "Link",
+      "props": {
+        "label": "Raul-dd/MiroShark",
+        "href": "https://github.com/Raul-dd/MiroShark"
+      }
+    },
+    "link-fork-4": {
+      "type": "Link",
+      "props": {
+        "label": "noelclaw/miroshark",
+        "href": "https://github.com/noelclaw/miroshark"
+      }
+    }
+  }
+}
