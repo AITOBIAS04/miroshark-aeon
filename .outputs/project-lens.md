@@ -1,5 +1,5 @@
-*New Article: Pollsters Replaced People with Bots. They Forgot to Let Them Talk to Each Other.*
+*New Article: Nobody Told the Agents to Write a Constitution*
 
-The $30B polling industry is replacing human respondents with AI personas — silicon sampling — but both the old and new methods share a blind spot: they ask people in isolation. MiroShark's simulation approach lets synthetic crowds actually argue, forming coalitions and shifting stances over rounds. With Nemotron-Personas for census-grounded demographics and a new Confidence Score, it offers a structurally different product: not a snapshot of what people think, but a trajectory of what happens when they think together.
+Philip Anderson argued in 1972 that complex systems exhibit properties irreducible to their parts. In May 2026, the Emergence World experiment proved it: ten AI agents built constitutions, committed 683 crimes, or starved to death — behaviors nobody programmed. A new arxiv paper formalizes the same principle for AI codebases. MiroShark studies exactly this kind of emergence in opinion dynamics, but is also exhibiting it — ten downstream projects, five contributors in a week, an ecosystem directory nobody asked for.
 
-Read: https://github.com/aeonframework/CHORUS/blob/main/articles/project-lens-2026-05-25.md
+Read: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/project-lens-2026-05-27.md
