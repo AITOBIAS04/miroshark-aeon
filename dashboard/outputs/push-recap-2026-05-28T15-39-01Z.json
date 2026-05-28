@@ -1,0 +1,457 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-28"
+      },
+      "children": [
+        "main-stack"
+      ]
+    },
+    "main-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "repos-section",
+        "sep1",
+        "features-section",
+        "sep2",
+        "key-changes-section",
+        "sep3",
+        "stats-section",
+        "sep4",
+        "full-recap-link"
+      ]
+    },
+    "repos-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-repo1",
+        "text-repo2"
+      ]
+    },
+    "text-repo1": {
+      "type": "Text",
+      "props": {
+        "text": "aaronjmars/MiroShark — 4 commits by 3 authors"
+      }
+    },
+    "text-repo2": {
+      "type": "Text",
+      "props": {
+        "text": "aaronjmars/miroshark-aeon — PR #48 + housekeeping"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "features-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "webhook-feature",
+        "ecosystem-feature",
+        "readme-feature",
+        "spam-feature"
+      ]
+    },
+    "webhook-feature": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "webhook-heading",
+        "webhook-desc1",
+        "webhook-desc2",
+        "webhook-categories",
+        "webhook-logic",
+        "webhook-ecosystem",
+        "webhook-stats",
+        "webhook-surface"
+      ]
+    },
+    "webhook-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Webhook Event Filtering (PR #120)",
+        "level": "h3"
+      }
+    },
+    "webhook-desc1": {
+      "type": "Text",
+      "props": {
+        "text": "Adds WEBHOOK_EVENTS, an optional allow-list that filters outbound webhooks before dispatch.",
+        "variant": "body"
+      }
+    },
+    "webhook-desc2": {
+      "type": "Text",
+      "props": {
+        "text": "Three token categories combine OR within categories, AND across them:"
+      }
+    },
+    "webhook-categories": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "webhook-cat1",
+        "webhook-cat2",
+        "webhook-cat3"
+      ]
+    },
+    "webhook-cat1": {
+      "type": "Text",
+      "props": {
+        "text": "• Direction: bullish, neutral, bearish"
+      }
+    },
+    "webhook-cat2": {
+      "type": "Text",
+      "props": {
+        "text": "• Confidence: high, medium (75%/50% thresholds)"
+      }
+    },
+    "webhook-cat3": {
+      "type": "Text",
+      "props": {
+        "text": "• Quality: excellent, good"
+      }
+    },
+    "webhook-logic": {
+      "type": "Text",
+      "props": {
+        "text": "Failed sims always bypass the filter."
+      }
+    },
+    "webhook-ecosystem": {
+      "type": "Text",
+      "props": {
+        "text": "10+ integrators in ECOSYSTEM.md can now subscribe to only the slice of the simulation stream they care about."
+      }
+    },
+    "webhook-stats": {
+      "type": "Text",
+      "props": {
+        "text": "237 lines of filtering logic + 454 lines of tests, zero new dependencies."
+      }
+    },
+    "webhook-surface": {
+      "type": "Badge",
+      "props": {
+        "text": "24th share surface",
+        "variant": "secondary"
+      }
+    },
+    "ecosystem-feature": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "ecosystem-heading",
+        "ecosystem-project",
+        "ecosystem-details",
+        "ecosystem-milestone"
+      ]
+    },
+    "ecosystem-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Community Ecosystem Growth (PR #117)",
+        "level": "h3"
+      }
+    },
+    "ecosystem-project": {
+      "type": "Text",
+      "props": {
+        "text": "Noelclaw joins ECOSYSTEM.md as the 11th listed project."
+      }
+    },
+    "ecosystem-details": {
+      "type": "Text",
+      "props": {
+        "text": "Includes X handle, website, and MCP integration."
+      }
+    },
+    "ecosystem-milestone": {
+      "type": "Text",
+      "props": {
+        "text": "6th external contributor toward the August target of 10."
+      }
+    },
+    "readme-feature": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "readme-heading",
+        "readme-condensed",
+        "readme-flow",
+        "readme-diagrams"
+      ]
+    },
+    "readme-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "README Overhaul (PRs #118/#119)",
+        "level": "h3"
+      }
+    },
+    "readme-condensed": {
+      "type": "Text",
+      "props": {
+        "text": "Condensed every feature-table row from paragraph to one-liner."
+      }
+    },
+    "readme-flow": {
+      "type": "Text",
+      "props": {
+        "text": "Moved Use Cases above Features for narrative flow."
+      }
+    },
+    "readme-diagrams": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "readme-diagram-label",
+        "readme-diagram1",
+        "readme-diagram2",
+        "readme-diagram3"
+      ]
+    },
+    "readme-diagram-label": {
+      "type": "Text",
+      "props": {
+        "text": "Added 3 new diagrams:"
+      }
+    },
+    "readme-diagram1": {
+      "type": "Text",
+      "props": {
+        "text": "• Simulate-anything hero banner"
+      }
+    },
+    "readme-diagram2": {
+      "type": "Text",
+      "props": {
+        "text": "• Agent grounding layers"
+      }
+    },
+    "readme-diagram3": {
+      "type": "Text",
+      "props": {
+        "text": "• Graph memory pipeline"
+      }
+    },
+    "spam-feature": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "spam-heading",
+        "spam-project",
+        "spam-action",
+        "spam-filters",
+        "spam-validation"
+      ]
+    },
+    "spam-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Token Report Spam Filter (PR #48)",
+        "level": "h3"
+      }
+    },
+    "spam-project": {
+      "type": "Text",
+      "props": {
+        "text": "miroshark-aeon project tightened the Grok query."
+      }
+    },
+    "spam-action": {
+      "type": "Text",
+      "props": {
+        "text": "Zero-engagement contract-drop spam stops landing in the Social Pulse section."
+      }
+    },
+    "spam-filters": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "spam-filter-label",
+        "spam-filter1",
+        "spam-filter2",
+        "spam-filter3"
+      ]
+    },
+    "spam-filter-label": {
+      "type": "Text",
+      "props": {
+        "text": "Three explicit pre-filters before Grok picks results:"
+      }
+    },
+    "spam-filter1": {
+      "type": "Text",
+      "props": {
+        "text": "• Zero-likes + zero-RT"
+      }
+    },
+    "spam-filter2": {
+      "type": "Text",
+      "props": {
+        "text": "• Contract-drop templates and clone domains"
+      }
+    },
+    "spam-filter3": {
+      "type": "Text",
+      "props": {
+        "text": "• Duplicate-template spam"
+      }
+    },
+    "spam-validation": {
+      "type": "Text",
+      "props": {
+        "text": "Tomorrow's 06:00 UTC run validates."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "key-changes-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "key-heading",
+        "key-item1",
+        "key-item2",
+        "key-item3"
+      ]
+    },
+    "key-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Changes Summary",
+        "level": "h3"
+      }
+    },
+    "key-item1": {
+      "type": "Text",
+      "props": {
+        "text": "WEBHOOK_EVENTS dispatch filter — source-side subscription for 10+ integrators (24th share surface)"
+      }
+    },
+    "key-item2": {
+      "type": "Text",
+      "props": {
+        "text": "README condensed to one-liner feature table + 3 architectural diagrams"
+      }
+    },
+    "key-item3": {
+      "type": "Text",
+      "props": {
+        "text": "Grok spam filter eliminates scam contract drops from daily token report"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stats-heading",
+        "stats-grid"
+      ]
+    },
+    "stats-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Statistics",
+        "level": "h3"
+      }
+    },
+    "stats-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-files",
+        "stat-lines"
+      ]
+    },
+    "stat-files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files Changed",
+        "value": "~17"
+      }
+    },
+    "stat-lines": {
+      "type": "Stat",
+      "props": {
+        "label": "Line Changes",
+        "value": "+1,065 / −49"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "full-recap-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Recap",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-28.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

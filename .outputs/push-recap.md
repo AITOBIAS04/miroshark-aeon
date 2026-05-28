@@ -1,20 +1,19 @@
-*Push Recap — 2026-05-27*
-MiroShark — 7 commits by 3 authors (@aaronjmars, shak, Aeon)
+*Push Recap — 2026-05-28*
+aaronjmars/MiroShark — 4 commits by 3 authors
+aaronjmars/miroshark-aeon — PR #48 + housekeeping
 
-Per-Agent Belief Sparklines (#115): New share surface exposes each individual agent's belief trajectory as inline SVG sparklines, colored by final stance. The agent-level layer under chart.svg's aggregate curve — answers "which agent anchored the consensus?" without parsing the transcript. 23rd share surface, zero new deps.
+Webhook Event Filtering (24th surface): PR #120 adds WEBHOOK_EVENTS, an optional allow-list that filters outbound webhooks before dispatch. Three token categories — direction (bullish/neutral/bearish), confidence (high/medium at 75%/50% thresholds), quality (excellent/good) — combine OR within categories, AND across them. Failed sims always bypass the filter. Integrators in ECOSYSTEM.md can now subscribe to only the slice of the simulation stream they care about. 237 lines of filtering logic + 454 lines of tests, zero new deps.
 
-8-Pass Code-Quality Cleanup (#116): Systematic sweep across 61 files — deleted 238-line dead retry.py, removed 27 unused imports, deduplicated CommandType enum and SVG-badge/event builders, tightened types (WebhookPayload TypedDict, Literal annotations), narrowed 5 catch-all exception handlers. Tests: 971 passed, Ruff 158→156.
+Community Ecosystem Growth: Noelclaw (PR #117) joins ECOSYSTEM.md as the 11th listed project — X handle, website, and MCP integration. 6th external contributor toward the August target of 10.
 
-Bug Fixes (#110–#112): Fixed reranker hanging indefinitely on Apple Silicon (MPS Metal shader compilation), fixed two null-response crash paths in report generation (LLM content + agent interview response).
+README Overhaul: PRs #118/#119 condensed every feature-table row from paragraph to one-liner, moved Use Cases above Features for narrative flow, and added 3 new diagrams (simulate-anything hero banner, agent grounding layers, graph memory pipeline).
 
-Regenerate Report Button (#113): One-click re-run from the report view UI. ECOSYSTEM.md (#114): ZER0 added by community contributor shak.
-
-miroshark-aeon: Disabled 5 skills (fetch-tweets, tweet-allocator, hyperstitions-ideas, skill-leaderboard, ai-framework-watch) to focus CI compute. Full Tuesday skill cycle ran successfully.
+Token Report Spam Filter: PR #48 (miroshark-aeon) tightened the Grok query so zero-engagement contract-drop spam stops landing in the Social Pulse section. Three explicit pre-filters before Grok picks results: zero-likes+zero-RT, contract-drop templates and clone domains, duplicate-template spam. Tomorrow's 06:00 UTC run validates.
 
 Key changes:
-- agent_sparklines_service.py: 279-line pure-stdlib service deriving per-agent belief paths from trajectory.json (+1,088 lines total with frontend/tests/docs)
-- retry.py deleted: 238 lines of dead code removed, badge_service.py refactored from 109→37 lines via shared builder
-- reranker_service.py: New _select_device() auto-detects CUDA/CPU, skips MPS — fixes Apple Silicon hang
+- WEBHOOK_EVENTS dispatch filter — source-side subscription for 10+ integrators (24th share surface)
+- README condensed to one-liner feature table + 3 architectural diagrams
+- Grok spam filter eliminates scam contract drops from daily token report
 
-Stats: ~70 files changed, +2,916/-547 lines
-Full recap: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-27.md
+Stats: ~17 files changed, +1,065/-49 lines
+Full recap: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-28.md
