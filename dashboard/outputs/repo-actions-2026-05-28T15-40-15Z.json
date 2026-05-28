@@ -1,0 +1,301 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Repo Action Ideas — 2026-05-28",
+        "description": "Generated from analysis of aaronjmars/MiroShark (1,208 stars, 257 forks) — five ideas the feature skill can autonomously build tomorrow."
+      },
+      "children": [
+        "main_stack"
+      ]
+    },
+    "main_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "idea1",
+        "idea2",
+        "idea3",
+        "idea4",
+        "idea5",
+        "separator",
+        "full_link"
+      ]
+    },
+    "idea1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea1_heading",
+        "idea1_badges",
+        "idea1_text"
+      ]
+    },
+    "idea1_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "1. Simulation Fork / \"Explore a Variant\"",
+        "level": "h3"
+      }
+    },
+    "idea1_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_feature_1",
+        "badge_size_1"
+      ]
+    },
+    "badge_feature_1": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "badge_size_1": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "idea1_text": {
+      "type": "Text",
+      "props": {
+        "text": "A \"Fork & vary\" button pre-fills the new-sim form from any published sim's config, records parent_sim_id, and shows a forks count on the watch page — the sensitivity-analysis primitive researchers need to ask \"was that result robust?\"",
+        "variant": "body"
+      }
+    },
+    "idea2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea2_heading",
+        "idea2_badges",
+        "idea2_text"
+      ]
+    },
+    "idea2_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "2. Outbound Completion Webhook",
+        "level": "h3"
+      }
+    },
+    "idea2_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_integration",
+        "badge_size_2"
+      ]
+    },
+    "badge_integration": {
+      "type": "Badge",
+      "props": {
+        "text": "Integration",
+        "variant": "default"
+      }
+    },
+    "badge_size_2": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "idea2_text": {
+      "type": "Text",
+      "props": {
+        "text": "Optional completion_webhook_url at launch fires a POST with full sim results when the run finishes — zero polling for operators using MiroShark inside larger automation pipelines.",
+        "variant": "body"
+      }
+    },
+    "idea3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea3_heading",
+        "idea3_badges",
+        "idea3_text"
+      ]
+    },
+    "idea3_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "3. AI Narrative Summary / \"Explain This Simulation\"",
+        "level": "h3"
+      }
+    },
+    "idea3_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_feature_3",
+        "badge_size_3"
+      ]
+    },
+    "badge_feature_3": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "badge_size_3": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "idea3_text": {
+      "type": "Text",
+      "props": {
+        "text": "An admin-gated \"Explain\" button calls Claude Haiku with structured sim data and writes a 150-200 word plain-language interpretation to narrative.md — cached forever, public to read once generated.",
+        "variant": "body"
+      }
+    },
+    "idea4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea4_heading",
+        "idea4_badges",
+        "idea4_text"
+      ]
+    },
+    "idea4_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "4. Operator Dashboard / \"All My Simulations\"",
+        "level": "h3"
+      }
+    },
+    "idea4_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_dx",
+        "badge_size_4"
+      ]
+    },
+    "badge_dx": {
+      "type": "Badge",
+      "props": {
+        "text": "DX",
+        "variant": "default"
+      }
+    },
+    "badge_size_4": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "idea4_text": {
+      "type": "Text",
+      "props": {
+        "text": "Admin-gated /my-simulations page lists every simulation owned by the current token (keyed by token hash) with status, confidence score, embed hits, and last modified — the operator's own inventory.",
+        "variant": "body"
+      }
+    },
+    "idea5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "idea5_heading",
+        "idea5_badges",
+        "idea5_text"
+      ]
+    },
+    "idea5_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "5. Round-Specific Replay Permalink",
+        "level": "h3"
+      }
+    },
+    "idea5_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_feature_5",
+        "badge_size_5"
+      ]
+    },
+    "badge_feature_5": {
+      "type": "Badge",
+      "props": {
+        "text": "Feature",
+        "variant": "default"
+      }
+    },
+    "badge_size_5": {
+      "type": "Badge",
+      "props": {
+        "text": "Small",
+        "variant": "secondary"
+      }
+    },
+    "idea5_text": {
+      "type": "Text",
+      "props": {
+        "text": "?round=N&agent=name query params initialize the replay player at a specific moment; a \"Share this moment\" toolbar button copies the current-round URL — the standard video-platform deep-link pattern applied to simulation replays.",
+        "variant": "body"
+      }
+    },
+    "separator": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "full_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "articles/repo-actions-2026-05-28.md",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-actions-2026-05-28.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}

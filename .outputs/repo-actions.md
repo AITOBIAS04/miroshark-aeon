@@ -1,19 +1,19 @@
-*Repo Action Ideas — 2026-05-24*
-Generated from analysis of aaronjmars/MiroShark (1,194 stars, 247 forks) — five ideas the feature skill can autonomously build.
+*Repo Action Ideas — 2026-05-28*
+Generated from analysis of aaronjmars/MiroShark (1,208 stars, 257 forks) — five ideas the feature skill can autonomously build tomorrow.
 
-1. French (fr) Locale (Community, Small)
-   Issue #95 is an explicit community ask — translate all i18n strings to French, opening the European academic and govtech audience already primed by the BibTeX + DKG citation stack.
+1. Simulation Fork / "Explore a Variant" (Feature, Small)
+   A "Fork & vary" button pre-fills the new-sim form from any published sim's config, records parent_sim_id, and shows a forks count on the watch page — the sensitivity-analysis primitive researchers need to ask "was that result robust?"
 
-2. Agent Interaction Graph Export (GraphML) (Integration, Small)
-   GET /api/simulation/:id/network.graphml — pure stdlib XML of the directed influence graph; Gephi/NetworkX/Cytoscape open it in one step; auto-included in Archive Bundle.
+2. Outbound Completion Webhook (Integration, Small)
+   Optional completion_webhook_url at launch fires a POST with full sim results when the run finishes — zero polling for operators using MiroShark inside larger automation pipelines.
 
-3. Simulation Confidence Score (Feature, Small)
-   Composite 0–100 score from stability + convergence + participation + robustness; chips on gallery cards; min_confidence filter; lands inside signal.json for quant integrators.
+3. AI Narrative Summary / "Explain This Simulation" (Feature, Small)
+   An admin-gated "Explain" button calls Claude Haiku with structured sim data and writes a 150-200 word plain-language interpretation to narrative.md — cached forever, public to read once generated.
 
-4. Scenario Template Library (Community/DX, Small)
-   8 pre-built scenario starters (Earnings, Policy Vote, Election, Product Launch…) with {{PLACEHOLDER}} tokens; Browse Templates modal in Step 1; /templates browse page; kills the blank-box onboarding failure.
+4. Operator Dashboard / "All My Simulations" (DX, Small)
+   Admin-gated /my-simulations page lists every simulation owned by the current token (keyed by token hash) with status, confidence score, embed hits, and last modified — the operator's own inventory.
 
-5. Embed Referrer Analytics (Feature, Small)
-   Referer header logging on /embed route; embed_referrers.json per sim; admin-gated GET /api/simulation/:id/embed-analytics; shows operators which domains are actually embedding their simulations.
+5. Round-Specific Replay Permalink (Feature, Small)
+   ?round=N&agent=name query params initialize the replay player at a specific moment; a "Share this moment" toolbar button copies the current-round URL — the standard video-platform deep-link pattern applied to simulation replays.
 
-Full details: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-actions-2026-05-24.md
+Full details: https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-actions-2026-05-28.md
