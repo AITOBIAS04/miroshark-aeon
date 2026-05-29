@@ -1,0 +1,280 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-29"
+      },
+      "children": [
+        "author",
+        "sep1",
+        "changes-section",
+        "sep2",
+        "prs-section",
+        "sep3",
+        "stats-section"
+      ]
+    },
+    "author": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark — 7 commits by 2 authors (@aaronjmars, DYAI2025)",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "changes-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "change1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change1-h",
+        "change1-t"
+      ]
+    },
+    "change1-h": {
+      "type": "Heading",
+      "props": {
+        "text": "Dark-Space-Violet Reskin",
+        "level": "h3"
+      }
+    },
+    "change1-t": {
+      "type": "Text",
+      "props": {
+        "text": "The entire frontend has been rewritten from the light Evangelion/Hyperstitions theme into the MiroShark visual language — deep-space radial gradients, glossy violet panels, chrome-shimmer accents across all 36 Vue files (+3,716/-3,452 lines). Every view from Home to Replay now lives in the same dark design system. TemplateGallery and HistoryDatabase reskinned and reinstated on Home."
+      }
+    },
+    "change2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change2-h",
+        "change2-t"
+      ]
+    },
+    "change2-h": {
+      "type": "Heading",
+      "props": {
+        "text": "Belief Volatility Analytics (25th Surface)",
+        "level": "h3"
+      }
+    },
+    "change2-t": {
+      "type": "Text",
+      "props": {
+        "text": "New GET /volatility endpoint quantifies how contested the path to consensus was — mean/std-dev/max of round-over-round swings, a normalized 0-100 volatility index, and a stable/converging/contested trend label. Completes the three-factor analytical view alongside signal.json (direction) and peak-round (when). 18 unit tests, zero new deps."
+      }
+    },
+    "change3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "change3-h",
+        "change3-t"
+      ]
+    },
+    "change3-h": {
+      "type": "Heading",
+      "props": {
+        "text": "Production Deployment Hardening",
+        "level": "h3"
+      }
+    },
+    "change3-t": {
+      "type": "Text",
+      "props": {
+        "text": "Auth guard now fail-closes on Railway/Cloud Run even when FLASK_DEBUG is left at its default (security fix — previously would serve /api/* openly). Switched from Flask dev server to gunicorn (1 worker, 8 threads). DYAI2025 contributed Cloud Run deploy infra (cloudbuild.yaml + deploy script). hmac.compare_digest for constant-time key comparison."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "prs-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "prs-h",
+        "prs-list"
+      ]
+    },
+    "prs-h": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h3"
+      }
+    },
+    "prs-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr1",
+        "pr2",
+        "pr3",
+        "pr4",
+        "pr5"
+      ]
+    },
+    "pr1": {
+      "type": "Text",
+      "props": {
+        "text": "PR #122: 36-file frontend reskin — every component from Home to Step3 to EmbedDialog rebuilt in glossy violet"
+      }
+    },
+    "pr2": {
+      "type": "Text",
+      "props": {
+        "text": "PR #124: volatility_service.py (206 LoC) + route + EmbedDialog section with gradient bar + 18 tests"
+      }
+    },
+    "pr3": {
+      "type": "Text",
+      "props": {
+        "text": "PR #125: Fail-closed auth guard + gunicorn — real security hardening for deployed instances"
+      }
+    },
+    "pr4": {
+      "type": "Text",
+      "props": {
+        "text": "PR #123: Locale negotiation protocol documented in API.md (en, zh-CN, precedence chain)"
+      }
+    },
+    "pr5": {
+      "type": "Text",
+      "props": {
+        "text": "PR #126: x402books wallet declaration for on-chain identity verification"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats-h",
+        "stats-grid1",
+        "stats-grid2",
+        "recap-link"
+      ]
+    },
+    "stats-h": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "stats-grid1": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat-files",
+        "stat-adds",
+        "stat-dels"
+      ]
+    },
+    "stat-files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "~60"
+      }
+    },
+    "stat-adds": {
+      "type": "Stat",
+      "props": {
+        "label": "Additions",
+        "value": "+5,047"
+      }
+    },
+    "stat-dels": {
+      "type": "Stat",
+      "props": {
+        "label": "Deletions",
+        "value": "-3,489"
+      }
+    },
+    "stats-grid2": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-stars",
+        "stat-forks"
+      ]
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1,209",
+        "delta": "+2",
+        "trend": "up"
+      }
+    },
+    "stat-forks": {
+      "type": "Stat",
+      "props": {
+        "label": "Forks",
+        "value": "257"
+      }
+    },
+    "recap-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-29.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
