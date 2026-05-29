@@ -1,0 +1,188 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat 2026-05-29"
+      },
+      "children": [
+        "alert_main",
+        "missing_skills_detail",
+        "separator_1",
+        "auto_dispatch_section",
+        "separator_2",
+        "success_section",
+        "separator_3",
+        "other_notes"
+      ]
+    },
+    "alert_main": {
+      "type": "Alert",
+      "props": {
+        "title": "2 Missing Skills Flagged",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "missing_skills_detail": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "token_report",
+        "feature_skill"
+      ]
+    },
+    "token_report": {
+      "type": "Text",
+      "props": {
+        "text": "token-report (06:00 UTC, 13h+ overdue) did not run",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "feature_skill": {
+      "type": "Text",
+      "props": {
+        "text": "feature (11:00 UTC, 8h+ overdue) did not run",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "auto_dispatch_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "auto_dispatch_heading",
+        "auto_dispatch_alert"
+      ]
+    },
+    "auto_dispatch_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Auto-Dispatch Status",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "auto_dispatch_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Auto-dispatch failed",
+        "message": "403 actions:read — deferred to scheduler",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "success_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "success_heading",
+        "success_skills"
+      ]
+    },
+    "success_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Friday Skills — All Ran Successfully",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "success_skills": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_repo_pulse",
+        "badge_push_recap",
+        "badge_project_lens"
+      ]
+    },
+    "badge_repo_pulse": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse ✓",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_push_recap": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap ✓",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_project_lens": {
+      "type": "Badge",
+      "props": {
+        "text": "project-lens ✓",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "other_notes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fetch_tweets_note",
+        "prs_note"
+      ]
+    },
+    "fetch_tweets_note": {
+      "type": "Text",
+      "props": {
+        "text": "fetch-tweets disabled (PR #47)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "prs_note": {
+      "type": "Text",
+      "props": {
+        "text": "11 self-improve PRs remain stalled in miroshark-aeon (chronic backlog)",
+        "variant": "body"
+      },
+      "children": []
+    }
+  }
+}
