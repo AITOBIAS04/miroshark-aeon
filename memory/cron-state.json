@@ -86,8 +86,8 @@
     "last_success": "2026-05-30T07:24:05Z"
   },
   "repo-pulse": {
-    "last_dispatch": "2026-05-29T10:11:04Z",
-    "last_status": "success",
+    "last_dispatch": "2026-05-30T11:00:26Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-30T09:01:50Z",
     "total_runs": 330,
     "total_successes": 27,
@@ -98,8 +98,8 @@
     "last_success": "2026-05-29T10:13:03Z"
   },
   "feature": {
-    "last_dispatch": "2026-05-28T11:52:32Z",
-    "last_status": "success",
+    "last_dispatch": "2026-05-30T11:00:26Z",
+    "last_status": "dispatched",
     "last_failed": "2026-04-30T09:02:15Z",
     "total_runs": 331,
     "total_successes": 26,
@@ -134,7 +134,7 @@
     "last_success": "2026-05-26T16:32:45Z"
   },
   "hyperstitions-ideas": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-04-30T09:02:14Z",
     "total_runs": 288,
     "total_successes": 6,
@@ -142,7 +142,7 @@
     "consecutive_failures": 0,
     "success_rate": 0.02,
     "last_error": "421e44a\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
-    "last_dispatch": "2026-05-23T10:54:30Z",
+    "last_dispatch": "2026-05-30T11:00:26Z",
     "last_success": "2026-05-23T10:58:02Z"
   },
   "skill-leaderboard": {
