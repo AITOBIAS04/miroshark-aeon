@@ -14,10 +14,18 @@ Check the following:
 - [ ] Any open PRs stalled > 24h? (use `gh pr list` to check)
 - [ ] Anything flagged in memory that needs follow-up?
 - [ ] Check recent GitHub issues for anything labeled urgent (use `gh issue list`)
-- [ ] Scan aeon.yml for enabled scheduled skills — cross-reference with today's log (`memory/logs/${today}.md`) to find any that haven't run when expected.
+- [ ] Scan aeon.yml for enabled scheduled skills — verify each one ran using `memory/cron-state.json` as the **primary source**, with log files as supplementary evidence.
 
-  **Matching skill names to log entries:**
-  Skills log under human-readable `## Headers`, not their aeon.yml kebab-case names. To check if a skill ran, do a **case-insensitive search** of the log file for the skill name with hyphens replaced by spaces. Examples:
+  **Step 1 — Check cron-state.json (authoritative):**
+  Read `memory/cron-state.json`. For each enabled skill, check the `last_success` timestamp:
+  - **Daily skills:** `last_success` should be within the last 26 hours (24h + 2h jitter buffer).
+  - **Every-2-day skills (`*/2`):** `last_success` should be within the last 50 hours.
+  - **Weekly skills:** `last_success` should be within the last 8 days.
+  - If `last_success` is within the expected window, the skill **has run** — do NOT flag it as missing, regardless of whether a log entry exists.
+  - If `last_success` is missing or stale, proceed to Step 2.
+
+  **Step 2 — Cross-reference with log file (supplementary):**
+  Check today's log (`memory/logs/${today}.md`) for additional evidence. Skills log under human-readable `## Headers`, not their aeon.yml kebab-case names. Do a **case-insensitive search** for the skill name with hyphens replaced by spaces. Examples:
   - `token-report` → search for "token report" (matches `## Token Report`, `## Token Report (Update)`)
   - `push-recap` → search for "push recap" (matches `## Push Recap`, `## Push Recap (MiroShark)`)
   - `fetch-tweets` → search for "fetch tweets" (matches `## Fetch Tweets — MIROSHARK`)
@@ -25,12 +33,22 @@ Check the following:
   - `hyperstitions-ideas` → search for "hyperstitions" (matches `## Hyperstitions Ideas`)
   - `memory-flush` → search for "memory flush"
   - `self-improve` → search for "self-improve" or "self improve" or "agent self-improvement"
+  - If the skill appears in the log, it has run — do NOT flag it.
+
+  **Step 3 — Check active runs (avoid premature flags):**
+  Only if both cron-state and log checks fail, verify the skill isn't currently running:
+  ```bash
+  gh run list --workflow=aeon.yml --created=$(date -u +%Y-%m-%d) --json displayTitle,status
+  ```
+  If the skill is `in_progress` or `queued`, skip it.
 
   **Timing rules (avoid false positives):**
   - GitHub Actions cron has ±10 min jitter and skills take 5-15 min to complete.
-  - Only flag a skill as missing if its scheduled time was **more than 2 hours ago**.
-  - Also check `gh run list --workflow=aeon.yml --created=$(date -u +%Y-%m-%d) --json displayTitle,status` — if the skill is currently `in_progress` or `queued`, don't flag it.
+  - Only flag a skill as missing if its scheduled time was **more than 2 hours ago** AND cron-state `last_success` is stale.
   - For day-of-week schedules (e.g. `0 20 * * 0` for Sundays), only check on the matching day.
+  - For `*/N` day-of-month schedules, check whether today's day matches the pattern before flagging.
+
+  **Important:** Use the `enabled` field in aeon.yml as the source of truth for whether a skill should be running. Do NOT rely on memory/log lessons about skills being "disabled" — those can go stale. If aeon.yml says `enabled: true` and cron-state shows recent success, the skill is running.
 
 Before sending any notification, grep the last 48h of logs for the same issue. If the same missing-skill or stalled-PR was already reported, skip it. Batch all findings into a single notification.
 
