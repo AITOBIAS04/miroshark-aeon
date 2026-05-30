@@ -1,0 +1,214 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Top Tweets — MIROSHARK / MiroShark (2026-05-30)"
+      },
+      "children": [
+        "header-note",
+        "separator1",
+        "tweets-stack"
+      ]
+    },
+    "header-note": {
+      "type": "Text",
+      "props": {
+        "text": "XAI_API_KEY not set — results via WebSearch.",
+        "variant": "muted"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "tweets-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tweet1-container",
+        "tweet2-container",
+        "tweet3-container",
+        "tweet4-container",
+        "tweet5-container"
+      ]
+    },
+    "tweet1-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet1-card",
+        "tweet1-engagement",
+        "tweet1-link"
+      ]
+    },
+    "tweet1-card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "Aeon autonomously added so many features to MiroShark that something unexpected happened — a \"mind blow moment\" the dev had to share"
+      }
+    },
+    "tweet1-engagement": {
+      "type": "Text",
+      "props": {
+        "text": "Likes: N/A | RTs: N/A",
+        "variant": "caption"
+      }
+    },
+    "tweet1-link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2055301173578457241"
+      }
+    },
+    "tweet2-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet2-card",
+        "tweet2-engagement",
+        "tweet2-link"
+      ]
+    },
+    "tweet2-card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "MiroShark just built the full simulation engine that MiroFish originally promised"
+      }
+    },
+    "tweet2-engagement": {
+      "type": "Text",
+      "props": {
+        "text": "Likes: N/A | RTs: N/A",
+        "variant": "caption"
+      }
+    },
+    "tweet2-link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2037582921947574759"
+      }
+    },
+    "tweet3-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet3-card",
+        "tweet3-engagement",
+        "tweet3-link"
+      ]
+    },
+    "tweet3-card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "github_repo",
+        "handle": "github_repo",
+        "text": "GitHub Trending picked up MiroShark: multi-agent engine that simulates public reaction on social media from any uploaded doc"
+      }
+    },
+    "tweet3-engagement": {
+      "type": "Text",
+      "props": {
+        "text": "Likes: N/A | RTs: N/A",
+        "variant": "caption"
+      }
+    },
+    "tweet3-link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/github_repo/status/2043803689907786095"
+      }
+    },
+    "tweet4-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet4-card",
+        "tweet4-engagement",
+        "tweet4-link"
+      ]
+    },
+    "tweet4-card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "aaronjmars",
+        "handle": "aaronjmars",
+        "text": "MiroShark & Aeon roadmap: fees tokenized via bankrbot; Aeon instance will use trading fees for ads, burns, and coordination markets"
+      }
+    },
+    "tweet4-engagement": {
+      "type": "Text",
+      "props": {
+        "text": "Likes: N/A | RTs: N/A",
+        "variant": "caption"
+      }
+    },
+    "tweet4-link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/aaronjmars/status/2036818584937095581"
+      }
+    },
+    "tweet5-container": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tweet5-card",
+        "tweet5-engagement",
+        "tweet5-link"
+      ]
+    },
+    "tweet5-card": {
+      "type": "TweetCard",
+      "props": {
+        "author": "BioStone_chad",
+        "handle": "BioStone_chad",
+        "text": "Dev confirmed roadmap; $MIROSHARK at 70k MC on Base with upgraded swarm AI, fee-driven burns and coordination; contract 0xd7bc6a05a56655FB2052F742B012d1DFD66e1BA3"
+      }
+    },
+    "tweet5-engagement": {
+      "type": "Text",
+      "props": {
+        "text": "Likes: N/A | RTs: N/A",
+        "variant": "caption"
+      }
+    },
+    "tweet5-link": {
+      "type": "Link",
+      "props": {
+        "label": "View tweet",
+        "href": "https://x.com/BioStone_chad/status/2036824963689411046"
+      }
+    }
+  }
+}
