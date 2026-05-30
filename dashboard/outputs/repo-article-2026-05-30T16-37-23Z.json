@@ -1,0 +1,41 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "The Simulation Engine That Just Got a Wallet"
+      },
+      "children": [
+        "stack-content"
+      ]
+    },
+    "stack-content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text-body",
+        "link-article"
+      ]
+    },
+    "text-body": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark declared x402 wallets this week — the same protocol Coinbase, Stripe, and Cloudflare built for agent-to-agent payments ($600M annualized volume). Combined with a 36-file frontend reskin, an external contributor shipping Cloud Run deploy infra, and belief volatility completing the 25th share surface, the simulation engine crossed from demo project to payment-ready infrastructure.",
+        "variant": "body"
+      }
+    },
+    "link-article": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Read the full article",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/repo-article-2026-05-30.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
