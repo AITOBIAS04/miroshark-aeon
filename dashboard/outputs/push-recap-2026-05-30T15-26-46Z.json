@@ -1,0 +1,217 @@
+{
+  "root": "card-root",
+  "state": {},
+  "elements": {
+    "card-root": {
+      "type": "Card",
+      "props": {
+        "title": "Push Recap — 2026-05-30"
+      },
+      "children": [
+        "repo-info",
+        "sep1",
+        "pr127-stack",
+        "sep2",
+        "pr128-stack",
+        "sep3",
+        "pr129-stack",
+        "sep4",
+        "key-changes-heading",
+        "key-changes-content",
+        "sep5",
+        "stats-heading",
+        "stats-grid",
+        "sep6",
+        "recap-link"
+      ]
+    },
+    "repo-info": {
+      "type": "Text",
+      "props": {
+        "text": "aaronjmars/MiroShark — 3 commits by 1 author (@aaronjmars + Claude Opus 4.8)",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr127-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr127-heading",
+        "pr127-desc"
+      ]
+    },
+    "pr127-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Design System Port (PR #127)",
+        "level": "h3"
+      }
+    },
+    "pr127-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Ported the miroshark.xyz marketing-site aesthetic into the entire in-app frontend. Deep-space nebula background + animated star field behind every route. Branded boot splash with chrome shark that cross-fades on mount. New site footer. App.vue now exports reusable design-system classes (chrome-text, glossy-panel, metal pills). All views restyled."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr128-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr128-heading",
+        "pr128-desc"
+      ]
+    },
+    "pr128-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Button & Typography Cleanup (PR #128)",
+        "level": "h3"
+      }
+    },
+    "pr128-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Caught everything the initial port missed. The Explore page — primary discovery surface — got a complete restyle: flat rectangles → glossy round pills, gallery cards → rounded panels, bullish/bearish green/red → violet/fuchsia. Purged all 73 stray Young Serif / Space Mono references. Dropped retired fonts from Google Fonts link."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "pr129-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr129-heading",
+        "pr129-desc"
+      ]
+    },
+    "pr129-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Embed Dialog & Sentiment Palette (PR #129)",
+        "level": "h3"
+      }
+    },
+    "pr129-desc": {
+      "type": "Text",
+      "props": {
+        "text": "The embed dialog was the last major light-themed widget inside the dark app — re-themed end-to-end. Unified the sentiment color palette across all charts and network graphs from teal/red to brand violet/fuchsia. Fixed the replay playback bar, which was entirely invisible (white bar, light text)."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "key-changes-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Key changes",
+        "level": "h3"
+      }
+    },
+    "key-changes-content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "change1",
+        "change2",
+        "change3"
+      ]
+    },
+    "change1": {
+      "type": "Text",
+      "props": {
+        "text": "App.vue (+419/-34): centralized design system with reusable CSS classes, global nebula/starfield, Geist typography"
+      }
+    },
+    "change2": {
+      "type": "Text",
+      "props": {
+        "text": "ExploreView.vue (+172/-83): complete gallery page restyle, all controls → glossy pills"
+      }
+    },
+    "change3": {
+      "type": "Text",
+      "props": {
+        "text": "EmbedDialog.vue (+188/-186): full dark retheme, invisible controls fixed, violet gradient buttons"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stats-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Stats",
+        "level": "h3"
+      }
+    },
+    "stats-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat-files",
+        "stat-lines-added",
+        "stat-lines-removed"
+      ]
+    },
+    "stat-files": {
+      "type": "Stat",
+      "props": {
+        "label": "Files changed",
+        "value": "34"
+      }
+    },
+    "stat-lines-added": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines added",
+        "value": "1,750"
+      }
+    },
+    "stat-lines-removed": {
+      "type": "Stat",
+      "props": {
+        "label": "Lines removed",
+        "value": "824"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {}
+    },
+    "recap-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full recap",
+        "href": "https://github.com/AITOBIAS04/CHORUS/blob/main/articles/push-recap-2026-05-30.md",
+        "source": "GitHub"
+      }
+    }
+  }
+}
