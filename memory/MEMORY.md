@@ -63,7 +63,7 @@
 - Cron-state success rates can be poisoned by extended auth outages (15-day Apr 16–30 outage left 1–7% rates on all skills despite 100% health since May 1); reset counters in cron-state.json when consecutive_failures = 0 post-outage
 - Heartbeat auto-dispatch requires `actions: write` scope; aeon.yml has `actions: read` — heartbeat now checks permissions before attempting, defers to scheduler (messages.yml) on 403
 - Tweet allocator can hit bankr agent timeout (>64s polling ceiling) causing TWEET_ALLOCATOR_EMPTY drift; fix: increase iterations 8→14 and add agent-timeout status (self-improve PR #43 2026-05-20)
-- PR #47 (2026-05-27) disabled 5 skills: fetch-tweets, tweet-allocator, hyperstitions-ideas, skill-leaderboard, ai-framework-watch — don't expect output from these
+- Skills fetch-tweets, hyperstitions-ideas, skill-leaderboard remain enabled and running (cron-state confirms recent successes); tweet-allocator and ai-framework-watch do not exist in aeon.yml
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07; 1K stars — CLEARED 2026-05-03 (1,022 stars)
