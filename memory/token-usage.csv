@@ -168,4 +168,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-05-29,repo-pulse,claude-sonnet-4-6,13,4006,435799,25994
 2026-05-29,push-recap,claude-opus-4-6,19,12010,1140950,69232
 2026-05-29,heartbeat,claude-sonnet-4-6,12,5182,402338,24866
-2026-05-30,fetch-tweets,claude-sonnet-4-6,13,4126,343291,26005
+2026-05-30,token-report,claude-sonnet-4-6,324,14111,785754,38802
