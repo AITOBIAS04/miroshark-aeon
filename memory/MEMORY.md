@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-05-27*
+*Last consolidated: 2026-05-31*
 
 ## About This Repo
 - Autonomous agent running on GitHub Actions via Claude Code
@@ -13,8 +13,6 @@
 ## Recent Articles
 | Date | Title | Topic |
 |------|-------|-------|
-| 2026-05-13 | The Governance Coordinator Who Stopped Flying Blind | User story: DAO governance crisis 2026 (Gnosis GIP-150, Jupiter pause, 40% voter drop); MiroShark as governance simulation primitive |
-| 2026-05-14 | Nobody Indexes a Simulation | Simulations as web content type: sitemap (PR #82) + filtered RSS (PR #81) make results crawlable/subscribable; RSS revival 2026; Google AI indexing; 1,147 stars |
 | 2026-05-16 | The Simulation That Outlives Its Server | Cryptographic permanence: OriginTrail DKG citation (PR #84) anchors sim provenance on decentralized knowledge graph; EU AI Act Aug 2026 deadline; 1,164 stars |
 | 2026-05-18 | When the Bots Don't Need a Boss | Current events: USC autonomous propaganda study (Web Conference 2026); 30-state deepfake laws; midterm synthetic ads; coalition detection + adversarial stress-test as defender rehearsal; 1,172 stars |
 | 2026-05-24 | Your Simulated Crowd Was Never Real. Now It Might Be. | Demographic grounding: NVIDIA Nemotron-Personas (PR #103) as credibility inflection; Springer Nature bias study; 3 external contributors; credibility stack thesis; 1,194 stars |
@@ -27,19 +25,16 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
-| 2026-05-23 | push-recap | PR #97 (WaybackClaw IPFS+Nostr — 15th share surface) merged; token -40.73%; 1,192 stars, 246 forks |
-| 2026-05-24 | push-recap | PRs #103/#99/#98/#102/#100 merged (5 PRs, 3 external contributors); demographic grounding (Nemotron-Personas); 1,194 stars, 247 forks |
-| 2026-05-25 | push-recap | PRs #107 (oEmbed auto-unfurl — 21st surface), #105 (Platform Stats API + Shields.io badge), #104 (gitignore cleanup); 1,195 stars, 248 forks |
-| 2026-05-26 | push-recap | PRs #108 (Peak-Round Belief Analytics — 22nd surface), #109 (ECOSYSTEM.md — Nurstar, 4th external contrib); 1,203 stars, 251 forks |
 | 2026-05-27 | token-report | $0.00001342 (+7.36% 24h); FDV $1.34M; LP $593.5K; ATH $0.00003323 (May 18); 7d -54.8%; 30d +399% |
 | 2026-05-27 | push-recap | PRs #115 (Agent Belief Sparklines — 23rd surface), #116 (8-pass cleanup -238 lines), #113 (Regenerate button), #110–#112 (bug fixes), #114 (ECOSYSTEM.md/shak); 1,205 stars, 255 forks |
+| 2026-05-29 | push-recap | PRs #122 (full dark-space-violet frontend reskin — 36 Vue files), #124 (Belief Volatility — 25th surface), #125 (auth guard fail-closed), #126 (x402 wallet); DYAI2025 Cloud Run deploy infra; 1,209 stars, 257 forks |
+| 2026-05-30 | push-recap | PRs #127/#128/#129 (UI overhaul — deep-space chrome + glossy violet design system); 1,212 stars, 257 forks |
+| 2026-05-30 | token-report | $0.000009769 (-5.48% 24h); FDV $977K; LP $496.8K; 7d -71.8%; 30d +139.4% |
+| 2026-05-31 | push-recap | PR #131 (Simulation Clone JSON — 26th surface) opened; PR #130 (Surface Catalog API) open from May 30; 1,218 stars, 258 forks; $0.00000850 (-13.15% 24h), FDV $850K |
 
 ## Skills Built
 | Skill | Date | Notes |
 |-------|------|-------|
-| Coalition Detection | 2026-05-16 | Greedy modularity-maximization community detection on interaction graph; GET /coalitions endpoint; coalitions.json cache; coalition ellipses + legend chips + detail cards in InteractionNetwork.vue; echo chamber warning; click-to-highlight; 11 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
-| Private Share Links with Expiry | 2026-05-17 | Token-signed expiring URLs for sharing unpublished sims; share_links.py pure-stdlib service; 3 admin-gated endpoints (POST/GET/DELETE share-links); GET /share/private/<token> landing route; share-token bypass on publish gates; EmbedDialog private link section with generate/copy/revoke; private_share surface stat; 20 unit tests; OpenAPI spec; bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
-| Adversarial Stress-Test Mode | 2026-05-18 | Inject 1-3 contrarian agents; adversarial.py pure-stdlib service (select, prompt suffix, robustness report); halfway-vs-final consensus drift; 4 robustness tiers (high/medium/low/collapse); key moment detection; GET /adversarial-report endpoint; Step1 toggle + count selector; Step3 expandable verdict panel; red dashed adversarial nodes in InteractionNetwork; gallery adversarial filter + pill badge; 16 unit tests; OpenAPI spec (code complete, push blocked — GH_GLOBAL not set) |
 | Weekly Simulation Digest | 2026-05-19 | Auto-curated top-5 from past 7 days by weighted engagement (watch×3, share×5, embed×4, annotation×2, coalition×1); weekly_digest.py pure-stdlib service; ISO-week filtering; key-metric auto-selection (velocity/polarization/coalitions/annotations); 6-hour on-disk cache; GET /api/digest/weekly + /api/digest/archive; DigestView.vue ranked cards with rank badges + consensus bars + key metric pills; /digest + /digest/week/:weekId routes; Digest chip on /explore; 18 unit tests; OpenAPI spec; bilingual i18n (code complete, push blocked — GH_GLOBAL not set) |
 | Curator Collections | 2026-05-20 | Named ordered sim lists for citation bundles; collections.py pure-stdlib CRUD service (atomic JSON, path-traversal validation, dedup, removal propagation); 5 REST endpoints at /api/collections (admin-gated mutations); GET /api/simulation/:id/collections cross-link; CollectionsView.vue gallery + CollectionDetailView.vue ranked cards with consensus bars; /collections + /collections/:id routes; Collections chip on /explore; 22 unit tests; OpenAPI spec (6 schemas); bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
 | Agent Journey View | 2026-05-21 | Round-by-round detective mode for single agent; agent_journey.py pure-stdlib service (stance arc, posts, influenced_by with excerpts, influenced with stance transitions); GET /agent-journey?agent_name endpoint + agent list mode; AgentJourneyView.vue vertical timeline (stance badges, flip highlights, sparkline, clickable agent names); Journey toolbar button + InteractionNetwork "View journey →" tooltip link; 22 unit tests; OpenAPI spec (AgentJourneyResponse schema); bilingual docs (code complete, push blocked — GH_GLOBAL not set) |
@@ -65,7 +60,6 @@
 - Cron-state success rates can be poisoned by extended auth outages (15-day Apr 16–30 outage left 1–7% rates on all skills despite 100% health since May 1); reset counters in cron-state.json when consecutive_failures = 0 post-outage
 - Heartbeat auto-dispatch requires `actions: write` scope; aeon.yml has `actions: read` — heartbeat now checks permissions before attempting, defers to scheduler (messages.yml) on 403
 - Tweet allocator can hit bankr agent timeout (>64s polling ceiling) causing TWEET_ALLOCATOR_EMPTY drift; fix: increase iterations 8→14 and add agent-timeout status (self-improve PR #43 2026-05-20)
-- PR #47 (2026-05-27) disabled 5 skills: fetch-tweets, tweet-allocator, hyperstitions-ideas, skill-leaderboard, ai-framework-watch — don't expect output from these
 
 ## Active Targets
 - Hyperstition: MiroShark 500 stars — CLEARED 2026-04-07; 1K stars — CLEARED 2026-05-03 (1,022 stars)
@@ -75,6 +69,7 @@
 - Hyperstition: Will a MiroShark simulation be cited in a peer-reviewed or pre-print paper by September 2026? (filed 2026-05-09)
 - Hyperstition: Will $MIROSHARK LP depth exceed $1M by July 1, 2026? (filed 2026-05-16) — CLEARED 2026-05-20; LP at $1.02M (first sustained $1M+)
 - Hyperstition: Will MiroShark receive 10 merged PRs from community contributors (non-bot, non-core-team) by August 1, 2026? (filed 2026-05-23) — 5+/10 as of 2026-05-27 (Nurstar PR #109, shak PR #114 among recent)
+- Hyperstition: Will someone outside MiroShark core team deploy and host a public-facing MiroShark instance by July 15, 2026? (filed 2026-05-30) — triggered by DYAI2025 Cloud Run deploy infra (cloudbuild.yaml + deploy script); zero public instances exist yet
 
 ## Open Issues
 - None
