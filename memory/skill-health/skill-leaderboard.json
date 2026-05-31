@@ -1,0 +1,14 @@
+{
+  "skill": "skill-leaderboard",
+  "last_analyzed": "2026-05-31T17:48:38Z",
+  "quality_score": 4,
+  "assessment": "Completed task with substantive fleet metrics, clear adoption tracking, and specific data; correctly declined notification per threshold rules",
+  "flags": [],
+  "avg_score": 4,
+  "history": [
+    {
+      "date": "2026-05-31",
+      "score": 4
+    }
+  ]
+}
