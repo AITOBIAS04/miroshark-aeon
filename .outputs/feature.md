@@ -1,21 +1,23 @@
-*Feature Built — 2026-05-30*
+*Feature Built — 2026-05-31*
 
-Operator Dashboard (All My Simulations)
-MiroShark operators now have a dedicated command center at /my-simulations. Enter your admin token once and see every simulation on the deployment — published, private, running, or failed — in one sortable, filterable table with per-sim metadata and aggregate statistics. No more scrolling through the public gallery or remembering simulation IDs.
+Real-Time Simulation Progress via SSE
+
+MiroShark simulations now push live progress to the browser. Instead of the old 2-second polling loop, the simulation runner writes events to a progress file as each round starts, completes, and as agents take notable actions — and a new Server-Sent Events endpoint streams those events directly to any connected client. The simulation page opens an EventSource on launch and shows a live activity feed: agent names, stance types, and platform badges flow in round by round, fading in with smooth CSS transitions.
 
 Why this matters:
-Until now, operators who ran 30+ simulations over weeks had no inventory view of their own work. The public gallery only shows published runs, the History Database is a flat chronological list without status filtering or aggregate stats, and finding 'the 8-agent sim I ran two weeks ago on the ECB decision' required bookmarks or memory. This was idea #4 from repo-actions and directly addresses the blind spot operators hit when using MiroShark as a recurring production tool rather than a one-off research toy.
+Until now, watching a running simulation meant polling two REST endpoints every 2–3 seconds and seeing numbers increment in batches. A 15-round, 30-agent simulation took several minutes, and the entire time the UI looked like a loading bar that updated in jumps. SSE replaces that with a push stream: the moment an agent posts on Twitter, the feed shows their name and action type. The moment a round completes on Reddit, the progress ticks up. The simulation feels alive — you watch agents act in real time instead of watching a number go up. This was idea #1 from yesterday's repo-actions (2026-05-30), selected as the highest-impact small-effort build: it transforms the creation experience rather than adding another post-hoc analytical surface.
 
 What was built:
-- backend/app/services/operator_dashboard_service.py: Pure-stdlib scanner that reads state.json, simulation_config.json, confidence.json, and surface-stats.json for every sim directory. Returns enriched cards sorted by last-modified, plus aggregate stats (counts, avg confidence, most-embedded sim, highest-confidence sim).
-- backend/app/api/operator.py: Flask blueprint with two admin-gated routes — GET /api/operator/simulations returns the full sim list with status counts, GET /api/operator/stats returns aggregate analytics. Both require Authorization: Bearer $MIROSHARK_ADMIN_TOKEN.
-- frontend/src/views/OperatorDashboardView.vue: Full-page dashboard with auth gate (token stored in localStorage), 4 stat cards (Total/Published/Private/Running), status filter tabs, sort dropdown (Last Modified/Created/Confidence/Embed Hits), and a sortable simulation table with color-coded status chips, confidence badges, relative timestamps, and click-to-navigate.
-- 12 unit tests, OpenAPI spec (Operator tag + schemas), API + FEATURES docs, /my-simulations route, Dashboard nav link.
+- backend/app/services/sse_progress_service.py: Pure-stdlib service that writes progress events to progress_events.jsonl and provides a file-tailing SSE generator with 15-second keepalive pings and 5-minute inactivity timeout
+- backend/app/services/simulation_runner.py: Modified to emit round_start, round_complete, agent_action (for posts, comments, quotes, trades), platform_complete, simulation_complete, and simulation_error events during the monitor loop
+- backend/app/api/simulation.py: New GET /api/simulation/<id>/events SSE endpoint with X-Accel-Buffering: no header for Cloud Run proxy compatibility
+- frontend/src/components/Step3Simulation.vue: EventSource connection on simulation start/resume; live activity feed strip with TransitionGroup animations showing platform labels, agent names, and action badges; auto-cleanup on unmount; graceful fallback to existing polling on connection failure
+- 12 unit tests, OpenAPI spec entry, bilingual docs (API.md + FEATURES.md, English + Chinese)
 
 How it works:
-The dashboard scans every simulation directory on disk (not just public ones), reading the same artifact files the gallery card builder uses — state.json for status, simulation_config.json for scenario/rounds/model, confidence.json for trust score, surface-stats.json for embed hit counts. The frontend stores the admin token in localStorage after validation and sends it as a Bearer header on each dashboard request. Status tabs filter in real-time; sorting works across four dimensions. The auth gate validates the token by calling the stats endpoint — a successful response unlocks the view, a 401 shows an inline error.
+The simulation runner already monitors per-platform actions.jsonl files every 2 seconds in a background thread. When it detects a round_start, round_end, or simulation_end event (or a high-signal agent action like CREATE_POST), it now also appends a progress event to progress_events.jsonl via the SSE service. The SSE endpoint opens that file, streams all existing lines immediately (so clients connecting mid-run catch up), then enters a 0.5-second tail-follow loop watching for new lines — the same pattern used by the existing observability SSE endpoint. Flask's native stream_with_context + Response(mimetype='text/event-stream') handles the long-lived connection. On the frontend, EventSource is native in every modern browser — zero new npm dependencies. The live feed keeps a sliding window of the 5 most recent entries with Vue's TransitionGroup providing enter/leave animations.
 
 What's next:
-Could add per-sim action buttons (publish/unpublish, delete), a search bar over scenarios, or export the full sim inventory as CSV for external analysis.
+The live feed currently shows text-only entries. Future iterations could include belief-position indicators (bullish/bearish chips) per agent action, a mini-chart that updates in real time, or a full-screen live mode designed for projection during workshops.
 
-Push blocked — GH_GLOBAL secret not set (26th consecutive block)
+Push blocked — GH_GLOBAL secret not set (27th consecutive block). Local commit 805b4c9 on branch feat/sse-progress.

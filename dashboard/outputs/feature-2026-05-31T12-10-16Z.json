@@ -1,0 +1,190 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Feature Built — 2026-05-31"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h_feature",
+        "text_intro",
+        "sep1",
+        "h_why",
+        "text_why",
+        "sep2",
+        "h_built",
+        "stack_built",
+        "sep3",
+        "h_how",
+        "text_how",
+        "sep4",
+        "h_next",
+        "text_next",
+        "sep5",
+        "alert_push"
+      ]
+    },
+    "h_feature": {
+      "type": "Heading",
+      "props": {
+        "text": "Real-Time Simulation Progress via SSE",
+        "level": "h2"
+      }
+    },
+    "text_intro": {
+      "type": "Text",
+      "props": {
+        "text": "MiroShark simulations now push live progress to the browser. Instead of the old 2-second polling loop, the simulation runner writes events to a progress file as each round starts, completes, and as agents take notable actions — and a new Server-Sent Events endpoint streams those events directly to any connected client. The simulation page opens an EventSource on launch and shows a live activity feed: agent names, stance types, and platform badges flow in round by round, fading in with smooth CSS transitions.",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "h_why": {
+      "type": "Heading",
+      "props": {
+        "text": "Why this matters:",
+        "level": "h3"
+      }
+    },
+    "text_why": {
+      "type": "Text",
+      "props": {
+        "text": "Until now, watching a running simulation meant polling two REST endpoints every 2–3 seconds and seeing numbers increment in batches. A 15-round, 30-agent simulation took several minutes, and the entire time the UI looked like a loading bar that updated in jumps. SSE replaces that with a push stream: the moment an agent posts on Twitter, the feed shows their name and action type. The moment a round completes on Reddit, the progress ticks up. The simulation feels alive — you watch agents act in real time instead of watching a number go up. This was idea #1 from yesterday's repo-actions (2026-05-30), selected as the highest-impact small-effort build: it transforms the creation experience rather than adding another post-hoc analytical surface.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "h_built": {
+      "type": "Heading",
+      "props": {
+        "text": "What was built:",
+        "level": "h3"
+      }
+    },
+    "stack_built": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_built_1",
+        "text_built_2",
+        "text_built_3",
+        "text_built_4",
+        "text_built_5"
+      ]
+    },
+    "text_built_1": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/sse_progress_service.py: Pure-stdlib service that writes progress events to progress_events.jsonl and provides a file-tailing SSE generator with 15-second keepalive pings and 5-minute inactivity timeout",
+        "variant": "body"
+      }
+    },
+    "text_built_2": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/services/simulation_runner.py: Modified to emit round_start, round_complete, agent_action (for posts, comments, quotes, trades), platform_complete, simulation_complete, and simulation_error events during the monitor loop",
+        "variant": "body"
+      }
+    },
+    "text_built_3": {
+      "type": "Text",
+      "props": {
+        "text": "backend/app/api/simulation.py: New GET /api/simulation/<id>/events SSE endpoint with X-Accel-Buffering: no header for Cloud Run proxy compatibility",
+        "variant": "body"
+      }
+    },
+    "text_built_4": {
+      "type": "Text",
+      "props": {
+        "text": "frontend/src/components/Step3Simulation.vue: EventSource connection on simulation start/resume; live activity feed strip with TransitionGroup animations showing platform labels, agent names, and action badges; auto-cleanup on unmount; graceful fallback to existing polling on connection failure",
+        "variant": "body"
+      }
+    },
+    "text_built_5": {
+      "type": "Text",
+      "props": {
+        "text": "12 unit tests, OpenAPI spec entry, bilingual docs (API.md + FEATURES.md, English + Chinese)",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "h_how": {
+      "type": "Heading",
+      "props": {
+        "text": "How it works:",
+        "level": "h3"
+      }
+    },
+    "text_how": {
+      "type": "Text",
+      "props": {
+        "text": "The simulation runner already monitors per-platform actions.jsonl files every 2 seconds in a background thread. When it detects a round_start, round_end, or simulation_end event (or a high-signal agent action like CREATE_POST), it now also appends a progress event to progress_events.jsonl via the SSE service. The SSE endpoint opens that file, streams all existing lines immediately (so clients connecting mid-run catch up), then enters a 0.5-second tail-follow loop watching for new lines — the same pattern used by the existing observability SSE endpoint. Flask's native stream_with_context + Response(mimetype='text/event-stream') handles the long-lived connection. On the frontend, EventSource is native in every modern browser — zero new npm dependencies. The live feed keeps a sliding window of the 5 most recent entries with Vue's TransitionGroup providing enter/leave animations.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "h_next": {
+      "type": "Heading",
+      "props": {
+        "text": "What's next:",
+        "level": "h3"
+      }
+    },
+    "text_next": {
+      "type": "Text",
+      "props": {
+        "text": "The live feed currently shows text-only entries. Future iterations could include belief-position indicators (bullish/bearish chips) per agent action, a mini-chart that updates in real time, or a full-screen live mode designed for projection during workshops.",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "alert_push": {
+      "type": "Alert",
+      "props": {
+        "title": "Push blocked",
+        "message": "GH_GLOBAL secret not set (27th consecutive block). Local commit 805b4c9 on branch feat/sse-progress.",
+        "type": "warning"
+      }
+    }
+  }
+}
