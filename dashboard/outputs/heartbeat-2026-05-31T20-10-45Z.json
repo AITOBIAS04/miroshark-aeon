@@ -1,0 +1,244 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat 2026-05-31",
+        "description": "3 skills missed, 1 PR stalled"
+      },
+      "children": [
+        "alert_summary",
+        "sep1",
+        "missing_section",
+        "sep2",
+        "dispatch_alert",
+        "sep3",
+        "pr_section",
+        "sep4",
+        "ok_section"
+      ]
+    },
+    "alert_summary": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "Status Summary",
+        "message": "3 skills missed, 1 PR stalled"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "missing_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "missing_heading",
+        "gap_text",
+        "missing_list"
+      ]
+    },
+    "missing_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Missing Skills",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "gap_text": {
+      "type": "Text",
+      "props": {
+        "text": "Scheduler gap 04:56–08:15 UTC:",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "missing_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "missing_1",
+        "missing_2",
+        "missing_3"
+      ]
+    },
+    "missing_1": {
+      "type": "Text",
+      "props": {
+        "text": "token-report (06:00)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "missing_2": {
+      "type": "Text",
+      "props": {
+        "text": "fetch-tweets (06:30)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "missing_3": {
+      "type": "Text",
+      "props": {
+        "text": "repo-article (16:00, Sunday schedule) — did not fire despite tick at 16:40",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "dispatch_alert": {
+      "type": "Alert",
+      "props": {
+        "type": "error",
+        "title": "Auto-dispatch Failed",
+        "message": "Auto-dispatch attempted for all 3 missing skills — blocked by 403 (actions: read scope). Skills will not self-heal; manual dispatch needed."
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "pr_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pr_heading",
+        "pr_link",
+        "pr_details"
+      ]
+    },
+    "pr_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "PR Stalled >24h",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "pr_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "feat: surface catalog API",
+        "href": "https://github.com/aaronjmars/MiroShark/pull/130",
+        "source": "aaronjmars/MiroShark #130"
+      },
+      "children": []
+    },
+    "pr_details": {
+      "type": "Text",
+      "props": {
+        "text": "Open since May 30 11:15 UTC — no review activity",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "ok_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "ok_heading",
+        "ok_list"
+      ]
+    },
+    "ok_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "All Other Scheduled Skills Confirmed OK",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "ok_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "ok_1",
+        "ok_2",
+        "ok_3",
+        "ok_4",
+        "ok_5"
+      ]
+    },
+    "ok_1": {
+      "type": "Badge",
+      "props": {
+        "text": "repo-pulse ✓",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "ok_2": {
+      "type": "Badge",
+      "props": {
+        "text": "feature ✓",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "ok_3": {
+      "type": "Badge",
+      "props": {
+        "text": "push-recap ✓",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "ok_4": {
+      "type": "Badge",
+      "props": {
+        "text": "skill-leaderboard ✓",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "ok_5": {
+      "type": "Badge",
+      "props": {
+        "text": "memory-flush ✓",
+        "variant": "secondary"
+      },
+      "children": []
+    }
+  }
+}
