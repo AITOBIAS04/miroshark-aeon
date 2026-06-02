@@ -99,15 +99,15 @@
   },
   "feature": {
     "last_dispatch": "2026-06-02T11:01:46Z",
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-05-30T11:30:52Z",
-    "total_runs": 335,
-    "total_successes": 29,
+    "total_runs": 336,
+    "total_successes": 30,
     "total_failures": 306,
     "consecutive_failures": 0,
     "success_rate": 0.09,
     "last_error": "7547f52\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
-    "last_success": "2026-06-01T12:58:34Z"
+    "last_success": "2026-06-02T11:18:12Z"
   },
   "self-improve": {
     "last_status": "success",
