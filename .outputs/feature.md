@@ -1,21 +1,22 @@
-*Feature Built — 2026-06-01*
+Feature Built — 2026-06-02
 
-Deployment Health & Status Endpoint
-MiroShark deployments now have a proper health check and status page. Cloud Run, Fly.io, Railway, Docker Compose, and uptime monitors (UptimeRobot, Betterstack, StatusCake) can all point at /api/health and get a fast, structured response telling them whether the service is healthy or degraded — with subsystem detail, uptime, and recent simulation activity. Operators and users get a clean /status page showing the same data in a visual dashboard.
+Multi-Metric Simulation Leaderboard
+
+MiroShark now has a dedicated leaderboard page at /leaderboard that ranks published simulations across five independent dimensions of engagement and quality. Instead of one composite trending score, visitors can switch between five metric tabs — Most Embedded, Highest Confidence, Most Volatile, Most Forked, and Most Agents — each showing the top 10 simulations for that signal.
 
 Why this matters:
-Cloud Run deploy infra shipped last week (cloudbuild.yaml + deploy script), but without a health check endpoint, Cloud Run cannot perform liveness probes and will restart the service unnecessarily during cold starts. No uptime monitor could alert on outages. For any operator self-hosting MiroShark on Cloud Run, Fly.io, or Railway, this was the missing standard ops primitive — the one that should ship within 72 hours of any new deployment target. The /status page gives operators a clean URL to link from their README or share in a Slack channel when users ask "is it down?"
+The gallery at /explore answers one question at a time: what's trending, what's confident, what's new. A visitor who wants to understand the full landscape of MiroShark activity had to run five separate queries. The leaderboard answers all five simultaneously in a ranked table format. For first-time visitors arriving from referral links, the leaderboard answers 'what's the best content here?' in one glance. For the MIROSHARK token narrative, the leaderboard is shareable evidence of real platform usage with measurable engagement across distinct dimensions. This was repo-actions idea #4 from May 30 — the fourth of five ideas built from that set (after SSE Progress and Deployment Health).
 
 What was built:
-- backend/app/services/health\_service.py: Three fast subsystem checks (filesystem readability, simulation directory writability, Python version), uptime computed from a startup timestamp file written at Flask init, recent simulation count via scandir mtime. All complete in under 50ms — no sim scanning, no database calls, no LLM.
-- backend/app/api/health.py: Two endpoints — GET /api/health (returns 200 on ok, 503 on degraded) and GET /api/health/status (same payload, always 200). Both public, cached 30 seconds. Exempt from internal auth guard.
-- frontend/src/views/StatusView.vue: Dark-themed /status page with large operational/degraded indicator, 4 metric cards (uptime, simulations 24h, storage health, Python version), subsystem check rows with pass/fail dots. Auto-refreshes every 60 seconds.
-- backend/tests/test\_unit\_health.py: 16 unit tests covering ok/degraded states, startup timestamp creation, uptime computation, simulation counting, route declarations, auth exemption, and OpenAPI spec presence.
+- backend/app/services/leaderboard_service.py: Pure-stdlib service that scans all published sim directories and computes 5 metrics from existing data files (surface-stats.json for embed hits, signal.json for confidence, volatility.json for volatility index, state.json parent refs for fork count, state.json profiles_count for agent count). 1-hour cache per metric. Nulls sort last. Only public + completed sims eligible.
+- backend/app/api/leaderboard.py: Flask blueprint at /api/leaderboard with ?metric (embed_hits|confidence|volatility|forks|agents) and ?limit (1-25) params. Public endpoint, Cache-Control 1 hour.
+- frontend/src/views/LeaderboardView.vue: Dark-themed page matching the space-violet design system. 5-tab metric selector with distinct icons, ranked table with gold/silver/bronze rank badges, consensus direction chips (color-coded bullish/neutral/bearish), formatted metric values, relative dates. Embed mode via ?embed=true strips navigation for iframe use. Responsive — mobile collapses tab labels to icons-only and hides the date column.
+- backend/tests/test_unit_leaderboard.py: 12 unit tests covering all 5 metrics, null handling, limit, cache hit/miss, exclusion of private/incomplete sims, invalid metric fallback, empty state.
 
 How it works:
-On app startup, create\_app() writes a startup\_timestamp.json to the simulation data directory. When /api/health is called, health\_service.py runs three fast filesystem checks: can we list the data directory (filesystem), can we write to it (simulation\_dir\_writable), and what Python version is running. It reads the startup timestamp to compute uptime\_seconds, and does a quick scandir pass to count simulation directories modified in the last 24 hours. If any check fails, status is "degraded" and /api/health returns 503. The /status alias always returns 200 for dashboards that poll without caring about HTTP codes. The frontend StatusView calls the status endpoint on mount and every 60 seconds, rendering the results in a dark-themed card layout matching the new space-violet design system.
+The service scans WONDERWALL_SIMULATION_DATA_DIR on each uncached request, reading the minimum set of JSON files per simulation needed for the requested metric. Each metric derives from a different existing file — no new data is collected during simulation runs, and no new writes happen. Results are cached per metric+limit combo for 1 hour using a thread-safe module-level cache (same pattern as platform_stats.py). The frontend fetches /api/leaderboard with the active metric tab and renders a ranked table. The ?metric param persists in the URL so a specific leaderboard view is bookmarkable and shareable.
 
-What is next:
-Could add Neo4j connectivity check, LLM provider reachability, and disk usage metrics in a future iteration. The /status page could also serve as the foundation for an admin dashboard.
+What's next:
+Could add ?embed=true iframe support to the embed infrastructure so site owners can embed specific metric leaderboards on their blogs. The Community Showcase (repo-actions idea #5) would complement the leaderboard — algorithmic rankings vs editorial curation.
 
-PR: blocked — GH\_GLOBAL secret not set (28th consecutive build blocked from push)
+PR: push blocked — GH_GLOBAL secret not set (29th consecutive block since May 1). Code complete as local commit on feat/simulation-leaderboard branch.
